@@ -19,7 +19,8 @@ class space_CreateO(unittest.TestCase):
     industry_1 = int(d.cell("test001-创建", 2, 10))  # 产业角色
 
     # 2.初始化
-    def setUp(self):
+    @classmethod
+    def setUpClass(self):
         # 1.建立连接信息
         cnn = Connect()
         self.driver = cnn.connect()
@@ -43,7 +44,8 @@ class space_CreateO(unittest.TestCase):
         self.log.info("------------START:test1_1创建机构空间.CreateOrgSpace001_1.py------------")
 
     # 3.释放资源
-    def tearDown(self):
+    @classmethod
+    def tearDownClass(self):
         # 1.打印日志
         self.log.info("------------END:test1_1创建机构空间.CreateOrgSpace001_1.py------------")
         self.log.info('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~用例结束！~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
@@ -51,43 +53,152 @@ class space_CreateO(unittest.TestCase):
         # self.driver.quit()
 
     # 4.测试用例
-    @ddt.data([fullname_1, easyname_1, province_1, city_1,
-               soverbank_1, sovermybank_1, soverbanknub_1,
-               customertype_1, industry_1])
+    # 4.1 进入空间
+    def test_createSpace01(self):
+        '''进入空间首页
+        :param driver:
+        :return:
+        '''
+        sleep(1)
+        self.log.info('------START:test1_1创建机构空间.CreateSpace.py------')
+        # 1.空间首页
+        self.handle.Kjlb_click()
+        self.log.info('点击进入空间首页')
+        # 2.点击+按钮
+        self.handle.Kjlb_mainmenu_click()
+        self.log.info('点击：+按钮')
+        # 3.+机构空间
+        self.handle.Kjlb_mainmenu_newspace_click()
+        self.log.info('选择：+机构空间')
+
+    # 4.2 新建机构空间
+    @ddt.data([fullname_1, easyname_1, province_1, city_1, customertype_1])
     @ddt.unpack
-    def test_spacecreate(self, fullname, easyname, province,
-                         city, soverbank, sovermybank, soverbanknub,
-                         customertype, industry):
-        '''创建机构空间'''
+    def test_createSpace02(self, fullname, easyname, province, city, customertype):
+        '''创建空间
+        :param driver:
+        :param fullname: 机构名称
+        :param easyname: 机构简称
+        :param province: 省
+        :param city: 市
+        :param soverbank: 开户行
+        :param sovermybank: 支行
+        :param soverbanknub: 银行账户
+        :param customertype: 客户类型
+        :param industry: 产业角色
+        :return:
+        '''
+        # --------------------------新建机构空间-------------------------
+        # 机构名称:(fullname):appium测试空间
+        # 机构简称:(easyname):appium测试空间
+        # 机构类型:企业
+        # 产业角色:工厂
+        # 客户类型:石材
+        # 所在地区:北京-东城
+        # 详细地址:不填
         try:
-            # -------------创建机构空间------------
-            # 先进行判断，空间是否存在，如果不存在，创建；如果存在，先删除后创建
             sleep(1)
-            self.handle.Kjlb_click()  # 进入空间列表
-            self.log.info('进入空间列表')
-            # 遍历空间列表，查找是否存在该空间
-            self.flag = 0
-            for element in self.handle.Kjlb_browseorgspace_getElements():
-                spacename = element.text
-                if spacename == easyname:
-                    self.flag = 1
-                    self.log.info('已存在该空间')
-                    break
-                else:
-                    pass
-            # 如果机构存在
-            if self.flag == 1:
-                self.cl.closeSpace(self.driver, easyname)  # 关闭
-                self.cr.createSpace(self.driver, fullname, easyname, province,
-                                    city, soverbank, sovermybank, soverbanknub,
-                                    customertype, industry)  # 关闭之后,重新创建机构空间
-                self.cl.closeSpace(self.driver, easyname)
-            else:
-                self.cr.createSpace(self.driver, fullname, easyname, province,
-                                    city, soverbank, sovermybank, soverbanknub,
-                                    customertype, industry)  # 创建机构空间
-                self.cl.closeSpace(self.driver, easyname)
+            self.handle.Kjlb_mainmenu_newspace_orgname_sendkeys(u'{0}'.format(fullname))  # 全称
+            self.log.info('输入企业全称：%s' % fullname)
+            self.handle.Kjlb_mainmenu_newspace_orgintro_sendkeys(u'{0}'.format(easyname))  # 简称
+            self.log.info('输入企业简称：%s' % easyname)
+            self.handle.Kjlb_mainmenu_newspace_orgtitle_click()  # 点击标题
+            self.log.info('点击标题')
+            self.handle.Kjlb_mainmenu_newspace_orgtype_click()  # 机构类型
+            self.log.info('点击机构类型')
+            self.handle.Kjlb_mainmenu_newspace_orgtype_company_click()  # 机构类型：企业
+            self.log.info('选择机构类型：企业')
+            sleep(1)
+            # handle.Kjlb_mainmenu_newspace_industry_click()  # 产业角色
+            # self.log.info('点击产业角色')
+            # handle.Kjlb_mainmenu_newspace_industry_tag_click(industry)  # 选择工厂
+            # self.log.info('产业角色选择：%s' % industry)
+            self.handle.Kjlb_mainmenu_newspace_customertype_click()  # 客户类型
+            self.log.info('点击客户类型')
+            self.handle.Kjlb_mainmenu_newspace_customertype_tag_click(customertype)  # 客户类型标签
+            self.log.info('点击客户类型标签')
+            self.handle.Kjlb_mainmenu_newspace_customertype_confirm_click()  # 点击确定
+            self.log.info('点击确定按钮')
+            self.handle.Kjlb_mainmenu_newspace_area_click()  # 所在地区
+            self.log.info('点击所在地区')
+            self.driver.find_element_by_name(province).click()
+            self.log.info('选择%s省' % province)
+            self.driver.find_element_by_name(city).click()
+            self.log.info('选择%s市' % city)
+            self.handle.Kjlb_mainmenu_newspace_affirm_click()  # 点击提交
+            self.log.info('确定提交')
         except Exception as err:
-            self.tools.getScreenShot(self.screen_path, "ExceptionShot")
-            self.log.error("CreateOrgSpace Outside : %s" % err)
+            self.log.error("CreateSpace Inside : %s" % err)
+            raise err
+
+    # 4.3 验证对公账号信息
+    @ddt.data([province_1, city_1, soverbanknub_1])
+    @ddt.unpack
+    def test_createSpace03(self, province, city, soverbanknub):
+        '''验证对公账号信息
+        :param province: 省
+        :param city: 市
+        :param soverbanknub:银行账号
+        :return:
+        '''
+        try:
+            self.handle.Kjlb_mainmenu_newspace_verifynow_click()  # 点击去验证
+            self.log.info('点击去验证对公账号')
+            # 开户银行:AAA
+            # 所在地区:北京-东城
+            # 支行:BBB
+            # 银行账号:123456
+            self.handle.Kjlb_mainmenu_newspace_verifynow_soverbank_click()  # 开户银行
+            self.log.info('点击开户银行')
+            self.handle.Kjlb_mainmenu_newspace_verifynow_soverbank_list1_click(0)
+            self.log.info('点击开户银行列表1中第1家银行')
+            self.handle.Kjlb_mainmenu_newspace_verifynow_soverbank_list1_click(0)
+            self.log.info('点击开户银行列表2中第1家银行')
+            self.handle.Kjlb_mainmenu_newspace_verifynow_soveraddress_click()  # 所在地区
+            self.log.info('点击所在地区')
+            self.driver.find_element_by_name(province).click()  # 北京
+            self.log.info('选择%s省' % province)
+            self.driver.find_element_by_name(city).click()  # 东城
+            self.log.info('选择%s市' % city)
+            # handle.Kjlb_mainmenu_newspace_verifynow_sovermybank_sendkeys(sovermybank)  # 支行
+            # self.log.info('填写支行：%s' % sovermybank)
+            self.handle.Kjlb_mainmenu_newspace_verifynow_soverbanknub_sendkeys(soverbanknub)  # 银行账户
+            self.log.info('填写银行账户：%s' % soverbanknub)
+            self.handle.Kjlb_mainmenu_newspace_verifynow_soversave_click()  # 确定提交
+            self.log.info('确定提交')
+            sleep(1)
+            self.handle.Kjlb_mainmenu_newspace_verifynow_soversave_back_click()  # 点击返回
+            self.log.info('点击返回')
+            sleep(1)
+        except Exception as err:
+            self.log.error("CreateSpace Inside : %s" % err)
+            raise err
+
+    # 4.4 关闭空间
+    @ddt.data([easyname_1])
+    @ddt.unpack
+    def test_createSpace04(self, spacename):
+        '''关闭空间
+        :param driver:
+        :param spacename: 简称名
+        :return:
+        '''
+        try:
+            self.log.info("------START:test1_1创建机构空间.CloseSpace.py-----")
+            # -----------------关闭空间 - ----------------
+            # 为了保证不中途退出，需要第一次进入的时候检查是否存在该机构，如果存在，先关闭
+            self.tools.find_space_by_name(spacename)
+            self.log.info('搜索栏搜索结果:{0}'.format(spacename))
+            self.handle.Kjlb_browseorgspaceByID_click(0)
+            self.log.info('点击进入空间:{0}'.format(spacename))
+            sleep(1)
+            self.handle.Kjlb_browseorgspace_menu_click()  # 菜单栏
+            self.log.info('点击空间菜单栏')
+            self.handle.Kjlb_browseorgspace_menu_close_click()  # 关闭
+            self.log.info('点击关闭按钮')
+            self.handle.Kjlb_browseorgspace_menu_close_confirm_click()  # 确认关闭
+            self.log.info('点击确认关闭')
+            self.log.info("------END:test1_1创建机构空间.CloseSpace.pyy-----")
+        except Exception as err:
+            self.log.error("CloseSpace Inside : %s" % err)
             raise err
