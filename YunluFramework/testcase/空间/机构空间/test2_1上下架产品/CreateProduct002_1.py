@@ -6,29 +6,16 @@ from YunluFramework.testcase.空间.机构空间.test2_1上下架产品 import *
 # 上下架产品
 @ddt.ddt
 class space_ProductO(unittest.TestCase):
-    # 1.全局测试数据
-    d = DataInfo("space.xls")  # 创建DataInfo()对象
-    spacename_1 = d.cell("test002-上架产品", 2, 1)  # 空间名
-    proname_1 = d.cell("test002-上架产品", 2, 3)
-    photo_1 = int(d.cell("test002-上架产品", 2, 2))  # photo列表
-    tag1_1 = int(d.cell("test002-上架产品", 2, 4))  # tag1
-    tag2_1 = int(d.cell("test002-上架产品", 2, 5))  # tag2
-    species1 = d.cell("test002-上架产品", 2, 6)  # 种类名
-    type_1 = int(d.cell("test002-上架产品", 2, 7))  # 制品
-    surface_1 = int(d.cell("test002-上架产品", 2, 8))  # 表面
-    key_1 = d.cell("test002-上架产品", 2, 9)  # 参数名
-    value_1 = d.cell("test002-上架产品", 2, 10)  # 参数值
-    price1_1 = int(d.cell("test002-上架产品", 2, 11))  # price1
-    stock1_1 = int(d.cell("test002-上架产品", 2, 12))  # stock1
-    price2_1 = int(d.cell("test002-上架产品", 2, 13))  # price2
-    stock2_1 = d.cell("test002-上架产品", 2, 14)  # stock2
-    price3_1 = d.cell("test002-上架产品", 2, 15)  # price3
-    stock3_1 = int(d.cell("test002-上架产品", 2, 16))  # stock3
-    price4_1 = int(d.cell("test002-上架产品", 2, 17))  # price4
-    stock4_1 = int(d.cell("test002-上架产品", 2, 18))  # stock4
+    # 1.创建数据库操作对象
+    d = DataMysql()
+    sql01 = "select * from test2_1_createproduct_01"
+    sql03 = "select * from test2_1_createproduct_03"
+    data01 = d.select(sql01, 0)
+    data03 = d.select(sql03, 0)
 
     # 2.初始化
-    def setUp(self):
+    @classmethod
+    def setUpClass(self):
         # 1.建立连接信息
         cnn = Connect()
         self.driver = cnn.connect()
@@ -41,17 +28,15 @@ class space_ProductO(unittest.TestCase):
         # 5.获取截图路径、日志路径、日志名
         self.screen_path = cf.getParam('space', "org_path_002_1")  # 通过配置文件获取截图的路径
         self.logfile = cf.getParam('log', "logfile")  # 日志文件名
-        # 6.创建CreateProduct和DeleteProduct对象
-        self.cr = CreateProduct()
-        self.dl = DeleteProduct()
-        # 7.创建日志记录模块
+        # 6.创建日志记录模块
         self.log = Log(self.logfile)
-        # 8.打印日志
+        # 7.打印日志
         self.log.info('****************************************用例开始！****************************************')
         self.log.info("------------START:test2_1上下架产品.CreateProduct002_1.py------------")
 
     # 3.释放资源
-    def tearDown(self):
+    @classmethod
+    def tearDownClass(self):
         # 1.打印日志
         self.log.info("------------END:test2_1上下架产品.CreateProduct002_1.py------------")
         self.log.info('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~用例结束！~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
@@ -60,22 +45,15 @@ class space_ProductO(unittest.TestCase):
         # self.driver.quit()
 
     # 4.测试用例
-    @ddt.data([spacename_1, photo_1, proname_1, tag1_1,
-               tag2_1, species1, type_1, surface_1,
-               key_1, value_1, price1_1, stock1_1,
-               price2_1, stock2_1, price3_1, stock3_1,
-               price4_1, stock4_1])
+    # 4.1 进入空间
+    @ddt.data(data01)
     @ddt.unpack
-    def test_spaceproduct(self, spacename, photo, proname,
-                          tag1, tag2, species, type,
-                          surface, key, value, price1,
-                          stock1, price2, stock2, price3,
-                          stock3, price4, stock4):
-        """
-        产品上下架
-        """
+    def test_createProduct01(self, spacename):
+        '''进入空间
+        :param spacename: 空间名
+        :return: 进入该空间
+        '''
         try:
-            # 1.点击进入空间界面
             sleep(1)
             self.handle.Kjlb_click()  # 点击进入空间列表
             self.log.info('点击进入空间列表')
@@ -83,17 +61,151 @@ class space_ProductO(unittest.TestCase):
             self.log.info('搜索栏搜索结果:{0}'.format(spacename))
             self.handle.Kjlb_browseorgspaceByID_click(0)
             self.log.info('点击进入%s' % spacename)
+        except Exception as err:
+            self.tools.getScreenShot(self.screen_path, "ExceptionShot")
+            self.log.error("test_createProduct01 : %s" % err)
+            raise err
+
+    # 4.2 点击产品
+    def test_createProduct02(self):
+        '''点击产品
+        :return:
+        '''
+        try:
             self.handle.Kjlb_browseorgspace_menu_click()  # 点击菜单栏
             self.log.info('点击菜单栏')
             self.handle.Kjlb_browseorgspace_menu_product_click()  # 点击产品
             self.log.info('点击产品')
-            # 2.新建产品
-            self.cr.createProduct(self.driver, photo, proname,
-                                  tag1, tag2, species, type,
-                                  surface, key, value, price1,
-                                  stock1, price2, stock2, price3,
-                                  stock3, price4, stock4)
-            # 3.未发布列表:发布
+        except Exception as err:
+            self.tools.getScreenShot(self.screen_path, "ExceptionShot")
+            self.log.error("test_createProduct02 : %s" % err)
+            raise err
+
+    # 4.3 新建产品
+    @ddt.data(data03)
+    @ddt.unpack
+    def test_createProduct03(self, driver, photo, proname, key, value, price1, stock1, price2, stock2, price3,
+                             stock3, price4, stock4):
+        '''新建产品
+        :param driver:
+        :param photo: 图片列表第N张
+        :param proname:产品名
+        :param key:参数名
+        :param value:参数值
+        :param price1:价格1
+        :param stock1:库存1
+        :param price2:价格2
+        :param stock2:库存2
+        :param price3:价格3
+        :param stock3:库存3
+        :param price4:价格4
+        :param stock4:库存4
+        :return:
+        '''
+        try:
+            # -----------------新建产品-----------------
+            self.handle.Kjlb_browseorgspace_menu_product_new_click()  # 点击新建按钮
+            self.log.info('点击新建按钮')
+            # 1.添加照片
+            self.handle.Kjlb_browseorgspace_menu_product_new_addphoto_click()  # 点击添加照片按钮
+            self.log.info('点击添加照片按钮')
+            self.handle.Kjlb_browseorgspace_menu_product_new_addphoto_album_click()  # 选择相册添加
+            self.log.info('选择相册添加')
+            self.handle.Kjlb_browseorgspace_menu_product_new_addphoto_album_list_click(photo)  # 选择第一张照片
+            self.log.info('选择第%s张照片' % photo)
+            self.handle.Kjlb_browseorgspace_menu_product_new_addphoto_album_confirm_click()  # 点击完成
+            self.log.info('点击完成')
+            sleep(4)
+            # 2.商品名称
+            self.handle.Kjlb_browseorgspace_menu_product_new_proname_click()  # 点击商品名称
+            self.log.info('点击商品名称')
+            self.handle.Kjlb_browseorgspace_menu_product_new_proname_name_sendkeys(proname)  # 输入商品名称
+            self.log.info('输入商品名称：%s' % proname)
+            self.handle.Kjlb_browseorgspace_menu_product_new_proname_name_title_click()  # 点击顶部标题
+            self.log.info('点击顶部标题')
+
+            driver.find_element_by_id("com.yunlu6.yunlu:id/et_classify").send_keys(u"建筑石材")
+            self.log.info('商品分类输入：建筑石材')
+            sleep(1)
+            self.tools.click_element_by_coordinate(528, 566)
+            self.log.info('点击搜索结果中的建筑石材')
+            sleep(1)
+
+            self.handle.Kjlb_browseorgspace_menu_product_new_proname_choose_click()  # 点击勾选按钮
+            self.log.info('点击勾选按钮')
+            # 5.产品参数
+            self.handle.Kjlb_browseorgspace_menu_product_new_parameter_click()  # 点击产品参数
+            self.log.info('点击产品参数')
+            self.handle.Kjlb_browseorgspace_menu_product_new_parameter_key_clear(0)  # 先清空参数名
+            self.log.info('清空参数名')
+            self.handle.Kjlb_browseorgspace_menu_product_new_parameter_key_sendkeys(0, key)  # 输入参数名
+            self.log.info('输入参数名：%s' % key)
+            self.handle.Kjlb_browseorgspace_menu_product_new_parameter_value_sendkeys(0, value)  # 输入参数值
+            self.log.info('输入参数值：%s' % value)
+            self.handle.Kjlb_browseorgspace_menu_product_new_parameter_confirm_click()  # 点击勾选
+            self.log.info('点击勾选')
+            # 6.价格
+            self.handle.Kjlb_browseorgspace_menu_product_new_price_click()  # 点击价格
+            self.log.info('点击价格')
+            # 6.1 价格:0 库存:0
+            self.handle.Kjlb_browseorgspace_menu_product_new_price_unitprice_sendkeys(-2, price1)  # 单价0元
+            self.log.info('单价：%s' % price1)
+            self.handle.Kjlb_browseorgspace_menu_product_new_price_stock_sendkeys(-1, stock1)  # 库存0
+            self.log.info('库存：%s' % stock1)
+            self.tools.swipeUp(500)
+            self.log.info('向上滑动屏幕0.5秒')
+            self.handle.Kjlb_browseorgspace_menu_product_new_price_save_click()  # 点击保存
+            self.log.info('点击保存')
+            # 6.2 价格:123 库存:空
+            self.handle.Kjlb_browseorgspace_menu_product_new_price_add_click()  # +新价
+            self.log.info('点击+新价')
+            self.handle.Kjlb_browseorgspace_menu_product_new_price_unitprice_sendkeys(-2, price2)  # 单价123元
+            self.log.info('单价：%s' % price2)
+            self.handle.Kjlb_browseorgspace_menu_product_new_price_stock_sendkeys(-1, stock2)  # 库存空
+            self.log.info('库存：%s' % stock2)
+            self.tools.swipeUp(500)
+            self.log.info('向上滑动屏幕0.5秒')
+            self.handle.Kjlb_browseorgspace_menu_product_new_price_save_click()  # 点击保存
+            self.log.info('点击保存')
+            # 6.3 价格:空 库存:123
+            self.handle.Kjlb_browseorgspace_menu_product_new_price_add_click()  # +新价
+            self.log.info('点击+新价')
+            self.handle.Kjlb_browseorgspace_menu_product_new_price_stock_sendkeys(-1, stock3)  # 库存123
+            self.log.info('库存：%s' % stock3)
+            self.handle.Kjlb_browseorgspace_menu_product_new_price_unitprice_sendkeys(-2, price3)  # 单价空
+            self.log.info('单价：%s' % price1)
+            self.tools.swipeUp(500)
+            self.log.info('向上滑动屏幕0.5秒')
+            self.handle.Kjlb_browseorgspace_menu_product_new_price_save_click()  # 点击保存
+            self.log.info('点击保存')
+            # 6.4 价格:999 库存:999
+            self.handle.Kjlb_browseorgspace_menu_product_new_price_add_click()  # +新价
+            self.log.info('点击+新价')
+            self.handle.Kjlb_browseorgspace_menu_product_new_price_unitprice_sendkeys(-2, price4)  # 单价999元
+            self.log.info('单价：%s' % price4)
+            self.handle.Kjlb_browseorgspace_menu_product_new_price_stock_sendkeys(-1, stock4)  # 库存999
+            self.log.info('库存：%s' % stock4)
+            self.tools.swipeUp(500)
+            self.log.info('向上滑动屏幕0.5秒')
+            self.handle.Kjlb_browseorgspace_menu_product_new_price_save_click()  # 点击保存
+            self.log.info('点击保存')
+            self.handle.Kjlb_browseorgspace_menu_product_new_price_back_click()  # 点击返回
+            self.log.info('点击返回')
+            # 7.保存->发布
+            self.handle.Kjlb_browseorgspace_menu_product_new_save_click()  # 点击保存
+            self.log.info('点击保存')
+            self.log.info('------END:test2_1上下架产品.CreateProduct.py------')
+        except Exception as err:
+            self.tools.getScreenShot(self.screen_path, "ExceptionShot")
+            self.log.error("test_createProduct03 : %s" % err)
+            raise err
+
+    # 4.4 发布产品
+    def test_createProduct04(self):
+        '''未发布列表-发布产品
+        :return:
+        '''
+        try:
             self.handle.Kjlb_browseorgspace_menu_product_unlock_click()  # 未发布列表点击
             self.log.info('点击未发布列表')
             self.handle.Kjlb_browseorgspace_menu_product_unlock_list_click(-1)  # 访问最后一个（刚上架的）
@@ -104,17 +216,28 @@ class space_ProductO(unittest.TestCase):
             self.log.info('点击发布')
             self.handle.Kjlb_browseorgspace_menu_product_unlock_list_menu_release_confirm_click()  # 确认
             self.log.info('点击确认')
-            # 4.已发布列表-产品检查
+        except Exception as err:
+            self.tools.getScreenShot(self.screen_path, "ExceptionShot")
+            self.log.error("test_createProduct04 : %s" % err)
+            raise err
+
+    # 4.5 已发布产品参数检查
+    def test_createProduct05(self):
+        '''已发布产品参数检查
+        :return:
+        '''
+        try:
+            # 5.已发布列表-产品检查
             self.handle.Kjlb_browseorgspace_menu_product_lock_click()  # 已发布列表
             self.log.info('点击已发布列表')
             sleep(2)
             self.handle.Kjlb_browseorgspace_menu_product_lock_list_click(-1)  # 访问最后一个
             self.log.info('点击最后一个产品-刚发布')
-            # 4.1商品名检查
+            # 5.1商品名检查
             proname = self.handle.Kjlb_browseorgspace_menu_product_lock_list_proname_text()
             assert proname == proname, "Proname Show Error!"
             self.log.info('商品名检查')
-            # 4.2更多价格检查
+            # 5.2更多价格检查
             self.handle.Kjlb_browseorgspace_menu_product_lock_list_moreprice_click()  # 点击更多价格
             price1 = self.handle.Kjlb_browseorgspace_menu_product_lock_list_moreprice_text(0)
             price2 = self.handle.Kjlb_browseorgspace_menu_product_lock_list_moreprice_text(1)
@@ -127,34 +250,45 @@ class space_ProductO(unittest.TestCase):
             self.log.info('价格检查')
             self.handle.Kjlb_browseorgspace_menu_product_lock_list_moreprice_list_click(0)  # 点击第一个价格
             self.log.info('点击第一个价格')
-            # # 4.3石种属性检查
-            # self.handle.Kjlb_browseorgspace_menu_product_lock_list_middle_click()  # 点击产品参数
-            # self.log.info('点击产品参数')
-            # attribute = self.handle.Kjlb_browseorgspace_menu_product_lock_list_middle_attribut_text()  # 获取石种相关属性
-            # assert attribute == "西班牙米黄 /浅 /黄 /云", "Attribute Show Error!"
-            # self.log.info('石种属性检查')
-            # # 4.4制品与表面检查
-            # pattern = self.handle.Kjlb_browseorgspace_menu_product_lock_list_middle_pattern_text()  # 获取制品与表面相关属性
-            # assert pattern == "平板 /光  面", "Pattern Show Error!"
-            # self.log.info('制品与表面检查')
-            # # 4.5参数名,参数值检查
-            # self.tools.swipeUp(500)  # 上滑,展示出key/value
-            # parameter = self.handle.Kjlb_browseorgspace_menu_product_lock_list_middle_keyvalue_text(1)
-            # assert parameter == "key:value", "Parameter Shwo Error!"
-            # self.log.info('参数名/参数值检查')
-            # 5.下架产品
+        except Exception as err:
+            self.tools.getScreenShot(self.screen_path, "ExceptionShot")
+            self.log.error("test_createProduct05 : %s" % err)
+            raise err
+
+    # 4.6 下架产品
+    def test_createProduct06(self):
+        '''下架产品
+        :return:
+        '''
+        try:
+            # 6.下架产品
             self.handle.Kjlb_browseorgspace_menu_product_lock_list_offshelf_click()  # 点击下架
             self.log.info('点击下架')
             self.handle.Kjlb_browseorgspace_menu_product_lock_list_offshelf_sure_click()  # 确定下架
             self.log.info('确定下架')
-            # 6.删除产品,还原测试场景
+        except Exception as err:
+            self.tools.getScreenShot(self.screen_path, "ExceptionShot")
+            self.log.error("test_createProduct06 : %s" % err)
+            raise err
+
+    # 4.7 删除产品
+    def test_createProduct07(self):
+        try:
+            # 7.1 删除产品,还原测试场景
             self.handle.Kjlb_browseorgspace_menu_product_unlock_click()  # 点击未发布列表
             self.log.info('点击未发布列表')
             sleep(1)
             self.handle.Kjlb_browseorgspace_menu_product_unlock_list_click(-1)  # 访问最后一个（刚下架）
             self.log.info('点击最后一个产品-刚下架')
-            self.dl.deleteProduct(self.driver)  # 删除产品，回归
+            # 7.2 点击菜单栏
+            self.handle.Kjlb_browseorgspace_menu_product_unlock_list_menu_click()  # 点击菜单栏
+            self.log.info('点击菜单栏')
+            # 7.3 点击删除
+            self.handle.Kjlb_browseorgspace_menu_product_unlock_list_menu_delete_click()  # 删除产品
+            self.log.info('点击删除')
+            self.handle.Kjlb_browseorgspace_menu_product_unlock_list_menu_delete_y_click()  # 确认删除该产品
+            self.log.info('确认删除')
         except Exception as err:
             self.tools.getScreenShot(self.screen_path, "ExceptionShot")
-            self.log.error("CreateProduct Outside : %s" % err)
+            self.log.error("test_createProduct07 : %s" % err)
             raise err

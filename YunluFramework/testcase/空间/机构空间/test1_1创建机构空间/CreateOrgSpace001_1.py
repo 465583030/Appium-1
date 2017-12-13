@@ -6,17 +6,14 @@ from YunluFramework.testcase.空间.机构空间.test1_1创建机构空间 impor
 # 创建机构空间
 @ddt.ddt
 class space_CreateO(unittest.TestCase):
-    # 1.全局测试数据
-    d = DataInfo("space.xls")  # 创建DataInfo()对象
-    fullname_1 = d.cell("test001-创建", 2, 1)  # fullname
-    easyname_1 = d.cell("test001-创建", 2, 2, )  # easyname
-    province_1 = (d.cell("test001-创建", 2, 4))  # 北京
-    city_1 = (d.cell("test001-创建", 2, 5))  # 东城
-    soverbank_1 = d.cell("test001-创建", 2, 7)  # 开户行
-    sovermybank_1 = d.cell("test001-创建", 2, 8)  # 支行
-    soverbanknub_1 = int(d.cell("test001-创建", 2, 9))  # 银行账号
-    customertype_1 = int(d.cell("test001-创建", 2, 3))  # 客户类型
-    industry_1 = int(d.cell("test001-创建", 2, 10))  # 产业角色
+    # 1.创建数据库操作对象
+    d = DataMysql()
+    sql02 = "select * from test1_1_createspace_02"
+    sql03 = "select * from test1_1_createspace_03"
+    sql04 = "select * from test1_1_createspace_04"
+    data02 = d.select(sql02, 0)
+    data03 = d.select(sql03, 0)
+    data04 = d.select(sql04, 0)
 
     # 2.初始化
     @classmethod
@@ -59,20 +56,26 @@ class space_CreateO(unittest.TestCase):
         :param driver:
         :return:
         '''
-        sleep(1)
-        self.log.info('------START:test1_1创建机构空间.CreateSpace.py------')
-        # 1.空间首页
-        self.handle.Kjlb_click()
-        self.log.info('点击进入空间首页')
-        # 2.点击+按钮
-        self.handle.Kjlb_mainmenu_click()
-        self.log.info('点击：+按钮')
-        # 3.+机构空间
-        self.handle.Kjlb_mainmenu_newspace_click()
-        self.log.info('选择：+机构空间')
+        try:
+            sleep(1)
+            self.log.info('------START:test1_1创建机构空间.CreateSpace.py------')
+            # 1.空间首页
+            self.handle.Kjlb_click()
+            self.log.info('点击进入空间首页')
+            # 2.点击+按钮
+            self.handle.Kjlb_mainmenu_click()
+            self.log.info('点击：+按钮')
+            # 3.+机构空间
+            self.handle.Kjlb_mainmenu_newspace_click()
+            self.log.info('选择：+机构空间')
+        except Exception as err:
+            self.tools.getScreenShot(self.screen_path, "ExceptionShot")
+            self.log.error("test_createSpace01 : %s" % err)
+            raise err
 
     # 4.2 新建机构空间
-    @ddt.data([fullname_1, easyname_1, province_1, city_1, customertype_1])
+    # @ddt.data([fullname_1, easyname_1, province_1, city_1, customertype_1])
+    @ddt.data(data02)
     @ddt.unpack
     def test_createSpace02(self, fullname, easyname, province, city, customertype):
         '''创建空间
@@ -100,19 +103,18 @@ class space_CreateO(unittest.TestCase):
             sleep(1)
             self.handle.Kjlb_mainmenu_newspace_orgname_sendkeys(u'{0}'.format(fullname))  # 全称
             self.log.info('输入企业全称：%s' % fullname)
+            self.handle.Kjlb_mainmenu_newspace_orgname_click()
+            self.log.info('点击企业全称输入框')
             self.handle.Kjlb_mainmenu_newspace_orgintro_sendkeys(u'{0}'.format(easyname))  # 简称
             self.log.info('输入企业简称：%s' % easyname)
-            self.handle.Kjlb_mainmenu_newspace_orgtitle_click()  # 点击标题
-            self.log.info('点击标题')
+            sleep(3)
+            self.handle.Kjlb_mainmenu_newspace_orgintro_click()
+            self.log.info('点击企业简称输入框')
             self.handle.Kjlb_mainmenu_newspace_orgtype_click()  # 机构类型
             self.log.info('点击机构类型')
             self.handle.Kjlb_mainmenu_newspace_orgtype_company_click()  # 机构类型：企业
             self.log.info('选择机构类型：企业')
             sleep(1)
-            # handle.Kjlb_mainmenu_newspace_industry_click()  # 产业角色
-            # self.log.info('点击产业角色')
-            # handle.Kjlb_mainmenu_newspace_industry_tag_click(industry)  # 选择工厂
-            # self.log.info('产业角色选择：%s' % industry)
             self.handle.Kjlb_mainmenu_newspace_customertype_click()  # 客户类型
             self.log.info('点击客户类型')
             self.handle.Kjlb_mainmenu_newspace_customertype_tag_click(customertype)  # 客户类型标签
@@ -128,11 +130,13 @@ class space_CreateO(unittest.TestCase):
             self.handle.Kjlb_mainmenu_newspace_affirm_click()  # 点击提交
             self.log.info('确定提交')
         except Exception as err:
-            self.log.error("CreateSpace Inside : %s" % err)
+            self.tools.getScreenShot(self.screen_path, "ExceptionShot")
+            self.log.error("test_createSpacet02 : %s" % err)
             raise err
 
     # 4.3 验证对公账号信息
-    @ddt.data([province_1, city_1, soverbanknub_1])
+    # @ddt.data([province_1, city_1, soverbanknub_1])
+    @ddt.data(data03)
     @ddt.unpack
     def test_createSpace03(self, province, city, soverbanknub):
         '''验证对公账号信息
@@ -171,11 +175,13 @@ class space_CreateO(unittest.TestCase):
             self.log.info('点击返回')
             sleep(1)
         except Exception as err:
-            self.log.error("CreateSpace Inside : %s" % err)
+            self.tools.getScreenShot(self.screen_path, "ExceptionShot")
+            self.log.error("test_createSpace03 : %s" % err)
             raise err
 
     # 4.4 关闭空间
-    @ddt.data([easyname_1])
+    # @ddt.data([easyname_1])
+    @ddt.data(data04)
     @ddt.unpack
     def test_createSpace04(self, spacename):
         '''关闭空间
@@ -200,5 +206,6 @@ class space_CreateO(unittest.TestCase):
             self.log.info('点击确认关闭')
             self.log.info("------END:test1_1创建机构空间.CloseSpace.pyy-----")
         except Exception as err:
-            self.log.error("CloseSpace Inside : %s" % err)
+            self.tools.getScreenShot(self.screen_path, "ExceptionShot")
+            self.log.error("test_createSpace04 : %s" % err)
             raise err

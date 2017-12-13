@@ -22,12 +22,19 @@ class SPACEHANDLE2(SPACEHANDLE1):
     def Kjlb_mainmenu_newspace_orgname_sendkeys(self, text):
         return self.p.send_keys(self.Kjlb_mainmenu_newspace_orgname, text)
 
+    # 空间列表-主菜单-'+机构空间'-机构全称:点击
+    def Kjlb_mainmenu_newspace_orgname_click(self):
+        return self.p.click(self.Kjlb_mainmenu_newspace_orgname)
+
     # 空间列表-主菜单-'+机构空间'-机构简称:发送文本
     def Kjlb_mainmenu_newspace_orgintro_sendkeys(self, text):
         return self.p.send_keys(self.Kjlb_mainmenu_newspace_orgintro, text)
 
-        # 空间列表-主菜单-'+机构空间'-新建机构空间标题:点击
+    # 空间列表-主菜单-'+机构空间'-机构简称:点击
+    def Kjlb_mainmenu_newspace_orgintro_click(self):
+        return self.p.click(self.Kjlb_mainmenu_newspace_orgintro)
 
+    # 空间列表-主菜单-'+机构空间'-新建机构空间标题:点击
     def Kjlb_mainmenu_newspace_orgtitle_click(self):
         return self.p.click(self.Kjlb_mainmenu_newspace_orgtitle)
 
