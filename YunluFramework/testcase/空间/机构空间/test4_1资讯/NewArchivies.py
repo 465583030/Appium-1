@@ -27,21 +27,23 @@ class NewArchivies:
             # 2.选择空间:测试空间123
             # handle.Kjlb_browseorgspaceByName_click("测试空间123")
             # 3.右上角:菜单栏选择资讯
-            handle.Kjlb_browseorgspace_menu_click()
-            self.log.info('点击菜单栏')
-            handle.Kjlb_browseorgspace_menu_archivies_click()
-            self.log.info('点击资讯')
+            # handle.Kjlb_browseorgspace_menu_click()
+            # self.log.info('点击菜单栏')
+            # handle.Kjlb_browseorgspace_menu_archivies_click()
+            # self.log.info('点击资讯')
+
             # 4.各入口跳转检查
             # 4.1 入口一:图片新增按钮
-            self.log.info('入口一：图片新增按钮检查')
-            handle.Kjlb_browseorgspace_menu_archivies_picadd_click()
-            self.log.info('点击新增图片按钮')
-            handle.Kjlb_browseorgspace_menu_archivies_new_back_click()  # 返回
-            self.log.info('点击返回')
-            # 4.2 入口二:右上角新增
-            self.log.info('入口二：右上角新增检查')
-            handle.Kjlb_browseorgspace_menu_archivies_new_click()
-            self.log.info('点击右上角新增按钮')
+            # self.log.info('入口一：图片新增按钮检查')
+            # handle.Kjlb_browseorgspace_menu_archivies_picadd_click()
+            # self.log.info('点击新增图片按钮')
+            # handle.Kjlb_browseorgspace_menu_archivies_new_back_click()  # 返回
+            # self.log.info('点击返回')
+            # # 4.2 入口二:右上角新增
+            # self.log.info('入口二：右上角新增检查')
+            # handle.Kjlb_browseorgspace_menu_archivies_new_click()
+            # self.log.info('点击右上角新增按钮')
+
             # 5.添加资讯
             # 5.1 添加照片
             handle.Kjlb_browseorgspace_menu_archivies_new_addphoto_click()

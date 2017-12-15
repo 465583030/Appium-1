@@ -33,6 +33,8 @@ class space_ProductO(unittest.TestCase):
         # 7.打印日志
         self.log.info('****************************************用例开始！****************************************')
         self.log.info("------------START:test2_1上下架产品.CreateProduct002_1.py------------")
+        # 8.创建空间公有对象
+        self.common = CommonSpace(self.handle, self.log, self.tools)
 
     # 3.释放资源
     @classmethod
@@ -54,13 +56,7 @@ class space_ProductO(unittest.TestCase):
         :return: 进入该空间
         '''
         try:
-            sleep(1)
-            self.handle.Kjlb_click()  # 点击进入空间列表
-            self.log.info('点击进入空间列表')
-            self.tools.find_space_by_name(spacename)
-            self.log.info('搜索栏搜索结果:{0}'.format(spacename))
-            self.handle.Kjlb_browseorgspaceByID_click(0)
-            self.log.info('点击进入%s' % spacename)
+            self.common.enter_space(spacename)
         except Exception as err:
             self.tools.getScreenShot(self.screen_path, "ExceptionShot")
             self.log.error("test_createProduct01 : %s" % err)
@@ -72,10 +68,7 @@ class space_ProductO(unittest.TestCase):
         :return:
         '''
         try:
-            self.handle.Kjlb_browseorgspace_menu_click()  # 点击菜单栏
-            self.log.info('点击菜单栏')
-            self.handle.Kjlb_browseorgspace_menu_product_click()  # 点击产品
-            self.log.info('点击产品')
+            self.common.click_org_menu('product')
         except Exception as err:
             self.tools.getScreenShot(self.screen_path, "ExceptionShot")
             self.log.error("test_createProduct02 : %s" % err)

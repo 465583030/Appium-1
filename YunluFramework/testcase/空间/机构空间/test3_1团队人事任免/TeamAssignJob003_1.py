@@ -32,10 +32,10 @@ class team_AssignO(unittest.TestCase):
         # 5.获取截图路径、日志路径、日志名
         self.screen_path = cf.getParam('space', "org_path_003_1")  # 通过配置文件获取截图的路径
         self.logfile = cf.getParam('log', "logfile")  # 日志文件名
-        # 6.创建TeamAssignJob对象
-        self.SpaceTa = TeamAssignJob()
-        # 7.创建日志记录模块
+        # 6.创建日志记录模块
         self.log = Log(self.logfile)
+        # 7.创建Space公有对象
+        self.common = CommonSpace(self.handle, self.log, self.tools)
         # 8.打印日志
         self.log.info('****************************************用例开始！****************************************')
         self.log.info("------------Start:test3_1团队人事任免.TeamAssignJob003_1.py------------")
@@ -59,13 +59,7 @@ class team_AssignO(unittest.TestCase):
         :return:
         '''
         try:
-            sleep(1)
-            self.handle.Kjlb_click()  # 点击进入空间列表
-            self.log.info('点击进入空间列表')
-            self.tools.find_space_by_name(spacename)
-            self.log.info('搜索栏搜索结果:{0}'.format(spacename))
-            self.handle.Kjlb_browseorgspaceByID_click(0)
-            self.log.info('点击进入%s' % spacename)
+            self.common.enter_space(spacename)
         except Exception as err:
             self.tools.getScreenShot(self.screen_path, "ExceptionShot")
             self.log.error("test_createProduct01 : %s" % err)
@@ -77,10 +71,7 @@ class team_AssignO(unittest.TestCase):
         :return:
         '''
         try:
-            self.handle.Kjlb_browseorgspace_menu_click()  # 右上角菜单
-            self.log.info('点击右上角菜单')
-            self.handle.Kjlb_browseorgspace_menu_team_click()  # 点击团队
-            self.log.info('点击团队')
+            self.common.click_org_menu('team')
         except Exception as err:
             self.tools.getScreenShot(self.screen_path, "ExceptionShot")
             self.log.error("test_createProduct02 : %s" % err)

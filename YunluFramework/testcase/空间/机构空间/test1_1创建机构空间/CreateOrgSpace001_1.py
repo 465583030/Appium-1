@@ -32,9 +32,8 @@ class space_CreateO(unittest.TestCase):
         self.logfile = cf.getParam('log', "logfile")  # 日志文件名
         # 6.创建日志记录模块
         self.log = Log(self.logfile)
-        # 7.创建Createspace和Closespace对象
-        self.cr = CreateSpace()
-        self.cl = CloseSpace()
+        # 7.创建空间公有操作对象
+        self.common = CommonSpace(self.handle, self.log, self.tools)
         sleep(1)
         # 8.打印日志
         self.log.info('****************************************用例开始！****************************************')
@@ -58,7 +57,6 @@ class space_CreateO(unittest.TestCase):
         '''
         try:
             sleep(1)
-            self.log.info('------START:test1_1创建机构空间.CreateSpace.py------')
             # 1.空间首页
             self.handle.Kjlb_click()
             self.log.info('点击进入空间首页')
@@ -198,13 +196,9 @@ class space_CreateO(unittest.TestCase):
             self.handle.Kjlb_browseorgspaceByID_click(0)
             self.log.info('点击进入空间:{0}'.format(spacename))
             sleep(1)
-            self.handle.Kjlb_browseorgspace_menu_click()  # 菜单栏
-            self.log.info('点击空间菜单栏')
-            self.handle.Kjlb_browseorgspace_menu_close_click()  # 关闭
-            self.log.info('点击关闭按钮')
+            self.common.click_org_menu('close')  # 点击关闭
             self.handle.Kjlb_browseorgspace_menu_close_confirm_click()  # 确认关闭
             self.log.info('点击确认关闭')
-            self.log.info("------END:test1_1创建机构空间.CloseSpace.pyy-----")
         except Exception as err:
             self.tools.getScreenShot(self.screen_path, "ExceptionShot")
             self.log.error("test_createSpace04 : %s" % err)
