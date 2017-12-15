@@ -84,7 +84,7 @@ class space_ProductO(unittest.TestCase):
     # 4.3 新建产品
     @ddt.data(data03)
     @ddt.unpack
-    def test_createProduct03(self, driver, photo, proname, key, value, price1, stock1, price2, stock2, price3,
+    def test_createProduct03(self, photo, proname, key, value, price1, stock1, price2, stock2, price3,
                              stock3, price4, stock4):
         '''新建产品
         :param driver:
@@ -123,14 +123,12 @@ class space_ProductO(unittest.TestCase):
             self.log.info('输入商品名称：%s' % proname)
             self.handle.Kjlb_browseorgspace_menu_product_new_proname_name_title_click()  # 点击顶部标题
             self.log.info('点击顶部标题')
-
-            driver.find_element_by_id("com.yunlu6.yunlu:id/et_classify").send_keys(u"建筑石材")
+            self.driver.find_element_by_id("com.yunlu6.yunlu:id/et_classify").send_keys(u"建筑石材")
             self.log.info('商品分类输入：建筑石材')
             sleep(1)
             self.tools.click_element_by_coordinate(528, 566)
             self.log.info('点击搜索结果中的建筑石材')
             sleep(1)
-
             self.handle.Kjlb_browseorgspace_menu_product_new_proname_choose_click()  # 点击勾选按钮
             self.log.info('点击勾选按钮')
             # 5.产品参数

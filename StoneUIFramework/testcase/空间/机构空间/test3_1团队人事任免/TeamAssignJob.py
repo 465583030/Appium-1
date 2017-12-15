@@ -28,81 +28,84 @@ class TeamAssignJob:
             # 2.选择空间:测试空间123
             # handle.Kjlb_browseorgspaceByName_click(self.spacename)
             # 3.右上角:菜单栏选择团队
-            self.log.info('------START:test3_1团队人事任免.TeamAssignJob.py------')
-            handle.Kjlb_browseorgspace_menu_click()  # 右上角菜单
-            self.log.info('点击右上角菜单')
-            handle.Kjlb_browseorgspace_menu_team_click()  # 点击团队
-            self.log.info('点击团队')
+            # self.log.info('------START:test3_1团队人事任免.TeamAssignJob.py------')
+            # handle.Kjlb_browseorgspace_menu_click()  # 右上角菜单
+            # self.log.info('点击右上角菜单')
+            # handle.Kjlb_browseorgspace_menu_team_click()  # 点击团队
+            # self.log.info('点击团队')
+
             # 4.团队编辑，编辑各职位人数
             # 4.1 管理员人数:2人
-            handle.Kjlb_browseorgspace_menu_team_teamedit_click()  # 点击编辑
-            self.log.info('点击编辑')
-            # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_click(self.AdministratorLoc)#编辑管理员人数
-            driver.find_elements_by_id("com.yunlu6.stone:id/companyteam_item_edit")[0].click()
-            self.log.info('编辑管理员人数')
-            handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_claer()  # 清空
-            self.log.info('清空输入框')
-            handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_sendkeys(AdmNum)  # 2人
-            self.log.info('设置管理员人数：%s' % AdmNum)
-            handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_confirm_click()  # 点击是
-            self.log.info('点击是')
-            # 4.2 销售员人数:3人
-            # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_click(self.SalespersonLoc)#编辑销售员人数
-            driver.find_elements_by_id("com.yunlu6.stone:id/companyteam_item_edit")[1].click()
-            self.log.info('编辑销售员人数')
-            handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_claer()  # 清空
-            self.log.info('清空输入框')
-            handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_sendkeys(SalNum)  # 3人
-            self.log.info('设置销售员人数：%s' % SalNum)
-            handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_confirm_click()  # 点击是
-            self.log.info('点击是')
-            # 4.3 行政助理人数:4人
-            # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_click(self.AssistantLoc)#编辑助理人数
-            driver.find_elements_by_id("com.yunlu6.stone:id/companyteam_item_edit")[3].click()
-            self.log.info('编辑助理人数')
-            handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_claer()  # 清空
-            self.log.info('清空输入框')
-            handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_sendkeys(AssNum)  # 4人
-            self.log.info('设置助理人数：%s' % AssNum)
-            handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_confirm_click()  # 点击是
-            self.log.info('点击是')
+            # handle.Kjlb_browseorgspace_menu_team_teamedit_click()  # 点击编辑
+            # self.log.info('点击编辑')
+            # # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_click(self.AdministratorLoc)#编辑管理员人数
+            # driver.find_elements_by_id("com.yunlu6.stone:id/companyteam_item_edit")[0].click()
+            # self.log.info('编辑管理员人数')
+            # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_claer()  # 清空
+            # self.log.info('清空输入框')
+            # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_sendkeys(AdmNum)  # 2人
+            # self.log.info('设置管理员人数：%s' % AdmNum)
+            # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_confirm_click()  # 点击是
+            # self.log.info('点击是')
+            # # 4.2 销售员人数:3人
+            # # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_click(self.SalespersonLoc)#编辑销售员人数
+            # driver.find_elements_by_id("com.yunlu6.stone:id/companyteam_item_edit")[1].click()
+            # self.log.info('编辑销售员人数')
+            # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_claer()  # 清空
+            # self.log.info('清空输入框')
+            # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_sendkeys(SalNum)  # 3人
+            # self.log.info('设置销售员人数：%s' % SalNum)
+            # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_confirm_click()  # 点击是
+            # self.log.info('点击是')
+            # # 4.3 行政助理人数:4人
+            # # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_click(self.AssistantLoc)#编辑助理人数
+            # driver.find_elements_by_id("com.yunlu6.stone:id/companyteam_item_edit")[3].click()
+            # self.log.info('编辑助理人数')
+            # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_claer()  # 清空
+            # self.log.info('清空输入框')
+            # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_sendkeys(AssNum)  # 4人
+            # self.log.info('设置助理人数：%s' % AssNum)
+            # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_confirm_click()  # 点击是
+            # self.log.info('点击是')
+
             # 5.检查各职位人数是否保存生效
             # 5.1 检查管理员人数编辑是否生效
             # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_click(self.AdministratorLoc)#编辑管理员人数
-            driver.find_elements_by_id("com.yunlu6.stone:id/companyteam_item_edit")[0].click()
-            self.log.info('点击编辑管理员人数')
-            AdmNumm = int(handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_text())
-            self.log.info('当前管理员人数：{0}'.format(AdmNumm))
-            self.log.info('预期管理员人数：{0}'.format(AdmNum))
-            assert AdmNum == AdmNumm, "编辑管理员人数保存后未生效"
-            self.log.info('检查管理员人数编辑是否生效')
-            handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_cancel_click()  # 点击否
-            self.log.info('点击否')
-            # 5.2 检查销售员人数编辑是否生效
-            # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_click(self.SalespersonLoc)#编辑管理员人数
-            driver.find_elements_by_id("com.yunlu6.stone:id/companyteam_item_edit")[1].click()
-            self.log.info('点击编辑销售员人数')
-            SalNumm = int(handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_text())
-            self.log.info('当前销售员人数：{0}'.format(SalNumm))
-            self.log.info('预期销售员人数：{0}'.format(SalNum))
-            assert SalNum == SalNumm, "编辑销售员人数保存后未生效"
-            self.log.info('检查销售人员人数编辑是否生效')
-            handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_cancel_click()  # 点击否
-            self.log.info('点击否')
-            # 5.3 检查行政助理人数编辑是否生效
-            # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_click(self.AssistantLoc)#编辑管理员人数
-            driver.find_elements_by_id("com.yunlu6.stone:id/companyteam_item_edit")[3].click()
-            self.log.info('点击行政助理人数')
-            AssNumm = int(handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_text())
-            self.log.info('当前行政助理人数：{0}'.format(AssNumm))
-            self.log.info('预期行政助理人数：{0}'.format(AssNum))
-            assert AssNum == AssNumm, "编辑行政助理人数后未生效"
-            self.log.info('检查行政助理人数编辑是否生效')
-            handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_cancel_click()  # 点击否
-            self.log.info('点击否')
+            # driver.find_elements_by_id("com.yunlu6.stone:id/companyteam_item_edit")[0].click()
+            # self.log.info('点击编辑管理员人数')
+            # AdmNumm = int(handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_text())
+            # self.log.info('当前管理员人数：{0}'.format(AdmNumm))
+            # self.log.info('预期管理员人数：{0}'.format(AdmNum))
+            # assert AdmNum == AdmNumm, "编辑管理员人数保存后未生效"
+            # self.log.info('检查管理员人数编辑是否生效')
+            # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_cancel_click()  # 点击否
+            # self.log.info('点击否')
+            # # 5.2 检查销售员人数编辑是否生效
+            # # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_click(self.SalespersonLoc)#编辑管理员人数
+            # driver.find_elements_by_id("com.yunlu6.stone:id/companyteam_item_edit")[1].click()
+            # self.log.info('点击编辑销售员人数')
+            # SalNumm = int(handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_text())
+            # self.log.info('当前销售员人数：{0}'.format(SalNumm))
+            # self.log.info('预期销售员人数：{0}'.format(SalNum))
+            # assert SalNum == SalNumm, "编辑销售员人数保存后未生效"
+            # self.log.info('检查销售人员人数编辑是否生效')
+            # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_cancel_click()  # 点击否
+            # self.log.info('点击否')
+            # # 5.3 检查行政助理人数编辑是否生效
+            # # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_click(self.AssistantLoc)#编辑管理员人数
+            # driver.find_elements_by_id("com.yunlu6.stone:id/companyteam_item_edit")[3].click()
+            # self.log.info('点击行政助理人数')
+            # AssNumm = int(handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_text())
+            # self.log.info('当前行政助理人数：{0}'.format(AssNumm))
+            # self.log.info('预期行政助理人数：{0}'.format(AssNum))
+            # assert AssNum == AssNumm, "编辑行政助理人数后未生效"
+            # self.log.info('检查行政助理人数编辑是否生效')
+            # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_cancel_click()  # 点击否
+            # self.log.info('点击否')
             # 6.关闭编辑
-            handle.Kjlb_browseorgspace_menu_team_teamedit_click()  # 点击编辑按钮
-            self.log.info('点击编辑按钮')
+            # handle.Kjlb_browseorgspace_menu_team_teamedit_click()  # 点击编辑按钮
+            # self.log.info('点击编辑按钮')
+
             # 7.菜单栏-人事任免
             handle.Kjlb_browseorgspace_menu_team_menu_click()  # 点击菜单栏
             self.log.info('点击菜单栏')

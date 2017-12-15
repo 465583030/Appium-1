@@ -6,22 +6,20 @@ from YunluFramework.testcase.空间.机构空间.test3_1团队人事任免 impor
 # 团队人事任免
 @ddt.ddt
 class team_AssignO(unittest.TestCase):
-    # 1.全局测试数据
-    d = DataInfo("space.xls")  # 创建DataInfo()对象
-    spacename_1 = d.cell("test003-团队", 2, 1)  # 测试空间123
-    AdministratorLoc_1 = int(d.cell("test003-团队", 2, 2))  # 管理员编辑
-    SalespersonLoc_1 = int(d.cell("test003-团队", 2, 2))  # 销售员编辑
-    AssistantLoc_1 = int(d.cell("test003-团队", 2, 4))  # 行政助理编辑
-    AdmNum_1 = int(d.cell("test003-团队", 2, 5))  # 管理员人数
-    SalNum_1 = int(d.cell("test003-团队", 2, 6))  # 销售员人数
-    AssNum_1 = int(d.cell("test003-团队", 2, 7))  # 行政助理人数
-    Name_1 = d.cell("test003-团队", 2, 8)  # 肖静远
-    Director_1 = int(d.cell("test003-团队", 2, 9))  # 董事会
-    Marketing_1 = int(d.cell("test003-团队", 2, 10))  # 营销部
-    HR_1 = int(d.cell("test003-团队", 2, 11))  # 人事部
+    # 1.创建数据库操作对象
+    d = DataMysql()
+    sql01 = "select * from test3_1_teamassign_01"
+    sql03 = "select * from test3_1_teamassign_03"
+    sql04 = "select * from test3_1_teamassign_04"
+    sql05 = "select * from test3_1_teamassign_05"
+    data01 = d.select(sql01, 0)
+    data03 = d.select(sql03, 0)
+    data04 = d.select(sql04, 0)
+    data05 = d.select(sql05, 0)
 
     # 2.初始化
-    def setUp(self):
+    @classmethod
+    def setUpClass(self):
         # 1.建立连接信息
         cnn = Connect()
         self.driver = cnn.connect()
@@ -43,7 +41,8 @@ class team_AssignO(unittest.TestCase):
         self.log.info("------------Start:test3_1团队人事任免.TeamAssignJob003_1.py------------")
 
     # 3.释放资源
-    def tearDown(self):
+    @classmethod
+    def tearDownclass(self):
         # 1.打印日志
         self.log.info("------------End:test3_1团队人事任免.TeamAssignJob003_1.py------------")
         self.log.info('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~用例结束！~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
@@ -51,28 +50,218 @@ class team_AssignO(unittest.TestCase):
         # self.driver.quit()
 
     # 4.测试用例
-    @ddt.data([spacename_1, AdministratorLoc_1, SalespersonLoc_1, AssistantLoc_1,
-               AdmNum_1, SalNum_1, AssNum_1, Name_1,
-               Director_1, Marketing_1, HR_1])
+    # 4.1 进入空间
+    @ddt.data(data01)
     @ddt.unpack
-    def test_teamassign(self, spacename, AdminstratorLoc, SalespersonLoc, AssistanLoc,
-                        AdmNum, SalNum, AssNum, Name,
-                        Director, Marketing, Hr):
-        """团队人事任免"""
+    def test_teamAssign01(self, spacename):
+        '''进入空间
+        :param spacename:空间名
+        :return:
+        '''
         try:
-            # 1.空间首页
-            self.handle.Kjlb_click()
-            self.log.info('点击空间首页')
-            # 2.选择空间:测试空间123
+            sleep(1)
+            self.handle.Kjlb_click()  # 点击进入空间列表
+            self.log.info('点击进入空间列表')
             self.tools.find_space_by_name(spacename)
             self.log.info('搜索栏搜索结果:{0}'.format(spacename))
             self.handle.Kjlb_browseorgspaceByID_click(0)
-            self.log.info('选择空间：%s' % spacename)
-            # 3.任免+移除
-            self.SpaceTa.teamAssignJob(self.driver, AdminstratorLoc,
-                                       SalespersonLoc, AssistanLoc, AdmNum, SalNum,
-                                       AssNum, Name, Director, Marketing, Hr)
+            self.log.info('点击进入%s' % spacename)
         except Exception as err:
             self.tools.getScreenShot(self.screen_path, "ExceptionShot")
-            self.log.error("TeamAssignJob Outside : %s" % err)
+            self.log.error("test_createProduct01 : %s" % err)
+            raise err
+
+    # 4.2 进入团队
+    def test_teamAssign02(self):
+        '''进入团队
+        :return:
+        '''
+        try:
+            self.handle.Kjlb_browseorgspace_menu_click()  # 右上角菜单
+            self.log.info('点击右上角菜单')
+            self.handle.Kjlb_browseorgspace_menu_team_click()  # 点击团队
+            self.log.info('点击团队')
+        except Exception as err:
+            self.tools.getScreenShot(self.screen_path, "ExceptionShot")
+            self.log.error("test_createProduct02 : %s" % err)
+            raise err
+
+    # 4.3 团队编辑，编辑各职位人数
+    @ddt.data(data03)
+    @ddt.unpack
+    def test_teamAssign03(self, AdmNum, SalNum, AssNum):
+        '''团队编辑，编辑各职位人数
+        :param AdmNum: 管理员人数
+        :param SalNum: 销售员人数
+        :param AssNum: 行政助理人数
+        :return:
+        '''
+        try:
+            '''编辑各职位人数
+            :return:
+            '''
+            # 1 管理员人数:2人
+            self.handle.Kjlb_browseorgspace_menu_team_teamedit_click()  # 点击编辑
+            self.log.info('点击编辑')
+            # self.handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_click(self.AdministratorLoc)#编辑管理员人数
+            self.driver.find_elements_by_id("com.yunlu6.yunlu:id/companyteam_item_edit")[0].click()
+            self.log.info('编辑管理员人数')
+            self.handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_claer()  # 清空
+            self.log.info('清空输入框')
+            self.handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_sendkeys(AdmNum)  # 2人
+            self.log.info('设置管理员人数：%s' % AdmNum)
+            self.handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_confirm_click()  # 点击是
+            self.log.info('点击是')
+            # 2 销售员人数:3人
+            # self.handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_click(self.SalespersonLoc)#编辑销售员人数
+            self.driver.find_elements_by_id("com.yunlu6.yunlu:id/companyteam_item_edit")[1].click()
+            self.log.info('编辑销售员人数')
+            self.handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_claer()  # 清空
+            self.log.info('清空输入框')
+            self.handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_sendkeys(SalNum)  # 3人
+            self.log.info('设置销售员人数：%s' % SalNum)
+            self.handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_confirm_click()  # 点击是
+            self.log.info('点击是')
+            # 3 行政助理人数:4人
+            # self.handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_click(self.AssistantLoc)#编辑助理人数
+            self.driver.find_elements_by_id("com.yunlu6.yunlu:id/companyteam_item_edit")[3].click()
+            self.log.info('编辑助理人数')
+            self.handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_claer()  # 清空
+            self.log.info('清空输入框')
+            self.handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_sendkeys(AssNum)  # 4人
+            self.log.info('设置助理人数：%s' % AssNum)
+            self.handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_confirm_click()  # 点击是
+            self.log.info('点击是')
+        except Exception as err:
+            self.tools.getScreenShot(self.screen_path, "ExceptionShot")
+            self.log.error("test_createProduct03 : %s" % err)
+            raise err
+
+    # 4.4 检查各职位人数是否保存生效
+    @ddt.data(data04)
+    @ddt.unpack
+    def test_teamAssign04(self, AdmNum, SalNum, AssNum):
+        '''检查各职位人数是否保存生效
+        :param AdmNum: 管理员人数
+        :param SalNum: 销售员人数
+        :param AssNum: 行政助理人数
+        :return:
+        '''
+        try:
+            # 1 检查管理员人数编辑是否生效
+            # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_click(self.AdministratorLoc)#编辑管理员人数
+            self.driver.find_elements_by_id("com.yunlu6.yunlu:id/companyteam_item_edit")[0].click()
+            self.log.info('点击编辑管理员人数')
+            AdmNumm = int(self.handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_text())
+            self.log.info('当前管理员人数：{0}'.format(AdmNumm))
+            self.log.info('预期管理员人数：{0}'.format(AdmNum))
+            assert AdmNum == AdmNumm, "编辑管理员人数保存后未生效"
+            self.log.info('检查管理员人数编辑是否生效')
+            self.handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_cancel_click()  # 点击否
+            self.log.info('点击否')
+            # 2 检查销售员人数编辑是否生效
+            # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_click(self.SalespersonLoc)#编辑管理员人数
+            self.driver.find_elements_by_id("com.yunlu6.yunlu:id/companyteam_item_edit")[1].click()
+            self.log.info('点击编辑销售员人数')
+            SalNumm = int(self.handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_text())
+            self.log.info('当前销售员人数：{0}'.format(SalNumm))
+            self.log.info('预期销售员人数：{0}'.format(SalNum))
+            assert SalNum == SalNumm, "编辑销售员人数保存后未生效"
+            self.log.info('检查销售人员人数编辑是否生效')
+            self.handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_cancel_click()  # 点击否
+            self.log.info('点击否')
+            # 3 检查行政助理人数编辑是否生效
+            # handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_click(self.AssistantLoc)#编辑管理员人数
+            self.driver.find_elements_by_id("com.yunlu6.yunlu:id/companyteam_item_edit")[3].click()
+            self.log.info('点击行政助理人数')
+            AssNumm = int(self.handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_jobsnumedit_text())
+            self.log.info('当前行政助理人数：{0}'.format(AssNumm))
+            self.log.info('预期行政助理人数：{0}'.format(AssNum))
+            assert AssNum == AssNumm, "编辑行政助理人数后未生效"
+            self.log.info('检查行政助理人数编辑是否生效')
+            self.handle.Kjlb_browseorgspace_menu_team_teamedit_numeidt_cancel_click()  # 点击否
+            self.log.info('点击否')
+            self.handle.Kjlb_browseorgspace_menu_team_teamedit_click()  # 点击编辑按钮
+            self.log.info('点击编辑按钮')
+        except Exception as err:
+            self.tools.getScreenShot(self.screen_path, "ExceptionShot")
+            self.log.error("test_createProduct04 : %s" % err)
+            raise err
+
+    # 4.5 人事任免
+    @ddt.data(data05)
+    @ddt.unpack
+    def test_teamAssign05(self, Name, Director):
+        '''人事任免
+        :param Name: 姓名
+        :param Director: 董事会
+        :return:
+        '''
+        try:
+            self.handle.Kjlb_browseorgspace_menu_team_menu_click()  # 点击菜单栏
+            self.log.info('点击菜单栏')
+            self.handle.Kjlb_browseorgspace_menu_team_menu_assignjob_click()  # 点击人事任免
+            self.log.info('点击人事任免')
+            if self.driver.find_elements_by_id("com.yunlu6.yunlu:id/removaljobs_name") != []:  # 列表是否为空
+                listT = self.handle.Kjlb_browseorgspace_menu_team_menu_assignjob_contact()
+                for i in range(len(listT)):  # 遍历列表
+                    # if handle.Kjlb_browseorgspace_menu_team_menu_assignjob_contact()[i].text == self.Name:#再判断是否该人已被任免
+                    if self.handle.Kjlb_browseorgspace_menu_team_menu_assignjob_contact_text(i) == Name:  # 再判断是否该人已被任免
+                        self.handle.Kjlb_browseorgspace_menu_team_menu_assignjob_contact_click(0)  # 待任免联系人
+                        self.log.info('判断该人是否已被任免')
+                        self.log.info('点击待任免联系人')
+                        self.handle.Kjlb_browseorgspace_menu_team_menu_assignjob_contact_delete_click()  # 点击移除
+                        self.log.info('点击移除')
+                    else:
+                        pass
+            else:
+                pass
+            self.handle.Kjlb_browseorgspace_menu_team_menu_assignjob_addperson_click()  # 点击人事任免新增按钮
+            self.log.info('点击人事任免新增按钮')
+            # 8.搜索姓名:肖静远
+            self.handle.Kjlb_browseorgspace_menu_team_menu_assignjob_addperson_search_sendkeys(Name)  # 搜索关键字
+            self.log.info('搜索人脉关键字：%s' % Name)
+            self.handle.Kjlb_browseorgspace_menu_team_menu_assignjob_addperson_searchbtn_click()  # 点击搜索
+            self.log.info('点击搜索')
+            # 9.点击搜索的结果,添加
+            self.handle.Kjlb_browseorgspace_menu_team_menu_assignjob_addperson_choose_click(0)  # 勾选
+            self.log.info('勾选')
+            self.handle.Kjlb_browseorgspace_menu_team_menu_assignjob_addperson_confirm_click()  # 添加
+            self.log.info('添加')
+            # 10.待任免列表点击联系人-任免职位-勾选-返回
+            self.handle.Kjlb_browseorgspace_menu_team_menu_assignjob_contact_click(0)  # 待任免联系人
+            self.log.info('点击待任免联系人')
+            self.handle.Kjlb_browseorgspace_menu_team_menu_assignjob_contact_department_click(Director)  # 董事会
+            self.log.info('点击董事会')
+            self.handle.Kjlb_browseorgspace_menu_team_menu_assignjob_contact_jobname_click(0)  # 董事长
+            self.log.info('勾选董事长')
+            self.handle.Kjlb_browseorgspace_menu_team_menu_assignjob_contact_confrim_click()  # 勾选
+            self.log.info('勾选')
+            self.handle.Kjlb_browseorgspace_menu_team_menu_assignjob_contact_back_click()  # 返回
+            self.log.info('返回')
+            name = self.driver.find_elements_by_id("com.yunlu6.yunlu:id/companyteam_item_name")[0].text  # 获取董事长姓名
+            assert Name == name, "董事长任免失败"
+            self.log.info('判断该人脉董事长职位是否任免成功')
+        except Exception as err:
+            self.tools.getScreenShot(self.screen_path, "ExceptionShot")
+            self.log.error("test_createProduct05 : %s" % err)
+            raise err
+
+    # 4.6 移除任免
+    def test_teamAssign06(self):
+        '''移除任免
+        :return:
+        '''
+        try:
+            self.handle.Kjlb_browseorgspace_menu_team_menu_click()  # 点击菜单栏
+            self.log.info('点击菜单栏')
+            self.handle.Kjlb_browseorgspace_menu_team_menu_assignjob_click()  # 点击人事任免
+            self.log.info('点击人事任免')
+            self.handle.Kjlb_browseorgspace_menu_team_menu_assignjob_contact_click(0)  # 待任免联系人
+            self.log.info('待任免联系人')
+            self.handle.Kjlb_browseorgspace_menu_team_menu_assignjob_contact_delete_click()  # 点击移除
+            self.log.info('点击移除')
+        except Exception as err:
+            self.tools.getScreenShot(self.screen_path, "ExceptionShot")
+            self.log.error("test_createProduct06 : %s" % err)
             raise err
