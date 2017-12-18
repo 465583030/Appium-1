@@ -196,7 +196,6 @@ class team_AssignO(unittest.TestCase):
             if self.driver.find_elements_by_id("com.yunlu6.yunlu:id/removaljobs_name") != []:  # 列表是否为空
                 listT = self.handle.Kjlb_browseorgspace_menu_team_menu_assignjob_contact()
                 for i in range(len(listT)):  # 遍历列表
-                    # if handle.Kjlb_browseorgspace_menu_team_menu_assignjob_contact()[i].text == self.Name:#再判断是否该人已被任免
                     if self.handle.Kjlb_browseorgspace_menu_team_menu_assignjob_contact_text(i) == Name:  # 再判断是否该人已被任免
                         self.handle.Kjlb_browseorgspace_menu_team_menu_assignjob_contact_click(0)  # 待任免联系人
                         self.log.info('判断该人是否已被任免')

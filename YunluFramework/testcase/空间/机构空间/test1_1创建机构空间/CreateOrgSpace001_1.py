@@ -150,6 +150,7 @@ class space_CreateO(unittest.TestCase):
             # 所在地区:北京-东城
             # 支行:BBB
             # 银行账号:123456
+            sleep(3)
             self.handle.Kjlb_mainmenu_newspace_verifynow_soverbank_click()  # 开户银行
             self.log.info('点击开户银行')
             self.handle.Kjlb_mainmenu_newspace_verifynow_soverbank_list1_click(0)

@@ -25,9 +25,9 @@ class CommonSpace:
         sleep(1)
         self.handle.Kjlb_click()  # 点击进入空间列表
         self.log.info('点击进入空间列表')
-        self.tools.find_space_by_name(spacename)
+        self.tools.find_space_by_name(spacename)  # 搜索空间名找到空间
         self.log.info('搜索栏搜索结果:{0}'.format(spacename))
-        self.handle.Kjlb_browseorgspaceByID_click(0)
+        self.handle.Kjlb_browseorgspaceByID_click(0)  # 点击搜索结果第一条
         self.log.info('点击进入%s' % spacename)
 
     def click_org_menu(self, menu):

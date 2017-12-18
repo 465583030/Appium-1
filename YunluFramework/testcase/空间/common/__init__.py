@@ -8,5 +8,3 @@ from YunluFramework.public.common.Connect import Connect
 from YunluFramework.public.common.publicfunction import Tools
 from YunluFramework.config.globalparam import GlobalParam
 from YunluFramework.public.handle.space.SPACEHANDLE6 import SPACEHANDLE6
-from YunluFramework.testcase.空间.机构空间.test3_1团队人事任免.TeamAssignJob import TeamAssignJob
-

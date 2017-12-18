@@ -17,7 +17,7 @@ class space_ArchiviesO(unittest.TestCase):
 
     # 2.初始化
     @classmethod
-    def setUpclass(self):
+    def setUpClass(self):
         # 1.建立连接信息
         cnn = Connect()
         self.driver = cnn.connect()
@@ -30,17 +30,17 @@ class space_ArchiviesO(unittest.TestCase):
         # 5.获取截图路径、日志路径、日志名
         self.screen_path = cf.getParam('space', "org_path_004_1")  # 通过配置文件获取截图的路径
         self.logfile = cf.getParam('log', "logfile")  # 日志文件名
-        # 6.创建Space操作对象
-        self.common = CommonSpace(self.handle, self.log, self.tools)
-        # 7.创建日志记录模块
+        # 6.创建日志记录模块
         self.log = Log(self.logfile)
+        # 7.创建Space操作对象
+        self.common = CommonSpace(self.handle, self.log, self.tools)
         # 8.打印日志
         self.log.info('****************************************用例开始！****************************************')
         self.log.info('------------START:test4_1资讯.Archivies004_1.py------------')
 
     # 3.释放资源
     @classmethod
-    def tearDownclass(self):
+    def tearDownClass(self):
         # 1.打印日志
         self.log.info("------------END:test4_1资讯.Archivies004_1.py------------")  # 宣布成功
         self.log.info('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~用例结束！~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
@@ -143,7 +143,7 @@ class space_ArchiviesO(unittest.TestCase):
             self.handle.Kjlb_browseorgspace_menu_archivies_pic_click(0)  # 点击第一张资讯
             self.log.info('点击第一张资讯')
             titlee = self.handle.Kjlb_browseorgspace_menu_archivies_pic_title_text()  # 获取资讯标题
-            assert titlee == self.title, "资讯标题未保存成功"
+            assert titlee == title, "资讯标题未保存成功"
             self.log.info('资讯标题检查')
             # 5.6 返回到空间列表
             self.handle.Kjlb_browseorgspace_menu_archivies_pic_back_click()
@@ -162,10 +162,11 @@ class space_ArchiviesO(unittest.TestCase):
     def test_archivies05(self, spacename):
         try:
             # 1. 进入空间
-            self.tools.find_space_by_name(spacename)
-            self.log.info('搜索栏搜索结果:{0}'.format(spacename))
-            self.self.handle.Kjlb_browseorgspaceByID_click(0)
-            self.log.info('点击进入%s' % spacename)
+            self.common.enter_space(spacename)
+            # self.tools.find_space_by_name(spacename)
+            # self.log.info('搜索栏搜索结果:{0}'.format(spacename))
+            # self.self.handle.Kjlb_browseorgspaceByID_click(0)
+            # self.log.info('点击进入%s' % spacename)
             # 3.右上角:菜单栏选择资讯
             self.handle.Kjlb_browseorgspace_menu_click()
             self.log.info('菜单栏选择资讯')
