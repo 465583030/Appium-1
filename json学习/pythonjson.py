@@ -7,5 +7,4 @@ data_json = json.dumps(data)
 print("data_json的数据类型是：", type(data_json))
 print(data_json)
 
-
-json.dumps(data_json,sort_keys=True,indent=4,separators=(',',':'))
+a = json.dumps(data_json, sort_keys=True, indent=4, separators=(',', ':'))

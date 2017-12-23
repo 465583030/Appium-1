@@ -1,46 +1,21 @@
-import re
-import json学习
-'''
-^  以某字符开头 例： ^a  以a开头的字符串
-$  以某字符结尾 例： 3%  以3结尾的字符串
-.  匹配任意字符
-*  乘以0或多个
-() 取括号中的东西      .*(b.*b).*
-贪婪匹配： 从左边开始匹配，遇到最后一个匹配的，因为很贪婪
-非贪婪匹配：从左边开始匹配 ，只匹配第一个遇到的，贪婪模式下会匹配到最后一个: ?
-+  至少匹配一次
-{2}     限定前面字符出现的次数
-{2,}    最小两次
-{2,5}   2-5次
+import datetime
 
 '''
+y = int(input('请输入4位数字的年份：'))  # 获取年份
+m = int(input('请输入月份：'))  # 获取月份
+d = int(input('请输入是哪一天：'))  # 获取“日”
 
-'''
-1. |   :或
-'''
-# 待匹配字符串
-line = "boobby123"
-# 模式
-regex_str = "((bobby|boobby)123)"
-match_obj = re.match(regex_str, line)
-# 模式匹配
-if match_obj:
-    print(match_obj.group(2))
+targetDay = datetime.date(y, m, d)  # 将输入的日期格式化成标准的日期
 
-'''
-2. [] :匹配任意字符,进入中括号的字符，不再有特殊含义
-'''
-# 待匹配字符串
-line = "boobby123"
-# 模式
-regex_str = "([abcd]oobby123)"
-match_obj = re.match(regex_str, line)
-# 模式匹配
-if match_obj:
-    print(match_obj.group(1))
+print(targetDay)
+print(datetime.date(targetDay.year-1,12,31))
 
-line = '13027104206'
-regex_str = '(1[3875][0-9]{9})'
-match_obj = re.match(regex_str,line)
-if match_obj:
-    print(match_obj.group(1))
+print(targetDay - datetime.date(targetDay.year - 1, 12, 31))
+'''
+
+for month in range(1, 501):
+    if month < 10:
+        month = '00{}'.format(month)
+    elif month>=10 and month<100:
+        month = '0{}'.format(month)
+    print(month)

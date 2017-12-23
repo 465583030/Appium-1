@@ -1,6 +1,6 @@
 __author__ = 'xiaoj'
 import os
-from StoneUIFramework.public.common.readconfig import Config
+from YunluFramework.public.common.readconfig import Config
 
 
 class GlobalParam():
