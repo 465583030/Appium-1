@@ -15,7 +15,7 @@
 2017-12-12 12:39:50,667 - INFO - 点击所在地区
 2017-12-12 12:39:51,517 - INFO - 选择北京省
 2017-12-12 12:39:52,742 - INFO - 选择东城市
-2017-12-12 12:39:54,740 - INFO - 确定提交
+2017-12-12 12:39:54,740 - INaFO - 确定提交
 2017-12-12 12:39:56,526 - INFO - 点击去验证对公账号
 2017-12-12 12:39:57,450 - INFO - 点击开户银行
 2017-12-12 12:39:59,082 - INFO - 点击开户银行列表1中第1家银行
@@ -2985,3 +2985,77 @@
 2017-12-19 17:26:45,525 - INFO - ------------END:test1_1创建机构空间.CreateOrgSpace001_1.py------------
 2017-12-19 17:26:45,527 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~用例结束！~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+2017-12-25 11:57:44,078 - ERROR - POST请求错误 : too many values to unpack (expected 2)
+2017-12-25 11:57:47,707 - ERROR - POST请求错误 : too many values to unpack (expected 2)
+2017-12-25 11:58:05,395 - ERROR - POST请求错误 : too many values to unpack (expected 2)
+2017-12-25 11:58:46,794 - ERROR - POST请求错误 : too many values to unpack (expected 2)
+2017-12-25 11:59:00,570 - ERROR - POST请求错误 : too many values to unpack (expected 2)
+2017-12-25 11:59:07,485 - INFO - POST请求：请求地址：https://api.yunlu6.com/api/v1/login 请求参数：[{'login': '13027104206', 'password': '1234567', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}, {'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}]
+2017-12-25 11:59:07,486 - INFO - 请求状态码为：401
+2017-12-25 11:59:07,488 - INFO - 返回结果格式化输出：{
+    "error": "401 Unauthorized"
+}
+2017-12-25 12:00:14,670 - INFO - POST请求：请求地址：https://api.yunlu6.com/api/v1/login 请求参数：[{'login': '13027104206', 'password': '1234567', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}, {'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}]
+2017-12-25 12:00:14,671 - INFO - 请求状态码为：401
+2017-12-25 12:00:14,673 - INFO - 返回结果格式化输出：{
+    "error": "401 Unauthorized"
+}
+2017-12-25 12:17:54,491 - INFO - POST请求：请求地址：https://api.yunlu6.com/api/v1/login 请求参数：[{'login': '13027104206', 'password': '1234567', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}, {'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}]
+2017-12-25 12:17:54,491 - INFO - 请求状态码为：401
+2017-12-25 12:17:54,493 - INFO - 返回结果格式化输出：{
+    "error": "401 Unauthorized"
+}
+2017-12-25 12:21:10,018 - INFO - POST请求：请求地址：https://api.yunlu6.com/api/v1/login 请求参数：[{'login': '13027104206', 'password': '1234567', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}, {'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}]
+2017-12-25 12:21:10,019 - INFO - 请求状态码为：401
+2017-12-25 12:21:10,022 - INFO - 返回结果格式化输出：{
+    "error": "401 Unauthorized"
+}
+2017-12-25 12:24:40,773 - INFO - POST请求：请求地址：https://api.yunlu6.com/api/v1/login 请求参数：{'login': '13027104206', 'password': '1234567', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-25 12:24:40,774 - INFO - 请求状态码为：401
+2017-12-25 12:24:40,776 - INFO - 返回结果格式化输出：{
+    "error": "401 Unauthorized"
+}
+2017-12-25 12:27:41,749 - INFO - POST请求：请求地址：https://test.yunlu6.com/api/v1/login 请求参数：{'login': '13027104206', 'password': '1234567', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-25 12:27:41,750 - INFO - 请求状态码为：401
+2017-12-25 12:27:41,752 - INFO - 返回结果格式化输出：{
+    "error": "401 Unauthorized"
+}
+2017-12-25 12:38:15,363 - INFO - POST请求：请求地址：https://test.yunlu6.com/api/v1/login 请求参数：{'login': '13027104206', 'password': '1234567', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-25 12:38:15,363 - INFO - 请求状态码为：401
+2017-12-25 12:38:15,366 - INFO - 返回结果格式化输出：{
+    "error": "401 Unauthorized"
+}
+2017-12-25 12:50:21,380 - INFO - POST请求：请求地址：https://test.yunlu6.com/api/v1/login 请求参数：{'login': '13027104206', 'password': '1234567', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-25 12:50:38,034 - INFO - POST请求：请求地址：https://test.yunlu6.com/api/v1/login 请求参数：{'login': '13027104206', 'password': '1234567', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-25 12:50:38,035 - INFO - 请求状态码为：401
+2017-12-25 12:50:38,037 - INFO - 返回结果格式化输出：{
+    "error": "401 Unauthorized"
+}
+2017-12-25 12:51:32,899 - INFO - POST请求：请求地址：https://test.yunlu6.com/api/v1/login 请求参数：{'login': '13027104206', 'password': '1234567', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-25 12:51:32,900 - INFO - 请求状态码为：401
+2017-12-25 12:51:32,902 - INFO - 返回结果格式化输出：{
+    "error": "401 Unauthorized"
+}
+2017-12-25 12:53:27,002 - INFO - POST请求：请求地址：https://test.yunlu6.com/api/v1/login 请求参数：{'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-25 12:53:27,002 - INFO - 请求状态码为：200
+2017-12-25 12:53:27,004 - INFO - 返回结果格式化输出：{
+    "address": "武汉市大学园路",
+    "age": null,
+    "authentication_token": "64633279e2c70620ce6c508f907c4ec9",
+    "avatar_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrtEVqsa6AaQRikUimD0H1EBufzI-thumb",
+    "device_id": "da4386a3-0b08-4c68-a7e1-52ed960488ba",
+    "email": "",
+    "has_teams": true,
+    "home_name": "萌太奇板板板板",
+    "id": "194820ce-782b-4330-ac62-77a36763cd43",
+    "mobile": "13027104206",
+    "name": "肖静远",
+    "sex": "男",
+    "sign": {
+        "msg": "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz:dev_da4386a3-0b08-4c68-a7e1-52ed960488ba:1514177606:45960",
+        "nonce": "45960",
+        "signature": "394b46168fbe3453f407c51f48639824d7a1db7d",
+        "timestamp": 1514177606
+    },
+    "sp": false
+}

@@ -14,3 +14,9 @@ class GlobalParam():
         path = cf1.get_PATH(path_Section, path_NO)
         path = self.BASE_DIR + path  # 将父目录和配置文件读取的相对路径拼接
         return path
+
+    def getURL(self, path_Section, path_NO):
+        # 创建读取配置文件的对象：
+        cf2 = Config(self.file_path)
+        url = cf2.get_PATH(path_Section, path_NO)
+        return url

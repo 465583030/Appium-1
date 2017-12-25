@@ -3,6 +3,7 @@ import os
 import mysql.connector
 from YunluFramework_API.config.globalparam import GlobalParam
 import configparser
+import xlwt
 
 
 class DataInfo():
@@ -17,7 +18,7 @@ class DataInfo():
         # 创建工作薄：用于操作excel表格形式数据
         self.workbook = xlrd.open_workbook(base_dir)
 
-    # --------------------------------------------Excel表格操作--------------------------------------------
+    # --------------------------------------------Excel表格读取操作--------------------------------------------
     def read_Data(self, sheet_name):
         '''
         根据表单名来获取表单对象
@@ -61,6 +62,29 @@ class DataInfo():
         rowno = rowno - 1
         colno = colno - 1
         return sheet_obj.cell_value(rowno, colno)
+
+
+class DataWrite():
+    def __init__(self, filename):
+        self.filename = filename
+
+    # --------------------------------------------Excel表格写入操作--------------------------------------------
+    def write_data(self, fields, result):
+        workbook_new = xlwt.Workbook()
+        sheet_new = workbook_new.add_sheet('login', cell_overwrite_ok=True)
+
+        # 第一行的数据（字段）：列表
+        # fields_1 = a.get_Fields(sql)
+        for i in range(0, len(fields)):
+            sheet_new.write(0, i, '%s' % fields[i])
+
+        # 第n行数据（测试数据）：列表
+        # list_result = a.select(sql)
+        for i in range(0, len(result)):
+            for j in range(0, len(result[i])):
+                sheet_new.write(i + 1, j, '%s' % result[i][j])
+
+        workbook_new.save(self.filename)
 
 
 class DataMysql:
@@ -110,15 +134,22 @@ class DataMysql:
         for i in range(0, len(desc)):
             desc_i = desc[i][0]
             fields.append(desc_i)
+        # 6.关闭游标
+        cursor.close()
+        cnn.close()
         return fields
 
     # 执行查询语句，返回列表
-    def select(self, sql, index):
+    def select(self, sql):
         '''
         数据库查询
         :param sql: 查询语句
         :param index:查询结果索引
-        :return:查询结果
+        :return:查询结果列表（双层）
+        例如：[
+        ['13027104206', '1234567', 'KNT-AL20', '862537039675333', 'andriod'],
+        ['13027104206', '12345678', 'KNT-AL20', '862537039675333', 'andriod']
+        ]
         '''
         # 1.申请连接对象
         cnn = self.connect()
@@ -126,87 +157,94 @@ class DataMysql:
         cursor = cnn.cursor()
         # 3.利用游标执行查询语句
         cursor.execute(sql)
-        # sql_select_table = "select * from test1_1创建机构空间_002"
-        # print(cursor.fetchone())
         # 4.记录结果
+        # 4.1 查询结果
         result = cursor.fetchall()
-        return list(result[index])
+        # 4.2 将结果存到列表中去
+        list_result = []
+        for i in range(0, len(result)):
+            list_result.append(list(result[i]))
+        # 5.关闭游标
+        cursor.close()
+        cnn.close()
+        return list_result
 
     # 数据组装
-    def data_assembly(self, sql, index):
+    def data_assembly(self, sql):
         '''
         数据组装
         :return: 返回字典数据
         '''
-        # 1.声明空字典
-        data_assmbly = {}
-        # 2. 组装
-        # 2.1查询结果
-        result = self.select(sql, index)
-        # 2.2字段名
-        fields = self.get_Fields(sql)
-        #3.组装数据
-        for i in range(0,len(fields)):
-            data_assmbly[fields[i]] = result[i]
-        return data_assmbly
+        # 1.申请连接对象
+        cnn = self.connect()
+        # 2.创建游标
+        cursor = cnn.cursor()
+        # 3.查询表信息
+        cursor.execute(sql)
+        # 4.获取描述信息
+        desc = cursor.description
+        # 5.循环取字段名
+        fields = []
+        for i in range(0, len(desc)):
+            desc_i = desc[i][0]
+            fields.append(desc_i)
 
+        # 6.记录结果
+        # 6.1 查询结果
+        result = cursor.fetchall()
 
-# ----------测试-----------
+        # 7. 组装
+        # 7.1查询结果-列表[][]
+        list_result = []
+        for i in range(0, len(result)):
+            list_result.append(list(result[i]))
 
+        # 8.1空列表，存字典
+        dict_list = []
+        # 8.2组装数据
+        for i in range(0, len(result)):
+            dictionary1 = dict(zip(fields, result[i]))
+            dict_list.append(dictionary1)
 
-# 1.查询数据
-a = DataMysql()
-sql = 'select * from test1_1_login_01'
+        cursor.close()
+        cnn.close()
+        return dict_list
 
-# 2.组装数据
-data = a.data_assembly(sql,0)
-print(data)
-print(type(data))
-
-import requests
-import json
-
-
-url = 'https://api.yunlu6.com/api/v1/login'
-# 3.发送请求
-r = requests.post(url, data=data)
-
-# 4.打印请求状态吗
-# print(r.status_code)
-response = r.text
-
-# 5.解码json数据,将json转为字典
-dict_r = json.loads(response)
-# 获取id，用字典取数据
-# print(dict_r['id'])
-
-# 6.格式化输出json
-json_r = json.dumps(dict_r, sort_keys=True, indent=4, separators=(',', ': '))
-print(json_r)
-
-
-'''
-# 7. 将测试数据写入excel文档中
-import xlwt
-
-# 文件名
-filename = '../../data/data.xls'
-
-# 原始测试数据
-print('原始拼接data:', data)
-workbook_new = xlwt.Workbook()
-sheet_new = workbook_new.add_sheet('login', cell_overwrite_ok=True)
-
-# 第一行的数据：列表
-list_1 = list(data.keys())
-print('data字典所有的键:', list_1)
-
-# 循环写第一行数据
-for i in range(0, len(data.keys())):
-    sheet_new.write(0, i, '%s' % list_1[i])
-
-for i in range(0, len(result)):
-    sheet_new.write(1, i, '%s' % result[i])
-
-workbook_new.save(filename)
-'''
+# #
+# # ----------测试-----------
+# # 1.查询数据
+# a = DataMysql()
+# sql = 'select * from test1_1_login_01'
+# print(a.data_assembly(sql))
+#
+# # 2.组装数据-[{...},{...}...]对象 列表-字典
+# data = a.data_assembly(sql)
+#
+# import requests
+# import json
+#
+# url = 'https://api.yunlu6.com/api/v1/login'
+# # 3.发送请求
+# r = requests.post(url, data=data[1])
+#
+# # 4.打印请求状态码
+# # print(r.status_code)
+# response = r.text
+#
+# # 5.解码json数据,将json转为字典
+# dict_r = json.loads(response)
+#
+# # 6.格式化输出json
+# # ensure_ascii=False 中文不转码
+# json_r = json.dumps(dict_r, sort_keys=True, ensure_ascii=False, indent=4, separators=(',', ': '))
+# print(json_r)
+#
+# # 7. 将测试数据写入excel文档中
+# # 文件名
+# filename = '../../data/data.xls'
+# # 第一行的数据（字段）：列表
+# fields_1 = a.get_Fields(sql)
+# # 第n行数据（测试数据）：列表
+# list_result = a.select(sql)
+# d = DataWrite(filename)
+# d.write_data(fields_1, list_result)
