@@ -10,8 +10,7 @@ class LoginAPI(unittest.TestCase):
     sql = 'select * from test1_1_login_01'
 
     # 1.初始化
-    @classmethod
-    def setUpClass(self):
+    def setUp(self):
         # 1.创建读取配置信息对象
         cf = GlobalParam('config', 'path_file.conf')
         # 2.获取截图路径、日志路径、日志名
@@ -26,8 +25,7 @@ class LoginAPI(unittest.TestCase):
         self.L = Login()
 
     # 3.释放资源
-    @classmethod
-    def tearDownClass(self):
+    def tearDown(self):
         # 1.打印日志
         self.log.info("------------END:test1_1登录.Login001_1.py------------")
         self.log.info('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')

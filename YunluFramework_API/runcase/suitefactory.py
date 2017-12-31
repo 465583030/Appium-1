@@ -1,8 +1,11 @@
-from YunluFramework.runcase import *
+from YunluFramework_API.runcase import *
 
 #测试用例：工厂
 class SuiteFactory():
     def suiteLoader(self):
+        # ----------------------------------【登录-测试用例】----------------------------------
+        login_api_01 = unittest.TestLoader().loadTestsFromTestCase(LoginAPI)                   # test1_1 云库上传图片
+
         # ----------------------------------【云库-测试用例】----------------------------------
         yunku_uploadPic_01 = unittest.TestLoader().loadTestsFromTestCase(yunku_UploadPic)                   # test1_1 云库上传图片
         yunku_EditPic_01 = unittest.TestLoader().loadTestsFromTestCase(yunku_EditPic)                       # test2_1 云库编辑图片
@@ -19,7 +22,7 @@ class SuiteFactory():
 
         # ----------------------------------【空间-测试用例】----------------------------------
         # @机构空间
-        sapce_CreateO_01 = unittest.TestLoader().loadTestsFromTestCase(space_CreateO)                       # test1_1 创建机构空间
+        sapce_CreateO_01 = unittest.TestLoader().loadTestsFromTestCase(SpaceAPI)                       # test1_1 创建机构空间
         space_ProductO_01 = unittest.TestLoader().loadTestsFromTestCase(space_ProductO)                     # test2_1 上下架产品
         space_AssignO_01 = unittest.TestLoader().loadTestsFromTestCase(team_AssignO)                        # test3_1 团队认识任免
         space_ArchiviesO_01 = unittest.TestLoader().loadTestsFromTestCase(space_ArchiviesO)                 # test4_1 资讯发布
@@ -46,6 +49,8 @@ class SuiteFactory():
         order_OrderBuy_01 = unittest.TestLoader().loadTestsFromTestCase(order_OrderBuy)
 
         self.suite = [
+            # ----------------------------------【登录-测试用例：1】----------------------------------
+            login_api_01,
             # ----------------------------------【云库-测试用例：2】----------------------------------
             yunku_uploadPic_01,                                                                             # test1_1 云库上传图片
             yunku_EditPic_01,                                                                               # test2_1 云库编辑图片

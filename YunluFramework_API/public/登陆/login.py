@@ -28,15 +28,15 @@ class Login:
         :param r_index: 返回值索引
         :return:
         '''
-        self.log.info('2、请求url：{0}'.format(self.url))
-        self.log.info('3、请求方法:post')
+        self.log.info('**请求url：{0}'.format(self.url))
+        self.log.info('**请求方法:post')
         # 1. 创建请求对象
         r = RequestForHttp()
         # 2.组装数据-[{...},{...}...]对象 列表-字典
         data = self.d.data_assembly(sql)
         data = data[d_index]
-        self.log.info('4、body参数：{0}'.format(data))
+        self.log.info('**body参数：{0}'.format(data))
         # 3. 发送请求
         response = r.post_function(self.url, data)
-        self.log.info('5、响应结果：{0}'.format(response[1]))
+        self.log.info('**响应结果：{0}'.format(response[1]))
         return response

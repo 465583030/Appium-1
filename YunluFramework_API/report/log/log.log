@@ -2449,3 +2449,2137 @@
 2017-12-25 20:37:48,905 - INFO - device_id：OK
 2017-12-25 20:37:48,905 - INFO - ------------END:test1_1登录.Login001_1.py------------
 2017-12-25 20:37:48,906 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-25 21:13:58,223 - INFO - ****************************************登录接口：开始****************************************
+2017-12-25 21:13:58,223 - INFO - ------------START:test1_1登录.Login001_1.py------------
+2017-12-25 21:13:58,224 - INFO - 1、接口描述：登录接口
+2017-12-25 21:13:58,227 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-25 21:13:58,227 - INFO - 3、请求方法:post
+2017-12-25 21:13:58,233 - INFO - 4、body参数：{'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-25 21:13:58,529 - INFO - 5、响应结果：{
+    "address": "武汉市大学园路",
+    "age": null,
+    "authentication_token": "45d83fba71f0e6eb9b6551f2341fd534",
+    "avatar_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrtEVqsa6AaQRikUimD0H1EBufzI-thumb",
+    "device_id": "da4386a3-0b08-4c68-a7e1-52ed960488ba",
+    "email": "",
+    "has_teams": true,
+    "home_name": "萌太奇板板板板",
+    "id": "194820ce-782b-4330-ac62-77a36763cd43",
+    "mobile": "13027104206",
+    "name": "肖静远",
+    "sex": "男",
+    "sign": {
+        "msg": "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz:dev_da4386a3-0b08-4c68-a7e1-52ed960488ba:1514207638:37015",
+        "nonce": "37015",
+        "signature": "b98e7fd3d0f653530f754bdc9a12be8f737e50d9",
+        "timestamp": 1514207638
+    },
+    "sp": false
+}
+2017-12-25 21:13:58,530 - INFO - 1.判断返回状态码：200 = 200
+2017-12-25 21:13:58,531 - INFO - status_code：OK
+2017-12-25 21:13:58,532 - INFO - 2.判断devcie_id：da4386a3-0b08-4c68-a7e1-52ed960488ba = da4386a3-0b08-4c68-a7e1-52ed960488ba
+2017-12-25 21:13:58,532 - INFO - device_id：OK
+2017-12-25 21:13:58,533 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-25 21:13:58,534 - INFO - 3、请求方法:post
+2017-12-25 21:13:58,539 - INFO - 4、body参数：{'login': '13027104206', 'password': '1234567', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-25 21:13:58,786 - INFO - 5、响应结果：{
+    "error": "401 Unauthorized"
+}
+2017-12-25 21:13:58,787 - INFO - 1.判断返回状态码：401 = 401
+2017-12-25 21:13:58,787 - INFO - status_code：OK
+2017-12-25 21:13:58,788 - INFO - 2.判断error：401 Unauthorized = 401 Unauthorized
+2017-12-25 21:13:58,788 - INFO - device_id：OK
+2017-12-25 21:13:58,789 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-25 21:13:58,790 - INFO - 3、请求方法:post
+2017-12-25 21:13:58,794 - INFO - 4、body参数：{'login': '13027104205', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-25 21:13:58,961 - INFO - 5、响应结果：{
+    "error": "401 Unauthorized"
+}
+2017-12-25 21:13:58,962 - INFO - 1.判断返回状态码：401 = 401
+2017-12-25 21:13:58,962 - INFO - status_code：OK
+2017-12-25 21:13:58,962 - INFO - 2.判断error：401 Unauthorized = 401 Unauthorized
+2017-12-25 21:13:58,963 - INFO - device_id：OK
+2017-12-25 21:13:58,964 - INFO - ------------END:test1_1登录.Login001_1.py------------
+2017-12-25 21:13:58,965 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-25 21:24:29,569 - INFO - {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{START:RUNCASSE1}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+2017-12-25 21:24:29,570 - INFO - 报告存储路径：/Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework_API/report/testreport/
+2017-12-25 21:24:29,570 - INFO - 测试报告名称：/Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework_API/report/testreport/20171225212429.html
+2017-12-25 21:24:29,571 - INFO - 运行测试用例！
+2017-12-25 21:24:36,198 - INFO - {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{END:RUNCASSE1}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+2017-12-25 21:25:51,624 - INFO - {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{START:RUNCASSE1}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+2017-12-25 21:25:51,624 - INFO - 报告存储路径：/Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework_API/report/testreport/
+2017-12-25 21:25:51,625 - INFO - 测试报告名称：/Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework_API/report/testreport/20171225212551.html
+2017-12-25 21:25:51,625 - INFO - 运行测试用例！
+2017-12-25 21:25:51,627 - INFO - ****************************************登录接口：开始****************************************
+2017-12-25 21:25:51,628 - INFO - ------------START:test1_1登录.Login001_1.py------------
+2017-12-25 21:25:51,628 - INFO - 1、接口描述：登录接口
+2017-12-25 21:25:51,630 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-25 21:25:51,631 - INFO - 3、请求方法:post
+2017-12-25 21:25:51,633 - INFO - 4、body参数：{'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-25 21:25:51,964 - INFO - 5、响应结果：{
+    "address": "武汉市大学园路",
+    "age": null,
+    "authentication_token": "f14bfc364a70c8d06eb424457b331fbd",
+    "avatar_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrtEVqsa6AaQRikUimD0H1EBufzI-thumb",
+    "device_id": "da4386a3-0b08-4c68-a7e1-52ed960488ba",
+    "email": "",
+    "has_teams": true,
+    "home_name": "萌太奇板板板板",
+    "id": "194820ce-782b-4330-ac62-77a36763cd43",
+    "mobile": "13027104206",
+    "name": "肖静远",
+    "sex": "男",
+    "sign": {
+        "msg": "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz:dev_da4386a3-0b08-4c68-a7e1-52ed960488ba:1514208351:40167",
+        "nonce": "40167",
+        "signature": "6de093e4f6d0824cc51ec520857eb6365ceeb529",
+        "timestamp": 1514208351
+    },
+    "sp": false
+}
+2017-12-25 21:25:51,964 - INFO - 1.判断返回状态码：200 = 200
+2017-12-25 21:25:51,965 - INFO - status_code：OK
+2017-12-25 21:25:51,965 - INFO - 2.判断devcie_id：da4386a3-0b08-4c68-a7e1-52ed960488ba = da4386a3-0b08-4c68-a7e1-52ed960488ba
+2017-12-25 21:25:51,965 - INFO - device_id：OK
+2017-12-25 21:25:51,966 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-25 21:25:51,966 - INFO - 3、请求方法:post
+2017-12-25 21:25:51,969 - INFO - 4、body参数：{'login': '13027104206', 'password': '1234567', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-25 21:25:52,219 - INFO - 5、响应结果：{
+    "error": "401 Unauthorized"
+}
+2017-12-25 21:25:52,220 - INFO - 1.判断返回状态码：401 = 401
+2017-12-25 21:25:52,220 - INFO - status_code：OK
+2017-12-25 21:25:52,221 - INFO - 2.判断error：401 Unauthorized = 401 Unauthorized
+2017-12-25 21:25:52,221 - INFO - device_id：OK
+2017-12-25 21:25:52,221 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-25 21:25:52,222 - INFO - 3、请求方法:post
+2017-12-25 21:25:52,225 - INFO - 4、body参数：{'login': '13027104205', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-25 21:25:52,379 - INFO - 5、响应结果：{
+    "error": "401 Unauthorized"
+}
+2017-12-25 21:25:52,379 - INFO - 1.判断返回状态码：401 = 401
+2017-12-25 21:25:52,380 - INFO - status_code：OK
+2017-12-25 21:25:52,380 - INFO - 2.判断error：401 Unauthorized = 401 Unauthorized
+2017-12-25 21:25:52,380 - INFO - device_id：OK
+2017-12-25 21:25:52,381 - INFO - ------------END:test1_1登录.Login001_1.py------------
+2017-12-25 21:25:52,381 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-25 21:25:58,375 - INFO - {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{END:RUNCASSE1}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+2017-12-25 21:31:49,826 - INFO - {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{START:RUNCASSE1}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+2017-12-25 21:31:49,827 - INFO - 报告存储路径：/Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework_API/report/testreport/
+2017-12-25 21:31:49,828 - INFO - 测试报告名称：/Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework_API/report/testreport/20171225213149.html
+2017-12-25 21:31:49,828 - INFO - 运行测试用例！
+2017-12-25 21:31:49,829 - INFO - ****************************************登录接口：开始****************************************
+2017-12-25 21:31:49,829 - INFO - ------------START:test1_1登录.Login001_1.py------------
+2017-12-25 21:31:49,830 - INFO - 1、接口描述：登录接口
+2017-12-25 21:31:49,831 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-25 21:31:49,831 - INFO - 3、请求方法:post
+2017-12-25 21:31:49,834 - INFO - 4、body参数：{'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-25 21:31:50,096 - INFO - 5、响应结果：{
+    "address": "武汉市大学园路",
+    "age": null,
+    "authentication_token": "2c5bc89a063bfe289288e09bba45b614",
+    "avatar_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrtEVqsa6AaQRikUimD0H1EBufzI-thumb",
+    "device_id": "da4386a3-0b08-4c68-a7e1-52ed960488ba",
+    "email": "",
+    "has_teams": true,
+    "home_name": "萌太奇板板板板",
+    "id": "194820ce-782b-4330-ac62-77a36763cd43",
+    "mobile": "13027104206",
+    "name": "肖静远",
+    "sex": "男",
+    "sign": {
+        "msg": "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz:dev_da4386a3-0b08-4c68-a7e1-52ed960488ba:1514208710:13259",
+        "nonce": "13259",
+        "signature": "0db15e1345bf484a83bc84ade336371af5f5e38d",
+        "timestamp": 1514208710
+    },
+    "sp": false
+}
+2017-12-25 21:31:50,097 - INFO - 1.判断返回状态码：200 = 200
+2017-12-25 21:31:50,098 - INFO - status_code：OK
+2017-12-25 21:31:50,099 - INFO - 2.判断devcie_id：da4386a3-0b08-4c68-a7e1-52ed960488ba = da4386a3-0b08-4c68-a7e1-52ed960488ba
+2017-12-25 21:31:50,099 - INFO - device_id：OK
+2017-12-25 21:31:50,100 - INFO - ------------END:test1_1登录.Login001_1.py------------
+2017-12-25 21:31:50,100 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-25 21:31:50,101 - INFO - ****************************************登录接口：开始****************************************
+2017-12-25 21:31:50,101 - INFO - ------------START:test1_1登录.Login001_1.py------------
+2017-12-25 21:31:50,101 - INFO - 1、接口描述：登录接口
+2017-12-25 21:31:50,103 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-25 21:31:50,103 - INFO - 3、请求方法:post
+2017-12-25 21:31:50,107 - INFO - 4、body参数：{'login': '13027104206', 'password': '1234567', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-25 21:31:50,339 - INFO - 5、响应结果：{
+    "error": "401 Unauthorized"
+}
+2017-12-25 21:31:50,339 - INFO - 1.判断返回状态码：401 = 401
+2017-12-25 21:31:50,342 - INFO - status_code：OK
+2017-12-25 21:31:50,342 - INFO - 2.判断error：401 Unauthorized = 401 Unauthorized
+2017-12-25 21:31:50,342 - INFO - device_id：OK
+2017-12-25 21:31:50,343 - INFO - ------------END:test1_1登录.Login001_1.py------------
+2017-12-25 21:31:50,343 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-25 21:31:50,344 - INFO - ****************************************登录接口：开始****************************************
+2017-12-25 21:31:50,344 - INFO - ------------START:test1_1登录.Login001_1.py------------
+2017-12-25 21:31:50,345 - INFO - 1、接口描述：登录接口
+2017-12-25 21:31:50,347 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-25 21:31:50,347 - INFO - 3、请求方法:post
+2017-12-25 21:31:50,350 - INFO - 4、body参数：{'login': '13027104205', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-25 21:31:50,499 - INFO - 5、响应结果：{
+    "error": "401 Unauthorized"
+}
+2017-12-25 21:31:50,500 - INFO - 1.判断返回状态码：401 = 401
+2017-12-25 21:31:50,502 - INFO - status_code：OK
+2017-12-25 21:31:50,502 - INFO - 2.判断error：401 Unauthorized = 401 Unauthorized
+2017-12-25 21:31:50,503 - INFO - device_id：OK
+2017-12-25 21:31:50,503 - INFO - ------------END:test1_1登录.Login001_1.py------------
+2017-12-25 21:31:50,503 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-25 21:31:57,495 - INFO - {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{END:RUNCASSE1}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+2017-12-26 10:02:03,137 - INFO - 2、请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 10:02:03,140 - INFO - 3、请求方法:post
+2017-12-26 10:02:03,149 - INFO - 4、body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材'}
+2017-12-26 10:02:48,592 - INFO - 2、请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 10:02:48,592 - INFO - 3、请求方法:post
+2017-12-26 10:02:48,598 - INFO - 4、body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材'}
+2017-12-26 10:02:48,749 - INFO - 5、响应结果：{
+    "error": "没有授权此操作"
+}
+2017-12-26 10:07:04,019 - INFO - ****************************************登录接口：开始****************************************
+2017-12-26 10:07:04,020 - INFO - ------------START:test1_1登录.Login001_1.py------------
+2017-12-26 10:07:04,020 - INFO - 1、接口描述：登录接口
+2017-12-26 10:07:04,022 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-26 10:07:04,023 - INFO - 3、请求方法:post
+2017-12-26 10:07:04,027 - INFO - 4、body参数：{'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-26 10:07:04,363 - INFO - 5、响应结果：{
+    "address": "武汉市大学园路",
+    "age": null,
+    "authentication_token": "73f9afcd75291437d3054c613ef55eee",
+    "avatar_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrtEVqsa6AaQRikUimD0H1EBufzI-thumb",
+    "device_id": "da4386a3-0b08-4c68-a7e1-52ed960488ba",
+    "email": "",
+    "has_teams": true,
+    "home_name": "萌太奇板板板板",
+    "id": "194820ce-782b-4330-ac62-77a36763cd43",
+    "mobile": "13027104206",
+    "name": "肖静远",
+    "sex": "男",
+    "sign": {
+        "msg": "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz:dev_da4386a3-0b08-4c68-a7e1-52ed960488ba:1514254024:83726",
+        "nonce": "83726",
+        "signature": "634e95be1826307a435d715ab7fe3e9a2552672f",
+        "timestamp": 1514254024
+    },
+    "sp": false
+}
+2017-12-26 10:07:04,364 - INFO - 1.判断返回状态码：200 = 200
+2017-12-26 10:07:04,365 - INFO - status_code：OK
+2017-12-26 10:07:04,365 - INFO - 2.判断devcie_id：da4386a3-0b08-4c68-a7e1-52ed960488ba = da4386a3-0b08-4c68-a7e1-52ed960488ba
+2017-12-26 10:07:04,366 - INFO - device_id：OK
+2017-12-26 10:07:04,366 - INFO - ------------END:test1_1登录.Login001_1.py------------
+2017-12-26 10:07:04,367 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 10:07:04,369 - INFO - ****************************************登录接口：开始****************************************
+2017-12-26 10:07:04,369 - INFO - ------------START:test1_1登录.Login001_1.py------------
+2017-12-26 10:07:04,370 - INFO - 1、接口描述：登录接口
+2017-12-26 10:07:04,372 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-26 10:07:04,372 - INFO - 3、请求方法:post
+2017-12-26 10:07:04,376 - INFO - 4、body参数：{'login': '13027104206', 'password': '1234567', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-26 10:07:04,645 - INFO - 5、响应结果：{
+    "error": "401 Unauthorized"
+}
+2017-12-26 10:07:04,646 - INFO - 1.判断返回状态码：401 = 401
+2017-12-26 10:07:04,648 - INFO - status_code：OK
+2017-12-26 10:07:04,649 - INFO - 2.判断error：401 Unauthorized = 401 Unauthorized
+2017-12-26 10:07:04,649 - INFO - device_id：OK
+2017-12-26 10:07:04,649 - INFO - ------------END:test1_1登录.Login001_1.py------------
+2017-12-26 10:07:04,650 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 10:07:04,651 - INFO - ****************************************登录接口：开始****************************************
+2017-12-26 10:07:04,652 - INFO - ------------START:test1_1登录.Login001_1.py------------
+2017-12-26 10:07:04,652 - INFO - 1、接口描述：登录接口
+2017-12-26 10:07:04,654 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-26 10:07:04,655 - INFO - 3、请求方法:post
+2017-12-26 10:07:04,658 - INFO - 4、body参数：{'login': '13027104205', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-26 10:07:04,821 - INFO - 5、响应结果：{
+    "error": "401 Unauthorized"
+}
+2017-12-26 10:07:04,822 - INFO - 1.判断返回状态码：401 = 401
+2017-12-26 10:07:04,824 - INFO - status_code：OK
+2017-12-26 10:07:04,825 - INFO - 2.判断error：401 Unauthorized = 401 Unauthorized
+2017-12-26 10:07:04,825 - INFO - device_id：OK
+2017-12-26 10:07:04,826 - INFO - ------------END:test1_1登录.Login001_1.py------------
+2017-12-26 10:07:04,826 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 10:14:35,651 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-26 10:14:35,652 - INFO - 3、请求方法:post
+2017-12-26 10:14:35,658 - INFO - 4、body参数：{'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-26 10:14:35,969 - INFO - 5、响应结果：{
+    "address": "武汉市大学园路",
+    "age": null,
+    "authentication_token": "30cc2b9a9bca51598d54d99f9d601017",
+    "avatar_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrtEVqsa6AaQRikUimD0H1EBufzI-thumb",
+    "device_id": "da4386a3-0b08-4c68-a7e1-52ed960488ba",
+    "email": "",
+    "has_teams": true,
+    "home_name": "萌太奇板板板板",
+    "id": "194820ce-782b-4330-ac62-77a36763cd43",
+    "mobile": "13027104206",
+    "name": "肖静远",
+    "sex": "男",
+    "sign": {
+        "msg": "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz:dev_da4386a3-0b08-4c68-a7e1-52ed960488ba:1514254475:58017",
+        "nonce": "58017",
+        "signature": "79cde5fa38f4388011677a3197d2350193860415",
+        "timestamp": 1514254475
+    },
+    "sp": false
+}
+2017-12-26 10:14:35,970 - INFO - 2、请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 10:14:35,972 - INFO - 3、请求方法:post
+2017-12-26 10:14:35,976 - INFO - 4、body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 10:16:23,260 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-26 10:16:23,261 - INFO - 3、请求方法:post
+2017-12-26 10:16:23,266 - INFO - 4、body参数：{'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-26 10:16:23,525 - INFO - 5、响应结果：{
+    "address": "武汉市大学园路",
+    "age": null,
+    "authentication_token": "9eca39deec6c5d0c5b99fc0b55b8998e",
+    "avatar_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrtEVqsa6AaQRikUimD0H1EBufzI-thumb",
+    "device_id": "da4386a3-0b08-4c68-a7e1-52ed960488ba",
+    "email": "",
+    "has_teams": true,
+    "home_name": "萌太奇板板板板",
+    "id": "194820ce-782b-4330-ac62-77a36763cd43",
+    "mobile": "13027104206",
+    "name": "肖静远",
+    "sex": "男",
+    "sign": {
+        "msg": "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz:dev_da4386a3-0b08-4c68-a7e1-52ed960488ba:1514254583:39518",
+        "nonce": "39518",
+        "signature": "61f08d1f95df7ed523e93a07380dd750759d9fb8",
+        "timestamp": 1514254583
+    },
+    "sp": false
+}
+2017-12-26 10:16:54,056 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-26 10:16:54,057 - INFO - 3、请求方法:post
+2017-12-26 10:16:54,064 - INFO - 4、body参数：{'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-26 10:16:54,348 - INFO - 5、响应结果：{
+    "address": "武汉市大学园路",
+    "age": null,
+    "authentication_token": "f518f05349a5b0254390e08af6352527",
+    "avatar_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrtEVqsa6AaQRikUimD0H1EBufzI-thumb",
+    "device_id": "da4386a3-0b08-4c68-a7e1-52ed960488ba",
+    "email": "",
+    "has_teams": true,
+    "home_name": "萌太奇板板板板",
+    "id": "194820ce-782b-4330-ac62-77a36763cd43",
+    "mobile": "13027104206",
+    "name": "肖静远",
+    "sex": "男",
+    "sign": {
+        "msg": "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz:dev_da4386a3-0b08-4c68-a7e1-52ed960488ba:1514254614:29017",
+        "nonce": "29017",
+        "signature": "d28ed98966a701e4b872f8a27c43a9a56d391f68",
+        "timestamp": 1514254614
+    },
+    "sp": false
+}
+2017-12-26 10:16:56,792 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-26 10:16:56,792 - INFO - 3、请求方法:post
+2017-12-26 10:16:56,800 - INFO - 4、body参数：{'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-26 10:16:57,068 - INFO - 5、响应结果：{
+    "address": "武汉市大学园路",
+    "age": null,
+    "authentication_token": "3792b70d4457b519bcb13dc13280e192",
+    "avatar_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrtEVqsa6AaQRikUimD0H1EBufzI-thumb",
+    "device_id": "da4386a3-0b08-4c68-a7e1-52ed960488ba",
+    "email": "",
+    "has_teams": true,
+    "home_name": "萌太奇板板板板",
+    "id": "194820ce-782b-4330-ac62-77a36763cd43",
+    "mobile": "13027104206",
+    "name": "肖静远",
+    "sex": "男",
+    "sign": {
+        "msg": "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz:dev_da4386a3-0b08-4c68-a7e1-52ed960488ba:1514254617:40271",
+        "nonce": "40271",
+        "signature": "6f1b8f1e80db2860aae752ed6858b1fed1f7cef1",
+        "timestamp": 1514254617
+    },
+    "sp": false
+}
+2017-12-26 10:17:02,785 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-26 10:17:02,786 - INFO - 3、请求方法:post
+2017-12-26 10:17:02,791 - INFO - 4、body参数：{'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-26 10:17:03,058 - INFO - 5、响应结果：{
+    "address": "武汉市大学园路",
+    "age": null,
+    "authentication_token": "70b89e435758de0fd2a89ae3e66e74b0",
+    "avatar_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrtEVqsa6AaQRikUimD0H1EBufzI-thumb",
+    "device_id": "da4386a3-0b08-4c68-a7e1-52ed960488ba",
+    "email": "",
+    "has_teams": true,
+    "home_name": "萌太奇板板板板",
+    "id": "194820ce-782b-4330-ac62-77a36763cd43",
+    "mobile": "13027104206",
+    "name": "肖静远",
+    "sex": "男",
+    "sign": {
+        "msg": "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz:dev_da4386a3-0b08-4c68-a7e1-52ed960488ba:1514254623:98526",
+        "nonce": "98526",
+        "signature": "974b025708822cffcca87b67777695f7e6a807e4",
+        "timestamp": 1514254623
+    },
+    "sp": false
+}
+2017-12-26 10:20:27,033 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-26 10:20:27,034 - INFO - 3、请求方法:post
+2017-12-26 10:20:27,038 - INFO - 4、body参数：{'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-26 10:20:28,793 - INFO - 5、响应结果：{
+    "address": "武汉市大学园路",
+    "age": null,
+    "authentication_token": "124687d01f4ead2cf32167821348d885",
+    "avatar_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrtEVqsa6AaQRikUimD0H1EBufzI-thumb",
+    "device_id": "da4386a3-0b08-4c68-a7e1-52ed960488ba",
+    "email": "",
+    "has_teams": true,
+    "home_name": "萌太奇板板板板",
+    "id": "194820ce-782b-4330-ac62-77a36763cd43",
+    "mobile": "13027104206",
+    "name": "肖静远",
+    "sex": "男",
+    "sign": {
+        "msg": "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz:dev_da4386a3-0b08-4c68-a7e1-52ed960488ba:1514254828:34015",
+        "nonce": "34015",
+        "signature": "fc72583d557bf1e34901e54a940fa77c18afffdb",
+        "timestamp": 1514254828
+    },
+    "sp": false
+}
+2017-12-26 10:20:28,794 - INFO - 2、请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 10:20:28,796 - INFO - 3、请求方法:post
+2017-12-26 10:20:28,799 - INFO - 4、body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 10:20:52,733 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-26 10:20:52,734 - INFO - 3、请求方法:post
+2017-12-26 10:20:52,739 - INFO - 4、body参数：{'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-26 10:20:53,009 - INFO - 5、响应结果：{
+    "address": "武汉市大学园路",
+    "age": null,
+    "authentication_token": "6f9f6c2224f4a7ab3ec7339506aca608",
+    "avatar_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrtEVqsa6AaQRikUimD0H1EBufzI-thumb",
+    "device_id": "da4386a3-0b08-4c68-a7e1-52ed960488ba",
+    "email": "",
+    "has_teams": true,
+    "home_name": "萌太奇板板板板",
+    "id": "194820ce-782b-4330-ac62-77a36763cd43",
+    "mobile": "13027104206",
+    "name": "肖静远",
+    "sex": "男",
+    "sign": {
+        "msg": "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz:dev_da4386a3-0b08-4c68-a7e1-52ed960488ba:1514254852:06392",
+        "nonce": "06392",
+        "signature": "5abdc0cb1979e1418a7729009d1b794a2723a0c8",
+        "timestamp": 1514254852
+    },
+    "sp": false
+}
+2017-12-26 10:20:53,009 - INFO - 2、请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 10:20:53,011 - INFO - 3、请求方法:post
+2017-12-26 10:20:53,015 - INFO - 4、body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 10:20:53,137 - INFO - 5、响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 10:27:17,608 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-26 10:27:17,608 - INFO - 3、请求方法:post
+2017-12-26 10:27:17,614 - INFO - 4、body参数：{'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-26 10:27:17,884 - INFO - 5、响应结果：{
+    "address": "武汉市大学园路",
+    "age": null,
+    "authentication_token": "e83f653c3c750ad56b709b894f4d6d30",
+    "avatar_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrtEVqsa6AaQRikUimD0H1EBufzI-thumb",
+    "device_id": "da4386a3-0b08-4c68-a7e1-52ed960488ba",
+    "email": "",
+    "has_teams": true,
+    "home_name": "萌太奇板板板板",
+    "id": "194820ce-782b-4330-ac62-77a36763cd43",
+    "mobile": "13027104206",
+    "name": "肖静远",
+    "sex": "男",
+    "sign": {
+        "msg": "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz:dev_da4386a3-0b08-4c68-a7e1-52ed960488ba:1514255237:68430",
+        "nonce": "68430",
+        "signature": "409edbf649c0baa445eee641b0dafb4fdd0a573b",
+        "timestamp": 1514255237
+    },
+    "sp": false
+}
+2017-12-26 10:27:17,885 - INFO - 获取token值：e83f653c3c750ad56b709b894f4d6d30
+2017-12-26 10:27:17,886 - INFO - 2、请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 10:27:17,887 - INFO - 3、请求方法:post
+2017-12-26 10:27:17,890 - INFO - 4、body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 10:27:18,003 - INFO - 5、响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 10:27:40,754 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-26 10:27:40,754 - INFO - 3、请求方法:post
+2017-12-26 10:27:40,760 - INFO - 4、body参数：{'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-26 10:27:41,044 - INFO - 5、响应结果：{
+    "address": "武汉市大学园路",
+    "age": null,
+    "authentication_token": "877ff45b32b1acb6a339bdcc6b8a5e66",
+    "avatar_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrtEVqsa6AaQRikUimD0H1EBufzI-thumb",
+    "device_id": "da4386a3-0b08-4c68-a7e1-52ed960488ba",
+    "email": "",
+    "has_teams": true,
+    "home_name": "萌太奇板板板板",
+    "id": "194820ce-782b-4330-ac62-77a36763cd43",
+    "mobile": "13027104206",
+    "name": "肖静远",
+    "sex": "男",
+    "sign": {
+        "msg": "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz:dev_da4386a3-0b08-4c68-a7e1-52ed960488ba:1514255260:60391",
+        "nonce": "60391",
+        "signature": "1c064dac9ebcbce3032f8e3a7ac9ccada02cc247",
+        "timestamp": 1514255260
+    },
+    "sp": false
+}
+2017-12-26 10:27:41,045 - INFO - 获取token值：877ff45b32b1acb6a339bdcc6b8a5e66
+2017-12-26 10:27:41,047 - INFO - 2、请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 10:27:41,047 - INFO - 3、请求方法:post
+2017-12-26 10:27:41,051 - INFO - 4、body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 10:27:41,220 - INFO - 5、响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 10:28:40,205 - INFO - 获取token值：
+2017-12-26 10:28:40,205 - INFO - 2、请求url：https://test.yunlu6.com/api/v1/login
+2017-12-26 10:28:40,208 - INFO - 3、请求方法:post
+2017-12-26 10:28:40,213 - INFO - 4、body参数：{'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-26 10:28:40,514 - INFO - 5、响应结果：{
+    "address": "武汉市大学园路",
+    "age": null,
+    "authentication_token": "c8f637bcf364fe051f92f734dd9624b7",
+    "avatar_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrtEVqsa6AaQRikUimD0H1EBufzI-thumb",
+    "device_id": "da4386a3-0b08-4c68-a7e1-52ed960488ba",
+    "email": "",
+    "has_teams": true,
+    "home_name": "萌太奇板板板板",
+    "id": "194820ce-782b-4330-ac62-77a36763cd43",
+    "mobile": "13027104206",
+    "name": "肖静远",
+    "sex": "男",
+    "sign": {
+        "msg": "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz:dev_da4386a3-0b08-4c68-a7e1-52ed960488ba:1514255320:10342",
+        "nonce": "10342",
+        "signature": "19e768e513a3641e631e0ed8b82c8c00063478c2",
+        "timestamp": 1514255320
+    },
+    "sp": false
+}
+2017-12-26 10:28:40,514 - INFO - 请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 10:28:40,516 - INFO - 请求方法:post
+2017-12-26 10:28:40,519 - INFO - body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 10:28:40,642 - INFO - 5、响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 10:29:41,259 - INFO - **获取token值：
+2017-12-26 10:29:41,259 - INFO - **请求url：https://test.yunlu6.com/api/v1/login
+2017-12-26 10:29:41,259 - INFO - **请求方法:post
+2017-12-26 10:29:41,263 - INFO - **body参数：{'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-26 10:29:41,538 - INFO - **响应结果：{
+    "address": "武汉市大学园路",
+    "age": null,
+    "authentication_token": "474970bcdf0e9b3c3fd187f173239167",
+    "avatar_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrtEVqsa6AaQRikUimD0H1EBufzI-thumb",
+    "device_id": "da4386a3-0b08-4c68-a7e1-52ed960488ba",
+    "email": "",
+    "has_teams": true,
+    "home_name": "萌太奇板板板板",
+    "id": "194820ce-782b-4330-ac62-77a36763cd43",
+    "mobile": "13027104206",
+    "name": "肖静远",
+    "sex": "男",
+    "sign": {
+        "msg": "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz:dev_da4386a3-0b08-4c68-a7e1-52ed960488ba:1514255381:12873",
+        "nonce": "12873",
+        "signature": "3d41e4d594d86b39a958cf98aa51465441c84f0a",
+        "timestamp": 1514255381
+    },
+    "sp": false
+}
+2017-12-26 10:29:41,538 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 10:29:41,540 - INFO - **请求方法:post
+2017-12-26 10:29:41,543 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 10:29:41,664 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 10:30:20,894 - INFO - ***获取token值****：
+2017-12-26 10:30:20,895 - INFO - **请求url：https://test.yunlu6.com/api/v1/login
+2017-12-26 10:30:20,897 - INFO - **请求方法:post
+2017-12-26 10:30:20,901 - INFO - **body参数：{'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-26 10:30:21,177 - INFO - **响应结果：{
+    "address": "武汉市大学园路",
+    "age": null,
+    "authentication_token": "322f7642e93a67c7614f856d13e45632",
+    "avatar_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrtEVqsa6AaQRikUimD0H1EBufzI-thumb",
+    "device_id": "da4386a3-0b08-4c68-a7e1-52ed960488ba",
+    "email": "",
+    "has_teams": true,
+    "home_name": "萌太奇板板板板",
+    "id": "194820ce-782b-4330-ac62-77a36763cd43",
+    "mobile": "13027104206",
+    "name": "肖静远",
+    "sex": "男",
+    "sign": {
+        "msg": "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz:dev_da4386a3-0b08-4c68-a7e1-52ed960488ba:1514255421:78520",
+        "nonce": "78520",
+        "signature": "b744b295b36b0dfe13d5bc4abdac532eb6226868",
+        "timestamp": 1514255421
+    },
+    "sp": false
+}
+2017-12-26 10:30:21,177 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 10:30:21,179 - INFO - **请求方法:post
+2017-12-26 10:30:21,182 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 10:30:21,299 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 10:30:34,257 - INFO - ---获取token值----：
+2017-12-26 10:30:34,257 - INFO - **请求url：https://test.yunlu6.com/api/v1/login
+2017-12-26 10:30:34,259 - INFO - **请求方法:post
+2017-12-26 10:30:34,264 - INFO - **body参数：{'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-26 10:30:34,558 - INFO - **响应结果：{
+    "address": "武汉市大学园路",
+    "age": null,
+    "authentication_token": "96fada686c8a139ac8a1076880bcff4d",
+    "avatar_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrtEVqsa6AaQRikUimD0H1EBufzI-thumb",
+    "device_id": "da4386a3-0b08-4c68-a7e1-52ed960488ba",
+    "email": "",
+    "has_teams": true,
+    "home_name": "萌太奇板板板板",
+    "id": "194820ce-782b-4330-ac62-77a36763cd43",
+    "mobile": "13027104206",
+    "name": "肖静远",
+    "sex": "男",
+    "sign": {
+        "msg": "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz:dev_da4386a3-0b08-4c68-a7e1-52ed960488ba:1514255434:48107",
+        "nonce": "48107",
+        "signature": "9eac1d28f25b0d5025e6d50d0719ec19f9459e0b",
+        "timestamp": 1514255434
+    },
+    "sp": false
+}
+2017-12-26 10:30:34,559 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 10:30:34,561 - INFO - **请求方法:post
+2017-12-26 10:30:34,565 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 10:30:34,690 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 10:30:44,513 - INFO - *获取token值*：
+2017-12-26 10:30:44,514 - INFO - **请求url：https://test.yunlu6.com/api/v1/login
+2017-12-26 10:30:44,516 - INFO - **请求方法:post
+2017-12-26 10:30:44,520 - INFO - **body参数：{'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-26 10:30:44,794 - INFO - **响应结果：{
+    "address": "武汉市大学园路",
+    "age": null,
+    "authentication_token": "5e71b7f32b6205cf2c746c0baa3001e8",
+    "avatar_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrtEVqsa6AaQRikUimD0H1EBufzI-thumb",
+    "device_id": "da4386a3-0b08-4c68-a7e1-52ed960488ba",
+    "email": "",
+    "has_teams": true,
+    "home_name": "萌太奇板板板板",
+    "id": "194820ce-782b-4330-ac62-77a36763cd43",
+    "mobile": "13027104206",
+    "name": "肖静远",
+    "sex": "男",
+    "sign": {
+        "msg": "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz:dev_da4386a3-0b08-4c68-a7e1-52ed960488ba:1514255444:61302",
+        "nonce": "61302",
+        "signature": "91f811b8d9a2a49e59a940f256803b2c7ff79876",
+        "timestamp": 1514255444
+    },
+    "sp": false
+}
+2017-12-26 10:30:44,794 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 10:30:44,796 - INFO - **请求方法:post
+2017-12-26 10:30:44,799 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 10:30:44,930 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 10:36:22,508 - INFO - **获取token值：
+2017-12-26 10:36:22,508 - INFO - **请求url：https://test.yunlu6.com/api/v1/login
+2017-12-26 10:36:22,510 - INFO - **请求方法:post
+2017-12-26 10:36:22,515 - INFO - **body参数：{'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-26 10:36:22,951 - INFO - **响应结果：{
+    "address": "武汉市大学园路",
+    "age": null,
+    "authentication_token": "30cf06be6d8a9e990a792230351eb859",
+    "avatar_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrtEVqsa6AaQRikUimD0H1EBufzI-thumb",
+    "device_id": "da4386a3-0b08-4c68-a7e1-52ed960488ba",
+    "email": "",
+    "has_teams": true,
+    "home_name": "萌太奇板板板板",
+    "id": "194820ce-782b-4330-ac62-77a36763cd43",
+    "mobile": "13027104206",
+    "name": "肖静远",
+    "sex": "男",
+    "sign": {
+        "msg": "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz:dev_da4386a3-0b08-4c68-a7e1-52ed960488ba:1514255782:95318",
+        "nonce": "95318",
+        "signature": "c3da231726885dacf0e49144036330214efe3c42",
+        "timestamp": 1514255782
+    },
+    "sp": false
+}
+2017-12-26 10:36:22,951 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 10:36:22,954 - INFO - **请求方法:post
+2017-12-26 10:36:22,957 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 10:36:23,366 - INFO - **响应结果：{
+    "organization_id": 5749,
+    "success": true
+}
+2017-12-26 10:38:26,390 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 10:38:26,390 - INFO - **请求方法:post
+2017-12-26 10:38:26,396 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 10:38:27,270 - INFO - **响应结果：{
+    "organization_id": 5750,
+    "success": true
+}
+2017-12-26 10:38:57,345 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 10:38:57,345 - INFO - **请求方法:post
+2017-12-26 10:38:57,350 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 10:38:57,782 - INFO - **响应结果：{
+    "organization_id": 5751,
+    "success": true
+}
+2017-12-26 10:43:16,901 - INFO - ****************************************登录接口：开始****************************************
+2017-12-26 10:43:16,901 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 10:43:16,903 - INFO - 1、接口描述：创建空间接口
+2017-12-26 10:43:16,906 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 10:43:16,907 - INFO - **请求方法:post
+2017-12-26 10:43:16,911 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 10:43:17,270 - INFO - **响应结果：{
+    "organization_id": 5752,
+    "success": true
+}
+2017-12-26 10:43:17,270 - INFO - 1.判断返回状态码：200 = 201
+2017-12-26 10:43:17,272 - ERROR - Login Outside : 返回状态不正确：201
+2017-12-26 10:43:17,273 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 10:43:17,273 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 10:43:48,662 - INFO - ****************************************登录接口：开始****************************************
+2017-12-26 10:43:48,663 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 10:43:48,665 - INFO - 1、接口描述：创建空间接口
+2017-12-26 10:43:48,668 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 10:43:48,668 - INFO - **请求方法:post
+2017-12-26 10:43:48,672 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 10:43:48,931 - INFO - **响应结果：{
+    "organization_id": 5753,
+    "success": true
+}
+2017-12-26 10:43:48,932 - INFO - 1.判断返回状态码：200 = 201
+2017-12-26 10:43:48,934 - INFO - status_code：OK
+2017-12-26 10:43:48,935 - INFO - 2.判断success：true = True
+2017-12-26 10:43:48,935 - ERROR - Login Outside : success状态不正确：True
+2017-12-26 10:43:48,936 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 10:43:48,936 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 10:47:07,457 - INFO - ****************************************登录接口：开始****************************************
+2017-12-26 10:47:07,457 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 10:47:07,459 - INFO - 1、接口描述：创建空间接口
+2017-12-26 10:47:07,462 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 10:47:07,463 - INFO - **请求方法:post
+2017-12-26 10:47:07,466 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 10:47:07,727 - INFO - **响应结果：{
+    "organization_id": 5754,
+    "success": true
+}
+2017-12-26 10:47:07,728 - INFO - 1.判断返回状态码：201 = 201
+2017-12-26 10:47:07,730 - INFO - status_code：OK
+2017-12-26 10:47:07,731 - INFO - 2.判断success：true = True
+2017-12-26 10:47:07,731 - INFO - success：OK
+2017-12-26 10:47:07,732 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 10:47:07,732 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 10:51:30,849 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 10:51:30,849 - INFO - **请求方法:post
+2017-12-26 10:51:30,855 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 10:51:31,033 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 10:55:14,925 - INFO - ****************************************登录接口：开始****************************************
+2017-12-26 10:55:14,926 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 10:55:14,926 - INFO - 1、接口描述：创建空间接口
+2017-12-26 10:55:14,929 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 10:55:14,929 - INFO - **请求方法:post
+2017-12-26 10:55:14,935 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 10:55:15,199 - INFO - **响应结果：{
+    "organization_id": 5757,
+    "success": true
+}
+2017-12-26 10:55:15,200 - INFO - 1.判断返回状态码：201 = 201
+2017-12-26 10:55:15,202 - INFO - status_code：OK
+2017-12-26 10:55:15,203 - INFO - 2.判断success：True = True
+2017-12-26 10:55:15,204 - INFO - success：OK
+2017-12-26 10:55:15,204 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 10:55:15,205 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 11:01:01,915 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:01:01,915 - INFO - **请求方法:post
+2017-12-26 11:01:01,921 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 11:01:02,328 - INFO - **响应结果：{
+    "organization_id": 5758,
+    "success": true
+}
+2017-12-26 11:01:02,331 - INFO - ****************************************登录接口：开始****************************************
+2017-12-26 11:01:02,331 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 11:01:02,331 - INFO - 1、接口描述：创建空间接口
+2017-12-26 11:01:02,333 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:01:02,334 - INFO - **请求方法:post
+2017-12-26 11:01:02,337 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 11:01:02,487 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 11:01:02,487 - INFO - 1.判断返回状态码：201 = 201
+2017-12-26 11:01:02,488 - INFO - status_code：OK
+2017-12-26 11:01:02,488 - INFO - 2.判断success：True = False
+2017-12-26 11:01:02,489 - ERROR - Login Outside : success状态不正确：False
+2017-12-26 11:01:02,489 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 11:01:02,490 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 11:05:43,231 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:05:43,232 - INFO - **请求方法:post
+2017-12-26 11:05:43,237 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 11:05:43,523 - INFO - **响应结果：{
+    "organization_id": 5759,
+    "success": true
+}
+2017-12-26 11:05:43,527 - INFO - ****************************************登录接口：开始****************************************
+2017-12-26 11:05:43,528 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 11:05:43,528 - INFO - 1、接口描述：创建空间接口
+2017-12-26 11:05:43,530 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:05:43,531 - INFO - **请求方法:post
+2017-12-26 11:05:43,534 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 11:05:43,654 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 11:05:43,655 - INFO - 1.判断返回状态码：201 = 201
+2017-12-26 11:05:43,657 - INFO - status_code：OK
+2017-12-26 11:05:43,658 - INFO - 2.判断success：True = False
+2017-12-26 11:05:43,659 - ERROR - Login Outside : success状态不正确：False
+2017-12-26 11:05:43,659 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 11:05:43,660 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 11:05:59,710 - INFO - ****************************************登录接口：开始****************************************
+2017-12-26 11:05:59,710 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 11:05:59,712 - INFO - 1、接口描述：创建空间接口
+2017-12-26 11:05:59,714 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:05:59,715 - INFO - **请求方法:post
+2017-12-26 11:05:59,719 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 11:05:59,985 - INFO - **响应结果：{
+    "organization_id": 5760,
+    "success": true
+}
+2017-12-26 11:05:59,986 - INFO - 1.判断返回状态码：201 = 201
+2017-12-26 11:05:59,988 - INFO - status_code：OK
+2017-12-26 11:05:59,989 - INFO - 2.判断success：True = True
+2017-12-26 11:05:59,989 - INFO - success：OK
+2017-12-26 11:05:59,990 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 11:05:59,990 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 11:06:43,441 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:06:43,441 - INFO - **请求方法:post
+2017-12-26 11:06:43,447 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 11:06:43,587 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 11:06:43,587 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:06:43,589 - INFO - **请求方法:post
+2017-12-26 11:06:43,590 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:06:43,591 - INFO - **请求方法:post
+2017-12-26 11:06:43,594 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 11:06:43,716 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 11:06:55,548 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:06:55,549 - INFO - **请求方法:post
+2017-12-26 11:06:55,555 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 11:06:55,823 - INFO - **响应结果：{
+    "organization_id": 5761,
+    "success": true
+}
+2017-12-26 11:06:55,823 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:06:55,826 - INFO - **请求方法:post
+2017-12-26 11:06:55,827 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:06:55,827 - INFO - **请求方法:post
+2017-12-26 11:06:55,831 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 11:06:55,956 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 11:40:14,456 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:40:14,457 - INFO - **请求方法:post
+2017-12-26 11:40:14,459 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 11:40:14,868 - INFO - **响应结果：{
+    "organization_id": 5762,
+    "success": true
+}
+2017-12-26 11:40:14,871 - INFO - 存organization_id：5762
+2017-12-26 11:40:14,872 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:40:14,872 - INFO - **请求方法:post
+2017-12-26 11:40:14,875 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/spaces/organization/[['5762']]/organization
+2017-12-26 11:40:14,997 - INFO - **响应结果：{
+    "msg": [
+        "简称 不能为空字符",
+        "简称 简称不能少于2个字符",
+        "简称 不能为空字符",
+        "简称 简称不能少于2个字符",
+        "全称 不能为空字符",
+        "全称 公司全称不能少于2个字符",
+        "全称 不能为空字符",
+        "全称 公司全称不能少于2个字符",
+        "空间机构 创建失败"
+    ],
+    "success": false
+}
+2017-12-26 11:40:50,693 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:40:50,694 - INFO - **请求方法:post
+2017-12-26 11:40:50,699 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': None}
+2017-12-26 11:40:51,827 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 11:41:25,329 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:41:25,329 - INFO - **请求方法:post
+2017-12-26 11:41:25,335 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 11:41:25,519 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 11:42:06,221 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:42:06,221 - INFO - **请求方法:post
+2017-12-26 11:42:06,226 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 11:42:06,439 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 11:42:20,655 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:42:20,656 - INFO - **请求方法:post
+2017-12-26 11:42:20,661 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 11:42:21,053 - INFO - **响应结果：{
+    "organization_id": 5763,
+    "success": true
+}
+2017-12-26 11:42:21,056 - INFO - 存organization_id：5763
+2017-12-26 11:42:21,056 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:42:21,056 - INFO - **请求方法:post
+2017-12-26 11:42:21,059 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/spaces/organization/[['5763']]/organization
+2017-12-26 11:42:53,845 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:42:53,846 - INFO - **请求方法:post
+2017-12-26 11:42:53,852 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 11:42:54,055 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 11:43:04,269 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:43:04,269 - INFO - **请求方法:post
+2017-12-26 11:43:04,274 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 11:43:04,649 - INFO - **响应结果：{
+    "organization_id": 5764,
+    "success": true
+}
+2017-12-26 11:43:04,652 - INFO - 存organization_id：5764
+2017-12-26 11:43:04,652 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:43:04,653 - INFO - **请求方法:post
+2017-12-26 11:43:04,655 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/spaces/organization/[['5764']]/organization
+2017-12-26 11:43:38,886 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:43:38,887 - INFO - **请求方法:post
+2017-12-26 11:43:38,892 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 11:43:39,224 - INFO - **响应结果：{
+    "organization_id": 5765,
+    "success": true
+}
+2017-12-26 11:43:39,227 - INFO - 存organization_id：5765
+2017-12-26 11:43:39,228 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:43:39,228 - INFO - **请求方法:post
+2017-12-26 11:43:39,231 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/spaces/organization/[['5765']]/organization
+2017-12-26 11:44:52,975 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:44:52,975 - INFO - **请求方法:post
+2017-12-26 11:44:52,980 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 11:44:53,260 - INFO - **响应结果：{
+    "organization_id": 5766,
+    "success": true
+}
+2017-12-26 11:44:53,263 - INFO - 存organization_id：5766
+2017-12-26 11:44:53,263 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:44:53,264 - INFO - **请求方法:post
+2017-12-26 11:44:53,266 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/spaces/organization/5766/organization
+2017-12-26 11:45:22,708 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:45:22,709 - INFO - **请求方法:post
+2017-12-26 11:45:22,713 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 11:45:23,005 - INFO - **响应结果：{
+    "organization_id": 5767,
+    "success": true
+}
+2017-12-26 11:45:23,007 - INFO - 存organization_id：5767
+2017-12-26 11:45:23,008 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:45:23,008 - INFO - **请求方法:post
+2017-12-26 11:45:23,011 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/spaces/organization/5767/organization
+2017-12-26 11:45:23,128 - INFO - **响应结果：{
+    "msg": [
+        "简称 不能为空字符",
+        "简称 简称不能少于2个字符",
+        "简称 不能为空字符",
+        "简称 简称不能少于2个字符",
+        "全称 不能为空字符",
+        "全称 公司全称不能少于2个字符",
+        "全称 不能为空字符",
+        "全称 公司全称不能少于2个字符",
+        "空间机构 创建失败"
+    ],
+    "success": false
+}
+2017-12-26 11:47:39,963 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:47:39,963 - INFO - **请求方法:post
+2017-12-26 11:47:39,969 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 11:47:40,235 - INFO - **响应结果：{
+    "organization_id": 5768,
+    "success": true
+}
+2017-12-26 11:47:40,238 - INFO - 存organization_id：5768
+2017-12-26 11:47:40,238 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 11:47:40,238 - INFO - **请求方法:post
+2017-12-26 11:47:40,241 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/spaces/organization/5768/organization
+2017-12-26 11:47:40,241 - INFO - **body参数：{'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 11:47:40,324 - INFO - **响应结果：{
+    "error": "405 Not Allowed"
+}
+2017-12-26 12:00:09,117 - INFO - **请求url：http://test.yunlu6.com/api//Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework_APIv1/spaces/organization
+2017-12-26 12:00:09,118 - INFO - **请求方法:post
+2017-12-26 12:00:09,122 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 12:00:09,365 - ERROR - POST请求错误 : Expecting value: line 1 column 1 (char 0)
+2017-12-26 12:01:08,598 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 12:01:08,598 - INFO - **请求方法:post
+2017-12-26 12:01:08,603 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 12:01:09,006 - INFO - **响应结果：{
+    "organization_id": 5770,
+    "success": true
+}
+2017-12-26 12:01:09,009 - INFO - 存organization_id：5770
+2017-12-26 12:01:09,010 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 12:01:09,010 - INFO - **请求方法:post
+2017-12-26 12:01:09,013 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/spaces/organizationv1/team/5770/organization
+2017-12-26 12:01:09,013 - INFO - **body参数：{'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 12:01:09,128 - INFO - **响应结果：{
+    "error": "405 Not Allowed"
+}
+2017-12-26 12:09:28,420 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 12:09:28,421 - INFO - **请求方法:post
+2017-12-26 12:09:28,426 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 12:09:28,578 - ERROR - POST请求错误 : Expecting value: line 1 column 1 (char 0)
+2017-12-26 12:09:48,450 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 12:09:48,451 - INFO - **请求方法:post
+2017-12-26 12:09:48,456 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 12:09:48,722 - INFO - **响应结果：{
+    "organization_id": 5771,
+    "success": true
+}
+2017-12-26 12:09:48,725 - INFO - 存organization_id：5771
+2017-12-26 12:09:48,725 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 12:09:48,725 - INFO - **请求方法:post
+2017-12-26 12:09:48,728 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/spaces/organizationv1/team/5771/organization
+2017-12-26 12:09:48,728 - INFO - **body参数：{'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 12:09:48,813 - INFO - **响应结果：{
+    "error": "405 Not Allowed"
+}
+2017-12-26 12:12:10,563 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 12:12:10,563 - INFO - **请求方法:post
+2017-12-26 12:12:10,569 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 12:12:10,831 - INFO - **响应结果：{
+    "organization_id": 5772,
+    "success": true
+}
+2017-12-26 12:12:10,834 - INFO - 存organization_id：5772
+2017-12-26 12:12:10,834 - INFO - **请求url：http://test.yunlu6.com/api/
+2017-12-26 12:12:10,835 - INFO - **请求方法:post
+2017-12-26 12:12:10,837 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/team/5772/organization
+2017-12-26 12:12:10,838 - INFO - **body参数：{'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 12:12:10,986 - ERROR - POST请求错误 : Expecting value: line 1 column 1 (char 0)
+2017-12-26 12:13:13,320 - INFO - **请求url：http://test.yunlu6.com/api/
+2017-12-26 12:13:13,321 - INFO - **请求方法:post
+2017-12-26 12:13:13,326 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/team/8888/organization
+2017-12-26 12:13:13,327 - INFO - **body参数：{'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 12:13:13,488 - ERROR - POST请求错误 : Expecting value: line 1 column 1 (char 0)
+2017-12-26 12:39:51,341 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 12:39:51,341 - INFO - **请求方法:post
+2017-12-26 12:39:51,347 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 12:39:51,485 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 12:40:02,757 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 12:40:02,757 - INFO - **请求方法:post
+2017-12-26 12:40:02,763 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 12:40:03,157 - INFO - **响应结果：{
+    "organization_id": 5773,
+    "success": true
+}
+2017-12-26 12:40:03,160 - INFO - 存organization_id：5773
+2017-12-26 12:40:21,875 - INFO - **请求url：http://test.yunlu6.com/api/
+2017-12-26 12:40:21,876 - INFO - **请求方法:post
+2017-12-26 12:40:21,882 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/team/8888/organization
+2017-12-26 12:40:21,882 - INFO - **body参数：{'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 12:40:22,085 - ERROR - POST请求错误 : Expecting value: line 1 column 1 (char 0)
+2017-12-26 12:45:50,285 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 12:45:50,285 - INFO - **请求方法:post
+2017-12-26 12:45:50,291 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 12:45:50,565 - INFO - **响应结果：{
+    "organization_id": 5774,
+    "success": true
+}
+2017-12-26 12:45:50,567 - INFO - 存organization_id：5774
+2017-12-26 12:45:50,568 - INFO - **请求url：http://test.yunlu6.com/api/
+2017-12-26 12:45:50,568 - INFO - **请求方法:post
+2017-12-26 12:45:50,571 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/team/5774/organization
+2017-12-26 12:45:50,571 - INFO - **body参数：{'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 12:45:50,721 - ERROR - POST请求错误 : Expecting value: line 1 column 1 (char 0)
+2017-12-26 13:05:44,692 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 13:05:44,692 - INFO - **请求方法:post
+2017-12-26 13:05:44,698 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 13:05:44,941 - INFO - **响应结果：{
+    "organization_id": 5775,
+    "success": true
+}
+2017-12-26 13:05:44,944 - INFO - 存organization_id：5775
+2017-12-26 13:05:44,945 - INFO - **请求url：http://test.yunlu6.com/api/
+2017-12-26 13:05:44,945 - INFO - **请求方法:post
+2017-12-26 13:05:44,948 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/team/5775/organization
+2017-12-26 13:05:44,948 - INFO - **body参数：{"token": "15d910df79987fb304c78886e24e364a"}
+2017-12-26 13:05:45,089 - ERROR - POST请求错误 : Expecting value: line 1 column 1 (char 0)
+2017-12-26 13:07:08,370 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 13:07:08,370 - INFO - **请求方法:post
+2017-12-26 13:07:08,377 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 13:07:08,627 - INFO - **响应结果：{
+    "organization_id": 5776,
+    "success": true
+}
+2017-12-26 13:07:08,630 - INFO - 存organization_id：5776
+2017-12-26 13:07:08,630 - INFO - **请求url：http://test.yunlu6.com/api/
+2017-12-26 13:07:08,631 - INFO - **请求方法:post
+2017-12-26 13:07:08,634 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/team/5776/organization
+2017-12-26 13:07:08,634 - INFO - **body参数：{'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 13:49:10,197 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 13:49:10,198 - INFO - **请求方法:post
+2017-12-26 13:49:10,203 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 13:49:10,461 - INFO - **响应结果：{
+    "organization_id": 5777,
+    "success": true
+}
+2017-12-26 13:49:10,463 - INFO - 存organization_id：5777
+2017-12-26 13:49:10,464 - INFO - **请求url：http://test.yunlu6.com/api/
+2017-12-26 13:49:10,464 - INFO - **请求方法:post
+2017-12-26 13:49:10,467 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/team/5777/organization
+2017-12-26 13:49:10,467 - INFO - **body参数：{'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 13:49:24,321 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 13:49:24,322 - INFO - **请求方法:post
+2017-12-26 13:49:24,328 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 13:49:24,584 - INFO - **响应结果：{
+    "organization_id": 5778,
+    "success": true
+}
+2017-12-26 13:49:24,586 - INFO - 存organization_id：5778
+2017-12-26 13:49:24,587 - INFO - **请求url：http://test.yunlu6.com/api/
+2017-12-26 13:49:24,587 - INFO - **请求方法:post
+2017-12-26 13:49:24,590 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/team/5778/organization
+2017-12-26 13:49:24,590 - INFO - **body参数：{'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 13:49:24,781 - ERROR - POST请求错误 : Expecting value: line 1 column 1 (char 0)
+2017-12-26 13:49:55,625 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 13:49:55,626 - INFO - **请求方法:post
+2017-12-26 13:49:55,631 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 13:49:55,871 - INFO - **响应结果：{
+    "organization_id": 5779,
+    "success": true
+}
+2017-12-26 13:49:55,874 - INFO - 存organization_id：5779
+2017-12-26 13:49:55,874 - INFO - **请求url：http://test.yunlu6.com/api/
+2017-12-26 13:49:55,874 - INFO - **请求方法:post
+2017-12-26 13:49:55,878 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/team/5779/organization
+2017-12-26 13:49:55,878 - INFO - **body参数：{'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 13:49:56,250 - INFO - **响应结果：{
+    "success": true
+}
+2017-12-26 14:00:18,063 - INFO - ****************************************登录接口：开始****************************************
+2017-12-26 14:00:18,063 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:00:18,064 - INFO - 1、接口描述：创建空间接口
+2017-12-26 14:00:18,066 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 14:00:18,067 - INFO - **请求方法:post
+2017-12-26 14:00:18,072 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 14:00:18,352 - INFO - **响应结果：{
+    "organization_id": 5780,
+    "success": true
+}
+2017-12-26 14:00:18,355 - INFO - 存organization_id：5780
+2017-12-26 14:00:18,355 - INFO - 1.判断返回状态码：201 = 201
+2017-12-26 14:00:18,356 - INFO - status_code：OK
+2017-12-26 14:00:18,356 - INFO - 2.判断success：True = True
+2017-12-26 14:00:18,357 - INFO - success：OK
+2017-12-26 14:00:18,357 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:00:18,358 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 14:00:18,359 - INFO - ****************************************登录接口：开始****************************************
+2017-12-26 14:00:18,359 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:00:18,360 - INFO - 1、接口描述：创建空间接口
+2017-12-26 14:00:18,362 - ERROR - Login Outside : 'SpaceAPI' object has no attribute 'L'
+2017-12-26 14:00:18,363 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:00:18,363 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 14:01:26,214 - INFO - ****************************************创建空间接口：开始****************************************
+2017-12-26 14:01:26,215 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:01:26,217 - INFO - 1、接口描述：创建空间接口
+2017-12-26 14:01:26,219 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 14:01:26,220 - INFO - **请求方法:post
+2017-12-26 14:01:26,225 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 14:01:26,517 - INFO - **响应结果：{
+    "organization_id": 5781,
+    "success": true
+}
+2017-12-26 14:01:26,521 - INFO - 存organization_id：5781
+2017-12-26 14:01:26,521 - INFO - 1.判断返回状态码：201 = 201
+2017-12-26 14:01:26,522 - INFO - status_code：OK
+2017-12-26 14:01:26,522 - INFO - 2.判断success：True = True
+2017-12-26 14:01:26,523 - INFO - success：OK
+2017-12-26 14:01:26,523 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:01:26,524 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~创建空间接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 14:01:26,525 - INFO - ****************************************创建空间接口：开始****************************************
+2017-12-26 14:01:26,526 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:01:26,526 - INFO - 1、接口描述：创建空间接口
+2017-12-26 14:01:26,528 - ERROR - Login Outside : 'SpaceAPI' object has no attribute 'L'
+2017-12-26 14:01:26,529 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:01:26,530 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~创建空间接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 14:02:10,619 - INFO - ****************************************创建空间接口：开始****************************************
+2017-12-26 14:02:10,620 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:02:10,622 - INFO - 1、接口描述：创建空间接口
+2017-12-26 14:02:10,624 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 14:02:10,625 - INFO - **请求方法:post
+2017-12-26 14:02:10,629 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 14:02:10,898 - INFO - **响应结果：{
+    "organization_id": 5782,
+    "success": true
+}
+2017-12-26 14:02:10,901 - INFO - 存organization_id：5782
+2017-12-26 14:02:10,902 - INFO - 1.判断返回状态码：201 = 201
+2017-12-26 14:02:10,902 - INFO - status_code：OK
+2017-12-26 14:02:10,903 - INFO - 2.判断success：True = True
+2017-12-26 14:02:10,903 - INFO - success：OK
+2017-12-26 14:02:10,903 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:02:10,904 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~创建空间接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 14:02:37,440 - INFO - ****************************************创建空间接口：开始****************************************
+2017-12-26 14:02:37,440 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:02:37,442 - INFO - 1、接口描述：创建空间接口
+2017-12-26 14:02:37,445 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 14:02:37,445 - INFO - **请求方法:post
+2017-12-26 14:02:37,449 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 14:02:37,721 - INFO - **响应结果：{
+    "organization_id": 5783,
+    "success": true
+}
+2017-12-26 14:02:37,725 - INFO - 存organization_id：5783
+2017-12-26 14:02:37,726 - INFO - 1.判断返回状态码：201 = 201
+2017-12-26 14:02:37,726 - INFO - status_code：OK
+2017-12-26 14:02:37,727 - INFO - 2.判断success：True = True
+2017-12-26 14:02:37,728 - INFO - success：OK
+2017-12-26 14:02:37,728 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:02:37,729 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~创建空间接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 14:02:37,730 - INFO - ****************************************创建空间接口：开始****************************************
+2017-12-26 14:02:37,731 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:02:37,731 - INFO - 1、接口描述：创建空间接口
+2017-12-26 14:02:37,734 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 14:02:37,734 - INFO - **请求方法:post
+2017-12-26 14:02:37,738 - INFO - **body参数：{'company': '测试空间1234', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 14:02:37,856 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 14:02:37,857 - ERROR - Login Outside : 'organization_id'
+2017-12-26 14:02:37,859 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:02:37,859 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~创建空间接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 14:16:20,017 - INFO - ****************************************创建空间接口：开始****************************************
+2017-12-26 14:16:20,017 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:16:20,020 - INFO - 1、接口描述：创建空间接口
+2017-12-26 14:16:20,022 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 14:16:20,023 - INFO - **请求方法:post
+2017-12-26 14:16:20,028 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 14:16:20,297 - INFO - **响应结果：{
+    "organization_id": 5784,
+    "success": true
+}
+2017-12-26 14:16:20,298 - INFO - 1.判断返回状态码：201 = 201
+2017-12-26 14:16:20,300 - INFO - status_code：OK
+2017-12-26 14:16:20,301 - INFO - 2.判断success：True = True
+2017-12-26 14:16:20,302 - INFO - success：OK
+2017-12-26 14:16:20,302 - ERROR - Login Outside : 1
+2017-12-26 14:16:20,303 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:16:20,303 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~创建空间接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 14:16:20,306 - INFO - ****************************************创建空间接口：开始****************************************
+2017-12-26 14:16:20,307 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:16:20,307 - INFO - 1、接口描述：创建空间接口
+2017-12-26 14:16:20,310 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 14:16:20,310 - INFO - **请求方法:post
+2017-12-26 14:16:20,314 - INFO - **body参数：{'company': '测试空间1234', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 14:16:20,434 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 14:16:20,435 - INFO - 1.判断返回状态码：201 = 201
+2017-12-26 14:16:20,437 - INFO - status_code：OK
+2017-12-26 14:16:20,437 - INFO - 2.判断success：True = False
+2017-12-26 14:16:20,438 - ERROR - Login Outside : success状态不正确：False
+2017-12-26 14:16:20,439 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:16:20,439 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~创建空间接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 14:17:41,095 - INFO - ****************************************创建空间接口：开始****************************************
+2017-12-26 14:17:41,096 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:17:41,099 - INFO - 1、接口描述：创建空间接口
+2017-12-26 14:17:41,102 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 14:17:41,103 - INFO - **请求方法:post
+2017-12-26 14:17:41,110 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 14:17:41,384 - INFO - **响应结果：{
+    "organization_id": 5785,
+    "success": true
+}
+2017-12-26 14:17:41,388 - INFO - 更新数据库organization_id：5785
+2017-12-26 14:17:41,389 - INFO - 1.判断返回状态码：201 = 201
+2017-12-26 14:17:41,389 - INFO - status_code：OK
+2017-12-26 14:17:41,390 - INFO - 2.判断success：True = True
+2017-12-26 14:17:41,391 - INFO - success：OK
+2017-12-26 14:17:41,392 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:17:41,393 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~创建空间接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 14:17:41,396 - INFO - ****************************************创建空间接口：开始****************************************
+2017-12-26 14:17:41,397 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:17:41,398 - INFO - 1、接口描述：创建空间接口
+2017-12-26 14:17:41,402 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 14:17:41,403 - INFO - **请求方法:post
+2017-12-26 14:17:41,408 - INFO - **body参数：{'company': '测试空间1234', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 14:17:59,447 - INFO - ****************************************创建空间接口：开始****************************************
+2017-12-26 14:17:59,448 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:17:59,450 - INFO - 1、接口描述：创建空间接口
+2017-12-26 14:17:59,452 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 14:17:59,453 - INFO - **请求方法:post
+2017-12-26 14:17:59,458 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 14:17:59,718 - INFO - **响应结果：{
+    "organization_id": 5786,
+    "success": true
+}
+2017-12-26 14:17:59,721 - INFO - 更新数据库organization_id：5786
+2017-12-26 14:17:59,721 - INFO - 1.判断返回状态码：201 = 201
+2017-12-26 14:17:59,721 - INFO - status_code：OK
+2017-12-26 14:17:59,722 - INFO - 2.判断success：True = True
+2017-12-26 14:17:59,722 - INFO - success：OK
+2017-12-26 14:17:59,723 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:17:59,723 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~创建空间接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 14:17:59,724 - INFO - ****************************************创建空间接口：开始****************************************
+2017-12-26 14:17:59,725 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:17:59,725 - INFO - 1、接口描述：创建空间接口
+2017-12-26 14:17:59,727 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 14:17:59,728 - INFO - **请求方法:post
+2017-12-26 14:17:59,731 - INFO - **body参数：{'company': '测试空间1234', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 14:17:59,848 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 14:17:59,849 - INFO - 1.判断返回状态码：201 = 201
+2017-12-26 14:17:59,851 - INFO - status_code：OK
+2017-12-26 14:17:59,852 - INFO - 2.判断success：True = False
+2017-12-26 14:17:59,852 - ERROR - Login Outside : success状态不正确：False
+2017-12-26 14:17:59,853 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 14:17:59,853 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~创建空间接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 15:15:55,321 - INFO - ****************************************创建空间接口：开始****************************************
+2017-12-26 15:15:55,322 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 15:15:55,323 - INFO - 1、接口描述：创建空间接口
+2017-12-26 15:15:55,325 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 15:15:55,326 - INFO - **请求方法:post
+2017-12-26 15:15:55,332 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 15:15:55,703 - INFO - **响应结果：{
+    "organization_id": 5788,
+    "success": true
+}
+2017-12-26 15:15:55,707 - INFO - 更新数据库organization_id：5788
+2017-12-26 15:15:55,707 - INFO - 1.判断返回状态码：201 = 201
+2017-12-26 15:15:55,708 - INFO - status_code：OK
+2017-12-26 15:15:55,708 - INFO - 2.判断success：True = True
+2017-12-26 15:15:55,709 - INFO - success：OK
+2017-12-26 15:15:55,709 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 15:15:55,710 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~创建空间接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 15:15:55,711 - INFO - ****************************************创建空间接口：开始****************************************
+2017-12-26 15:15:55,711 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 15:15:55,712 - INFO - 1、接口描述：创建空间接口
+2017-12-26 15:15:55,714 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 15:15:55,715 - INFO - **请求方法:post
+2017-12-26 15:15:55,718 - INFO - **body参数：{'company': '测试空间1234', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 15:15:56,838 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 15:15:56,839 - INFO - 1.判断返回状态码：201 = 201
+2017-12-26 15:15:56,841 - INFO - status_code：OK
+2017-12-26 15:15:56,842 - INFO - 2.判断success：True = False
+2017-12-26 15:15:56,842 - INFO - success：OK
+2017-12-26 15:15:56,843 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 15:15:56,843 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~创建空间接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-26 15:47:47,489 - INFO - {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{START:RUNCASSE1}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+2017-12-26 15:47:47,490 - INFO - 报告存储路径：/Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework_API/report/testreport/
+2017-12-26 15:47:47,490 - INFO - 测试报告名称：/Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework_API/report/testreport/20171226154747.html
+2017-12-26 15:47:47,491 - INFO - 运行测试用例！
+2017-12-26 15:48:49,882 - INFO - {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{START:RUNCASSE1}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+2017-12-26 15:48:49,883 - INFO - 报告存储路径：/Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework_API/report/testreport/
+2017-12-26 15:48:49,883 - INFO - 测试报告名称：/Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework_API/report/testreport/20171226154849.html
+2017-12-26 15:48:49,884 - INFO - 运行测试用例！
+2017-12-26 15:48:49,884 - INFO - ****************************************创建空间接口：开始****************************************
+2017-12-26 15:48:49,885 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 15:48:49,885 - INFO - 1、接口描述：创建空间接口
+2017-12-26 15:48:49,887 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 15:48:49,887 - INFO - **请求方法:post
+2017-12-26 15:48:49,891 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 15:48:50,172 - INFO - **响应结果：{
+    "organization_id": 5789,
+    "success": true
+}
+2017-12-26 15:48:50,185 - INFO - 更新数据库organization_id：5789
+2017-12-26 15:48:50,185 - INFO - 1.判断返回状态码：201 = 201
+2017-12-26 15:48:50,185 - INFO - status_code：OK
+2017-12-26 15:48:50,186 - INFO - 2.判断success：True = True
+2017-12-26 15:48:50,186 - INFO - success：OK
+2017-12-26 15:48:50,186 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 15:48:50,187 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~创建空间接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+2017-12-26 15:48:50,188 - INFO - ****************************************创建空间接口：开始****************************************
+2017-12-26 15:48:50,188 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 15:48:50,188 - INFO - 1、接口描述：创建空间接口
+2017-12-26 15:48:50,202 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 15:48:50,202 - INFO - **请求方法:post
+2017-12-26 15:48:50,205 - INFO - **body参数：{'company': '测试空间1234', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 15:48:50,336 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 15:48:50,336 - INFO - 1.判断返回状态码：201 = 201
+2017-12-26 15:48:50,338 - INFO - status_code：OK
+2017-12-26 15:48:50,339 - INFO - 2.判断success：True = False
+2017-12-26 15:48:50,339 - INFO - success：OK
+2017-12-26 15:48:50,339 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 15:48:50,340 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~创建空间接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+2017-12-26 15:48:57,570 - INFO - {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{END:RUNCASSE1}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+2017-12-26 20:27:21,671 - INFO - {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{START:RUNCASSE1}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+2017-12-26 20:27:21,674 - INFO - 报告存储路径：/Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework_API/report/testreport/
+2017-12-26 20:27:21,674 - INFO - 测试报告名称：/Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework_API/report/testreport/20171226202721.html
+2017-12-26 20:27:21,675 - INFO - 运行测试用例！
+2017-12-26 20:27:21,676 - INFO - 创建空间接口：开始
+2017-12-26 20:27:21,676 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 20:27:21,677 - INFO - **接口描述：创建空间接口
+2017-12-26 20:27:21,679 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 20:27:21,679 - INFO - **请求方法:post
+2017-12-26 20:27:21,682 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 20:27:21,992 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 20:27:21,992 - ERROR - Login Outside : 'organization_id'
+2017-12-26 20:27:21,992 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 20:27:21,993 - INFO - 创建空间接口：结束
+
+2017-12-26 20:27:21,994 - INFO - 创建空间接口：开始
+2017-12-26 20:27:21,994 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 20:27:21,995 - INFO - **接口描述：创建空间接口
+2017-12-26 20:27:21,997 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 20:27:21,997 - INFO - **请求方法:post
+2017-12-26 20:27:22,000 - INFO - **body参数：{'company': '测试空间1234', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 20:27:22,115 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 20:27:22,115 - INFO - 1.判断返回状态码：201 = 201
+2017-12-26 20:27:22,116 - INFO - status_code：OK
+2017-12-26 20:27:22,116 - INFO - 2.判断success：True = False
+2017-12-26 20:27:22,116 - INFO - success：OK
+2017-12-26 20:27:22,117 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 20:27:22,117 - INFO - 创建空间接口：结束
+
+2017-12-26 20:27:28,045 - INFO - {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{END:RUNCASSE1}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+2017-12-26 21:03:39,832 - INFO - **请求url：http://test.yunlu6.com/api/
+2017-12-26 21:03:39,833 - INFO - **请求方法:post
+2017-12-26 21:03:39,834 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/team/select * from test1_1_closespace_01/organization
+2017-12-26 21:03:39,834 - INFO - **body参数：{'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 21:03:40,384 - INFO - **响应结果：{
+    "error": "该记录不存在"
+}
+2017-12-26 21:03:58,090 - INFO - **请求url：http://test.yunlu6.com/api/
+2017-12-26 21:03:58,091 - INFO - **请求方法:post
+2017-12-26 21:03:58,091 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/team/select * from test1_1_closespace_01/organization
+2017-12-26 21:03:58,092 - INFO - **body参数：{'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 21:03:58,233 - INFO - **响应结果：{
+    "error": "该记录不存在"
+}
+2017-12-26 21:03:58,237 - INFO - 创建空间接口：开始
+2017-12-26 21:03:58,238 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 21:03:58,239 - INFO - **接口描述：创建空间接口
+2017-12-26 21:03:58,241 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 21:03:58,242 - INFO - **请求方法:post
+2017-12-26 21:03:58,246 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 21:03:58,367 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 21:03:58,368 - ERROR - Login Outside : 'organization_id'
+2017-12-26 21:03:58,369 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 21:03:58,369 - INFO - 创建空间接口：结束
+
+2017-12-26 21:03:58,373 - INFO - 创建空间接口：开始
+2017-12-26 21:03:58,374 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 21:03:58,374 - INFO - **接口描述：创建空间接口
+2017-12-26 21:03:58,377 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 21:03:58,377 - INFO - **请求方法:post
+2017-12-26 21:03:58,381 - INFO - **body参数：{'company': '测试空间1234', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 21:03:58,558 - INFO - **响应结果：{
+    "msg": [
+        "简称 已经被使用",
+        "简称 已经被使用",
+        "空间机构 创建失败",
+        "空间名 已经被使用"
+    ],
+    "success": false
+}
+2017-12-26 21:03:58,559 - INFO - 1.判断返回状态码：201 = 201
+2017-12-26 21:03:58,559 - INFO - status_code：OK
+2017-12-26 21:03:58,560 - INFO - 2.判断success：True = False
+2017-12-26 21:03:58,561 - INFO - success：OK
+2017-12-26 21:03:58,561 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 21:03:58,562 - INFO - 创建空间接口：结束
+
+2017-12-26 21:07:51,209 - INFO - **请求url：http://test.yunlu6.com/api/
+2017-12-26 21:07:51,210 - INFO - **请求方法:post
+2017-12-26 21:07:51,212 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/team/select * from test1_1_closespace_01/organization
+2017-12-26 21:07:51,213 - INFO - **body参数：{'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 21:07:51,315 - INFO - **响应结果：{
+    "error": "该记录不存在"
+}
+2017-12-26 21:09:07,079 - INFO - **请求url：http://test.yunlu6.com/api/
+2017-12-26 21:09:07,079 - INFO - **请求方法:post
+2017-12-26 21:09:07,083 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/team/select * from test1_1_closespace_01/organization
+2017-12-26 21:09:07,083 - INFO - **body参数：{'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 21:09:07,188 - INFO - **响应结果：{
+    "error": "该记录不存在"
+}
+2017-12-26 21:09:42,386 - INFO - **请求url：http://test.yunlu6.com/api/
+2017-12-26 21:09:42,387 - INFO - **请求方法:post
+2017-12-26 21:09:42,390 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/team/select * from test1_1_closespace_01/organization
+2017-12-26 21:09:42,390 - INFO - **body参数：{'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 21:09:42,492 - INFO - **响应结果：{
+    "error": "该记录不存在"
+}
+2017-12-26 21:11:15,371 - INFO - **请求url：http://test.yunlu6.com/api/
+2017-12-26 21:11:15,372 - INFO - **请求方法:post
+2017-12-26 21:11:15,375 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/team/5789/organization
+2017-12-26 21:11:15,375 - INFO - **body参数：{'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 21:11:15,931 - INFO - **响应结果：{
+    "success": true
+}
+2017-12-26 21:23:46,906 - INFO - 创建空间接口：开始
+2017-12-26 21:23:46,906 - INFO - ------------START:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 21:23:46,909 - INFO - **接口描述：创建空间接口
+2017-12-26 21:23:46,914 - INFO - **请求url：http://test.yunlu6.com/api/v1/spaces/organization
+2017-12-26 21:23:46,915 - INFO - **请求方法:post
+2017-12-26 21:23:46,925 - INFO - **body参数：{'company': '测试空间123', 'name': '测试空间123', 'province': '11', 'city': '1101', 'district': None, 'latitude': None, 'longtitude': None, 'address': None, 'keywords[]': '石材', 'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-26 21:23:47,349 - INFO - **响应结果：{
+    "organization_id": 5790,
+    "success": true
+}
+2017-12-26 21:23:47,352 - INFO - 更新数据库organization_id：5790
+2017-12-26 21:23:47,352 - INFO - 1.判断返回状态码：201 = 201
+2017-12-26 21:23:47,353 - INFO - status_code：OK
+2017-12-26 21:23:47,353 - INFO - 2.判断success：True = True
+2017-12-26 21:23:47,354 - INFO - success：OK
+2017-12-26 21:23:47,355 - INFO - ------------END:test1_1创建空间.CreateOrgSpace001_1.py------------
+2017-12-26 21:23:47,356 - INFO - 创建空间接口：结束
+
+2017-12-26 21:49:40,364 - INFO - **请求url：http://test.yunlu6.com/api/
+2017-12-26 21:49:40,364 - INFO - **请求方法:post
+2017-12-26 21:49:40,367 - INFO - **拼接后url：v1/spaces
+2017-12-26 21:49:40,367 - INFO - **body参数：{'token': '98ddb8b43796a7f68380f4f5884d3346'}
+2017-12-26 21:49:40,369 - ERROR - POST请求错误 : Invalid URL 'v1/spaces': No schema supplied. Perhaps you meant http://v1/spaces?
+2017-12-26 21:52:54,463 - INFO - **请求url：http://test.yunlu6.com/api/
+2017-12-26 21:52:54,463 - INFO - **请求方法:post
+2017-12-26 21:52:54,466 - INFO - **拼接后url：v1/spaceshttp://test.yunlu6.com/api/
+2017-12-26 21:52:54,466 - INFO - **body参数：{'token': '98ddb8b43796a7f68380f4f5884d3346'}
+2017-12-26 21:52:54,480 - ERROR - POST请求错误 : No connection adapters were found for 'v1/spaceshttp://test.yunlu6.com/api/'
+2017-12-26 21:53:15,747 - INFO - **请求url：http://test.yunlu6.com/api/
+2017-12-26 21:53:15,747 - INFO - **请求方法:post
+2017-12-26 21:53:15,750 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/spaces
+2017-12-26 21:53:15,751 - INFO - **body参数：{'token': '98ddb8b43796a7f68380f4f5884d3346'}
+2017-12-26 21:53:15,877 - INFO - **响应结果：{
+    "error": "405 Not Allowed"
+}
+2017-12-26 21:53:37,847 - INFO - **请求url：http://test.yunlu6.com/api/
+2017-12-26 21:53:37,847 - INFO - **请求方法:post
+2017-12-26 21:53:37,851 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/spaces
+2017-12-26 21:53:37,851 - INFO - **body参数：{'token': '98ddb8b43796a7f68380f4f5884d3346'}
+2017-12-26 21:53:37,967 - INFO - GET请求：请求地址：http://test.yunlu6.com/api/v1/spaces 请求参数：{'token': '98ddb8b43796a7f68380f4f5884d3346'}
+2017-12-26 21:53:37,968 - INFO - 请求状态码为：200
+2017-12-26 21:53:37,980 - INFO - 返回结果格式化输出：[
+    {
+        "aliaz": "association",
+        "class_id": null,
+        "cluster_id": 7746,
+        "company": "章程协会123",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "章程协会123",
+        "organization_id": 5494,
+        "organization_state": "unapproved",
+        "owner_class": "master",
+        "service_id": 37,
+        "vocation": "other"
+    },
+    {
+        "aliaz": "unknown",
+        "class_id": null,
+        "cluster_id": 8032,
+        "company": "测试空间1233",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "测试空间1233",
+        "organization_id": 5712,
+        "organization_state": "unapproved",
+        "owner_class": "master",
+        "service_id": 23,
+        "vocation": "other"
+    },
+    {
+        "aliaz": null,
+        "class_id": 73,
+        "cluster_id": 3464,
+        "company": null,
+        "disclosure": "off",
+        "gallery_count": 2,
+        "locked": false,
+        "logo_url": null,
+        "name": "空间1",
+        "organization_id": null,
+        "owner_class": "private",
+        "service_id": null,
+        "vocation": null
+    },
+    {
+        "aliaz": null,
+        "class_id": 73,
+        "cluster_id": 3466,
+        "company": null,
+        "disclosure": "off",
+        "gallery_count": 0,
+        "locked": false,
+        "logo_url": null,
+        "name": "空间2",
+        "organization_id": null,
+        "owner_class": "private",
+        "service_id": null,
+        "vocation": null
+    }
+]
+2017-12-26 22:06:41,448 - INFO - **请求url：http://test.yunlu6.com/api/
+2017-12-26 22:06:41,448 - INFO - **请求方法:post
+2017-12-26 22:06:41,451 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/spaces
+2017-12-26 22:06:41,451 - INFO - **body参数：{'token': '98ddb8b43796a7f68380f4f5884d3346'}
+2017-12-26 22:06:42,027 - INFO - **响应结果：[
+    {
+        "aliaz": "association",
+        "class_id": null,
+        "cluster_id": 7746,
+        "company": "章程协会123",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "章程协会123",
+        "organization_id": 5494,
+        "organization_state": "unapproved",
+        "owner_class": "master",
+        "service_id": 37,
+        "vocation": "other"
+    },
+    {
+        "aliaz": "unknown",
+        "class_id": null,
+        "cluster_id": 8032,
+        "company": "测试空间1233",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "测试空间1233",
+        "organization_id": 5712,
+        "organization_state": "unapproved",
+        "owner_class": "master",
+        "service_id": 23,
+        "vocation": "other"
+    },
+    {
+        "aliaz": null,
+        "class_id": 73,
+        "cluster_id": 3464,
+        "company": null,
+        "disclosure": "off",
+        "gallery_count": 2,
+        "locked": false,
+        "logo_url": null,
+        "name": "空间1",
+        "organization_id": null,
+        "owner_class": "private",
+        "service_id": null,
+        "vocation": null
+    },
+    {
+        "aliaz": null,
+        "class_id": 73,
+        "cluster_id": 3466,
+        "company": null,
+        "disclosure": "off",
+        "gallery_count": 0,
+        "locked": false,
+        "logo_url": null,
+        "name": "空间2",
+        "organization_id": null,
+        "owner_class": "private",
+        "service_id": null,
+        "vocation": null
+    }
+]
+2017-12-27 09:10:20,203 - INFO - **请求url：http://test.yunlu6.com/api/
+2017-12-27 09:10:20,204 - INFO - **请求方法:post
+2017-12-27 09:10:20,205 - INFO - **拼接后url：http://test.yunlu6.com/api/v1/spaces
+2017-12-27 09:10:20,205 - INFO - **body参数：{'token': '15d910df79987fb304c78886e24e364a'}
+2017-12-27 09:10:20,462 - INFO - **响应结果：[
+    {
+        "aliaz": "stone_store",
+        "class_id": 69,
+        "cluster_id": 308,
+        "company": "武汉环球万国石材有限公司",
+        "disclosure": "off",
+        "gallery_count": 11,
+        "locked": false,
+        "logo_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrB4rO7zQO2n6yyvDGeqhuD-Bvot-thumb",
+        "name": "环球万国",
+        "organization_id": 90,
+        "organization_state": "approved",
+        "owner_class": "member",
+        "service_id": 13,
+        "vocation": "stone"
+    },
+    {
+        "aliaz": "stone_mine",
+        "class_id": null,
+        "cluster_id": 2067,
+        "company": "武汉服设计公司",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "locked": false,
+        "logo_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FhnT-zchYWGw3XgBRQ2rZfcvbMOg-thumb",
+        "name": "服装营销",
+        "organization_id": 985,
+        "organization_state": "expired",
+        "owner_class": "member",
+        "service_id": 11,
+        "vocation": "stone"
+    },
+    {
+        "aliaz": "unknown",
+        "class_id": null,
+        "cluster_id": 3320,
+        "company": "福建省雾精灵环境科技有限公司",
+        "disclosure": "on",
+        "gallery_count": 0,
+        "locked": false,
+        "logo_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FmhhoGbTLfUNBGUJQAOWcD2v9xeU-thumb",
+        "name": "雾精灵公司",
+        "organization_id": 1619,
+        "organization_state": "approved",
+        "owner_class": "member",
+        "service_id": 23,
+        "vocation": "other"
+    },
+    {
+        "aliaz": "stone_mine",
+        "class_id": null,
+        "cluster_id": 7009,
+        "company": "测试机构321",
+        "disclosure": "on",
+        "gallery_count": 0,
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "测试机构",
+        "organization_id": 4835,
+        "organization_state": "approved",
+        "owner_class": "master",
+        "service_id": 11,
+        "vocation": "stone"
+    },
+    {
+        "aliaz": "association",
+        "class_id": null,
+        "cluster_id": 7225,
+        "company": "协会测试123",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "协会测试123",
+        "organization_id": 5029,
+        "organization_state": "unapproved",
+        "owner_class": "master",
+        "service_id": 37,
+        "vocation": "other"
+    },
+    {
+        "aliaz": "class",
+        "class_id": null,
+        "cluster_id": 7433,
+        "company": "江汉大学数学与计算机1401班",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "1401班",
+        "organization_id": 5235,
+        "organization_state": "approved",
+        "owner_class": "master",
+        "service_id": 71,
+        "vocation": "other"
+    },
+    {
+        "aliaz": "unknown",
+        "class_id": null,
+        "cluster_id": 7843,
+        "company": "收款账号123",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "收款账号123",
+        "organization_id": 5556,
+        "organization_state": "approved",
+        "owner_class": "master",
+        "service_id": 23,
+        "vocation": "other"
+    },
+    {
+        "aliaz": "unknown",
+        "class_id": null,
+        "cluster_id": 7844,
+        "company": "测试账号124",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "测试账号124",
+        "organization_id": 5557,
+        "organization_state": "approved",
+        "owner_class": "master",
+        "service_id": 23,
+        "vocation": "other"
+    },
+    {
+        "aliaz": "unknown",
+        "class_id": null,
+        "cluster_id": 8026,
+        "company": "测试分享名片",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "测试分享名片",
+        "organization_id": 5706,
+        "organization_state": "approved",
+        "owner_class": "master",
+        "service_id": 23,
+        "vocation": "other"
+    },
+    {
+        "aliaz": "mall",
+        "class_id": null,
+        "cluster_id": 8029,
+        "company": "12D3商城",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "啥在上自习",
+        "organization_id": 5709,
+        "organization_state": "approved",
+        "owner_class": "master",
+        "service_id": 73,
+        "vocation": "other"
+    },
+    {
+        "aliaz": "unknown",
+        "class_id": null,
+        "cluster_id": 8030,
+        "company": "商城资讯审核",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "商城资讯审核",
+        "organization_id": 5710,
+        "organization_state": "approved",
+        "owner_class": "master",
+        "service_id": 23,
+        "vocation": "other"
+    },
+    {
+        "aliaz": "mall",
+        "class_id": null,
+        "cluster_id": 8031,
+        "company": "123商城123",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "123商城123",
+        "organization_id": 5711,
+        "organization_state": "approved",
+        "owner_class": "master",
+        "service_id": 73,
+        "vocation": "other"
+    },
+    {
+        "aliaz": "unknown",
+        "class_id": null,
+        "cluster_id": 8113,
+        "company": "测试空间123",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "测试空间123",
+        "organization_id": 5790,
+        "organization_state": "unapproved",
+        "owner_class": "master",
+        "service_id": 23,
+        "vocation": "other"
+    },
+    {
+        "aliaz": null,
+        "class_id": 67,
+        "cluster_id": 4073,
+        "company": null,
+        "disclosure": "on",
+        "gallery_count": 2,
+        "locked": false,
+        "logo_url": null,
+        "name": "你好",
+        "organization_id": null,
+        "owner_class": "private",
+        "service_id": null,
+        "vocation": null
+    }
+]
+2017-12-31 12:40:32,257 - INFO - ****************************************登录接口：开始****************************************
+2017-12-31 12:40:32,258 - INFO - ------------START:test1_1登录.Login001_1.py------------
+2017-12-31 12:40:32,259 - INFO - 1、接口描述：登录接口
+2017-12-31 12:40:32,261 - INFO - **请求url：https://test.yunlu6.com/api/v1/login
+2017-12-31 12:40:32,262 - INFO - **请求方法:post
+2017-12-31 12:40:32,279 - INFO - **body参数：{'login': '13027104206', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-31 12:40:32,596 - INFO - **响应结果：{
+    "address": "武汉市大学园路",
+    "age": null,
+    "authentication_token": "daefdc94623f4f1f98a590417f0aadc4",
+    "avatar_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrtEVqsa6AaQRikUimD0H1EBufzI-thumb",
+    "device_id": "da4386a3-0b08-4c68-a7e1-52ed960488ba",
+    "email": "",
+    "has_teams": true,
+    "home_name": "萌太奇板板板板",
+    "id": "194820ce-782b-4330-ac62-77a36763cd43",
+    "mobile": "13027104206",
+    "name": "肖静远",
+    "sex": "男",
+    "sign": {
+        "msg": "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz:dev_da4386a3-0b08-4c68-a7e1-52ed960488ba:1514695232:69708",
+        "nonce": "69708",
+        "signature": "31d6492dd85bc9028ca93410a2e8921afc23d8f9",
+        "timestamp": 1514695232
+    },
+    "sp": false
+}
+2017-12-31 12:40:32,596 - INFO - 1.判断返回状态码：200 = 200
+2017-12-31 12:40:32,599 - INFO - status_code：OK
+2017-12-31 12:40:32,599 - INFO - 2.判断devcie_id：da4386a3-0b08-4c68-a7e1-52ed960488ba = da4386a3-0b08-4c68-a7e1-52ed960488ba
+2017-12-31 12:40:32,600 - INFO - device_id：OK
+2017-12-31 12:40:32,601 - INFO - ------------END:test1_1登录.Login001_1.py------------
+2017-12-31 12:40:32,602 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-31 12:40:32,604 - INFO - ****************************************登录接口：开始****************************************
+2017-12-31 12:40:32,606 - INFO - ------------START:test1_1登录.Login001_1.py------------
+2017-12-31 12:40:32,608 - INFO - 1、接口描述：登录接口
+2017-12-31 12:40:32,611 - INFO - **请求url：https://test.yunlu6.com/api/v1/login
+2017-12-31 12:40:32,612 - INFO - **请求方法:post
+2017-12-31 12:40:32,616 - INFO - **body参数：{'login': '13027104206', 'password': '1234567', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-31 12:40:32,865 - INFO - **响应结果：{
+    "error": "401 Unauthorized"
+}
+2017-12-31 12:40:32,865 - INFO - 1.判断返回状态码：401 = 401
+2017-12-31 12:40:32,867 - INFO - status_code：OK
+2017-12-31 12:40:32,868 - INFO - 2.判断error：401 Unauthorized = 401 Unauthorized
+2017-12-31 12:40:32,868 - INFO - device_id：OK
+2017-12-31 12:40:32,869 - INFO - ------------END:test1_1登录.Login001_1.py------------
+2017-12-31 12:40:32,869 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-12-31 12:40:32,871 - INFO - ****************************************登录接口：开始****************************************
+2017-12-31 12:40:32,872 - INFO - ------------START:test1_1登录.Login001_1.py------------
+2017-12-31 12:40:32,873 - INFO - 1、接口描述：登录接口
+2017-12-31 12:40:32,876 - INFO - **请求url：https://test.yunlu6.com/api/v1/login
+2017-12-31 12:40:32,877 - INFO - **请求方法:post
+2017-12-31 12:40:32,880 - INFO - **body参数：{'login': '13027104205', 'password': '12345678', 'dev_name': 'KNT-AL20', 'dev_number': '862537039675333', 'dev_class': 'andriod'}
+2017-12-31 12:40:33,028 - INFO - **响应结果：{
+    "error": "401 Unauthorized"
+}
+2017-12-31 12:40:33,032 - INFO - 1.判断返回状态码：401 = 401
+2017-12-31 12:40:33,032 - INFO - status_code：OK
+2017-12-31 12:40:33,033 - INFO - 2.判断error：401 Unauthorized = 401 Unauthorized
+2017-12-31 12:40:33,033 - INFO - device_id：OK
+2017-12-31 12:40:33,034 - INFO - ------------END:test1_1登录.Login001_1.py------------
+2017-12-31 12:40:33,035 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~登录接口：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -20,3 +20,9 @@ class GlobalParam():
         cf2 = Config(self.file_path)
         url = cf2.get_PATH(path_Section, path_NO)
         return url
+
+    def getToken(self, path_Section, path_NO):
+        # 创建读取配置文件的对象：
+        cf2 = Config(self.file_path)
+        token = cf2.get_PATH(path_Section, path_NO)
+        return token

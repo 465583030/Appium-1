@@ -1,5 +1,5 @@
 import unittest
-from YunluFramework.runcase.suitefactory import SuiteFactory
+from YunluFramework_API.runcase.suitefactory import SuiteFactory
 
 #测试用例：控制器
 class SuiteController(SuiteFactory):

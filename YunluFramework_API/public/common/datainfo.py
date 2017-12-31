@@ -210,6 +210,53 @@ class DataMysql:
         cnn.close()
         return dict_list
 
+    # 插入数据
+    def insert(self, *args, **kwargs):
+        '''
+        插入数据
+        :param sql:
+        :return:
+        '''
+        try:
+            # 1.申请连接对象
+            cnn = self.connect()
+            # 2.创建游标
+            cursor = cnn.cursor()
+            # 3.元祖连接插入方式
+            sql_insert2 = "insert into test1_1_closespace_01(organization_id) values (%s)"
+            # 此处的%s为占位符，而不是格式化字符串，所以age用%s，占用一个位置，后期可以直接替换参数，比较常用
+            data = (args)
+            cursor.execute(sql_insert2, data)
+            cnn.commit()
+        except mysql.connector.Error as e:
+            print('insert data error!{}'.format(e))
+        finally:
+            cursor.close()
+            cnn.close()
+
+    # 更新数据
+    def update(self, *args, **kwargs):
+        '''
+        插入数据
+        :param sql:
+        :return:
+        '''
+        try:
+            # 1.申请连接对象
+            cnn = self.connect()
+            # 2.创建游标
+            cursor = cnn.cursor()
+            # 3.元祖连接插入方式
+            # sql_insert2 = "insert into test1_1_closespace_01(organization_id) values (%s)"
+            sql_update = 'UPDATE test1_1_closespace_01 SET organization_id = %s'%args
+            # 此处的%s为占位符，而不是格式化字符串，所以age用%s，占用一个位置，后期可以直接替换参数，比较常用
+            cursor.execute(sql_update)
+            cnn.commit()
+        except mysql.connector.Error as e:
+            print('update data error!{}'.format(e))
+        finally:
+            cursor.close()
+            cnn.close()
 # #
 # # ----------测试-----------
 # # 1.查询数据
@@ -248,3 +295,8 @@ class DataMysql:
 # list_result = a.select(sql)
 # d = DataWrite(filename)
 # d.write_data(fields_1, list_result)
+
+# a = DataMysql()
+# a.insert('5761')
+# a.update('8888')
+# a.insert(5761)

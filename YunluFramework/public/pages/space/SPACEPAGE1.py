@@ -6,8 +6,11 @@ class SPACEPAGE1(Page):
     # 定位:空间列表
     Kjlb = ('id->com.yunlu6.yunlu:id/navi_item_zone', '空间列表')
 
-    # 空间列表-主菜单(加号按钮)
-    Kjlb_mainmenu = ("id->com.yunlu6.yunlu:id/main_bottom_iv_addpuls", "空间列表-+按钮")
+    # 空间列表-主菜单
+    Kjlb_mainmenu = ("id->com.yunlu6.yunlu:id/title_main_tv_more_menu", "空间列表-主菜单")
+
+    # +按钮
+    Add_btn = ("id->com.yunlu6.yunlu:id/main_bottom_iv_addpuls", "空间列表-+按钮")
 
     # 空间列表-浏览空间列表(通过ID查找)
     Kjlb_browseorgspaceByID = ("id->com.yunlu6.yunlu:id/zone_company_title", "空间列表-浏览企业空间(通过ID查找)")
@@ -30,10 +33,10 @@ class SPACEPAGE1(Page):
     Kjlb_searchspace = ("id->com.yunlu6.yunlu:id/edit_text", "空间列表-搜索框")
 
     # 空间列表-主菜单-'+机构空间'
-    Kjlb_mainmenu_newspace = ("id->com.yunlu6.yunlu:id/cloundzone_bottom_companyzone", "定位空间列表-主菜单-'+机构空间'失败")
+    Kjlb_mainmenu_newspace = ("name->机构空间", "定位空间列表-主菜单-'+机构空间'")
 
     # 空间列表-主菜单-'+私人空间'
-    Kjlb_mainmenu_newpersonspace = ("id->com.yunlu6.yunlu:id/cloundzone_bottom_personzone", "空间列表-主菜单-'+私人空间'")
+    Kjlb_mainmenu_newpersonspace = ("name->私人空间", "空间列表-主菜单-'+私人空间'")
 
     # 空间列表-主菜单-分享名片
-    Kjlb_mainmenu_sharecard = ("id->com.yunlu6.yunlu:id/btn_share_space", "空间列表-主菜单-分享名片")
+    Kjlb_mainmenu_sharecard = ("name->分析", "空间列表-主菜单-分享")
