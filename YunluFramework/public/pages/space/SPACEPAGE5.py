@@ -9,10 +9,10 @@ class SPACEPAGE5(SPACEPAGE4):
     Kjlb_browseorgspace_menu_product_new_addphoto_album_back = ("id->com.yunlu6.yunlu:id/title_back_edit_icon", "空间列表-浏览企业空间-菜单栏-产品-新建-添加照片-相册-返回")
 
     #  空间列表-浏览企业空间-菜单栏-产品-新建-添加照片-相册-照片列表
-    Kjlb_browseorgspace_menu_product_new_addphoto_album_list = ("id->com.yunlu6.yunlu:id/item_cloudlibrary_ll_checked", "空间列表-浏览企业空间-菜单栏-产品-新建-添加照片-相册-照片列表")
+    Kjlb_browseorgspace_menu_product_new_addphoto_album_list = ("id->com.yunlu6.yunlu:id/check", "空间列表-浏览企业空间-菜单栏-产品-新建-添加照片-相册-照片列表")
 
     #  空间列表-浏览企业空间-菜单栏-产品-新建-添加照片-相册-完成
-    Kjlb_browseorgspace_menu_product_new_addphoto_album_confirm = ("id->com.yunlu6.yunlu:id/title_tv_edit_menu_tv", "空间列表-浏览企业空间-菜单栏-产品-新建-添加照片-相册-完成")
+    Kjlb_browseorgspace_menu_product_new_addphoto_album_confirm = ("id->com.yunlu6.yunlu:id/picture_tv_ok", "空间列表-浏览企业空间-菜单栏-产品-新建-添加照片-相册-完成")
 
     # ***************************************【PAGE4】添加照片-产品库Kjlb_browseorgspace_menu_product_new_addphoto_wifisync***************************************
     #  空间列表-浏览企业空间-菜单栏-产品-新建-添加照片-产品库-返回
@@ -43,8 +43,11 @@ class SPACEPAGE5(SPACEPAGE4):
     #  空间列表-浏览企业空间-菜单栏-产品-新建-商品名称-分类输入框（云庐用）
     Kjlb_browseorgspace_menu_product_new_proname_yclassify = ("id->com.yunlu6.yunlu:id/et_classify", "空间列表-浏览企业空间-菜单栏-产品-新建-商品名称-分类输入框")
 
+    '''
+    NOTE：此处不需要，直接写在spacehandle5中了
+    '''
     #  空浏览企业空间-菜单栏-产品-新建-商品名称-推荐标签（云庐用）
-    Kjlb_browseorgspace_menu_product_new_proname_ytag = ("id->com.yunlu6.yunlu:id/tag_id", "空间列表-浏览企业空间-菜单栏-产品-新建-商品名称-推荐标签")
+    # Kjlb_browseorgspace_menu_product_new_proname_ytags = ("name->%s"%name, "空间列表-浏览企业空间-菜单栏-产品-新建-商品名称-推荐标签")
 
     #  空间列表-浏览企业空间-菜单栏-产品-新建-商品名称-分类（百石堂）
     Kjlb_browseorgspace_menu_product_new_proname_bclassify = ("id->com.yunlu6.yunlu:id/et_classify", "空间列表-浏览企业空间-菜单栏-产品-新建-商品名称-分类")

@@ -3,6 +3,7 @@ from YunluFramework.runcase import *
 #测试用例：工厂
 class SuiteFactory():
     def suiteLoader(self):
+# ******************************************************1.加载测试用例******************************************************
         # ----------------------------------【云库-测试用例】----------------------------------
         yunku_uploadPic_01 = unittest.TestLoader().loadTestsFromTestCase(yunku_UploadPic)                   # test1_1 云库上传图片
         yunku_EditPic_01 = unittest.TestLoader().loadTestsFromTestCase(yunku_EditPic)                       # test2_1 云库编辑图片
@@ -45,10 +46,12 @@ class SuiteFactory():
         # @订单
         order_OrderBuy_01 = unittest.TestLoader().loadTestsFromTestCase(order_OrderBuy)
 
+#******************************************************2.组装测试用例集******************************************************
         self.suite = [
             # ----------------------------------【云库-测试用例：2】----------------------------------
             yunku_uploadPic_01,                                                                             # test1_1 云库上传图片
             yunku_EditPic_01,                                                                               # test2_1 云库编辑图片
+
             # ----------------------------------【空间-测试用例:19】----------------------------------
             # --------------------@机构空间:5--------------------
             sapce_CreateO_01,                                                                               # test1_1 创建机构空间
@@ -72,6 +75,7 @@ class SuiteFactory():
             AddAtoOAgreeA_01,                                                                               # test5_6 加会员_管理员_企业_同意
             AddPtoOAgreeA_01,                                                                               # test5_6 加会员_管理员_企业_同意
             space_ArchiviesA_01,                                                                            # test6_1 资讯发布
+
             # ----------------------------------【订单-测试用例：1】----------------------------------
             order_OrderBuy_01,                                                                              #test_1 订单主流程
 

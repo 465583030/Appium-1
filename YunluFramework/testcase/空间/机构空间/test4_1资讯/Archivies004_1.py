@@ -21,19 +21,26 @@ class space_ArchiviesO(unittest.TestCase):
         # 1.建立连接信息
         cnn = Connect()
         self.driver = cnn.connect()
+
         # 2.创建工具类
         self.tools = Tools(self.driver)  # tools工具
+
         # 3.创建 _SPACEHANDLE5公有定位控件对象
         self.handle = SPACEHANDLE5(self.driver)
+
         # 4.创建读取配置信息对象
         cf = GlobalParam('config', 'path_file.conf')
+
         # 5.获取截图路径、日志路径、日志名
         self.screen_path = cf.getParam('space', "org_path_004_1")  # 通过配置文件获取截图的路径
         self.logfile = cf.getParam('log', "logfile")  # 日志文件名
+
         # 6.创建日志记录模块
         self.log = Log(self.logfile)
+
         # 7.创建Space操作对象
         self.common = CommonSpace(self.handle, self.log, self.tools)
+
         # 8.打印日志
         self.log.info('****************************************用例开始！****************************************')
         self.log.info('------------START:test4_1资讯.Archivies004_1.py------------')
@@ -44,6 +51,7 @@ class space_ArchiviesO(unittest.TestCase):
         # 1.打印日志
         self.log.info("------------END:test4_1资讯.Archivies004_1.py------------")  # 宣布成功
         self.log.info('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~用例结束！~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
+
         # 2.关闭driver
         # self.driver.quit()
 
@@ -54,9 +62,9 @@ class space_ArchiviesO(unittest.TestCase):
     def test_archivies01(self, spacename):
         '''进入空间
         :param spacename:空间名
-        :return:
         '''
         try:
+            # 1.进入空间
             self.common.enter_space(spacename)
         except Exception as err:
             self.tools.getScreenShot(self.screen_path, "ExceptionShot")
@@ -69,6 +77,7 @@ class space_ArchiviesO(unittest.TestCase):
         :return:
         '''
         try:
+            # 1.进入资讯
             self.common.click_org_menu('archivies')
         except Exception as err:
             self.tools.getScreenShot(self.screen_path, "ExceptionShot")
@@ -87,6 +96,7 @@ class space_ArchiviesO(unittest.TestCase):
             self.log.info('点击新增图片按钮')
             self.handle.Kjlb_browseorgspace_menu_archivies_new_back_click()  # 返回
             self.log.info('点击返回')
+
             # 4.2 入口二:右上角新增
             self.log.info('入口二：右上角新增检查')
             self.handle.Kjlb_browseorgspace_menu_archivies_new_click()
@@ -101,7 +111,7 @@ class space_ArchiviesO(unittest.TestCase):
     @ddt.unpack
     def test_archivies04(self, title, typelist):
         try:
-            # 5.1 添加照片
+            # 1.添加照片
             self.handle.Kjlb_browseorgspace_menu_archivies_new_addphoto_click()
             self.log.info('点击+照片')
             self.handle.Kjlb_browseorgspace_menu_archivies_new_addphoto_album_click()  # 点击相册
@@ -111,20 +121,24 @@ class space_ArchiviesO(unittest.TestCase):
             self.handle.Kjlb_browseorgspace_menu_archivies_new_addphoto_album_confirm_click()  # 点击完成
             self.log.info('点击完成')
             sleep(1)
-            # 5.2 标题
+
+            # 2.标题
             self.handle.Kjlb_browseorgspace_menu_archivies_new_title_sendkeys(title)  # 标题
             self.log.info('标题：%s' % title)
-            # 5.3 类型
+
+            # 3.类型
             self.handle.Kjlb_browseorgspace_menu_archivies_new_type_click()  # 类型
             self.log.info('点击类型')
             self.handle.Kjlb_browseorgspace_menu_archivies_new_type_typelist_click(typelist)  # 经典作品
             self.log.info('选择经典作品')
-            # 5.4 勾选
+
+            # 4.勾选
             self.handle.Kjlb_browseorgspace_menu_archivies_new_confirm_click()  # 勾选
             self.log.info('勾选')
             self.handle.Kjlb_browseorgspace_menu_archivies_new_confirm_late_click()  # 保存
             self.log.info('保存')
-            # 5.5 点击资讯发布
+
+            # 5.点击资讯发布
             self.handle.Kjlb_browseorgspace_menu_archivies_pic_click(0)  # 点击第一张资讯
             self.log.info('点击第一张资讯')
             self.handle.Kjlb_browseorgspace_menu_archivies_pic_click(0)  # 点击第一张资讯
@@ -136,8 +150,7 @@ class space_ArchiviesO(unittest.TestCase):
             type = self.handle.Kjlb_browseorgspace_menu_archivies_pic_menu_new_type_text()  # 获取资讯类型
             assert type == "经典作品(1)", "资讯类型保存错误"
             self.log.info('资讯类型检查')
-            self.driver.implicitly_wait(1)  # 只能等待2秒
-            # sleep(2)
+            self.driver.implicitly_wait(1)  # 只能等待1秒
             self.handle.Kjlb_browseorgspace_menu_archivies_pic_click(0)  # 点击第一张资讯
             self.log.info('点击第一张资讯')
             self.handle.Kjlb_browseorgspace_menu_archivies_pic_click(0)  # 点击第一张资讯
@@ -145,7 +158,8 @@ class space_ArchiviesO(unittest.TestCase):
             titlee = self.handle.Kjlb_browseorgspace_menu_archivies_pic_title_text()  # 获取资讯标题
             assert titlee == title, "资讯标题未保存成功"
             self.log.info('资讯标题检查')
-            # 5.6 返回到空间列表
+
+            # 6.返回到空间列表
             self.handle.Kjlb_browseorgspace_menu_archivies_pic_back_click()
             self.handle.Kjlb_browseorgspace_menu_archivies_back_click()
             self.handle.Kjlb_browseorgspace_menu_archivies_back_click()
@@ -161,57 +175,65 @@ class space_ArchiviesO(unittest.TestCase):
     @ddt.unpack
     def test_archivies05(self, spacename):
         try:
-            # 1. 进入空间
+            # 1.进入空间
             self.common.enter_space(spacename)
-            # self.tools.find_space_by_name(spacename)
-            # self.log.info('搜索栏搜索结果:{0}'.format(spacename))
-            # self.self.handle.Kjlb_browseorgspaceByID_click(0)
-            # self.log.info('点击进入%s' % spacename)
-            # 3.右上角:菜单栏选择资讯
+
+            # 2.右上角:菜单栏选择资讯
             self.handle.Kjlb_browseorgspace_menu_click()
             self.log.info('菜单栏选择资讯')
             self.handle.Kjlb_browseorgspace_menu_archivies_click()
             self.log.info('点击资讯')
-            # 4.判断是否有图片，有就进入删除
-            # 4.1判断-点击第1张图片-点击第1张图片
+
+            # 3.判断是否有图片，有就进入删除
+            # 3.1判断-点击第1张图片-点击第1张图片
             if self.handle.Kjlb_browseorgspace_menu_archivies_pic_element() != []:
                 self.log.info('判断是否有图片，有就进入删除')
                 self.handle.Kjlb_browseorgspace_menu_archivies_pic_click(0)
                 self.log.info('点击第一张图片')
                 self.handle.Kjlb_browseorgspace_menu_archivies_pic_click(0)
                 self.log.info('点击第一张图片')
-                # 4.2菜单栏
+
+                # 3.2菜单栏
                 self.handle.Kjlb_browseorgspace_menu_archivies_pic_menu_click()
                 self.log.info('点击菜单栏')
-                # 4.3下架
+
+                # 3.3下架
                 self.handle.Kjlb_browseorgspace_menu_archivies_pic_menu_offshelf_click()
                 self.log.info('下架')
-                # 4.4点击第1张图片
+
+                # 3.4点击第1张图片
                 sleep(1)
                 self.handle.Kjlb_browseorgspace_menu_archivies_pic_click(0)
                 self.log.info('点击第一张图片')
                 sleep(2)
                 self.handle.Kjlb_browseorgspace_menu_archivies_pic_click(0)
                 self.log.info('点击第一张图片')
-                # 4.4菜单栏
+
+                # 3.4菜单栏
                 self.handle.Kjlb_browseorgspace_menu_archivies_pic_menu_click()
                 self.log.info('菜单栏')
-                # 4.5删除
+
+                # 3.5删除
                 self.handle.Kjlb_browseorgspace_menu_archivies_pic_menu_delete_click()
                 self.log.info('删除')
-                # 4.6返回-空间主界面
+
+                # 3.6返回-空间主界面
                 self.handle.Kjlb_browseorgspace_menu_archivies_back_click()
                 self.log.info('返回')
-                # 5.删除检查
+
+                # 3.7删除检查
                 self.handle.Kjlb_browseorgspaceByName_click(spacename)
                 self.log.info('进入空间：%s' % spacename)
-                # 5.1菜单栏
+
+                # 3.8菜单栏
                 self.handle.Kjlb_browseorgspace_menu_click()
                 self.log.info('点击菜单栏')
-                # 5.1资讯
+
+                # 3.9资讯
                 self.handle.Kjlb_browseorgspace_menu_archivies_click()
                 self.log.info('点击资讯')
-                # 5.3判断
+
+                # 3.10判断
                 self.log.info('判断是否为空，为空即是已删除')
                 assert [] == self.handle.Kjlb_browseorgspace_menu_archivies_pic_element(), 'Error Pic Delete Failed!'
         except Exception as err:

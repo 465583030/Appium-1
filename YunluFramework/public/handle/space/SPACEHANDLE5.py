@@ -51,13 +51,15 @@ class SPACEHANDLE5(SPACEHANDLE4):
     def Kjlb_browseorgspace_menu_product_new_proname_name_title_click(self):
         return self.p.click(self.Kjlb_browseorgspace_menu_product_new_proname_name_title)
 
-    #  空间列表-浏览企业空间-菜单栏-产品-新建-商品名称-分类输入框（云庐用）
+    #  空间列表-浏览企业空间-菜单栏-产品-新建-商品名称-分类（云庐用）
     def Kjlb_browseorgspace_menu_product_new_proname_yclassify_click(self):
         return self.p.click(self.Kjlb_browseorgspace_menu_product_new_proname_yclassify)
 
     #  空浏览企业空间-菜单栏-产品-新建-商品名称-推荐标签（云庐用）
-    def Kjlb_browseorgspace_menu_product_new_proname_ytag_click(self):
-        return self.p.click(self.Kjlb_browseorgspace_menu_product_new_proname_ytag)
+    def Kjlb_browseorgspace_menu_product_new_proname_ytag_click(self, name):
+        # 定位元素
+        Kjlb_browseorgspace_menu_product_new_proname_ytags = ("name->%s" % name, "空间列表-浏览企业空间-菜单栏-产品-新建-商品名称-推荐标签")
+        return self.p.click(Kjlb_browseorgspace_menu_product_new_proname_ytags)
 
     #  空间列表-浏览企业空间-菜单栏-产品-新建-商品名称-分类（百石堂）:点击
     def Kjlb_browseorgspace_menu_product_new_proname_bclassify_click(self):
@@ -95,7 +97,8 @@ class SPACEHANDLE5(SPACEHANDLE4):
 
     #  空间列表-浏览企业空间-菜单栏-产品-新建-石种属性-颜色:点击
     def Kjlb_browseorgspace_menu_product_new_attribute_color_click(self):
-        self.Kjlb_browseorgspace_menu_product_new_attribute_color = self.p.get_element("id->com.yunlu6.stone:id/tv_color_name", "空间列表-浏览企业空间-菜单栏-产品-新建-石种属性-颜色")
+        self.Kjlb_browseorgspace_menu_product_new_attribute_color = self.p.get_element(
+            "id->com.yunlu6.stone:id/tv_color_name", "空间列表-浏览企业空间-菜单栏-产品-新建-石种属性-颜色")
         return self.p.click(self.Kjlb_browseorgspace_menu_product_new_attribute_color)
 
     #  空间列表-浏览企业空间-菜单栏-产品-新建-石种属性-颜色-列表:点击
@@ -112,7 +115,8 @@ class SPACEHANDLE5(SPACEHANDLE4):
 
     #  空间列表-浏览企业空间-菜单栏-产品-新建-石种属性-花纹:点击
     def Kjlb_browseorgspace_menu_product_new_attribute_pattern_click(self):
-        self.Kjlb_browseorgspace_menu_product_new_attribute_pattern = self.p.get_element("id->com.yunlu6.stone:id/tv_pattern_name", "空间列表-浏览企业空间-菜单栏-产品-新建-石种属性-花纹")
+        self.Kjlb_browseorgspace_menu_product_new_attribute_pattern = self.p.get_element(
+            "id->com.yunlu6.stone:id/tv_pattern_name", "空间列表-浏览企业空间-菜单栏-产品-新建-石种属性-花纹")
         return self.p.click(self.Kjlb_browseorgspace_menu_product_new_attribute_pattern)
 
     #  空间列表-浏览企业空间-菜单栏-产品-新建-石种属性-花纹-列表:点击

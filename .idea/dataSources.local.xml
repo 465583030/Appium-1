@@ -11,5 +11,15 @@
       <user-name>root</user-name>
       <introspection-schemas>*:YunluFramework</introspection-schemas>
     </data-source>
+    <data-source name="YunluFramework_API@localhost" uuid="afe8e5db-ddcb-4885-86d4-95c26a9ea9cc">
+      <database-info product="MySQL" version="5.7.20" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.44 ( Revision: b3cda4f864902ffdde495b9df93937c3e20009be )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-schemas>*:YunluFramework_API</introspection-schemas>
+    </data-source>
   </component>
 </project>
