@@ -27,6 +27,7 @@ class Tools:
         # 1.输入空间名
         self.handle.Kjlb_searchspace_sendkeys(spacename)
         self.log.info('搜索栏输入空间名:{0}'.format(spacename))
+
         # 2.点击搜索按钮
         self.handle.Kjlb_searchbutton_click()
         self.log.info('点击搜索按钮')

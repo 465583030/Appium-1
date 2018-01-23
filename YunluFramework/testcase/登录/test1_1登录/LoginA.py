@@ -16,37 +16,41 @@ class LoginA:
 
     # 2.登录-公用方法
     def login(self, driver, phone, password):
-        # 创建工具类
-        tools = Tools(driver)  # tools工具
         # 创建_OrgSpaceTeamHandle公有定位控件对象
         handle = LOGINHANDLE2(driver)
         sleep(1)
         try:
             self.log.info('------START:test1_1登录.LoginA.py------')
+
             # 登录首页
             if driver.find_elements_by_id("com.yunlu6.stone:id/main_login") != []:
                 # 1.点击账号密码登录
                 handle.Login_byAccount_click()
                 self.log.info('点击账号密码登录')
+
                 # 2.输入手机号+密码
                 handle.Login_phone_sendkeys(phone)
                 self.log.info('输入手机号：{0}'.format(phone))
                 handle.Login_password_sendkeys(password)
                 self.log.info('输入密码：{0}'.format(password))
+
                 # 3.点击登录
                 handle.Login_loginbtn_click()
                 self.log.info('点击登录')
                 sleep(1)
+
             # 输入框页
             else:
                 #1.点击账号密码登录
                 handle.Login_byAccount_click()
                 self.log.info('点击账号密码登录')
+
                 # 2.输入手机号+密码
                 handle.Login_phone_sendkeys(phone)
                 self.log.info('输入手机号：{0}'.format(phone))
                 handle.Login_password_sendkeys(password)
                 self.log.info('输入密码：{0}'.format(password))
+
                 # 3.点击登录
                 handle.Login_loginbtn_click()
                 self.log.info('点击登录')

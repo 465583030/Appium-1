@@ -16,10 +16,14 @@ if __name__ == '__main__':
     cf = GlobalParam('config', 'path_file.conf')
     logfile = cf.getParam('log', "logfile")  # 日志文件名
     logger = Log(logfile)
+
     # 2.创建控制器对象
     SC = SuiteController()
-    # 2.选择测试用例
-    suiteA = SC.chooseSuite(4, 4, 'ALL')  # 所有用例
+
+    # 3.选择测试用例
+    suiteA = SC.chooseSuite(1, 1, 'ALL')  # 所有用例
+
+    # 4.控制器
     a = 1
     while a != 5:
         # a = a + 1

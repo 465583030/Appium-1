@@ -7,6 +7,7 @@ class SuiteController(SuiteFactory):
         # 1.跑全部测试用例
         if all == "ALL" and index_F == None and index_S == None:
             return unittest.TestSuite(self.suiteLoader())
+
         # 2.跑指定的某个测试用例
         else:
             return unittest.TestSuite(self.suiteLoader()[index_F - 1:index_S])

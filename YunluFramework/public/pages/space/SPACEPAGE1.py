@@ -32,6 +32,9 @@ class SPACEPAGE1(Page):
     # 空间列表-搜索框
     Kjlb_searchspace = ("id->com.yunlu6.yunlu:id/edit_text", "空间列表-搜索框")
 
+    # 空间列表-搜索-返回
+    Kjlb_search_back = ("id->com.yunlu6.yunlu:id/clondzone_search_back", "空间列表-搜索-返回")
+
     # 空间列表-主菜单-'+机构空间'
     Kjlb_mainmenu_newspace = ("name->机构空间", "定位空间列表-主菜单-'+机构空间'")
 

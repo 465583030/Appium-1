@@ -311,10 +311,10 @@ class SPACEPAGE5(SPACEPAGE4):
 
     # ***************************************【PAGE4】添加照片-相册Kjlb_browseorgspace_menu_archivies_new_addphoto_album***************************************
     # 空间列表-浏览企业空间-菜单栏-资讯-新增按钮-添加照片-相册-照片列表
-    Kjlb_browseorgspace_menu_archivies_new_addphoto_album_list = ("id->com.yunlu6.yunlu:id/item_cloudlibrary_ll_checked", "空间列表-浏览企业空间-菜单栏-资讯-新增按钮-添加照片-相册-照片列表")
+    Kjlb_browseorgspace_menu_archivies_new_addphoto_album_list = ("id->com.yunlu6.yunlu:id/check", "空间列表-浏览企业空间-菜单栏-资讯-新增按钮-添加照片-相册-照片列表")
 
     # 空间列表-浏览企业空间-菜单栏-资讯-新增按钮-添加照片-相册-完成
-    Kjlb_browseorgspace_menu_archivies_new_addphoto_album_confirm = ("id->com.yunlu6.yunlu:id/title_tv_edit_menu_tv", "空间列表-浏览企业空间-菜单栏-资讯-新增按钮-添加照片-相册-完成")
+    Kjlb_browseorgspace_menu_archivies_new_addphoto_album_confirm = ("id->com.yunlu6.yunlu:id/picture_tv_ok", "空间列表-浏览企业空间-菜单栏-资讯-新增按钮-添加照片-相册-完成")
 
     # ***************************************【PAGE4】添加照片-文件库Kjlb_browseorgspace_menu_archivies_new_addphoto_wifisync***************************************
     # 照片列表Kjlb_browseorgspace_menu_archivies_new_addphoto_wifisync_list

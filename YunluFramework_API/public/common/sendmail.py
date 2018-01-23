@@ -67,7 +67,7 @@ class SendMail:
             smtp = smtplib.SMTP('smtp.163.com', 25)
             logger.info('与邮件服务器：{0}建立连接'.format('smtp.163.com'))
             smtp.login(sendaddr_name, sendaddr_pswd)
-            logger.info('登录邮件服务器，用户名：{0}，密码：{1}'.format(sendaddr_name,sendaddr_pswd))
+            logger.info('登录邮件服务器，用户名：{0}，密码：{1}'.format(sendaddr_name,'xxxxxxxxx'))
             smtp.sendmail(self.msg['from'], self.sendTo, self.msg.as_string())
             logger.info('发件人为：{0}'.format(self.msg['from']))
             logger.info('收件人为：{0}'.format(self.sendTo))

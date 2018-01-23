@@ -1,4 +1,5 @@
 import unittest
+from YunluFramework_API.testcase.SpaceAPI.TestSpaceApi import SpaceAPI_Private
 
 # 以下导入各模块测试用例
 # @登录-测试用例

@@ -1,9 +1,10 @@
 import xlrd
 import os
 import mysql.connector
-from YunluFramework_API.config.globalparam import GlobalParam
 import configparser
 import xlwt
+from YunluFramework_API.public.common.log import Log
+from YunluFramework_API.config.globalparam import GlobalParam
 
 
 class DataInfo():
@@ -13,8 +14,10 @@ class DataInfo():
         '''
         # 项目目录
         base_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+
         # 数据data目录文件拼接
         base_dir = base_dir + "/data/" + path
+
         # 创建工作薄：用于操作excel表格形式数据
         self.workbook = xlrd.open_workbook(base_dir)
 
@@ -92,13 +95,24 @@ class DataMysql:
         # 读取数据库连接信息
         # 1.项目目录
         base_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+
         # 2.数据库配置文件
         self.config = base_dir + "/config/sqlserver.conf"
+
         # 3.读取配置信息
         cf = configparser.ConfigParser()
         cf.read(self.config)
         sections_01 = cf.sections()[0]
         self.connectinfo = eval(cf.get(sections_01, "config"))
+
+        # 4.创建读取配置信息对象
+        cf = GlobalParam('config', 'path_file.conf')
+
+        # 5.获取截图路径、日志路径、日志名
+        self.logfile = cf.getParam('log', "logfile")  # 日志文件名
+
+        # 6.创建日志记录模块
+        self.log = Log(self.logfile)
 
     # --------------------------------------------数据库操作--------------------------------------------
     # 建立连接
@@ -112,7 +126,7 @@ class DataMysql:
             # print('mysql连接对象是cnn', cnn)
             return cnn
         except mysql.connector.Error as e:
-            print('CONNECT MYSQL FAILS!:{0}'.format(e))
+            self.log.info('CONNECT MYSQL FAILS!:{0}'.format(e))
 
     # 获取数据库字段名，返回列表
     def get_Fields(self, sql):
@@ -121,23 +135,27 @@ class DataMysql:
         :param sql: 查询语句
         :return: 返回字段名列表
         '''
-        # 1.申请连接对象
-        cnn = self.connect()
-        # 2.创建游标
-        cursor = cnn.cursor()
-        # 3.查询表信息
-        cursor.execute(sql)
-        # 4.获取描述信息
-        desc = cursor.description
-        # 5.循环取字段名
-        fields = []
-        for i in range(0, len(desc)):
-            desc_i = desc[i][0]
-            fields.append(desc_i)
-        # 6.关闭游标
-        cursor.close()
-        cnn.close()
-        return fields
+        try:
+            # 1.申请连接对象
+            cnn = self.connect()
+            # 2.创建游标
+            cursor = cnn.cursor()
+            # 3.查询表信息
+            cursor.execute(sql)
+            # 4.获取描述信息
+            desc = cursor.description
+            # 5.循环取字段名
+            fields = []
+            for i in range(0, len(desc)):
+                desc_i = desc[i][0]
+                fields.append(desc_i)
+            # 6.关闭游标
+            cursor.close()
+            cnn.close()
+            return fields
+
+        except mysql.connector.Error as e:
+            self.log.info('get_Fields error!{}'.format(e))
 
     # 执行查询语句，返回列表
     def select(self, sql):
@@ -151,23 +169,27 @@ class DataMysql:
         ['13027104206', '12345678', 'KNT-AL20', '862537039675333', 'andriod']
         ]
         '''
-        # 1.申请连接对象
-        cnn = self.connect()
-        # 2.创建游标
-        cursor = cnn.cursor()
-        # 3.利用游标执行查询语句
-        cursor.execute(sql)
-        # 4.记录结果
-        # 4.1 查询结果
-        result = cursor.fetchall()
-        # 4.2 将结果存到列表中去
-        list_result = []
-        for i in range(0, len(result)):
-            list_result.append(list(result[i]))
-        # 5.关闭游标
-        cursor.close()
-        cnn.close()
-        return list_result
+        try:
+            # 1.申请连接对象
+            cnn = self.connect()
+            # 2.创建游标
+            cursor = cnn.cursor()
+            # 3.利用游标执行查询语句
+            cursor.execute(sql)
+            # 4.记录结果
+            # 4.1 查询结果
+            result = cursor.fetchall()
+            # 4.2 将结果存到列表中去
+            list_result = []
+            for i in range(0, len(result)):
+                list_result.append(list(result[i]))
+            # 5.关闭游标
+            cursor.close()
+            cnn.close()
+            return list_result
+
+        except mysql.connector.Error as e:
+            self.log.info('select data error!{}'.format(e))
 
     # 数据组装
     def data_assembly(self, sql):
@@ -175,40 +197,44 @@ class DataMysql:
         数据组装
         :return: 返回字典数据
         '''
-        # 1.申请连接对象
-        cnn = self.connect()
-        # 2.创建游标
-        cursor = cnn.cursor()
-        # 3.查询表信息
-        cursor.execute(sql)
-        # 4.获取描述信息
-        desc = cursor.description
-        # 5.循环取字段名
-        fields = []
-        for i in range(0, len(desc)):
-            desc_i = desc[i][0]
-            fields.append(desc_i)
+        try:
+            # 1.申请连接对象
+            cnn = self.connect()
+            # 2.创建游标
+            cursor = cnn.cursor()
+            # 3.查询表信息
+            cursor.execute(sql)
+            # 4.获取描述信息
+            desc = cursor.description
+            # 5.循环取字段名
+            fields = []
+            for i in range(0, len(desc)):
+                desc_i = desc[i][0]
+                fields.append(desc_i)
 
-        # 6.记录结果
-        # 6.1 查询结果
-        result = cursor.fetchall()
+            # 6.记录结果
+            # 6.1 查询结果
+            result = cursor.fetchall()
 
-        # 7. 组装
-        # 7.1查询结果-列表[][]
-        list_result = []
-        for i in range(0, len(result)):
-            list_result.append(list(result[i]))
+            # 7. 组装
+            # 7.1查询结果-列表[][]
+            list_result = []
+            for i in range(0, len(result)):
+                list_result.append(list(result[i]))
 
-        # 8.1空列表，存字典
-        dict_list = []
-        # 8.2组装数据
-        for i in range(0, len(result)):
-            dictionary1 = dict(zip(fields, result[i]))
-            dict_list.append(dictionary1)
+            # 8.1空列表，存字典
+            dict_list = []
+            # 8.2组装数据
+            for i in range(0, len(result)):
+                dictionary1 = dict(zip(fields, result[i]))
+                dict_list.append(dictionary1)
 
-        cursor.close()
-        cnn.close()
-        return dict_list
+            cursor.close()
+            cnn.close()
+            return dict_list
+
+        except mysql.connector.Error as e:
+            self.log.info('assembly data error!{}'.format(e))
 
     # 插入数据
     def insert(self, *args, **kwargs):
@@ -220,22 +246,50 @@ class DataMysql:
         try:
             # 1.申请连接对象
             cnn = self.connect()
+
             # 2.创建游标
             cursor = cnn.cursor()
+
             # 3.元祖连接插入方式
             sql_insert2 = "insert into test1_1_closespace_01(organization_id) values (%s)"
             # 此处的%s为占位符，而不是格式化字符串，所以age用%s，占用一个位置，后期可以直接替换参数，比较常用
             data = (args)
             cursor.execute(sql_insert2, data)
             cnn.commit()
-        except mysql.connector.Error as e:
-            print('insert data error!{}'.format(e))
-        finally:
+
+            # 4.关闭连接
             cursor.close()
             cnn.close()
 
+        except mysql.connector.Error as e:
+            self.log.info('insert data error!{}'.format(e))
+
+    # # 更新数据
+    # def update(self, *args, **kwargs):
+    #     '''
+    #     插入数据
+    #     :param sql:
+    #     :return:
+    #     '''
+    #     try:
+    #         # 1.申请连接对象
+    #         cnn = self.connect()
+    #         # 2.创建游标
+    #         cursor = cnn.cursor()
+    #         # 3.元祖连接插入方式
+    #         # sql_insert2 = "insert into test1_1_closespace_01(organization_id) values (%s)"
+    #         sql_update = 'UPDATE test1_1_closespace_01 SET organization_id = %s'%args
+    #         # 此处的%s为占位符，而不是格式化字符串，所以age用%s，占用一个位置，后期可以直接替换参数，比较常用
+    #         cursor.execute(sql_update)
+    #         cnn.commit()
+    #     except mysql.connector.Error as e:
+    #         print('update data error!{}'.format(e))
+    #     finally:
+    #         cursor.close()
+    #         cnn.close()
+
     # 更新数据
-    def update(self, *args, **kwargs):
+    def update(self, sql):
         '''
         插入数据
         :param sql:
@@ -244,24 +298,29 @@ class DataMysql:
         try:
             # 1.申请连接对象
             cnn = self.connect()
+
             # 2.创建游标
             cursor = cnn.cursor()
+
             # 3.元祖连接插入方式
-            # sql_insert2 = "insert into test1_1_closespace_01(organization_id) values (%s)"
-            sql_update = 'UPDATE test1_1_closespace_01 SET organization_id = %s'%args
+            # sql_update = 'UPDATE test1_1_closespace_01 SET organization_id = %s' % args
             # 此处的%s为占位符，而不是格式化字符串，所以age用%s，占用一个位置，后期可以直接替换参数，比较常用
-            cursor.execute(sql_update)
+
+            cursor.execute(sql)
             cnn.commit()
-        except mysql.connector.Error as e:
-            print('update data error!{}'.format(e))
-        finally:
+
+            # 4.关闭连接
             cursor.close()
             cnn.close()
+        except mysql.connector.Error as e:
+            self.log.info('update data error!{}'.format(e))
+
 # #
 # # ----------测试-----------
-# # 1.查询数据
+# 1.查询数据
 # a = DataMysql()
-# sql = 'select * from test1_1_login_01'
+# sql = 'select * from Space_private_type_list_api_table'
+# print(a.data_assembly(sql))
 # print(a.data_assembly(sql))
 #
 # # 2.组装数据-[{...},{...}...]对象 列表-字典

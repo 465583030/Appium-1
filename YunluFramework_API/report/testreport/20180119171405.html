@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>测试结果</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    
+<style type="text/css" media="screen">
+body        { font-family: Microsoft YaHei,Tahoma,arial,helvetica,sans-serif;padding: 20px; font-size: 120%; }
+table       { font-size: 100%; }
+/* -- heading ---------------------------------------------------------------------- */
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+/* -- report ------------------------------------------------------------------------ */
+#total_row  { font-weight: bold; }
+.passCase   { color: #5cb85c; }
+.failCase   { color: #d9534f; font-weight: bold; }
+.errorCase  { color: #f0ad4e; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+</style>
+
+</head>
+<body >
+<script language="javascript" type="text/javascript">
+output_list = Array();
+/*level 调整增加只显示通过用例的分类 --Findyou
+0:Summary //all hiddenRow
+1:Failed  //pt hiddenRow, ft none
+2:Pass    //pt none, ft hiddenRow
+3:All     //pt none, ft none
+*/
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level == 2 || level == 0 ) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level < 2) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+    }
+    //加入【详细】切换文字变化 --Findyou
+    detail_class=document.getElementsByClassName('detail');
+	//console.log(detail_class.length)
+	if (level == 3) {
+		for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="收起"
+		}
+	}
+	else{
+			for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="详细"
+		}
+	}
+}
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        //ID修改 点 为 下划线 -Findyou
+        tid0 = 't' + cid.substr(1) + '_' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        //修改点击无法收起的BUG，加入【详细】切换文字变化 --Findyou
+        if (toHide) {
+            document.getElementById(tid).className = 'hiddenRow';
+            document.getElementById(cid).innerText = "详细"
+        }
+        else {
+            document.getElementById(tid).className = '';
+            document.getElementById(cid).innerText = "收起"
+        }
+    }
+}
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+</script>
+<div class='heading'>
+<h1 style="font-family: Microsoft YaHei">测试结果</h1>
+<p class='attribute'><strong>测试人员 : </strong> xiaojingyuan</p>
+<p class='attribute'><strong>开始时间 : </strong> 2018-01-19 17:14:05</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:00:00.786694</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 3，通过 3，通过率= 100.00%</p>
+
+<p class='description'>测试报告</p>
+</div>
+
+
+<p id='show_detail_line'>
+<a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 100.00% }</a>
+<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 0 }</a>
+<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 3 }</a>
+<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 3 }</a>
+</p>
+<table id='result_table' class="table table-condensed table-bordered table-hover">
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row' class="text-center success" style="font-weight: bold;font-size: 16px;">
+    <td>用例集/测试用例</td>
+    <td>总计</td>
+    <td>通过</td>
+    <td>失败</td>
+    <td>错误</td>
+    <td>详细</td>
+</tr>
+
+<tr class='passClass warning'>
+    <td>YunluFramework_API.testcase.SpaceAPI.SapceApiTest.SpaceAPI_Private</td>
+    <td class="text-center">3</td>
+    <td class="text-center">3</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c1',3)" class="detail" id='c1'>详细</a></td>
+</tr>
+
+<tr id='pt1_1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test01_Space_type_list_api: Space - 私人空间类型列表 ：获取空间或目录类型列表</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
+    <div id='div_pt1_1' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
+    <div id='div_pt1_1' class="collapse in" align="left">
+    <pre>
+    
+pt1_1: 2018-01-19 17:14:05,148 - INFO - ****************************************SpaceAPI_Private：开始****************************************
+2018-01-19 17:14:05,148 - INFO - ------------START:SpaceAPI_Private.py------------
+2018-01-19 17:14:05,363 - INFO - 1.接口描述
+2018-01-19 17:14:05,363 - INFO - Space - 私人空间类型列表
+
+2018-01-19 17:14:05,363 - INFO - 2.请求url
+2018-01-19 17:14:05,364 - INFO - /api/v1/space_classes
+
+2018-01-19 17:14:05,364 - INFO - 3.请求方法
+2018-01-19 17:14:05,364 - INFO - get
+
+2018-01-19 17:14:05,364 - INFO - 4.请求headers
+2018-01-19 17:14:05,365 - INFO - None
+
+2018-01-19 17:14:05,365 - INFO - 5.body参数
+2018-01-19 17:14:05,365 - INFO - {'token': '4c3791289d0e8576e07a7061d23870f1', 'parent_id': None}
+
+2018-01-19 17:14:05,365 - INFO - 6.响应结果
+2018-01-19 17:14:05,366 - INFO - [
+    {
+        "aliaz": "food",
+        "id": 67,
+        "name": "食物"
+    },
+    {
+        "aliaz": "house",
+        "id": 68,
+        "name": "居住"
+    },
+    {
+        "aliaz": "traffic",
+        "id": 69,
+        "name": "出行"
+    },
+    {
+        "aliaz": "education",
+        "id": 70,
+        "name": "学习"
+    },
+    {
+        "aliaz": "health",
+        "id": 71,
+        "name": "健康"
+    },
+    {
+        "aliaz": "intercourse",
+        "id": 72,
+        "name": "社交"
+    },
+    {
+        "aliaz": "vocation",
+        "id": 73,
+        "name": "工作"
+    },
+    {
+        "aliaz": "art",
+        "id": 74,
+        "name": "文艺"
+    },
+    {
+        "aliaz": "amusement",
+        "id": 75,
+        "name": "娱乐"
+    },
+    {
+        "aliaz": "beauty",
+        "id": 76,
+        "name": "美护"
+    },
+    {
+        "aliaz": "other",
+        "id": 77,
+        "name": "其他"
+    },
+    {
+        "aliaz": "clothing",
+        "id": 66,
+        "name": "穿衣"
+    }
+]
+
+2018-01-19 17:14:05,366 - INFO - 1.判断返回状态码：200 ?= 200:
+2018-01-19 17:14:05,366 - INFO - status_code：OK
+2018-01-19 17:14:05,366 - INFO - 2.判断返回数据与数据库中数据是否相等：
+2018-01-19 17:14:05,369 - INFO - 数据库原始数据为：[{'aliaz': 'food', 'id': 67, 'name': '食物'}, {'aliaz': 'house', 'id': 68, 'name': '居住'}, {'aliaz': 'traffic', 'id': 69, 'name': '出行'}, {'aliaz': 'education', 'id': 70, 'name': '学习'}, {'aliaz': 'health', 'id': 71, 'name': '健康'}, {'aliaz': 'intercourse', 'id': 72, 'name': '社交'}, {'aliaz': 'vocation', 'id': 73, 'name': '工作'}, {'aliaz': 'art', 'id': 74, 'name': '文艺'}, {'aliaz': 'amusement', 'id': 75, 'name': '娱乐'}, {'aliaz': 'beauty', 'id': 76, 'name': '美护'}, {'aliaz': 'other', 'id': 77, 'name': '其他'}, {'aliaz': 'clothing', 'id': 66, 'name': '穿衣'}]
+2018-01-19 17:14:05,370 - INFO - 返回的结果数据为：[{'aliaz': 'food', 'id': 67, 'name': '食物'}, {'aliaz': 'house', 'id': 68, 'name': '居住'}, {'aliaz': 'traffic', 'id': 69, 'name': '出行'}, {'aliaz': 'education', 'id': 70, 'name': '学习'}, {'aliaz': 'health', 'id': 71, 'name': '健康'}, {'aliaz': 'intercourse', 'id': 72, 'name': '社交'}, {'aliaz': 'vocation', 'id': 73, 'name': '工作'}, {'aliaz': 'art', 'id': 74, 'name': '文艺'}, {'aliaz': 'amusement', 'id': 75, 'name': '娱乐'}, {'aliaz': 'beauty', 'id': 76, 'name': '美护'}, {'aliaz': 'other', 'id': 77, 'name': '其他'}, {'aliaz': 'clothing', 'id': 66, 'name': '穿衣'}]
+2018-01-19 17:14:05,370 - INFO - 返回数据：OK
+2018-01-19 17:14:05,370 - INFO - ------------END:SpaceAPI_Private.py------------
+2018-01-19 17:14:05,371 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SpaceAPI_Private：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test02_Space_popular_name_api: Space - 热门空间名 ：获取常用空间名</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_2'>通过</button>
+    <div id='div_pt1_2' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_2'>通过</button>
+    <div id='div_pt1_2' class="collapse in" align="left">
+    <pre>
+    
+pt1_2: 2018-01-19 17:14:05,372 - INFO - ****************************************SpaceAPI_Private：开始****************************************
+2018-01-19 17:14:05,372 - INFO - ------------START:SpaceAPI_Private.py------------
+2018-01-19 17:14:05,399 - INFO - 调用Space_private_type_list_api接口获取私人空间类型
+2018-01-19 17:14:05,555 - INFO - 1.接口描述
+2018-01-19 17:14:05,555 - INFO - Space - 私人空间类型列表
+
+2018-01-19 17:14:05,557 - INFO - 2.请求url
+2018-01-19 17:14:05,558 - INFO - /api/v1/space_classes
+
+2018-01-19 17:14:05,558 - INFO - 3.请求方法
+2018-01-19 17:14:05,558 - INFO - get
+
+2018-01-19 17:14:05,559 - INFO - 4.请求headers
+2018-01-19 17:14:05,559 - INFO - None
+
+2018-01-19 17:14:05,559 - INFO - 5.body参数
+2018-01-19 17:14:05,560 - INFO - {'token': '4c3791289d0e8576e07a7061d23870f1', 'parent_id': None}
+
+2018-01-19 17:14:05,560 - INFO - 6.响应结果
+2018-01-19 17:14:05,560 - INFO - [
+    {
+        "aliaz": "food",
+        "id": 67,
+        "name": "食物"
+    },
+    {
+        "aliaz": "house",
+        "id": 68,
+        "name": "居住"
+    },
+    {
+        "aliaz": "traffic",
+        "id": 69,
+        "name": "出行"
+    },
+    {
+        "aliaz": "education",
+        "id": 70,
+        "name": "学习"
+    },
+    {
+        "aliaz": "health",
+        "id": 71,
+        "name": "健康"
+    },
+    {
+        "aliaz": "intercourse",
+        "id": 72,
+        "name": "社交"
+    },
+    {
+        "aliaz": "vocation",
+        "id": 73,
+        "name": "工作"
+    },
+    {
+        "aliaz": "art",
+        "id": 74,
+        "name": "文艺"
+    },
+    {
+        "aliaz": "amusement",
+        "id": 75,
+        "name": "娱乐"
+    },
+    {
+        "aliaz": "beauty",
+        "id": 76,
+        "name": "美护"
+    },
+    {
+        "aliaz": "other",
+        "id": 77,
+        "name": "其他"
+    },
+    {
+        "aliaz": "clothing",
+        "id": 66,
+        "name": "穿衣"
+    }
+]
+
+2018-01-19 17:14:05,616 - INFO - 1.接口描述
+2018-01-19 17:14:05,616 - INFO - Space - 热门空间名
+
+2018-01-19 17:14:05,618 - INFO - 2.请求url
+2018-01-19 17:14:05,619 - INFO - /api/v1/spaces/names
+
+2018-01-19 17:14:05,619 - INFO - 3.请求方法
+2018-01-19 17:14:05,619 - INFO - get
+
+2018-01-19 17:14:05,620 - INFO - 4.请求headers
+2018-01-19 17:14:05,620 - INFO - None
+
+2018-01-19 17:14:05,620 - INFO - 5.body参数
+2018-01-19 17:14:05,621 - INFO - {'token': '4c3791289d0e8576e07a7061d23870f1', 'class_id': 67, 'count': None}
+
+2018-01-19 17:14:05,621 - INFO - 6.响应结果
+2018-01-19 17:14:05,621 - INFO - {
+    "names": [
+        "舌尖上的中国",
+        "美食",
+        "民以食为天",
+        "茶",
+        "厨艺秀",
+        "正宗东海海鲜《海鲜大礼》",
+        "吃货世界",
+        "吃货的世界",
+        "我的衣柜",
+        "我的店铺"
+    ],
+    "success": true
+}
+
+2018-01-19 17:14:05,622 - INFO - 1.判断返回状态码：200 ?= 200:
+2018-01-19 17:14:05,622 - INFO - status_code：OK
+2018-01-19 17:14:05,622 - INFO - 2.判断success：True ?= True：
+2018-01-19 17:14:05,622 - INFO - success：OK
+2018-01-19 17:14:05,623 - INFO - 3.判断names：names ? &lt;&gt; None:
+2018-01-19 17:14:05,623 - INFO - names：OK
+2018-01-19 17:14:05,623 - INFO - ------------END:SpaceAPI_Private.py------------
+2018-01-19 17:14:05,624 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SpaceAPI_Private：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test03_Space_private_create_api_1___api测试__: Space - 空间创建（私人空间）：当前用户创建私人空间</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_3' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_3'>通过</button>
+    <div id='div_pt1_3' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_3' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_3'>通过</button>
+    <div id='div_pt1_3' class="collapse in" align="left">
+    <pre>
+    
+pt1_3: 2018-01-19 17:14:05,625 - INFO - ****************************************SpaceAPI_Private：开始****************************************
+2018-01-19 17:14:05,625 - INFO - ------------START:SpaceAPI_Private.py------------
+2018-01-19 17:14:05,655 - INFO - 调用Space_private_type_list_api接口获取私人空间类型
+2018-01-19 17:14:05,858 - INFO - 1.接口描述
+2018-01-19 17:14:05,859 - INFO - Space - 私人空间类型列表
+
+2018-01-19 17:14:05,861 - INFO - 2.请求url
+2018-01-19 17:14:05,861 - INFO - /api/v1/space_classes
+
+2018-01-19 17:14:05,861 - INFO - 3.请求方法
+2018-01-19 17:14:05,862 - INFO - get
+
+2018-01-19 17:14:05,862 - INFO - 4.请求headers
+2018-01-19 17:14:05,862 - INFO - None
+
+2018-01-19 17:14:05,862 - INFO - 5.body参数
+2018-01-19 17:14:05,863 - INFO - {'token': '4c3791289d0e8576e07a7061d23870f1', 'parent_id': None}
+
+2018-01-19 17:14:05,863 - INFO - 6.响应结果
+2018-01-19 17:14:05,863 - INFO - [
+    {
+        "aliaz": "food",
+        "id": 67,
+        "name": "食物"
+    },
+    {
+        "aliaz": "house",
+        "id": 68,
+        "name": "居住"
+    },
+    {
+        "aliaz": "traffic",
+        "id": 69,
+        "name": "出行"
+    },
+    {
+        "aliaz": "education",
+        "id": 70,
+        "name": "学习"
+    },
+    {
+        "aliaz": "health",
+        "id": 71,
+        "name": "健康"
+    },
+    {
+        "aliaz": "intercourse",
+        "id": 72,
+        "name": "社交"
+    },
+    {
+        "aliaz": "vocation",
+        "id": 73,
+        "name": "工作"
+    },
+    {
+        "aliaz": "art",
+        "id": 74,
+        "name": "文艺"
+    },
+    {
+        "aliaz": "amusement",
+        "id": 75,
+        "name": "娱乐"
+    },
+    {
+        "aliaz": "beauty",
+        "id": 76,
+        "name": "美护"
+    },
+    {
+        "aliaz": "other",
+        "id": 77,
+        "name": "其他"
+    },
+    {
+        "aliaz": "clothing",
+        "id": 66,
+        "name": "穿衣"
+    }
+]
+
+2018-01-19 17:14:05,925 - INFO - 1.接口描述
+2018-01-19 17:14:05,926 - INFO - Space - 私人空间创建
+
+2018-01-19 17:14:05,928 - INFO - 2.请求url
+2018-01-19 17:14:05,928 - INFO - /api/v1/clusters
+
+2018-01-19 17:14:05,929 - INFO - 3.请求方法
+2018-01-19 17:14:05,929 - INFO - post
+
+2018-01-19 17:14:05,929 - INFO - 4.请求headers
+2018-01-19 17:14:05,930 - INFO - None
+
+2018-01-19 17:14:05,930 - INFO - 5.body参数
+2018-01-19 17:14:05,931 - INFO - {'token': '4c3791289d0e8576e07a7061d23870f1', 'name': 'api测试', 'class_id': 67}
+
+2018-01-19 17:14:05,931 - INFO - 6.响应结果
+2018-01-19 17:14:05,931 - INFO - {
+    "id": 8274,
+    "success": true
+}
+
+2018-01-19 17:14:05,931 - INFO - 1.判断返回状态码：201 ?= 201:
+2018-01-19 17:14:05,932 - INFO - status_code：OK
+2018-01-19 17:14:05,932 - INFO - 2.判断success：True ?= True:
+2018-01-19 17:14:05,932 - INFO - success：OK
+2018-01-19 17:14:05,933 - INFO - ------------END:SpaceAPI_Private.py------------
+2018-01-19 17:14:05,933 - INFO - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SpaceAPI_Private：结束~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='total_row' class="text-center active">
+    <td>总计</td>
+    <td>3</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td>通过率：100.00%</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+    <div style=" position:fixed;right:50px; bottom:30px; width:20px; height:20px;cursor:pointer">
+    <a href="#"><span class="glyphicon glyphicon-eject" style = "font-size:30px;" aria-hidden="true">
+    </span></a></div>
+    
+</body>
+</html>

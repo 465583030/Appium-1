@@ -3,6 +3,11 @@ from YunluFramework_API.runcase import *
 #测试用例：工厂
 class SuiteFactory():
     def suiteLoader(self):
+        # ----------------------------------【SpaceAPI-SpaceAPI_Private】----------------------------------
+        space_api_private = unittest.TestLoader().loadTestsFromTestCase(SpaceAPI_Private)
+
+
+
         # ----------------------------------【登录-测试用例】----------------------------------
         login_api_01 = unittest.TestLoader().loadTestsFromTestCase(LoginAPI)                   # test1_1 云库上传图片
 
@@ -49,6 +54,10 @@ class SuiteFactory():
         order_OrderBuy_01 = unittest.TestLoader().loadTestsFromTestCase(order_OrderBuy)
 
         self.suite = [
+            # ----------------------------------【SpaceAPI-SpaceAPI_Private】----------------------------------
+            space_api_private,
+
+
             # ----------------------------------【登录-测试用例：1】----------------------------------
             login_api_01,
             # ----------------------------------【云库-测试用例：2】----------------------------------

@@ -1,8 +1,8 @@
 # Author:Xiaojingyuan
+import unittest
 import json
 from YunluFramework_API.public.common.datainfo import DataMysql
 from YunluFramework_API.public.common.datainfo import DataInfo
-import unittest
 from YunluFramework_API.public.common.RequestForHttp import RequestForHttp
 import ddt
 from YunluFramework_API.public.common.log import Log
