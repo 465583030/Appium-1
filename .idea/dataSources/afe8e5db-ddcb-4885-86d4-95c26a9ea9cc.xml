@@ -912,10 +912,10 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="230" parent="3" name="Space_folder_create_api_table">
+    <table id="230" parent="3" name="Space_folder_list_api_table">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="231" parent="3" name="Space_folder_list_api_table">
+    <table id="231" parent="3" name="Space_folder_update_id_api_table">
       <Engine>InnoDB</Engine>
     </table>
     <table id="232" parent="3" name="Space_private_create_api_table">
@@ -939,25 +939,25 @@
     <table id="238" parent="3" name="test_token">
       <Engine>InnoDB</Engine>
     </table>
-    <column id="239" parent="230" name="id">
-      <Position>1</Position>
-      <DataType>varchar(20)|0</DataType>
-      <DefaultExpression>&apos;1234&apos;</DefaultExpression>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="240" parent="231" name="stranger_id">
+    <column id="239" parent="230" name="stranger_id">
       <Position>1</Position>
       <DataType>varchar(10)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="241" parent="231" name="user_id">
+    <column id="240" parent="230" name="user_id">
       <Position>2</Position>
       <DataType>varchar(10)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="242" parent="231" name="cluster_id">
+    <column id="241" parent="230" name="cluster_id">
       <Position>3</Position>
       <DataType>varchar(10)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="242" parent="231" name="id">
+      <Position>1</Position>
+      <DataType>varchar(20)|0</DataType>
+      <DefaultExpression>&apos;1234&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="243" parent="232" name="name">

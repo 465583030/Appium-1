@@ -1,106 +1,118 @@
 # Author:Xiaojingyuan
 __author__ = 'Administrator'
 # -*- coding: utf-8 -*-
-from YunluFramework_API.public.空间 import *
+from YunluFramework_API.public.Shopping import *
 
 
 # 空间
 @ddt.ddt
-class Space(Login):
+class Shopping(Login):
     def __init__(self):
         Handle.__init__(self)
-        # 1.接口路由
+
+        #1. 创建读取配置信息对象
+        self.shopping = GlobalParam('config', 'shopping.conf')
+
+        # 2.接口路由
         # Space - 企业空间关闭
-        self.url_closespace = self.cf.getURL('space', "url_closespace")
+        self.Shopping_buyer_order_details_number = self.shopping.getURL('shopping','Shopping_buyer_order_details_number')
 
-        # Space - 企业空间创建
-        self.Space_org_create = self.cf.getURL('space', "Space_org_create")
+        # Shopping - 买家订单 - 下单
+        self.Shopping_buyer_order_order = self.shopping.getURL('shopping','Shopping_buyer_order_order')
 
-        # Space - 图片标签列表
-        self.Space_list = self.cf.getURL('space', 'Spaces_list')
+        # Shopping - 买家订单 - 列表
+        Shopping_buyer_order_list = / api / v1 / order_forms
 
-        # Space - 图片标签删除
-        self.Space_img_label_delete_id = self.cf.getURL('space', 'Space_img_label_delete_id')
+        # Shopping - 买家订单 - 取消订单
+        Shopping_buyer_order_cancel = / api / v1 / order_forms /: number / cancel
 
-        # Space - 图片标签新增
-        self.Space_img_label_add = self.cf.getURL('space', 'Space_img_label_add')
+        # hopping - 买家订单 - 提醒发货
+        买家提醒发货
+        Shopping_buyer_order_remind = / api / v1 / order_forms /: number / remind
 
-        # Space - 文件夹中上传图片（个人）
-        self.Space_folder_img_upload_id = self.cf.getURL('space', 'Space_folder_img_upload_id')
+        Shopping - 买家订单 - 收货
+        Shopping_buyer_order_receipt = / api / v1 / order_forms /: number / receipt
 
-        # Space - 文件夹中列举图片（个人）
-        self.Space_folder_list_img = self.cf.getURL('space', 'Space_folder_list_img')
+        Shopping - 买家订单 - 物流轨迹
+        Shopping_buyer_order_traces = / api / v1 / order_forms /: number / traces
 
-        # Space - 文件夹公开设置
-        self.Space_folder_open_setting = self.cf.getURL('space', 'Space_folder_open_setting')
+        Shopping - 买家订单 - 申请退款
+        Shopping_buyer_order_refund = / api / v1 / order_forms /: number / refund
 
-        # Space - 文件夹列表
-        self.Space_folder_list = self.cf.getURL('space', 'Space_folder_list')
+        Shopping - 买家订单 - 评论
+        用户对商品发表评论
+        Shopping_buyer_order_comments = / api / v1 / order_forms /: number / comments
 
-        # Space - 文件夹列表(联系人所有）
-        self.Space_folder_list_id = self.cf.getURL('space', 'Space_folder_list_id')
+        Shopping - 会费订单 - 创建
+        会费订单创建
+        Shopping_member_fee_create = / api / v1 / order_forms / member_fee
 
-        # Space - 文件夹创建
-        self.Space_folder_create = self.cf.getURL('space', 'Space_folder_create')
+        Shopping - 余额充值订单 - 创建
+        余额充值订单创建
+        Shopping_balance_create = / api / v1 / order_forms / balance
 
-        # Space - 文件夹删除
-        self.Space_folder_delete_id = self.cf.getURL('space', 'Space_folder_delete_id')
+        Shopping - 卖家订单 - 列表
+        Shopping_seller_order_list = / api / v1 / team /: team_id / order_forms
 
-        # Space - 文件夹更新
-        self.Space_folder_update_id = self.cf.getURL('space', 'Space_folder_update_id')
+        Shopping - 卖家订单 - 发货
+        Shopping_seller_order_deliver = / api / v1 / team /: team_id / order_forms /:number / deliver
 
-        # Space - 文件夹浏览记录
-        self.Space_folder_browse = self.cf.getURL('space', 'Space_folder_browse')
+        Shopping - 卖家订单 - 售后详情
+        Shopping_seller_order_aftermarket_details = / api / v1 / team /: team_id / order_forms /:number / refund /: item_id
 
-        # Space - 热门空间名
-        self.Space_popular_name = self.cf.getURL('space', 'Space_popular_name')
+        Shopping - 卖家订单 - 回复评论
+        Shopping_seller_order_reply_comments = / api / v1 / team /: team_id / order_forms /:number / comments
 
-        # Space - 特定图片标签列表
-        self.Space_img_label_list = self.cf.getURL('space', 'Space_specificimg_label_list')
+        Shopping - 卖家订单 - 处理退货
+        Shopping_seller_order_deal_refund = / api / v1 / team /: team_id / order_forms /:number / refund
 
-        # Space - 特定图片标签删除
-        self.Space_img_label_delete_id = self.cf.getURL('space', 'Space_specificimg_label_delete_id')
+        Shopping - 卖家订单 - 待评价
+        Shopping_seller_order_need_reply = / api / v1 / team /: team_id / order_forms / items / need_reply
 
-        # Space - 特定图片标签更新
-        self.Space_img_label_update = self.cf.getURL('space', 'Space_specificimg_label_update')
+        Shopping - 卖家订单 - 查看评论
+        Shopping_seller_order_view_comments = / api / v1 / team /: team_id / order_forms /:number / comments
 
-        # Space - 空间中删除联系人(删除客户)
-        self.Space_delete_contact_id = self.cf.getURL('space', 'Space_delete_contact_id')
+        Shopping - 卖家订单 - 物流轨迹
+        Shopping_seller_order_traces = / api / v1 / team /: team_id / order_forms /:number / traces
 
-        # Space - 空间中添加联系人(新增客户)
-        self.Space_add_contac_id = self.cf.getURL('space', 'Space_add_contac_id')
+        Shopping - 卖家订单 - 退款(售后)
+        订单
+        Shopping_seller_order_service = / api / v1 / order_forms / service
 
-        # Space - 空间公开设置
-        self.Space_switch_setting = self.cf.getURL('space', 'Space_switch_setting')
+        Shopping - 收货地址 - 列表
+        Shopping_receiving_address_list = / api / v1 / deliveries
 
-        # Space - 空间列表
-        self.Spaces_list = self.cf.getURL('space', 'Spaces_list')
+        Shopping - 收货地址 - 删除
+        Shopping_receiving_address_delete = / api / v1 / deliveries /: id
 
-        # Space - 空间创建
-        self.Space_private_create = self.cf.getURL('space', 'Space_private_create')
+        Shopping - 收货地址 - 添加
+        Shopping_receiving_address_add = / api / v1 / deliveries
 
-        # Space - 空间删除
-        self.Space_private_delete_id = self.cf.getURL('space', 'Space_private_delete_id')
+        Shopping - 收货地址 - 编辑
+        Shopping_receiving_address_edit = / api / v1 / deliveries /: id
 
-        # Space - 空间升级
-        self.Space_upgrade = self.cf.getURL('space', 'Space_upgrade')
+        Shopping - 物流公司 - 列表
+        Shopping_express_company_list = / api / v1 / express_companies
 
-        # Space - 空间更新
-        self.Space_update_id = self.cf.getURL('space', 'Space_update_id')
+        Shopping - 采购项目 - 分单
+        Shopping_purchase_items_groups = / api / v1 / purchase_items / groups
 
-        # Space - 空间概况
-        self.Space_overview_id = self.cf.getURL('space', 'Space_overview_id')
+        Shopping - 采购项目 - 列表
+        Shopping_purchase_items_list = / api / v1 / purchase_items
 
-        # Space - 空间类型列表
-        self.Space_type_list = self.cf.getURL('space', 'Space_type_list')
+        Shopping - 采购项目 - 删除
+        Shopping_purchase_items_delete = / api / v1 / purchase_items
 
-        # Space - 空间联系人列表(非当前用户)
-        self.Space_contact_list_id = self.cf.getURL('space', 'Space_contact_list_id')
+        Shopping - 采购项目 - 添加
+        Shopping_purchase_items_add = / api / v1 / purchase_items
 
-        # 2.token
+        Shopping - 采购项目 - 编辑
+        Shopping_purchase_items_edit = / api / v1 / purchase_items /: id
+
+        # 3.token
         self.token = self.get_token()
 
-        # 3. 创建请求对象
+        # 4. 创建请求对象
         self.R = RequestForHttp()
 
     # Space - 企业空间创建
@@ -616,7 +628,6 @@ class Space(Login):
 
 
 # 调试
-sp = Space()
 
 # Space - 文件夹列表
 # sp.Space_folder_list_api(cluster_id='4073')

@@ -4,8 +4,8 @@ import smtplib
 import time
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from YunluFramework.config.globalparam import GlobalParam
-from YunluFramework.public.common.log import Log
+from YunluFramework_API.config.globalparam import GlobalParam
+from YunluFramework_API.public.common.log import Log
 
 # 1.配置日志记录模块
 cf = GlobalParam('config', 'path_file.conf')
@@ -19,6 +19,7 @@ reportPath = cf.getParam("report", "path")  # 报告存储路径
 # 3.配置收发件人
 # 3.1收件人信息
 recvaddress = ['291008572@qq.com']
+
 # 3.2发件人信息
 # 163的用户名和密码
 sendaddr_name = '13027104206@163.com'
