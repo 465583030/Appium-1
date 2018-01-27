@@ -10,104 +10,99 @@ class Shopping(Login):
     def __init__(self):
         Handle.__init__(self)
 
-        #1. 创建读取配置信息对象
+        # 1. 创建读取配置信息对象
         self.shopping = GlobalParam('config', 'shopping.conf')
 
         # 2.接口路由
         # Space - 企业空间关闭
-        self.Shopping_buyer_order_details_number = self.shopping.getURL('shopping','Shopping_buyer_order_details_number')
+        self.Shopping_buyer_order_details_number = self.shopping.getURL('shopping', 'Shopping_buyer_order_details_number')
 
         # Shopping - 买家订单 - 下单
-        self.Shopping_buyer_order_order = self.shopping.getURL('shopping','Shopping_buyer_order_order')
+        self.Shopping_buyer_order_order = self.shopping.getURL('shopping', 'Shopping_buyer_order_order')
 
         # Shopping - 买家订单 - 列表
-        Shopping_buyer_order_list = / api / v1 / order_forms
+        self.Shopping_buyer_order_list = self.shopping.getURL('shopping', 'Shopping_buyer_order_list')
 
         # Shopping - 买家订单 - 取消订单
-        Shopping_buyer_order_cancel = / api / v1 / order_forms /: number / cancel
+        self.Shopping_buyer_order_cancel = self.shopping.getURL('shopping', 'Shopping_buyer_order_cancel')
 
         # hopping - 买家订单 - 提醒发货
-        买家提醒发货
-        Shopping_buyer_order_remind = / api / v1 / order_forms /: number / remind
+        self.Shopping_buyer_order_remind = self.shopping.getURL('shopping', 'Shopping_buyer_order_cancel')
 
-        Shopping - 买家订单 - 收货
-        Shopping_buyer_order_receipt = / api / v1 / order_forms /: number / receipt
+        # Shopping - 买家订单 - 收货
+        self.Shopping_buyer_order_receipt = self.shopping.getURL('shopping', 'Shopping_buyer_order_receipt')
 
-        Shopping - 买家订单 - 物流轨迹
-        Shopping_buyer_order_traces = / api / v1 / order_forms /: number / traces
+        # Shopping - 买家订单 - 物流轨迹
+        self.Shopping_buyer_order_traces = self.shopping.getURL('shopping', 'Shopping_buyer_order_traces')
 
-        Shopping - 买家订单 - 申请退款
-        Shopping_buyer_order_refund = / api / v1 / order_forms /: number / refund
+        # Shopping - 买家订单 - 申请退款
+        self.Shopping_buyer_order_refund = self.shopping.getURL('shopping', 'Shopping_buyer_order_refund')
 
-        Shopping - 买家订单 - 评论
-        用户对商品发表评论
-        Shopping_buyer_order_comments = / api / v1 / order_forms /: number / comments
+        # Shopping - 买家订单 - 评论
+        self.Shopping_buyer_order_comments = self.shopping.getURL('shopping', 'Shopping_buyer_order_comments')
 
-        Shopping - 会费订单 - 创建
-        会费订单创建
-        Shopping_member_fee_create = / api / v1 / order_forms / member_fee
+        # Shopping - 会费订单 - 创建
+        self.Shopping_member_fee_create = self.shopping.getURL('shopping', 'Shopping_member_fee_create')
 
-        Shopping - 余额充值订单 - 创建
-        余额充值订单创建
-        Shopping_balance_create = / api / v1 / order_forms / balance
+        # Shopping - 余额充值订单 - 创建
+        self.Shopping_balance_create = self.shopping.getURL('shopping', 'Shopping_balance_create')
 
-        Shopping - 卖家订单 - 列表
-        Shopping_seller_order_list = / api / v1 / team /: team_id / order_forms
+        # Shopping - 卖家订单 - 列表
+        self.Shopping_seller_order_list = self.shopping.getURL('shopping', 'Shopping_seller_order_list')
 
-        Shopping - 卖家订单 - 发货
-        Shopping_seller_order_deliver = / api / v1 / team /: team_id / order_forms /:number / deliver
+        # hopping - 卖家订单 - 发货
+        self.Shopping_seller_order_deliver = self.shopping.getURL('shopping', 'Shopping_seller_order_deliver')
 
-        Shopping - 卖家订单 - 售后详情
-        Shopping_seller_order_aftermarket_details = / api / v1 / team /: team_id / order_forms /:number / refund /: item_id
+        # Shopping - 卖家订单 - 售后详情
+        self.Shopping_seller_order_aftermarket_details = self.shopping.getURL('shopping', 'Shopping_seller_order_aftermarket_details')
 
-        Shopping - 卖家订单 - 回复评论
-        Shopping_seller_order_reply_comments = / api / v1 / team /: team_id / order_forms /:number / comments
+        # Shopping - 卖家订单 - 回复评论
+        self.Shopping_seller_order_reply_comments = self.shopping.getURL('shopping', 'Shopping_seller_order_reply_comments')
 
-        Shopping - 卖家订单 - 处理退货
-        Shopping_seller_order_deal_refund = / api / v1 / team /: team_id / order_forms /:number / refund
+        # Shopping - 卖家订单 - 处理退货
+        self.Shopping_seller_order_deal_refund = self.shopping.getURL('shopping', 'Shopping_seller_order_deal_refund')
 
-        Shopping - 卖家订单 - 待评价
-        Shopping_seller_order_need_reply = / api / v1 / team /: team_id / order_forms / items / need_reply
+        # Shopping - 卖家订单 - 待评价
+        self.Shopping_seller_order_need_reply = self.shopping.getURL('shopping', 'Shopping_seller_order_need_reply')
 
-        Shopping - 卖家订单 - 查看评论
-        Shopping_seller_order_view_comments = / api / v1 / team /: team_id / order_forms /:number / comments
+        # Shopping - 卖家订单 - 查看评论
+        self.Shopping_seller_order_view_comments = self.shopping.getURL('shopping', 'Shopping_seller_order_view_comments')
 
-        Shopping - 卖家订单 - 物流轨迹
-        Shopping_seller_order_traces = / api / v1 / team /: team_id / order_forms /:number / traces
+        # Shopping - 卖家订单 - 物流轨迹
+        self.Shopping_seller_order_traces = self.shopping.getURL('shopping', 'Shopping_seller_order_traces')
 
-        Shopping - 卖家订单 - 退款(售后)
-        订单
-        Shopping_seller_order_service = / api / v1 / order_forms / service
+        # Shopping - 卖家订单 - 退款(售后)
+        self.Shopping_seller_order_service = self.shopping.getURL('shopping', 'Shopping_seller_order_service')
 
-        Shopping - 收货地址 - 列表
-        Shopping_receiving_address_list = / api / v1 / deliveries
+        # Shopping - 收货地址 - 列表
+        self.Shopping_receiving_address_list = self.shopping.getURL('shopping', 'Shopping_receiving_address_list')
 
-        Shopping - 收货地址 - 删除
-        Shopping_receiving_address_delete = / api / v1 / deliveries /: id
+        # Shopping - 收货地址 - 删除
+        self.Shopping_receiving_address_delete = self.shopping.getURL('shopping', 'Shopping_receiving_address_delete')
 
-        Shopping - 收货地址 - 添加
-        Shopping_receiving_address_add = / api / v1 / deliveries
+        # Shopping - 收货地址 - 添加
+        self.Shopping_receiving_address_add = self.shopping.getURL('shopping', 'Shopping_receiving_address_add')
 
-        Shopping - 收货地址 - 编辑
-        Shopping_receiving_address_edit = / api / v1 / deliveries /: id
+        # Shopping - 收货地址 - 编辑
+        self.Shopping_receiving_address_edit = self.shopping.getURL('shopping', 'Shopping_receiving_address_edit')
 
-        Shopping - 物流公司 - 列表
-        Shopping_express_company_list = / api / v1 / express_companies
+        # Shopping - 物流公司 - 列表
+        self.Shopping_express_company_list = self.shopping.getURL('shopping', 'Shopping_express_company_list')
 
-        Shopping - 采购项目 - 分单
-        Shopping_purchase_items_groups = / api / v1 / purchase_items / groups
+        # Shopping - 采购项目 - 分单
+        self.Shopping_purchase_items_groups = self.shopping.getURL('shopping', 'Shopping_purchase_items_groups')
 
-        Shopping - 采购项目 - 列表
-        Shopping_purchase_items_list = / api / v1 / purchase_items
+        # Shopping - 采购项目 - 列表
+        self.Shopping_purchase_items_list = self.shopping.getURL('shopping', 'Shopping_purchase_items_list')
 
-        Shopping - 采购项目 - 删除
-        Shopping_purchase_items_delete = / api / v1 / purchase_items
+        # Shopping - 采购项目 - 删除
+        self.Shopping_purchase_items_delete = self.shopping.getURL('shopping', 'Shopping_purchase_items_delete')
 
-        Shopping - 采购项目 - 添加
-        Shopping_purchase_items_add = / api / v1 / purchase_items
+        # Shopping - 采购项目 - 添加
+        self.Shopping_purchase_items_add = self.shopping.getURL('shopping', 'Shopping_purchase_items_add')
 
-        Shopping - 采购项目 - 编辑
-        Shopping_purchase_items_edit = / api / v1 / purchase_items /: id
+        # Shopping - 采购项目 - 编辑
+        self.Shopping_purchase_items_edit = self.shopping.getURL('shopping', 'Shopping_purchase_items_edit')
 
         # 3.token
         self.token = self.get_token()
@@ -115,566 +110,225 @@ class Shopping(Login):
         # 4. 创建请求对象
         self.R = RequestForHttp()
 
-    # Space - 企业空间创建
-    def Space_org_create_api(self, sql, d_index):
-        '''创建机构空间
-        :param token : token值
-        :param sql: sql查询语句
-        :param d_index: 数据索引
-        :return:
+    # Shopping - 买家某个订单详情
+    def Shopping_buyer_order_details_number_api(self, number):
         '''
-
-        # 1.组装数据-[{...},{...}...]对象 列表-字典
-        data = self.d.data_assembly(sql)
-        data = data[d_index]
-
-        # 2. 组装token和data
-        data['token'] = self.token
-
-        # 3. 发送请求
-        response = self.R.post_function(self.Space_org_create, data)
-
-        # 4.打印日志
-        self.plog.printlog(data, response, describle='Space - 企业空间创建', url=self.Space_org_create, method='post')
-
-        # 5.返回
-        return response
-
-    # Space - 文件夹列表
-    def Space_folder_list_api(self, stranger_id=None, user_id=None, cluster_id=None):
-        '''
-        获取当前用户的文件夹
-        :param stranger_id : 联系人ID  提供该值则获取该联系人下的文件夹
-        :param user_id :     用户UUID  提供该值则获取该用户下的文件夹
-        :param cluster_id :  私有空间ID 提供该值则获取该空间下的文件夹
-        :return:
-        '''
-        # 1.组装数据
-        # data = self.d.data_assembly(sql)
-        # data = data[d_index]
-
-        # 2.组装token和data
-        key = 'token'
-        data = {
-            key: self.token,
-            'stranger_id': stranger_id,
-            'user_id': user_id,
-            'cluster_id': cluster_id
-        }
-
-        # 3. 发送请求
-        response = self.R.get_function(self.Space_folder_list, data)
-
-        # 4.打印日志
-        self.plog.printlog(data, response, describle='Space - 文件夹列表', url=self.Space_folder_list, method='get')
-
-        # 5.返回
-        return response
-
-    # Space - 文件夹列表(联系人所有）
-    def Space_folder_list_id_api(self, id, cluster_id):
-        '''
-        获取指定联系人向当前用户开放空间内的文件夹列表
-        :param id :         联系人ID
-        :param cluster_id : 空间ID
+        买家某个订单详情
+        :param number : 订单号
         :return:
         '''
         # 1.组装token和data
         data = {
             'token': self.token,
-            'id': id,
-            'cluster_id': cluster_id
+            'number': number
         }
 
         # 2.替换id
-        self.Space_folder_list_id = self.Space_folder_list_id.replace(":id", id)
+        self.Shopping_buyer_order_details_number = self.Shopping_buyer_order_details_number.replace(":number", number)
 
         # 3.发送请求
-        response = self.R.get_function(self.Space_folder_list_id, data)
+        response = self.R.get_function(self.Shopping_buyer_order_details_number, data)
 
         # 4.打印日志
-        self.plog.printlog(data, response, describle='Space - 文件夹列表(联系人所有）', url=self.Space_folder_list_id, method='get')
+        self.plog.printlog(data, response, describle='Shopping - 买家某个订单详情', url=self.Shopping_buyer_order_details_number, method='get')
 
         # 5.返回
         return response
 
-    # Space - 文件夹创建
-    def Space_folder_create_api(self, cluster_id, name):
+    # Shopping - 买家订单-下单
+    def Shopping_buyer_order_order_api(self, data):
         '''
-        创建文件夹到私人空间
-        :param cluster_id : 私有空间ID
-        :param name :       文件夹名称
+        用户下单
+        :param delivery_id      :   收货地址ID
+        :param organization_id  :   卖家ID
+        :param price_id         :   商品单价ID
+        :param quantity         :   购买数量
+        :param message          :   留言
+        :param source_id        :   若是商城或协会下的产品加入的购物车，此处须传入商城或协会的team_id
         :return:
         '''
-
-        # 1.组装token和data
-        data = {
-            'token': self.token,
-            'cluster_id': cluster_id,
-            'name': name
-        }
-
-        # 2.发送请求
-        response = self.R.post_function(self.Space_folder_create, data)
-
-        # 3.打印日志
-        self.plog.printlog(data, response, describle='Space - 文件夹创建', url='Space_folder_create', method='post')
-
-        # 4.返回
-        return response
-
-    # Space - 文件夹删除
-    def Space_folder_delete_id_api(self, id):
-        '''
-        删除当前用户的文件夹
-        :param id : 文件夹id
-        :return:
-        '''
-
-        # 1. 组装
-        data = {
-            'token': self.token,
-            'id': id,
-        }
-
-        # 2. 替换id
-        self.Space_folder_delete_id = self.Space_folder_delete_id.replace(":id", id)
-
-        # 3.发送请求
-        response = self.R.delete_function(self.Space_folder_delete_id, data)
-
-        # 4.打印日志
-        self.plog.printlog(data, response, describle='Space - 文件夹删除', url=self.Space_folder_delete_id, method='delete')
-
-        # 5.返回
-        return response
-
-    # Space - 文件夹更新
-    def Space_folder_update_id_api(self, id, cluster_id=None, name=None):
-        '''
-        更新文件夹
-        :param id :         文件夹ID
-        :param cluster_id : 私有空间ID
-        :param name :       文件夹名称
-        :return:
-        '''
-
-        # 1.组装
-        data = {
-            'token': self.token,
-            # 'id': id,
-            'cluster_id': cluster_id,
-            'name': name
-        }
-
-        # 2.替换id
-        url = self.Space_folder_update_id.replace(":id", id)
-
-        # 3.发送请求
-        response = self.R.put_function(url, data)
-
-        # 4.打印日志
-        self.plog.printlog(data, response, describle='Space - 文件夹更新', url=url, method='put')
-
-        # 5.返回
-        return response
-
-    # Space - 文件夹浏览记录
-    def Space_folder_browse_api(self, id, aid=None, page=None, per_page=None):
-        '''
-        文件夹浏览记录列表
-        :param id :      文件夹ID
-        :param aid :     消息ID 当从消息中查看时
-        :param page:     页数
-        :param per_page: 每页记录数
-        :return:
-        '''
-
-        # 1.组装
-        data = {
-            'token': self.token,
-            'id': id,
-            'aid': aid,
-            'page': page,
-            'per_page': per_page
-        }
-
-        # 2.替换id
-        url = self.Space_folder_browse.replace(":id", id)
-
-        # 3.发送请求
-        response = self.R.get_function(url, data)
-
-        # 4.打印日志
-        self.plog.printlog(data, response, describle='Space - 文件夹浏览记录', url=url, method='get')
-
-        # 5.返回
-        return response
-
-    # Space - 热门空间名
-    def Space_popular_name_api(self, class_id, count=None):
-        '''
-        获取常用空间名
-        :param class_id :   空间类型
-        :param count :      空间名数量 默认10个
-        :return:
-        '''
-        # 1.组装
-        data = {
-            'token': self.token,
-            'class_id': class_id,
-            'count': count
-        }
-
-        # 2.发送请求
-        response = self.R.get_function(self.Space_popular_name, data)
-
-        # 3.打印日志
-        self.plog.printlog(data, response, describle='Space - 热门空间名', url=self.Space_popular_name, method='get')
-
-        # 4.返回
-        return response
-
-    # Space - 空间中删除联系人(删除客户)
-    def Space_delete_contact_id_api(self, id, stranger_ids):
-        '''
-        从当前用户的空间删除联系人
-        :param id :             私有空间ID
-        :param stranger_ids :   联系人ID
-        :return:
-        '''
-
-        # 1.组装
-        data = {
-            'token': self.token,
-            'id': id,
-            'stranger_ids[]': stranger_ids
-        }
-
-        # 2.替换id
-        url = self.Space_delete_contact_id.replace(":id", id)
-
-        # 3.发送请求
-        response = self.R.delete_function(url, data)
-
-        # 4.打印日志
-        self.plog.printlog(data, response, describle='Space - 空间中删除联系人(删除客户)', url=url, method='delete')
-
-        # 5.返回
-        return response
-
-    # Space - 空间中添加联系人(新增客户)
-    def Space_add_contac_id_api(self, id, stranger_ids):
-        '''
-        从当前用户的空间删除联系人
-        :param id :             私有空间ID
-        :param stranger_ids :   联系人ID
-        :return:
-        '''
-
-        # 1.组装
-        data = {
-            'token': self.token,
-            'id': id,
-            'stranger_ids[]': stranger_ids
-        }
-
-        # 2.替换id
-        url = self.Space_add_contac_id.replace(":id", id)
-
-        # 3.发送请求
-        response = self.R.post_function(url, data)
-
-        # 4.打印日志
-        self.plog.printlog(data, response, describle='Space - 空间中添加联系人(新增客户)', url=url, method='post')
-
-        # 5.返回
-        return response
-
-    # Space - 空间公开设置
-    def Space_switch_setting_api(self, id, disclosure):
-        '''
-        对个人空间设置公开与否
-        :param clusters_id :         空间ID
-        :param clusters_disclosure : 开关-允许值: ['on', 'off']
-        :return:
-        '''
-
-        # 1.组装
-        data = {
-            "token": self.token,
-            "clusters": [
-                {
-                    "id": id,
-                    "disclosure": disclosure
-                }
-            ]
-        }
-
-        # 2.将字典格式转化成json
-        data = json.dumps(data)
-
-        # 3.定制请求头
+        # 0.定制请求头
         headers = {
             "Content-Type": "application/json"
         }
 
-        # 4.发送请求
-        response = self.R.post_function(self.Space_switch_setting, data, headers=headers)
+        data['token'] = self.token
+        # data = {
+        #     "token": self.token,
+        #     "delivery_id": delivery_id,
+        #     "groups": [{
+        #         "message": message1,
+        #         "organization_id": organization_id1,
+        #         "items": [{
+        #             "price_id": price_id1,
+        #             "quantity": quantity1,
+        #             "source_id": source_id1
+        #         }]
+        #     }, {
+        #         "message": message2,
+        #         "organization_id": organization_id2,
+        #         "items": [{
+        #             "price_id": price_id2,
+        #             "quantity": quantity2,
+        #             "source_id": source_id2
+        #         }]
+        #     }]
+        # }
 
-        # 5.打印日志
-        self.plog.printlog(data, response, describle='Space - 空间公开设置', url=self.Space_switch_setting, method='post')
-
-        # 6.返回
-        return response
-
-    # Space - 空间列表
-    def Space_list_api(self, q=None, class_type=None):
-        # 1.组装token
-        data = {
-            'token': self.token,
-            'q': q,
-            'class': class_type
-        }
-
-        # 2. 发送请求
-        response = self.R.get_function(self.Space_list, data)
-
-        # 3.打印日志
-        self.plog.printlog(data, response, describle='Space - 空间列表', url=self.Space_list, method='get')
-
-        # 4.返回
-        return response
-
-    # Space - 空间创建（私人空间）
-    def Space_private_create_api(self, name, class_id):
-        '''
-        当前用户创建私人空间
-        :param name :       空间名称
-        :param class_id :   空间类型
-        :return:
-        '''
-
-        # 1.组装token
-        data = {
-            'token': self.token,
-            'name': name,
-            'class_id': class_id
-        }
-
-        # 2. 发送请求
-        response = self.R.post_function(self.Space_private_create, data)
-
-        # 3.打印日志
-        self.plog.printlog(data, response, describle='Space - 私人空间创建', url=self.Space_private_create, method='post')
-
-        # 4.返回
-        return response
-
-    # Space - 空间删除（私人空间）
-    def Space_private_delete_id_api(self, id):
-        '''
-        删除当前用户的私人空间
-        :param id : 空间id
-        :return:
-        '''
-
-        # 1.组装数据
-        data = {
-            'token': self.token,
-            'id': id
-        }
-
-        # 2.替换id
-        url = self.Space_private_delete_id.replace(':id', id)
-
-        # 3. 发送请求
-        response = self.R.delete_function(url, data)
-
-        # 4.打印日志
-        self.plog.printlog(data, response, describle='Space - 私人空间删除', url=url, method='delete')
-
-        # 5.返回
-        return response
-
-    # Space - 空间更新（私人空间）
-    def Space_update_id_api(self, id, name=None, class_id=None):
-        '''
-        更新私人空间
-        :param id :         空间ID
-        :param name :       空间名称
-        :param class_id:    空间类型ID
-        :return:
-        '''
-
-        # 1.组装数据
-        data = {
-            'token': self.token,
-            'id': id,
-            'name': name,
-            'class_id': class_id
-        }
-
-        # 2.替换id
-        url = self.Space_update_id.replace(':id', id)
+        # 2.将字典格式转化成json
+        data = json.dumps(data)
 
         # 3.发送请求
-        response = self.R.put_function(url, data)
+        response = self.R.post_function(self.Shopping_buyer_order_order, data, headers=headers)
 
         # 4.打印日志
-        self.plog.printlog(data, response, describle='Space - 空间更新', url=url, method='put')
+        self.plog.printlog(data, response, describle='Shopping - 买家订单-下单', url=self.Shopping_buyer_order_order, method='post')
 
         # 5.返回
         return response
 
-    # Space - 空间概况（私人空间）
-    def Space_overview_id_api(self, id):
+    # Shopping - 买家订单-列表
+    def Shopping_buyer_order_list_api(self, number=None, state=None, item_state=None, page=None, per_page=None):
         '''
-        空间概况
-        :param id : 空间ID
+        获取指定用户的订单列表。(按照创建顺序倒序排列，最新下单的在前面)
+        :param number       :   订单号 用来查询单一订单
+        :param state        :   订单状态 根据此先进行订单状态过滤
+                                submitted 待付款
+                                paid 待发货
+                                reminded 待发货(已提醒)
+                                delivered 已发货
+                                receipted 已收货
+                                canceled 交易取消
+                                finished 交易成功
+                                settling 交易成功
+                                settlement 交易成功
+                                ['finished', 'receipted'] 待评论订单 (使用此状态时，item_state设置为['mounted', 'accepted', 'rejected'])
+        :param item_state   :   订单中的商品状态 根据商品状态过滤 可选值有
+                                submitted 待付款
+                                mounted 支付完成
+                                refunding 请求售后
+                                accepted 同意售后
+                                rejected 拒绝售后
+                                commented 评论
+        :param page         :   页数
+        :param per_page     :   每页记录数
         :return:
         '''
 
-        # 1.组装数据
+        # 1.组装token和data
         data = {
             'token': self.token,
-            'id': id
-        }
-
-        # 2.替换id
-        url = self.Space_overview_id.replace(':id', id)
-
-        # 3.发送请求
-        response = self.R.get_function(url, data)
-
-        # 4.打印日志
-        self.plog.printlog(data, response, describle='Space - 空间概况', url=url, method='get')
-
-        # 5.返回
-        return response
-
-    # Space - 私人空间类型列表
-    def Space_private_type_list_api(self, parent_id=None):
-        # 1.组装token
-        data = {
-            'token': self.token,
-            'parent_id': parent_id
-        }
-
-        # 2. 发送请求
-        response = self.R.get_function(self.Space_type_list, data)
-
-        # 3.打印日志
-        self.plog.printlog(data, response, describle='Space - 私人空间类型列表', url=self.Space_type_list, method='get')
-
-        # 4.返回数据
-        return response
-
-    # Space - 空间联系人列表(非当前用户)
-    def Space_contact_list_id_api(self, id, page=None, per_page=None):
-        '''
-        :param id :         空间ID
-        :param page :       页数
-        :param per_page :   每页记录数
-        :return:
-        '''
-
-        # 1.组装数据
-        data = {
-            'token': self.token,
-            'id': id,
+            'number': number,
+            'state[]': state,
+            'item_state': item_state,
             'page': page,
             'per_page': per_page
         }
 
-        # 2.替换id
-        url = self.Space_contact_list_id.replace(":id", id)
+        # 2.发送请求
+        response = self.R.get_function(self.Shopping_buyer_order_list, data)
 
-        # 3.发送请求
-        response = self.R.get_function(url, data)
+        # 3.打印日志
+        self.plog.printlog(data, response, describle='Shopping - 买家订单-列表', url=self.Shopping_buyer_order_list, method='get')
 
-        # 4.打印日志
-        self.plog.printlog(data, response, describle='Space - 空间联系人列表(非当前用户)', url=url, method='get')
-
-        # 5.返回
+        # 4.返回
         return response
 
-    # Space - 企业空间关闭
-    def Space_delete_api(self, sql):
-        '''关闭空间
-        :param sql: sql查询语句
-        :param d_index: 数据索引
+    # Shopping - 买家订单-取消订单
+    def Shopping_buyer_order_cancel_api(self, number):
+        '''
+        买家取消未支付的订单
+        :param number   :   订单号
+        :return:
+        '''
+        # 1.组装token和data
+        data = {
+            'token': self.token,
+            'number': number
+        }
+
+        # 2.替换number
+        self.Shopping_buyer_order_cancel = self.Shopping_buyer_order_cancel.replace(":number", number)
+
+        # 3.发送请求
+        response = self.R.put_function(self.Shopping_buyer_order_cancel, data)  # 当response为空时，此处返回status
+
+        # 4.当response为空时，自动分配response返回值
+        response_none = [response, '']
+
+        # 5.打印日志
+        self.plog.printlog(data, response_none, describle='Shopping - 买家订单-取消订单', url=self.Shopping_buyer_order_cancel, method='put')
+
+        # 5.返回，此处结果为status码
+        return response
+
+    # Shopping - 买家订单-提醒发货
+    def Shopping_buyer_order_remind_api(self, number):
+        '''
+        买家提醒发货
+        :param number   :   订单号
         :return:
         '''
 
-        # 1.查询organzation_id
-        organization_id = self.d.select(sql)[0][0]
+        # 1.准备数据
+        data = {
+            'token': self.token,
+            'number': number
+        }
 
-        # 2.组装url
-        part_url = '/%s/organization' % organization_id
-        url = self.url_closespace + part_url
+        # 2.替换url中number
+        self.Shopping_buyer_order_remind = self.Shopping_buyer_order_remind.replace(":number", number)
 
-        # 3. 组装token和data
-        # 创建data字典
-        key = 'token'
-        data = {key: self.token}
+        # 3.发送请求
+        response = self.R.put_function(self.Shopping_buyer_order_remind, data)
 
-        # 4. 发送请求
-        response = self.R.delete_function(url, data)
-        self.plog.printlog(data, response, describle='Space - 企业空间关闭', url=self.url_closespace, method='delete')
+        # 4.替换结果，此处为put方法，返回结果为空
+        response_none = [response, '']
 
-        # 5.返回
+        # 5.打印日志
+        self.plog.printlog(data, response_none, describle='Shopping - 买家订单-提醒发货', url=self.Shopping_buyer_order_remind, method='put')
+
+        # 6.返回，此处结果为status码
         return response
 
 
 # 调试
+shopping = Shopping()
 
-# Space - 文件夹列表
-# sp.Space_folder_list_api(cluster_id='4073')
+# Shopping - 买家某个订单详情
+# shopping.Shopping_buyer_order_details_number_api(number='121691026083027')
 
-# Space - 文件夹列表(联系人所有）
-# sp.Space_folder_list_id_api(id='183262',cluster_id='3464')
+# Shopping - 买家订单-下单
+# shopping.Shopping_buyer_order_order_single_api(delivery_id=245, organization_id=4835, price_id=63363, quantity=1)
 
-# Space - 文件夹创建
-# sp.Space_folder_create_api(cluster_id='4073',name='api测试')
 
-# Space - 文件夹删除
-# sp.Space_folder_delete_id_api(id='19710')
+# Shopping - 买家订单-下单-多订单
+# data = {
+#     "token": "41d956f78205b4f0f787a54bd44fed74",
+#     "delivery_id": 245,
+#     "groups": [{
+#         "message": "，测",
+#         "organization_id": 5556,
+#         "items": [{
+#             "price_id": 63372,
+#             "quantity": 1
+#         }]
+#     }, {
+#         "message": "，测",
+#         "organization_id": 4835,
+#         "items": [{
+#             "price_id": 62612,
+#             "quantity": 1
+#         }]
+#     }]
+# }
+# shopping.Shopping_buyer_order_order_more_api(data)
 
-# Space - 文件夹更新
-# sp.Space_folder_update_id_api(id='8299',cluster_id='19768',name='api测试1')
+# Shopping - 买家订单-列表
+# shopping.Shopping_buyer_order_list_api(state='submitted')
 
-# Space - 文件夹浏览记录
-# sp.Space_folder_browse_api(id='19711')
+# Shopping - 买家订单-取消订单
+# shopping.Shopping_buyer_order_cancel_api(number='121750892001309')
 
-# Space - 热门空间名
-# sp.Space_popular_name_api(class_id='66')
-
-# Space - 空间中删除联系人(删除客户)
-# sp.Space_delete_contact_id_api(id='4073',stranger_ids='183262')
-
-# Space - 空间中添加联系人(新增客户)
-# sp.Space_add_contac_id_api(id='4073',stranger_ids='183262')
-
-# Space - 空间公开设置
-# sp.Space_switch_setting_api("4073", "off")
-
-# Space - 私人空间创建
-# sp.Space_private_create_api(name='api测试', class_id='67')
-
-# Space - 私人空间删除
-# sp.Space_private_delete_id_api(id='8248')
-
-# Space - 空间更新
-# sp.Space_update_id_api(id='8248',name='空间更新api',class_id='68')
-
-# Space - 空间概况
-# sp.Space_overview_id_api(id='8248')
-
-# Space - 空间联系人列表(非当前用户) ———— 弃用
-# sp.Space_contact_list_id_api(id='8248')
-
-# Space - 私人空间类型列表
-# sp.Space_private_type_list_api()
-
-# sp.Space_list_api(q='api测试')
+# Shopping - 买家订单-提醒发货
+# shopping.Shopping_buyer_order_remind_api(number='121751027503208')

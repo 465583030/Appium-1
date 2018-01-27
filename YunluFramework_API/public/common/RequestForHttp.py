@@ -23,7 +23,7 @@ class RequestForHttp(Handle):
 
             # 1.发送请求
             with requests.Session() as s:
-                r = s.get(url,params=r_data)
+                r = s.get(url, params=r_data)
 
             # 2.打印请求状态码
             status = r.status_code
@@ -57,7 +57,7 @@ class RequestForHttp(Handle):
 
             # 1.发送请求
             with requests.Session() as s:
-                r = s.post(url,data=r_data, headers=headers)
+                r = s.post(url, data=r_data, headers=headers)
 
             # 2.打印请求状态码
             status = r.status_code
@@ -133,14 +133,27 @@ class RequestForHttp(Handle):
             # 3.打印返回结果
             response = r.text
 
-            # 4.解码json数据,将json转为字典
-            dict_r = json.loads(response)
+            try:
+                # 4.解码json数据,将json转为字典
+                dict_r = json.loads(response)
 
-            # 5.格式化输出json
-            # ensure_ascii=False 中文不转码
-            json_r = json.dumps(dict_r, sort_keys=True, ensure_ascii=False, indent=4, separators=(',', ': '))
-            return [status, json_r]
+                # 5.格式化输出json
+                # ensure_ascii=False 中文不转码
+                json_r = json.dumps(dict_r, sort_keys=True, ensure_ascii=False, indent=4, separators=(',', ': '))
+                return [status, json_r]
+
+            except Exception as e:
+                return status
 
         except Exception as err:
             self.log.error("PUT请求错误 : %s" % err)
             raise err
+
+
+# data = {
+#     'token': '3888f2c8717f50b7a7f47e2371c1cbf2',
+#     'number': '121750866140321'
+# }
+# req = RequestForHttp()
+# response = req.put_function(url='/api/v1/order_forms/121750866140321/cancel', r_data=data)
+# print(response)
