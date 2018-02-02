@@ -128,6 +128,55 @@ class Space(Login):
         # 5.返回
         return response
 
+    """
+    @api {get} /api/v1/galleries 私人空间-文件夹列表
+    @apiGroup Space
+    @apiName galleries
+    @apiDescription 用于获取私人空间下面的文件夹列表，可以传联系人ID，用户ID，私人空间ID
+
+    @apiParam {String} token 
+    @apiParam {Number} [stranger_id]  联系人ID：提供此ID则获取该联系人下的文件夹，人脉中可用
+    @apiParam {String} [user_id] 用户UUID：提供此ID则获取该用户下的文件夹，人脉中可用
+    @apiParam {Number} [cluster_id] 私人空间ID：提供此ID则获取该空间下的文件夹，一般在进入私人空间中调用
+    
+    @apiParamExample {json} Request-Example:
+    {
+      'token': 'e156d8f635eaa66230368130ed207579', 
+      'stranger_id': None,
+      'user_id': None,
+      'cluster_id': '8339'
+    }
+
+    
+    @apiSuccess {Object[]} gallery 返回文件夹对象，json数据
+    @apiSuccess {Number}  id 文件夹ID
+    @apiSuccess {String} name  文件夹名称
+    @apiSuccess {Number} cluster_id  空间ID
+    @apiSuccess {Number} count  文件夹图片数量
+    @apiSuccess {Number} last_photo  文件夹最新图片
+    @apiSuccess {String="on","off"}  disclosure 是否公开 
+    
+    @apiSuccessExample {json} Success-Response:
+      HTTP/1.1 200 OK
+      {
+        "gallery": [
+            {
+                "can_click": false,
+                "clazz": "user_custom",
+                "cluster_class_id": 68,
+                "cluster_id": 8339,
+                "count": 0,
+                "disclosure": "off",
+                "id": 19828,
+                "last_photo": "",
+                "name": "测试文件夹api",
+                "photos": []
+                }
+            ]
+        }
+    
+    """
+
     # Space - 文件夹列表
     def Space_folder_list_api(self, stranger_id=None, user_id=None, cluster_id=None):
         '''
@@ -186,6 +235,35 @@ class Space(Login):
         # 5.返回
         return response
 
+    """
+           @api {post} /api/v1/galleries 私人空间-文件夹创建
+           @apiGroup Space
+           @apiName create_gallery
+           @apiDescription 创建文件夹到私人空间
+
+           @apiParam {String} token
+           @apiParam {Number} cluster_id 私人空间ID
+           @apiParam {String} name 文件夹名称
+
+           @apiParamExample {json} Request-Example:
+           {
+            'token': 'e156d8f635eaa66230368130ed207579', 
+            'cluster_id': '8341', 
+            'name': 'api测试文件夹'
+           }
+
+           @apiSuccess (201) {String} success 成功状态
+           @apiSuccess (201) {Number} id 文件夹创建成功后id 
+
+           @apiSuccessExample {json} Success-Response:
+            HTTP/1.1 201 OK
+            {
+                "id": 19831,
+                "success": true
+            }
+
+        """
+
     # Space - 文件夹创建
     def Space_folder_create_api(self, cluster_id, name):
         '''
@@ -206,10 +284,35 @@ class Space(Login):
         response = self.R.post_function(self.Space_folder_create, data)
 
         # 3.打印日志
-        self.plog.printlog(data, response, describle='Space - 文件夹创建', url='Space_folder_create', method='post')
+        self.plog.printlog(data, response, describle='Space - 文件夹创建', url=self.Space_folder_create, method='post')
 
         # 4.返回
         return response
+
+    """
+          @api {delete} /api/v1/galleries/:id 私人空间-文件夹删除
+          @apiGroup Space
+          @apiName delete_gallery
+          @apiDescription 私人空间删除当前用户文件夹
+    
+          @apiParam {String} token
+          @apiParam {Number} id 文件夹ID
+    
+          @apiParamExample {json} Request-Example:
+          {
+           'token': 'e156d8f635eaa66230368130ed207579', 
+           'id': '19833',
+          }
+    
+          @apiSuccess  {String} success 成功状态
+    
+          @apiSuccessExample {json} Success-Response:
+           HTTP/1.1 200 OK
+           {
+               "success": true
+           }
+
+    """
 
     # Space - 文件夹删除
     def Space_folder_delete_id_api(self, id):
@@ -237,6 +340,35 @@ class Space(Login):
         # 5.返回
         return response
 
+    """
+       @api {put} /api/v1/galleries 私人空间-文件夹更新
+       @apiGroup Space
+       @apiName update_gallery
+       @apiDescription 私人空间更新文件夹(如：更新文件夹名称)
+
+       @apiParam {String} token
+       @apiParam {Number} id 文件夹ID
+       @apiParam {Number} [cluster_id] 私人空间ID
+       @apiParam {String} [name] 文件夹名称
+
+       @apiParamExample {json} Request-Example:
+       {
+        'token': 'e156d8f635eaa66230368130ed207579', 
+        'id': '19833',
+        'cluster_id': '8342', 
+        'name': '测试文件夹api'
+       }
+
+       @apiSuccess  {String} success 成功状态
+
+       @apiSuccessExample {json} Success-Response:
+        HTTP/1.1 200 OK
+        {
+            "success": true
+        }
+
+    """
+
     # Space - 文件夹更新
     def Space_folder_update_id_api(self, id, cluster_id=None, name=None):
         '''
@@ -250,7 +382,7 @@ class Space(Login):
         # 1.组装
         data = {
             'token': self.token,
-            # 'id': id,
+            'id': id,
             'cluster_id': cluster_id,
             'name': name
         }
@@ -298,6 +430,47 @@ class Space(Login):
 
         # 5.返回
         return response
+
+    """
+       @api {get} /api/v1/spaces/names 热门空间名
+       @apiGroup Space
+       @apiName names
+       @apiDescription 用于获取常用的空间名，用于创建空间时的空间名推荐
+
+       @apiParam {String} count  空间名数量，默认10个
+       @apiParam {Number} [class_id] 空间类型，来源：根据"私人空间类型列表"接口获取空间类型
+
+       @apiParamExample {json} Request-Example:
+       {
+        'token': 'e156d8f635eaa66230368130ed207579', 
+        'class_id': 67, 
+        'count': None
+        }
+
+
+
+       @apiSuccess {String} success 成功状态
+       @apiSuccess {String}  names 热门空间名 
+
+       @apiSuccessExample {json} Success-Response:
+        HTTP/1.1 200 OK
+        {
+        "names": [
+            "舌尖上的中国",
+            "美食",
+            "民以食为天",
+            "茶",
+            "厨艺秀",
+            "正宗东海海鲜《海鲜大礼》",
+            "吃货世界",
+            "吃货的世界",
+            "我的衣柜",
+            "我的店铺"
+        ],
+        "success": true
+        }
+
+       """
 
     # Space - 热门空间名
     def Space_popular_name_api(self, class_id, count=None):
@@ -416,6 +589,66 @@ class Space(Login):
         # 6.返回
         return response
 
+    """
+       @api {post} /api/v1/spaces 空间列表
+       @apiGroup Space
+       @apiName spaces
+       @apiDescription 获取指定用户的空间列表
+    
+       @apiParam {String} token
+       @apiParam {String} [q] 根据空间名过滤
+       @apiParam {String="private", "organization", "representative", "master", "normal", "outer"} class private-获取所有私人空间；
+                                                                                                    organization-获取所有企业空间（包括自创的与加盟的）；未提供该值则返回所有空间；
+                                                                                                    representative-获取当前用户是其机构法人的企业空间；
+                                                                                                    master-获取当前用户是其高管的企业空间；
+                                                                                                    normal-获取当前用户是其助理级员工的企业空间；
+                                                                                                    outer-获取当前用户是其导购员的企业空间
+       @apiParam {String} [stranger_id] 联系人ID，提供该值时返回的结果中包含字段opened(空间是否已对指定联系人开放，提供参数 stranger_id 时，包含该字段)
+
+        
+       @apiParamExample {json} Request-Example:
+       {
+           'token': 'e156d8f635eaa66230368130ed207579', 
+           'q': 'api测试', 
+           'class': None
+       }
+        
+        
+       @apiSuccess  {Object[]} space 空间对象
+       @apiSuccess  {String} name 空间名称 
+       @apiSuccess  {Number} cluster_id 私人空间ID
+       @apiSuccess  {Number} organization_id 机构空间ID
+       @apiSuccess  {Number} service_id 服务类型ID
+       @apiSuccess  {String} logo_url 机构空间-LOGO URL
+       @apiSuccess  {Number} class_id 空间类型ID(案例中为私人空间类型ID)
+       @apiSuccess  {String} owner_class 空间所有类型 private - 私有空间; master - 堂主空间; member - 加盟空间
+       @apiSuccess  {Number} locked 空间是否已暂时关闭
+       @apiSuccess  {Number} gallery_count 空间所属的目录数
+       @apiSuccess  {Boolean} opened 空间是否已对指定联系人开放，提供参数 stranger_id 时，包含该字段
+       @apiSuccess  {Boolean} organization_state 机构状态，企业空间时，包含该字段
+
+       @apiSuccessExample {json} Success-Response:
+        HTTP/1.1 201 OK
+        [
+            {
+                "aliaz": null,
+                "class_id": 67,
+                "cluster_id": 8339,
+                "company": null,
+                "disclosure": "off",
+                "gallery_count": 0,
+                "locked": false,
+                "logo_url": null,
+                "name": "api测试",
+                "organization_id": null,
+                "owner_class": "private",
+                "service_id": null,
+                "vocation": null
+            }
+        ]
+
+    """
+
     # Space - 空间列表
     def Space_list_api(self, q=None, class_type=None):
         # 1.组装token
@@ -433,6 +666,35 @@ class Space(Login):
 
         # 4.返回
         return response
+
+    """
+       @api {post} /api/v1/clusters 私人空间创建
+       @apiGroup Space
+       @apiName cluster
+       @apiDescription 当前用户用于创建私人空间
+
+       @apiParam {String} token
+       @apiParam {String} name 私人空间名称
+       @apiParam {Number} [class_id] 空间类型，来源：根据"私人空间类型列表"接口获取空间类型
+
+       @apiParamExample {json} Request-Example:
+       {
+           'token': 'e156d8f635eaa66230368130ed207579', 
+           'name': 'api测试', 
+           'class_id': 67
+       }
+
+       @apiSuccess (201) {String} success 成功状态
+       @apiSuccess (201) {Number} id 空间ID 
+
+       @apiSuccessExample {json} Success-Response:
+        HTTP/1.1 201 OK
+        {
+            "id": 8339,
+            "success": true
+        }
+    
+    """
 
     # Space - 空间创建（私人空间）
     def Space_private_create_api(self, name, class_id):
@@ -459,6 +721,30 @@ class Space(Login):
         # 4.返回
         return response
 
+    """
+      @api {delete} /api/v1/clusters/:id 私人空间删除
+      @apiGroup Space
+      @apiName delete_cluster
+      @apiDescription 删除当前用户的私人空间
+
+      @apiParam {String} token
+      @apiParam {Number} id 空间ID
+
+      @apiParamExample {json} Request-Example:
+      {
+       'token': 'e156d8f635eaa66230368130ed207579', 
+       'id': '19833',
+      }
+
+      @apiSuccess  {String} success 成功状态
+
+      @apiSuccessExample {json} Success-Response:
+       HTTP/1.1 200 OK
+       {
+           "success": true
+       }
+
+    """
     # Space - 空间删除（私人空间）
     def Space_private_delete_id_api(self, id):
         '''
@@ -469,8 +755,8 @@ class Space(Login):
 
         # 1.组装数据
         data = {
-            'token': self.token,
-            'id': id
+            "token": self.token,
+            "id": id
         }
 
         # 2.替换id
@@ -484,6 +770,35 @@ class Space(Login):
 
         # 5.返回
         return response
+
+    """
+          @api {put} /api/v1/clusters/8341 私人空间更新
+          @apiGroup Space
+          @apiName 
+          @apiDescription 当前用户更新私人空间，例如更新私人空间名称、空间类型
+
+          @apiParam {String} token
+          @apiParam {Number} id 空间ID
+          @apiParam {String} [name] 私人空间名称
+          @apiParam {Number} [class_id] 空间类型ID
+
+          @apiParamExample {json} Request-Example:
+          {
+            'token': 'e156d8f635eaa66230368130ed207579', 
+            'id': '8341', 
+            'name': '测试api', 
+            'class_id': '68'
+          }
+
+          @apiSuccess {String} success 成功状态
+
+          @apiSuccessExample {json} Success-Response:
+           HTTP/1.1 200 OK
+           {
+               "success": true
+           }
+
+       """
 
     # Space - 空间更新（私人空间）
     def Space_update_id_api(self, id, name=None, class_id=None):
@@ -515,6 +830,41 @@ class Space(Login):
         # 5.返回
         return response
 
+    """
+       @api {get} /api/v1/clusters/:id 私人空间-空间概况
+       @apiGroup Space
+       @apiName show_cluster
+       @apiDescription 私人空间概况
+
+       @apiParam {String} token
+       @apiParam {Number} id 私人空间ID
+
+       @apiParamExample {json} Request-Example:
+       {
+        'token': 'e156d8f635eaa66230368130ed207579', 
+        'id': '8343',
+       }
+
+       @apiSuccess  {Number} id 私人空间ID
+       @apiSuccess {String} name 私人空间名称
+       @apiSuccess {Number} class_id 空间类型ID
+       @apiSuccess {String} class_name 空间类型名称
+       @apiSuccess {Number} galleries_count 空间中的文件夹个数
+       @apiSuccess {Number} clients_count 空间中的客户数量
+
+       @apiSuccessExample {json} Success-Response:
+        HTTP/1.1 200 OK
+        {
+            "class_id": 68,
+            "class_name": "居住",
+            "clients_count": 0,
+            "galleries_count": 1,
+            "id": 8343,
+            "name": "测试api"
+        }
+
+    """
+
     # Space - 空间概况（私人空间）
     def Space_overview_id_api(self, id):
         '''
@@ -540,6 +890,94 @@ class Space(Login):
 
         # 5.返回
         return response
+
+    """
+        @api {get} /api/v1/space_classes 私人空间类型列表
+        @apiGroup Space
+        @apiName classes
+        @apiDescription 获取私人空间下面的可选类型列表
+
+        @apiParam {Number} [parent_id] 空间类型ID，提供该值则返回为目录类型
+
+        @apiParamExample {json} Request-Example:
+        {
+            'token': 'e156d8f635eaa66230368130ed207579', 
+            'parent_id': None
+        }
+
+
+        @apiSuccess {Object[]} space_class 返回空间类型对象，json数据
+        @apiSuccess {String}  id 类型ID
+        @apiSuccess {String} name  类型名称
+        @apiSuccess {String} aliaz  类别别名
+
+        @apiSuccessExample {json} Success-Response:
+          HTTP/1.1 200 OK
+          [
+            {
+                "aliaz": "food",
+                "id": 67,
+                "name": "食物"
+            },
+            {
+                "aliaz": "house",
+                "id": 68,
+                "name": "居住"
+            },
+            {
+                "aliaz": "traffic",
+                "id": 69,
+                "name": "出行"
+            },
+            {
+                "aliaz": "education",
+                "id": 70,
+                "name": "学习"
+            },
+            {
+                "aliaz": "health",
+                "id": 71,
+                "name": "健康"
+            },
+            {
+                "aliaz": "intercourse",
+                "id": 72,
+                "name": "社交"
+            },
+            {
+                "aliaz": "vocation",
+                "id": 73,
+                "name": "工作"
+            },
+            {
+                "aliaz": "art",
+                "id": 74,
+                "name": "文艺"
+            },
+            {
+                "aliaz": "amusement",
+                "id": 75,
+                "name": "娱乐"
+            },
+            {
+                "aliaz": "beauty",
+                "id": 76,
+                "name": "美护"
+            },
+            {
+                "aliaz": "other",
+                "id": 77,
+                "name": "其他"
+            },
+            {
+                "aliaz": "clothing",
+                "id": 66,
+                "name": "穿衣"
+            }
+        ]
+
+
+        """
 
     # Space - 私人空间类型列表
     def Space_private_type_list_api(self, parent_id=None):
