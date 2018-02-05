@@ -1,7 +1,7 @@
 # Author:Xiaojingyuan
 __author__ = 'Administrator'
 # -*- coding: utf-8 -*-
-from YunluFramework_API.public.登陆 import *
+from YunluFramework_API.api.登陆 import *
 
 
 # 登录
