@@ -23,7 +23,7 @@ class CreatePerSFolder:
         sleep(2)
         try:
             self.log.info('------START:test2_1私人空间加文件夹.CreatePerSFolder.py------')
-            # 1.空间-菜单栏
+            # 1.Space-菜单栏
             tools.swipeUp(500)
             tools.swipeUp(500)
             tools.swipeUp(500)

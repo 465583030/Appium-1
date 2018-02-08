@@ -1,5 +1,6 @@
 # Author:Xiaojingyuan
 from YunluFramework_API.public.common.datainfo import DataMysql
+from YunluFramework_API.public.common.datainfo import DataInfo
 from YunluFramework_API.config.globalparam import GlobalParam
 from YunluFramework_API.public.common.log import Log
 from YunluFramework_API.public.common.loginfo import LogInfo
@@ -10,6 +11,7 @@ class Handle:
     def __init__(self):
         # 1.创建数据库操作对象
         self.d = DataMysql()
+        self.excel = DataInfo('data_api.xls')
 
         # 2.创建读取配置信息对象
         self.cf = GlobalParam('config', 'path_file.conf')

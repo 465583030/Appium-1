@@ -4,7 +4,7 @@ __author__ = 'Administrator'
 from YunluFramework_API.api.TeamConstruction import *
 
 
-# 空间
+# Space
 @ddt.ddt
 class TeamConstruction(Login):
     def __init__(self):
@@ -245,7 +245,7 @@ class TeamConstruction(Login):
         Team_Construction - 产业角色 - 修改：没有此功能了(不能修改产业角色前端)
     """
 
-    # Team_Construction - 产业角色 - 修改
+    # Team_Construction - 产业角色 - 修改(未使用)
     def Team_Construction_industry_modify_api(self, team_id, server_id):
         '''
         修改企业的产业角色，定制企业上下游
@@ -1460,140 +1460,55 @@ class TeamConstruction(Login):
         return response
 
     """
-         @api {get} /api/v1/team/:team_id/departments 部门列表
+         @api {get} /api/v1/team/:team_id/departments/mine 部门列表（我的部门）
          @apiGroup Team Construction
-         @apiName departments
-         @apiDescription 获取指定团队的部门列表。（该接口需要部门的浏览权限）
+         @apiName departments_mine
+         @apiDescription 获取指定团队的当前用户所在的部门列表。（该接口需要部门及员工的浏览权限）用于查看我所在部门的相关信息
 
          @apiParam {String} token
-         @apiParam {Number} team_id        团队ID
-         @apiParam {Boolean} [has_groups]  是否附加该部门的职位列表。（如提供该参数则该接口还需拥有职位的浏览权限）  
-         @apiParam {Boolean} [ex] 职位别名  为true时，则排除掉导购员职位
+         @apiParam {Number} team_id  团队ID
+         @apiParam {String} [q] 按成员姓名模糊检索
 
          @apiParamExample {json} Request-Example:
          {
-             'token': 'e4423f326ab0a7f7fc64c08689ee403d', 
-             'team_id': '4835', 
-             'has_groups': 'true', 
-             'ex': None
+            'token': 'e4423f326ab0a7f7fc64c08689ee403d', 
+            'team_id': '4835', 
+            'q': None
          }
 
          @apiSuccess (200) {Object[]} departments 部门
-         @apiSuccess (200) {Object[]} departments.groups 职位
-         @apiSuccess (200) {Number} departments.groups.id 职位ID
-         @apiSuccess (200) {String} departments.groups.name 职位名称
-         @apiSuccess (200) {Number} departments.groups.quota 名额
-         @apiSuccess (200) {String} departments.groups.clazz 职位类型 master-负责人 normal-普通
-         @apiSuccess (200) {Number} departments.groups.user_count 职位当前人数
-         @apiSuccess (200) {String} departments.groups.master_name 负责人姓名
-         @apiSuccess (200) {String} departments.id 部门ID
+         @apiSuccess (200) {Object[]} departments.users 部门员工
+         @apiSuccess (200) {Number} departments.users.id 部门员工ID
+         @apiSuccess (200) {String} departments.users.name 部门员工姓名
+         @apiSuccess (200) {Object[]} departments.users.groups 员工职位
+         @apiSuccess (200) {Number} departments.users.id 员工职位ID
+         @apiSuccess (200) {Number} departments.users.name 职位名称
          @apiSuccess (200) {Number} departments.id 部门ID
          @apiSuccess (200) {String} departments.name 部门名称
-         @apiSuccess (200) {String} departments.description 部门描述
-         @apiSuccess (200) {String} departments.clazz 部门类型 root-公司 normal-普通
 
          @apiSuccess (403) {String} message 错误信息 用户没有部门浏览权限
 
          @apiSuccessExample {json} Success-Response:
          HTTP/1.1 200 OK
           [
-           {
-               "clazz": "root",
-               "description": "董事会",
-               "groups": [
-                   {
-                       "clazz": "master",
-                       "description": "董事长",
-                       "id": 17,
-                       "master_name": null,
-                       "name": "董事长",
-                       "quota": 1,
-                       "user_count": 0
-                   },
-                   {
-                       "clazz": "master",
-                       "description": "管理员",
-                       "id": 18,
-                       "master_name": "肖静远",
-                       "name": "管理员",
-                       "quota": 2,
-                       "user_count": 1
-                   },
-                   {
-                       "clazz": "master",
-                       "description": "总经理",
-                       "id": 19,
-                       "master_name": null,
-                       "name": "总经理",
-                       "quota": 1,
-                       "user_count": 0
-                   }
-               ],
-               "id": 9,
-               "name": "董事会"
-           },
-           {
-               "clazz": "normal",
-               "description": "销售部",
-               "groups": [
-                   {
-                       "clazz": "master",
-                       "description": "销售经理",
-                       "id": 20,
-                       "master_name": "祝菲",
-                       "name": "销售主管",
-                       "quota": 1,
-                       "user_count": 1
-                   },
-                   {
-                       "clazz": "normal",
-                       "description": "销售员",
-                       "id": 21,
-                       "master_name": null,
-                       "name": "销售员",
-                       "quota": 1,
-                       "user_count": 0
-                   },
-                   {
-                       "clazz": "outer",
-                       "description": "<p>1. 努力提高自身的知名度、信用度、美誉度，维护好自身光辉形象。 </p>\n<p>2. 利用自己的人脉资源,通过各种分享和传播渠道，帮助企业添加有效客户。</p>\n<p>3. 与客户保持良好沟通，提高企业在客户中的口碑。</p>",
-                       "id": 54,
-                       "master_name": null,
-                       "name": "导购员",
-                       "quota": 0,
-                       "user_count": 0
-                   }
-               ],
-               "id": 10,
-               "name": "营销部"
-           },
-           {
-               "clazz": "normal",
-               "description": "行政部",
-               "groups": [
-                   {
-                       "clazz": "master",
-                       "description": "行政人事经理",
-                       "id": 22,
-                       "master_name": null,
-                       "name": "人事主管",
-                       "quota": 1,
-                       "user_count": 0
-                   },
-                   {
-                       "clazz": "normal",
-                       "description": "",
-                       "id": 44,
-                       "master_name": null,
-                       "name": "行政助理",
-                       "quota": 1,
-                       "user_count": 0
-                   }
-               ],
-               "id": 11,
-               "name": "人事部"
-           }
-       ]
+            {
+                "id": 9,
+                "name": "董事会",
+                "users": [
+                    {
+                        "groups": [
+                            {
+                                "id": 18,
+                                "name": "管理员"
+                            }
+                        ],
+                        "id": 1654,
+                        "mobile": "13027104206",
+                        "name": "肖静远"
+                    }
+                ]
+            }
+          ]
        """
 
     # Team_Construction - 部门列表(我的部门)
@@ -1608,7 +1523,7 @@ class TeamConstruction(Login):
         data = {
             'token': self.token,
             'team_id': team_id,
-            'q':q
+            'q': q
         }
 
         # 2.替换id
@@ -1619,6 +1534,69 @@ class TeamConstruction(Login):
 
         # 4.打印日志
         self.plog.printlog(data, response, describle='Team_Construction - 部门列表(我的部门)', url=self.Team_Construction_departments_mine, method='get')
+
+        # 5.返回
+        return response
+
+    """
+     @api {put} /api/v1/team/:team_id/departments/:id 部门更新(未使用)
+     @apiGroup Team Construction
+     @apiName update_department
+     @apiDescription 更新指定团队的指定部门。（该接口需要部门的更新权限）
+
+     @apiParam {String} token
+     @apiParam {Number} team_id  团队ID
+     @apiParam {Number} id  部门ID
+     @apiParam {String} name  部门名称
+     @apiParam {String} description 部门描述
+
+     @apiParamExample {json} Request-Example:
+     {
+        'token': 'e4423f326ab0a7f7fc64c08689ee403d', 
+        'team_id': '4835', 
+        'id':'1234',
+        'name':'人事部'
+        'description':'description for this department'
+     }
+
+     @apiSuccess (200) {String} success 成功状态
+
+     @apiSuccess (403) {String} message 错误信息 用户没有部门更新权限
+
+     @apiSuccessExampl7e {json} Success-Response:
+     HTTP/1.1 200 OK
+      {
+        'success' : true
+      }
+   """
+
+    # Team_Construction - 部门更新(未使用)
+    def Team_Construction_departments_update_api(self, team_id, id, name, description):
+        '''
+        更新指定团队的指定部门。（该接口需要部门的更新权限）
+        :param team_id      :   团队ID
+        :param id           :   部门ID
+        :param name         :   部门名称
+        :param description  :   部门描述
+        :return:
+        '''
+        # 1.组装token和data
+        data = {
+            'token': self.token,
+            'id': id,
+            'name':name,
+            'description':description
+        }
+
+        # 2.替换id
+        self.Team_Construction_departments_update = self.Team_Construction_departments_update.replace(":team_id", team_id)
+        self.Team_Construction_departments_update = self.Team_Construction_departments_update.replace(":id", id)
+
+        # 3.发送请求
+        response = self.R.put_function(self.Team_Construction_departments_update, data)
+
+        # 4.打印日志
+        self.plog.printlog(data, response, describle='Team_Construction - 部门列表(我的部门)', url=self.Team_Construction_departments_update, method='put')
 
         # 5.返回
         return response
@@ -1673,5 +1651,5 @@ team = TeamConstruction()
 # Team_Construction - 部门列表
 # team.Team_Construction_departments_list_api(team_id='4835', has_groups='true')
 
-# Team_Construction - 部门列表
-team.Team_Construction_departments_mine_api(team_id='4835')
+# Team_Construction - 部门列表(我的部门)
+# team.Team_Construction_departments_mine_api(team_id='4835')

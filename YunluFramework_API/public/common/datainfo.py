@@ -66,6 +66,70 @@ class DataInfo():
         colno = colno - 1
         return sheet_obj.cell_value(rowno, colno)
 
+    def get_rows(self, sheet_name):
+        '''
+        获取表单行数
+        :param sheet_name: 表单名
+        :return:
+        '''
+        sheet_obj = self.workbook.sheet_by_name(sheet_name)
+        return sheet_obj.nrows
+
+    def get_cols(self, sheet_name):
+        '''
+        获取表单列数
+        :param sheet_name: 表单名
+        :return:
+        '''
+        sheet_obj = self.workbook.sheet_by_name(sheet_name)
+        return sheet_obj.ncols
+
+    def get_api_data(self, sheet_name):
+        d = DataInfo('data_api.xls')
+        len = d.get_rows(sheet_name)
+
+        for i in range(2, len + 1):
+            # 编号
+            api_no = int(d.cell(sheet_name=sheet_name, rowno=i, colno=1))
+
+            # 接口名称
+            api_name = str(d.cell(sheet_name=sheet_name, rowno=i, colno=2))
+
+            # 接口描述
+            api_description = str(d.cell(sheet_name=sheet_name, rowno=i, colno=3))
+
+            # 接口路由
+            url = d.cell(sheet_name=sheet_name, rowno=i, colno=4)
+
+            # 名称+描述
+            description = api_name + ':' + api_description
+
+            # 请求方法
+            api_function = d.cell(sheet_name=sheet_name, rowno=i, colno=5)
+
+            # 请求头
+            api_headers = d.cell(sheet_name=sheet_name, rowno=i, colno=6)
+
+            # 请求参数
+            api_data = d.cell(sheet_name=sheet_name, rowno=i, colno=7)
+
+            # 检查字段
+            api_check = d.cell(sheet_name=sheet_name, rowno=i, colno=8)
+
+            # 预期结果
+            api_hope = d.cell(sheet_name=sheet_name, rowno=i, colno=9)
+
+    def write_data(self, sheet_name, rowno, colno, result):
+        workbook_new = xlwt.Workbook()
+        sheet_new = workbook_new.add_sheet(sheet_name, cell_overwrite_ok=True)
+        rowno = rowno - 1
+        colno = colno - 1
+        sheet_new.write(rowno, colno, result)
+        workbook_new.save('data_api.xls')
+
+d = DataInfo(path='data_api.xls')
+d.write_data(sheet_name='SPACE',rowno=10,colno=10,result='1')
+
 
 class DataWrite():
     def __init__(self, filename):

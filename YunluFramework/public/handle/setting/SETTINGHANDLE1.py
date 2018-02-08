@@ -12,7 +12,7 @@ class SETTINGHANDLE1(SETTINGPAGE4):
         if n ==3 :
             return self.p.click(self.Setting3)    #人脉
         if n ==4 :
-            return self.p.click(self.Setting4)    #空间
+            return self.p.click(self.Setting4)    #Space
 
     #设置:设置-头像
     def Setting_portrait_click(self):

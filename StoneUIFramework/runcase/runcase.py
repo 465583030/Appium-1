@@ -65,7 +65,7 @@ if __name__ == '__main__':
         # suite.addTest(contact_Exc("test_excContact"))                         #人脉换名片
         # suite.addTest(contact_Label("test_labelContact"))                     #打标签
 
-        # ----------------------------------【空间-测试用例】----------------------------------
+        # ----------------------------------【Space-测试用例】----------------------------------
         # @机构空间
         # suite.addTest(space_CreateO("test_spacecreate"))                     # test1_1 创建机构空间
         # suite.addTest(space_ProductO("test_spaceproduct"))                   # test2_1 上下架产品

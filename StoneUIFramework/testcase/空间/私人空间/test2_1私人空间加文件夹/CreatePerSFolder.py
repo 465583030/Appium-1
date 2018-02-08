@@ -23,7 +23,7 @@ class CreatePerSFolder:
         sleep(2)
         try:
             self.log.info('------START:test2_1私人空间加文件夹.CreatePerSFolder.py------')
-            # 1.空间-菜单栏
+            # 1.Space-菜单栏
             t.swipeUp(500)
             self.log.info('屏幕向上滑动0.5秒')
             # driver.find_element_by_name(spacename).click()

@@ -4,7 +4,7 @@ __author__ = 'Administrator'
 from YunluFramework_API.api.Shopping import *
 
 
-# 空间
+# Space
 @ddt.ddt
 class Shopping(Login):
     def __init__(self):
