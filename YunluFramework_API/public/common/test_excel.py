@@ -12,6 +12,13 @@ class Excel:
         # 初始化表单名
         self.sheet_name = sheet_name
 
+        # 4.创建DataInfo操作对象
+        self.data_info = DataInfo(path='data_api.xls')
+
+    """
+        统计接口测试用例描述信息次数(此处为接口名称)
+    """
+
     def excel_data(self, description):
         '''
         统计接口测试用例描述信息次数
@@ -37,9 +44,13 @@ class Excel:
 
         return [api_description_flag, row_no]
 
+    """
+        获取：测试数据 和 预期结果
+    """
+
     def get_data(self, description):
         '''
-        获取测试数据
+        获取测试数据 和 预期结果
         :param description ：描述信息
         :return:
         '''
@@ -48,59 +59,44 @@ class Excel:
 
         # 2.存描述次数
         description_row_no = self.excel_data(description)
-        flag = description_row_no[0]
-        row_no = description_row_no[1]
+        flag = description_row_no[0]  # 循环控制次数
+        row_no = description_row_no[1]  # 从第几行开始读数据
 
+        # 如果符合条件的只有1次
         if flag == 1:
-            # list.append(eval(self.d.cell(sheet_name=self.sheet_name, rowno=row_no, colno=7)))
-            list.append((self.d.cell(sheet_name=self.sheet_name, rowno=row_no, colno=7)))
+            data = self.d.cell(sheet_name=self.sheet_name, rowno=row_no, colno=7)
+            hope_result = self.d.cell(sheet_name=self.sheet_name, rowno=row_no, colno=9)
+            list1 = [data, hope_result]
+            list.append(list1)
             return list
 
-
+        # 如果符合条件的>1次
         elif flag > 1:
-
             for i in range(row_no, row_no + flag):
-                a = self.d.cell(sheet_name=self.sheet_name, rowno=i, colno=7)  # a:字符串
+                # 测试数据
+                data = self.d.cell(sheet_name=self.sheet_name, rowno=i, colno=7)  # a:字符串
+
+                # 预期结果
+                hope_result = self.d.cell(sheet_name=self.sheet_name, rowno=i, colno=9)  # a:字符串
+                list1 = [data, hope_result]
+
+                # 进入列表
+                list.append(list1)
+
                 # list.append(eval(a)) #将a转换成字典
-                list.append((a))  # 将a转换成字典
+                # list.append((a))  # 将a转换成字典
             return list
 
+        # 以上情况均不符
         else:
             list.append(None)
             return list
 
-    def get_result(self, description):
-        '''
-        获取测试数据
-        :param description ：描述信息
-        :return:
-        '''
-        # 1.申明列表
-        list = []
+    """
+        将测试结果写入excel表中
+    """
 
-        # 2.存描述次数
-        description_row_no = self.excel_data(description)
-        flag = description_row_no[0]
-        row_no = description_row_no[1]
-
-        if flag == 1:
-            list.append((self.d.cell(sheet_name=self.sheet_name, rowno=row_no, colno=9)))
-            return list
-
-
-        elif flag > 1:
-
-            for i in range(row_no, row_no + flag):
-                a = self.d.cell(sheet_name=self.sheet_name, rowno=i, colno=9)  # a:字符串
-                # list.append(eval(a)) #将a转换成字典
-                list.append((a))
-            return list
-
-        else:
-            list.append(None)
-            return list
-
-    def write_cell(self, description, sheet_name, result):
+    def write_cell(self, description, sheet_no, col, str):
         '''
         将结果写入excel表中
         :param result : 测试结果
@@ -110,16 +106,36 @@ class Excel:
         flag = description_row_no[0]  # 循环写入次数
         row_no1 = description_row_no[1]  # 从第几行开始写
 
-        #1.循环写入
-        for i in range(1,flag+1):
-            self.d.write_data(sheet_name=sheet_name, rowno=row_no1, colno=10, result=result)
+        for i in range(0, flag):
+            self.d.write_Excel(sheet_no=sheet_no, row=row_no1 + i, col=col, str=str)
 
-ex = Excel(xls='data_api.xls', sheet_name='SPACE')
-# a = ex.get_data(description='Space - 空间列表')
-# print(a)
+    """
+        获取excel中某行数据
+    """
 
-# a = ex.get_result(description='Space - 空间类型列表（私人空间）')
-# print(a)
+    def get_row_data(self, sheet_name):
+        len = self.data_info.get_rows(sheet_name=sheet_name)
+        list_row = []
 
-result = 'asdfasdfasdf'
-ex.write_cell(description='Space - 空间类型列表（私人空间）',sheet_name='SPACE',result=result)
+        # len = 10
+        for i in range(2, len + 1):
+            row_data = self.data_info.row(sheet_name=sheet_name, rowno=i)
+            api_no = int(row_data[0])
+            api_name = row_data[1]
+            api_describe = row_data[2]
+            api_url = row_data[3]
+            api_function = row_data[4]
+            api_headers = row_data[5]
+            api_data = row_data[6]
+            api_check = row_data[7]
+            api_hope = row_data[8]
+            api_reality = row_data[9]
+            api_active = row_data[10]
+            api_status = int(row_data[11])
+            api_correlation = row_data[12]
+
+            list_2 = [api_no, api_name, api_describe, api_url, api_function,
+                      api_headers, api_data, api_check, api_hope, api_reality,
+                      api_active, api_status,api_correlation]
+            list_row.append(list_2)
+        return list_row

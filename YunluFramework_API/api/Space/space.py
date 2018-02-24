@@ -563,7 +563,7 @@ class Space(Login):
         return response
 
     """
-       @api {post} /api/v1/spaces 空间列表
+       @api {get} /api/v1/spaces 空间列表
        @apiGroup Space
        @apiName spaces
        @apiDescription 获取指定用户的空间列表

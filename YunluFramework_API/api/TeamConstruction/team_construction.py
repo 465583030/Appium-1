@@ -1563,7 +1563,7 @@ class TeamConstruction(Login):
 
      @apiSuccess (403) {String} message 错误信息 用户没有部门更新权限
 
-     @apiSuccessExampl7e {json} Success-Response:
+     @apiSuccessExample {json} Success-Response:
      HTTP/1.1 200 OK
       {
         'success' : true

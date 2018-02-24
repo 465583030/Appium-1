@@ -2,8 +2,10 @@
 __author__ = 'Administrator'
 # -*- coding: utf-8 -*-
 from YunluFramework_API.testcase.SpaceAPI import *
-import json
 from YunluFramework_API.testcase.SpaceAPI.TestSapceData import SpaceAPI_Dada
+from YunluFramework_API.public.common.test_excel import Excel
+from YunluFramework_API.api_test.api_request import API_REQUEST
+import json
 
 
 # Space
@@ -12,6 +14,7 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
     # 声明数据库操作对象
     d = DataMysql()
     excel = DataInfo(path='data_api.xls')
+    result = Excel(xls='data_api.xls', sheet_name='SPACE')
 
     # 私人空间创建：私人空间name
     data_test03_Space_private_create_api = d.select(sql='select * from Space_private_create_api_table')[0][0]
@@ -37,6 +40,11 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
         # 5.创建登录对象
         self.S = Space()
 
+        # 6.获取excel中行数据
+        self.request = API_REQUEST(sheet_name='test2')
+        self.excel = Excel(xls='data_api.xls', sheet_name='test2')
+        self.data = self.excel.get_row_data(sheet_name='test2')
+
     # 2.类结束
     @classmethod
     def tearDownClass(self):
@@ -52,69 +60,124 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
         self.data_test07_Space_folder_update_id_api = self.d.select(sql='select * from Space_folder_update_id_api_table')[0][0]
 
     # 4.测试用例
-    '''
-    4.1 覆盖接口
-    Space - 空间类型列表（私人空间）
-    Space - 热门空间名
-    Space - 空间创建（私人空间）
-    Space - 空间列表
-    Space - 空间更新（私人空间）
-    Space - 文件夹创建
-    Space - 文件夹更新
-    Space - 文件夹列表
-    Space - 空间概况（私人空间）
-    Space - 文件夹删除
-    Space - 空间删除（私人空间）
-    
-    4.2 测试流程
-    空间创建
-    热门空间名：根据空间列表获取的类型
-    空间类型列表：获取
-    空间列表：查询
-    空间更新：名称
-    文件夹创建
-    文件夹更新：名称
-    文件夹列表：查询
-    空间概况：浏览文件夹信息
-    文件夹删除
-    空间删除
-    '''
+    def test_api(self):
+        # 1.控制器
+        for i in range(0, len(self.data)):
+            api_no = self.data[i][0]  # 接口编号
+            api_name = self.data[i][1]  # 接口名称
+            api_describe = self.data[i][2]  # 接口描述
+            api_url = self.data[i][3]  # 接口路由
+            api_function = self.data[i][4]  # 接口方法
+            api_headers = self.data[i][5]  # 接口头部
+            api_data = self.data[i][6]  # 接口数据
+            api_check = self.data[i][7]  # 接口检查
+            api_hope = self.data[i][8]  # 接口预期
+            api_active = self.data[i][10]  # 接口执行
+            api_status = self.data[i][11]  # 预期状态
+            api_correlation = self.data[i][12]  # 接口关联
 
-    # 1.Space - 私人空间类型列表
-    # 数据驱动做
-    @ddt.data(*SpaceAPI_Dada.Space_private_type_list_data)
-    def test_01_Space_type_list_api(self, data):
-        '''Space - 私人空间类型列表 ：获取空间或目录类型列表
-        :return:
-        '''
+            # 2.用例执行
+            response = ''
+            status_code = ''
 
-        try:
-            self.log.info("------------START:test01_Space_type_list_api()------------")
-            # 1.调用请求
-            response = self.S.Space_private_type_list_api(data)
+            if api_active == 'YES':
+                try:
+                    # 发送请求
+                    response = self.request.api_requests(api_no=api_no, api_name=api_name, api_describe=api_describe,
+                                                         api_url=api_url, api_function=api_function, api_headers=api_headers,
+                                                         api_data=api_data, api_check=api_check, api_hope=api_hope,
+                                                         api_status=api_status, api_correlation=api_correlation)
+                    # 解析状态码
+                    status_code = response[0]
 
-            # 2.检查状态码
-            self.log.info('1.判断返回状态码：{0} ?= {1}:'.format(200, response[0]))
-            assert 200 == response[0], '返回状态不正确：{0}'.format(response[0])
-            self.log.info('status_code：OK')
+                    # 解析返回值
+                    response = response[1]
+                except Exception as e:
+                    self.log.error('Exception Information : {0}'.format(e))
 
-            # 3.查询数据库原始数据
-            self.log.info('2.判断返回数据与数据库中数据是否相等：')
-            data_sql = self.d.data_assembly(sql='select * from Space_private_type_list_api_table')
-            self.log.info('数据库原始数据为：{0}'.format(data_sql))
+                # 断言1:返回值是否为空
+                try:
+                    assert response != ''
+                except Exception as e:
+                    self.log.error('返回值为空！\n')
+                    assert False, '返回值为空！'
 
-            # 4.解析返回值数据
-            data_res = json.loads(response[1])  # 转换成列表
-            self.log.info('返回的结果数据为：{0}'.format(data_res))
+                # 断言2:status状态码是否正确
+                try:
+                    assert status_code == api_status
+                except Exception as e:
+                    self.log.error('返回状态码错误！实际返回状态码为:{0}\n'.format(status_code))
+                    assert False, '返回状态码错误！实际返回状态码为:{0}'.format(status_code)
 
-            # 5.检查数据
-            assert data_res == data_sql, 'Error Information：返回的结果与数据库中不匹配'
-            self.log.info('返回数据：OK')
-            self.log.info("------------END:test01_Space_type_list_api()------------\n")
+                # 断言3:返回值是否符合预期
+                # 如果api_hope不为空:
+                if api_hope != '':
+                    # 1> 先将api_hope通过json解析成对应的格式
+                    api_hope = json.loads(api_hope)
 
-        except Exception as err:
-            self.log.error("test01_Space_type_list_api : %s" % err)
-            raise err
+                    # 2> 断言
+                    try:
+                        assert api_hope == response
+                    except Exception as e:
+                        self.log.error('实际结果与预期结果不符！')
+                        assert False, '实际结果与预期结果不符！'
+                else:
+                    pass
+
+            # 3.用例不执行
+            elif api_active == 'NO':
+                self.log.info('未执行测试用例编号 : {0} | 名称 : {1}\n'.format(api_no, api_name))
+                pass
+
+    # # 1.Space - 私人空间类型列表
+    # # 数据驱动做
+    # @ddt.data(*SpaceAPI_Dada.Space_private_type_list_data)
+    # def test_01_Space_type_list_api(self, parameter):
+    #
+    #     # 测试数据
+    #     data = parameter[0]
+    #
+    #     # 预期结果
+    #     result = parameter[1]
+    #
+    #     '''Space - 私人空间类型列表 ：获取空间或目录类型列表
+    #     :return:
+    #     '''
+    #
+    #     try:
+    #         self.log.info("------------START:test01_Space_type_list_api()------------")
+    #         # 1.调用请求
+    #         response = self.S.Space_private_type_list_api(data)
+    #
+    #         # 2.检查状态码
+    #         self.log.info('1.判断返回状态码：{0} ?= {1}:'.format(200, response[0]))
+    #         assert 200 == response[0], '返回状态不正确：{0}'.format(response[0])
+    #         self.log.info('status_code：OK')
+    #
+    #         # 3.实际结果: 存数据
+    #         self.result.write_cell(description='Space - 空间类型列表（私人空间）',
+    #                                sheet_no=0, col=10, str=response[1])
+    #
+    #         # 4.预期结果 == 实际结果: 数据比对
+    #         assert response[1] == result, '错误！'
+    #
+    #         # # 3.查询数据库原始数据
+    #         # self.log.info('2.判断返回数据与数据库中数据是否相等：')
+    #         # data_sql = self.d.data_assembly(sql='select * from Space_private_type_list_api_table')
+    #         # self.log.info('数据库原始数据为：{0}'.format(data_sql))
+    #         #
+    #         # # 4.解析返回值数据
+    #         # data_res = json.loads(response[1])  # 转换成列表
+    #         # self.log.info('返回的结果数据为：{0}'.format(data_res))
+    #         #
+    #         # # 5.检查数据
+    #         # assert data_res == data_sql, 'Error Information：返回的结果与数据库中不匹配'
+    #         # self.log.info('返回数据：OK')
+    #         self.log.info("------------END:test01_Space_type_list_api()------------\n")
+    #
+    #     except Exception as err:
+    #         self.log.error("test01_Space_type_list_api : %s" % err)
+    #         raise err
 
     # # 2.Space - 热门空间名
     # def test02_Space_popular_name_api(self):

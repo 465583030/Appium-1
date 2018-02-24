@@ -22,8 +22,8 @@ recvaddress = ['291008572@qq.com']
 
 # 3.2发件人信息
 # 163的用户名和密码
-sendaddr_name = ''
-sendaddr_pswd = ''
+sendaddr_name = '13027104206@163.com'
+sendaddr_pswd = 'xjy199288'
 
 
 class SendMail:

@@ -5,6 +5,7 @@ import configparser
 import xlwt
 from YunluFramework_API.public.common.log import Log
 from YunluFramework_API.config.globalparam import GlobalParam
+from xlutils.copy import copy
 
 
 class DataInfo():
@@ -17,6 +18,7 @@ class DataInfo():
 
         # 数据data目录文件拼接
         base_dir = base_dir + "/data/" + path
+        self.save_path = base_dir
 
         # 创建工作薄：用于操作excel表格形式数据
         self.workbook = xlrd.open_workbook(base_dir)
@@ -84,51 +86,71 @@ class DataInfo():
         sheet_obj = self.workbook.sheet_by_name(sheet_name)
         return sheet_obj.ncols
 
-    def get_api_data(self, sheet_name):
-        d = DataInfo('data_api.xls')
-        len = d.get_rows(sheet_name)
+    """
+    python可以使用xlrd读excel，使用xlwt写excel，但是如果要把数据写入已存在的excel，需要另外一个库xlutils配合使用.
+    
+    大概思路：
+    
+    1、用xlrd.open_workbook打开已有的xsl文件
+    注意添加参数formatting_info=True，得以保存之前数据的格式
+    2、然后用，from xlutils.copy import copy;，之后的copy去从打开的xlrd的Book变量中，拷贝出一份，成为新的xlwt的Workbook变量
+    3、然后对于xlwt的Workbook变量，就是正常的：
+    通过get_sheet去获得对应的sheet，拿到sheet变量后，就可以往sheet中，写入新的数据
+    4、写完新数据后，最终save保存
+    """
 
-        for i in range(2, len + 1):
-            # 编号
-            api_no = int(d.cell(sheet_name=sheet_name, rowno=i, colno=1))
+    def write_Excel(self, sheet_no, row, col, str):
+        '''
+        此方法写入数据不会覆盖源文件，等同于向excel中新增数据
+        :param sheet_no : 表单编号
+        :param row : 行数
+        :param col : 列数
+        :param str ：写入数据
+        :return:
+        '''
+        # 1.行列转换
+        row_no = row - 1
+        col_no = col - 1
 
-            # 接口名称
-            api_name = str(d.cell(sheet_name=sheet_name, rowno=i, colno=2))
+        # 2.以原有格式信息打开工作本
+        rb = xlrd.open_workbook(self.save_path, formatting_info=True)
 
-            # 接口描述
-            api_description = str(d.cell(sheet_name=sheet_name, rowno=i, colno=3))
+        # 3.保存一份副本
+        wb = copy(rb)
 
-            # 接口路由
-            url = d.cell(sheet_name=sheet_name, rowno=i, colno=4)
+        # 4.利用副本获取表单对象
+        ws = wb.get_sheet(sheet_no)
 
-            # 名称+描述
-            description = api_name + ':' + api_description
+        # 5.写入数据
+        ws.write(row_no, col_no, str)
 
-            # 请求方法
-            api_function = d.cell(sheet_name=sheet_name, rowno=i, colno=5)
+        # 6.保存副本
+        wb.save(self.save_path)
 
-            # 请求头
-            api_headers = d.cell(sheet_name=sheet_name, rowno=i, colno=6)
+    def write_data(self, sheet_name, sheet_no, rowno, colno, result):
+        '''
+        此方法写入数据会覆盖源文件，源文件啥都没有了
+        :param sheet_name:
+        :param sheet_no:
+        :param rowno:
+        :param colno:
+        :param result:
+        :return:
+        '''
+        ws = self.workbook.get_sheet(0)
 
-            # 请求参数
-            api_data = d.cell(sheet_name=sheet_name, rowno=i, colno=7)
-
-            # 检查字段
-            api_check = d.cell(sheet_name=sheet_name, rowno=i, colno=8)
-
-            # 预期结果
-            api_hope = d.cell(sheet_name=sheet_name, rowno=i, colno=9)
-
-    def write_data(self, sheet_name, rowno, colno, result):
         workbook_new = xlwt.Workbook()
         sheet_new = workbook_new.add_sheet(sheet_name, cell_overwrite_ok=True)
         rowno = rowno - 1
         colno = colno - 1
         sheet_new.write(rowno, colno, result)
-        workbook_new.save('data_api.xls')
+        workbook_new.save(self.save_path)
+
 
 d = DataInfo(path='data_api.xls')
-d.write_data(sheet_name='SPACE',rowno=10,colno=10,result='1')
+# a = d.row(sheet_name='SPACE',rowno=1)
+# print(a)
+# d.write_Excel(sheet_no=0, row=10, col=10, str='123123')
 
 
 class DataWrite():

@@ -1,5 +1,4 @@
 # Author:Xiaojingyuan
-from YunluFramework_API.public.common.test_excel import Excel
 from YunluFramework_API.testcase.SpaceAPI import *
 
 
@@ -12,6 +11,7 @@ class SpaceAPI_Dada():
     # Space_folder_list_id_data = ex.get_data(description=' Space - 文件夹列表(联系人所有）')
     # Space_folder_browse_data = ex.get_data(description='Space - 文件夹浏览记录')
     Space_private_type_list_data = ex.get_data(description='Space - 空间类型列表（私人空间）')
+    # print('Space_private_type_list_data',Space_private_type_list_data)
     # Space_popular_name_data = ex.get_data(description='Space - 热门空间名')
     # Space_private_create_data = ex.get_data(description='Space - 空间创建（私人空间）')
     # Space_list_data = ex.get_data(description='Space - 空间列表')
@@ -29,7 +29,8 @@ class SpaceAPI_Dada():
     # Space_switch_setting_api = ex.get_result(description='Space - 空间公开设置（名片设置）')
     # Space_folder_list_id_result = ex.get_result(description=' Space - 文件夹列表(联系人所有）')
     # Space_folder_browse_result = ex.get_result(description='Space - 文件夹浏览记录')
-    Space_private_type_list_result = ex.get_result(description='Space - 空间类型列表（私人空间）')
+    # Space_private_type_list_result = ex.get_hope_result(description='Space - 空间类型列表（私人空间）')
+    # print('Space_private_type_list_result',Space_private_type_list_result)
     # Space_popular_name_result = ex.get_result(description='Space - 热门空间名')
     # Space_private_create_result = ex.get_result(description='Space - 空间创建（私人空间）')
     # Space_list_result = ex.get_result(description='Space - 空间列表')
@@ -41,10 +42,3 @@ class SpaceAPI_Dada():
     # Space_folder_delete_id_result = ex.get_result(description=' Space - 文件夹删除')
     # Space_private_delete_id_result = ex.get_result(description='Space - 空间删除（私人空间）')
 
-    list1 = [Space_private_type_list_data, Space_private_type_list_result]
-    # print(Space_private_type_list_data)
-    # print(type(Space_private_type_list_data))
-    # print(list1)
-    # print(list1[0])
-    # print(list1[1])
-    # print(list1[0], list1[1])
