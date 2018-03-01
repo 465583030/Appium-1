@@ -62,7 +62,7 @@ class API_REQUEST(Login):
         self.log.info('8. 接口检查 : {0}'.format(api_check))
         self.log.info('9. 预期状态 ：{0}'.format(api_status))
         self.log.info('10.接口预期 : {0}'.format(api_hope))
-        self.log.info('11.接口返回 : {0}\n'.format(response[1]))
+        self.log.info('11.接口返回 : {0}'.format(response[1]))
 
     def api_method(self, method, api_url, data, api_headers):
         '''
@@ -219,22 +219,116 @@ class API_REQUEST(Login):
                     self.correlationDict[correlation[0]] = value
         return self.correlationDict
 
-    # #  用于解析检查点(check)
-    # def analysis_check(self, api_check):
-    #     '''
-    #     用于解析检查点中的数据，将这些数据存入检查字典中
-    #     :param api_check:
-    #     :return:
-    #     '''
-    #     # 如果检查数据不为空
-    #     if api_check !='':
-    #         #1.处理检查数据(存到列表中)
+    # 用于解析检查点
+    def analysis_check(self, api_no, api_name, api_check, response):
+        '''
+        用于检查点的校验
+        :param response : 接口返回值
+        :return:
+        '''
+        # 标志符
+        flag = ''
 
-    def check(self, response, api_check):
-        if response['success'] == 'true':
-            print("OK!")
-        else:
-            print("NO!")
+        # 如果检查数据不为空
+        if api_check != '':
+            # 1.处理关联数据(存到列表中)
+            api_check = api_check.replace('\n', '').replace('\r', '').split(';')
+            # print('api_check = ',api_check)
+
+            # 2.分解关联数据
+            for j in range(len(api_check)):
+
+                # 判断是否为'='关系
+                if '=' in api_check[j]:
+
+                    # 如果 '#len#' 存在
+                    if '#len#' in api_check[j]:
+                        # print('去除指定的 #len# 字符串 ：', api_check[j].strip('#len#'))
+                        param = api_check[j].replace('#len#', '').split('=')
+                        flag = '#len#'
+
+                    # 如果 '#len#'不存在
+                    elif '#len#' not in api_check[j]:
+                        param = api_check[j].split('=')
+                        # print('没进入 #len# 的param = ', param)
+                        flag = ''
+
+                # 判断是否为'<>'关系
+                elif '<>' in api_check[j]:
+                    param = api_check[j].split('<>')
+                    flag = '<>'
+
+                # 3.判断处理后的关联列表长度为2时
+                if len(param) == 2:
+                    if param[1] == '' or not re.search(r'^\[', param[1]) or not re.search(r'\]$', param[1]):
+                        self.log.error(api_no + ' ' + api_name + ' 关联参数设置有误，请检查[Check]字段参数格式是否正确！！！')
+                        continue
+
+                    # 4.返回结果赋值
+                    value = response
+
+                    # 5.继续处理api_check
+                    a = param[1][1:-1].split('][')
+                    # print('a = ',a)
+
+                    # 6.循环遍历列表的键
+                    for key in a:
+                        try:
+                            temp = value[int(key)]
+                        except:
+                            try:
+                                temp = value[key]
+                            except:
+                                break
+                        value = temp
+                        # print('value = ',value)
+
+                try:
+                    # 检查点数据校验
+                    # '='关系断言
+                    if flag == '=':
+                        # print('等于')
+
+                        # 先将value值中的True或False的类型转换成str类型，再与param[0]断言
+                        if param[0] in 'True' or 'False':
+                            value = str(value)
+                            assert param[0] == value
+
+                        # 如果返回数据为int型，比较时将excel中的数据先转换成整型数据
+                        elif type(value) == int:
+                            # print('进入elif')
+                            assert int(param[0]) == value
+
+                        # 无需转换时，直接比较检查点
+                        else:
+                            # print('进入else')
+                            assert param[0] == value
+
+                    # '<>'关系断言
+                    if flag == '<>':
+                        # 先将value值中的True或False的类型转换成str类型，再与param[0]断言
+                        if param[0] in 'True' or 'False':
+                            value = str(value)
+                            assert param[0] != value
+
+                        # 如果返回数据为int型，比较时将excel中的数据先转换成整型数据
+                        elif type(value) == int:
+                            # print('进入elif')
+                            assert int(param[0]) != value
+
+                        # 无需转换时，直接比较检查点
+                        else:
+                            # print('进入else')
+                            assert param[0] != value
+
+                    # '#len#'关系断言
+                    if flag == '#len#':
+                        # print('进入#len#')
+                        assert len(value) == int(param[0])
+
+                except Exception as e:
+                    # print('进入exception')
+                    return False
 
 # request = API_REQUEST(sheet_name='test2')
 # excel = Excel(xls='data_api.xls', sheet_name='test2')
