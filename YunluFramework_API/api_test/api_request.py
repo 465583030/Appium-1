@@ -13,6 +13,7 @@ class API_REQUEST(Login):
 
         # 2.token
         self.token = self.get_token()
+        self.token1 = self.get_token1()
 
         # 3. 创建请求对象
         self.R = RequestForHttp()
@@ -34,6 +35,7 @@ class API_REQUEST(Login):
         # ${hashPassword}（hash加密密码，明文123456）
 
         self.correlationDict['${self.token}'] = self.token
+        self.correlationDict['${self.token1}'] = self.token1
         self.correlationDict['${space_name}'] = 'api测试'
 
     def print_log(self, api_no, api_name, api_describe, api_url, api_function, api_headers,
@@ -330,7 +332,60 @@ class API_REQUEST(Login):
                     # print('进入exception')
                     return False
 
-# request = API_REQUEST(sheet_name='test2')
+    # 获取leancloud系统消息记录
+    def get_Messages_from_leancloud(self, from_who=None, timestamp=None, till_timestamp=None):
+        import requests
+        url = "https://3bxid9fg.api.lncld.net/1.1/rtm/messages/history"
+        headers = {
+            'X-LC-Id': "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz",
+            'X-LC-Sign': "7396816f73bdbcf70281b09dc2c1b3b9,1517046641139,master",
+            'Cache-Control': "no-cache",
+            'Postman-Token': "5c5edf73-6e8a-4bf5-9376-499057d1ec8b"
+        }
+
+        data = {
+            'from': from_who,
+            'timestamp': timestamp,
+            'till_timestamp':till_timestamp
+        }
+
+        response = requests.request("GET", url, headers=headers, data=data)
+        res = response.text
+
+        # 转为字典
+        dict_r = json.loads(res)
+
+        # 转为json,并格式化输出
+        json_r = json.dumps(dict_r, sort_keys=True, ensure_ascii=False, indent=4, separators=(',', ': '))
+        return json_r
+
+
+request = API_REQUEST(sheet_name='test2')
+# re1 = request.get_Messages_from_leancloud(from_who='system', timestamp='1521010252352',till_timestamp='1521010252350')
+re1 = request.get_Messages_from_leancloud()
+# print(re1)
+
+re1 = json.loads(re1)
+to = 'd66dcb63-107f-4d30-a632-d97882b7465f'
+list1 = []
+for i in re1:
+    if i['to'] == to:
+        list1.append(i)
+    else:
+        pass
+
+list1 = json.dumps(list1, sort_keys=True, ensure_ascii=False, indent=4, separators=(',', ': '))
+print(list1)
+
+
+
+
+
+
+
+
+
+
 # excel = Excel(xls='data_api.xls', sheet_name='test2')
 # data = excel.get_row_data(sheet_name='test2')
 #

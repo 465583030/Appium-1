@@ -2,6 +2,7 @@
 import json
 from YunluFramework_API.public.common.Handle import Handle
 import requests
+import time
 
 
 # 用于处理请求的Get和Post方法
@@ -23,6 +24,9 @@ class RequestForHttp(Handle):
 
             # 1.发送请求
             with requests.Session() as s:
+                # 获取发送请求的时间戳
+                # t1 = str(time.time()).replace('.',''[0:13])
+                # print('时间戳为：',t1)
                 r = s.get(url, params=r_data)
 
             # 2.打印请求状态码
@@ -57,6 +61,9 @@ class RequestForHttp(Handle):
 
             # 1.发送请求
             with requests.Session() as s:
+                # t1 = str(time.time()).replace('.', ''[0:11])
+                # print('时间戳为：', t1)
+
                 r = s.post(url, data=r_data, headers=headers)
 
             # 2.打印请求状态码

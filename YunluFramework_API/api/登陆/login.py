@@ -73,7 +73,26 @@ class Login(Handle):
         except Exception as err:
             self.log.error("Function get_token error : %s" % err)
             raise err
+        # 3.获取token
+
+    def get_token1(self):
+        '''
+        从数据库中查询token
+        :return:
+        '''
+        try:
+            # 1.查询语句
+            sql = 'select * from test_token'
+
+            # 2.执行
+            token = self.d.select(sql)
+            return token[0][1]
+
+        except Exception as err:
+            self.log.error("Function get_token error : %s" % err)
+            raise err
 
 # a = Login()
 # a.loginRequest(sql='select * from test1_1_login_01', d_index=0)
-# token = a.get_token()
+# token = a.get_token1()
+# print(token)
