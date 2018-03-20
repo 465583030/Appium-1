@@ -84,6 +84,7 @@ class space_CreateO(unittest.TestCase):
             # 1.空间首页
             self.handle.Kjlb_click()
             self.log.info('点击进入空间首页')
+            sleep(2)
 
             # 2.点击+按钮
             self.handle.Kjlb_mainmenu_click()

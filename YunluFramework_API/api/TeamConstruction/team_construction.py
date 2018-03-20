@@ -10,6 +10,7 @@ class TeamConstruction(Login):
     def __init__(self):
         Handle.__init__(self)
 
+
         # 1. 创建读取配置信息对象
         self.team_construction = GlobalParam('config', 'team_construction.conf')
 

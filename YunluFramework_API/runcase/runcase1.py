@@ -3,6 +3,7 @@ import time
 import sys
 
 # sys.path.append("C:\Program Files (x86)\Jenkins\workspace\jenkins_github_test1\\")
+sys.path.append("C:\Program Files (x86)\Jenkins\workspace\jenkins_github_test1\\")
 
 from YunluFramework_API.public.common.HTMLTestRunner import HTMLTestRunner
 from YunluFramework_API.config.globalparam import GlobalParam
@@ -44,9 +45,10 @@ if __name__ == '__main__':
         logger.info('运行测试用例！')
         runner.run(suiteA)
         fp.close()  # 测试报告关闭
+
         # 发送邮件
-        time.sleep(5)
-        sendMail = SendMail()
-        sendMail.send()
+        # time.sleep(5)
+        # sendMail = SendMail()
+        # sendMail.send()
         logger.info('{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{END:RUNCASSE1}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}')
         break

@@ -55,6 +55,7 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
         :return:
         '''
         # 1.控制器
+        api_no = list[1]
         api_no = list[0]  # 接口编号
         api_name = list[1]  # 接口名称
         api_describe = list[2]  # 接口描述
@@ -67,6 +68,7 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
         api_active = list[10]  # 接口执行
         api_status = list[11]  # 预期状态
         api_correlation = list[12]  # 接口关联
+        api_message = list[13]  # 消息关联
 
         # 2.用例执行
         response = ''
@@ -75,31 +77,53 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
         if api_active == 'YES':
             try:
                 # 发送请求
-                response = self.request.api_requests(api_no=api_no, api_name=api_name, api_describe=api_describe,
-                                                     api_url=api_url, api_function=api_function, api_headers=api_headers,
-                                                     api_data=api_data, api_check=api_check, api_hope=api_hope,
-                                                     api_status=api_status, api_correlation=api_correlation)
-                # 解析状态码
+                response = self.request.api_requests(
+                    api_no=api_no,
+                    api_name=api_name,
+                    api_describe=api_describe,
+                    api_url=api_url,
+                    api_function=api_function,
+                    api_headers=api_headers,
+                    api_data=api_data,
+                    api_check=api_check,
+                    api_hope=api_hope,
+                    api_status=api_status,
+                    api_correlation=api_correlation,
+                    api_messages=api_message
+                )
+
+                # 解析状态码-实际状态码
                 status_code = response[0]
 
                 # 解析返回值
                 response = response[1]
+
             except Exception as e:
                 self.log.error('Exception Information : {0}'.format(e))
 
-            # 断言1:返回值是否为空
-            try:
-                assert response != ''
-            except Exception as e:
-                self.log.error('返回值为空！\n')
-                assert False, '返回值为空！'
-
-            # 断言2:status状态码是否正确
+            # 断言1:status状态码是否正确
             try:
                 assert status_code == api_status
             except Exception as e:
                 self.log.error('返回状态码错误！实际返回状态码为:{0}\n'.format(status_code))
                 assert False, '返回状态码错误！实际返回状态码为:{0}'.format(status_code)
+
+            # 断言2:返回值是否为空
+            # 状态码为204时
+            if status_code == 204:
+                try:
+                    assert response == ''
+                except Exception as e:
+                    self.log.error('204状态下返回值应该为空！')
+                    assert False, '204状态下返回值应该为空,当前实际不为空！'
+
+            # 状态码不为204时
+            else:
+                try:
+                    assert response != ''
+                except Exception as e:
+                    self.log.error('返回值为空！\n')
+                    assert False, '返回值应该不为空,当前实际返回值为空！'
 
             # 断言3:检查点数据校验
             # 如果api_check不为空：

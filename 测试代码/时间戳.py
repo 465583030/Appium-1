@@ -21,7 +21,6 @@ from leancloud import Message
 
 me = Message()
 
-
 messages = me.find_by_client(from_client='system',limit=1)
 # messages = Message.find_by_conversation(conversation_id='8b3ab185492e461c1eb76b1998e5473b')
 print(messages)

@@ -24,9 +24,6 @@ class RequestForHttp(Handle):
 
             # 1.发送请求
             with requests.Session() as s:
-                # 获取发送请求的时间戳
-                # t1 = str(time.time()).replace('.',''[0:13])
-                # print('时间戳为：',t1)
                 r = s.get(url, params=r_data)
 
             # 2.打印请求状态码

@@ -133,9 +133,23 @@ class Excel:
             api_active = row_data[10]
             api_status = int(row_data[11])
             api_correlation = row_data[12]
+            api_message = row_data[13]
 
-            list_2 = [api_no, api_name, api_describe, api_url, api_function,
-                      api_headers, api_data, api_check, api_hope, api_reality,
-                      api_active, api_status,api_correlation]
+            list_2 = [
+                api_no,
+                api_name,
+                api_describe,
+                api_url,
+                api_function,
+                api_headers,
+                api_data,
+                api_check,
+                api_hope,
+                api_reality,
+                api_active,
+                api_status,
+                api_correlation,
+                api_message
+            ]
             list_row.append(list_2)
         return list_row

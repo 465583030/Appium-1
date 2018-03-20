@@ -6,7 +6,9 @@ correlationDict = {}
 # 关联原始数据
 correlation = '${session_id}=[session];${token_id}=[token]'
 # correlation_13 = '${cluster_id}=[0][cluster_id];${name}=[0][name]'
-correlation = '${cluster_id}=[token]'
+# correlation = '${cluster_id}=[token]'
+
+correlation= '${mes_invite_id}=[_lcattrs][id]'
 
 
 # 处理关联数据(存到列表中)
@@ -14,7 +16,22 @@ correlation = correlation.replace('\n', '').replace('\r', '').split(';')
 # correlation = correlation_13.replace('\n', '').replace('\r', '').split(';')
 
 # 返回值
-resp = {'token': 'token_12345678', 'session': 'session_id_123456'}
+# resp = {'token': 'token_12345678', 'session': 'session_id_123456'}
+resp ={
+    '_lctype': -1,
+    '_lctext': ':'
+               '{user_name} 邀请您成为:{organization_name}的 :{role_name}。',
+    '_lcattrs': {'title': '团队成员邀请',
+                 'clazz': 'teams.invited',
+                 'id': 10846, 'organization_name': '测试机构',
+                 'organization_id': 4835,
+                 'role_name': '团队成员',
+                 'user_id': '194820ce-782b-4330-ac62-77a36763cd43',
+                 'user_name': '肖静远'
+                 }
+}
+
+
 # resp1 = [{'token': 'token_12345678', 'session': 'session_id_123456'}]
 
 # resp = [

@@ -64,7 +64,10 @@ class API_REQUEST(Login):
         self.log.info('8. 接口检查 : {0}'.format(api_check))
         self.log.info('9. 预期状态 ：{0}'.format(api_status))
         self.log.info('10.接口预期 : {0}'.format(api_hope))
-        self.log.info('11.接口返回 : {0}'.format(response[1]))
+        if api_status == 204:
+            self.log.info('11.接口返回 : {0}'.format(response[1]))
+        else:
+            self.log.info('11.接口返回 : {0}'.format(response[1]))
 
     def api_method(self, method, api_url, data, api_headers):
         '''
@@ -98,8 +101,19 @@ class API_REQUEST(Login):
         通用的接口请求方法,返回接口的response值
     '''
 
-    def api_requests(self, api_no, api_name, api_describe, api_url, api_function, api_headers,
-                     api_data, api_check, api_hope, api_status, api_correlation):
+    def api_requests(self,
+                     api_no,
+                     api_name,
+                     api_describe,
+                     api_url,
+                     api_function,
+                     api_headers,
+                     api_data,
+                     api_check,
+                     api_hope,
+                     api_status,
+                     api_correlation,
+                     api_messages):
         '''
         公用请求方法
         :param api_no       : 接口编号
@@ -132,18 +146,45 @@ class API_REQUEST(Login):
             self.log.error(e)
 
         # 2. 发送请求
-        response = self.api_method(method=api_function, api_url=api_url, data=data, api_headers=api_headers)
+        # 2.1 > 如果状态码不为204
+        if api_status != 204:
 
-        # 3. 打印日志
-        self.print_log(api_no, api_name, api_describe, api_url, api_function, api_headers,
-                       data, api_check, api_hope, api_status, response)
+            # 2. 发送请求
+            response = self.api_method(method=api_function, api_url=api_url, data=data, api_headers=api_headers)
 
-        # 4.解析返回值
-        status_code = response[0]  # 状态码
-        response1 = json.loads(response[1])  # 解析返回值
-        self.analysis_response(api_no, api_name, api_correlation, response1)
+            # 3. 打印日志
+            self.print_log(api_no, api_name, api_describe, api_url, api_function, api_headers,
+                           data, api_check, api_hope, api_status, response)
 
-        return status_code, response1
+            # 4.解析返回值
+            status_code = response[0]  # 状态码
+            response1 = json.loads(response[1])  # 解析返回值
+            self.analysis_response(api_no, api_name, api_correlation, response1)
+
+            # 5.解析关联消息
+            self.analysis_messages(api_no, api_name, api_messages)
+
+            return status_code, response1
+
+        # 2.2 > 如果状态码为204，返回结果为【no content】
+        elif api_status == 204:
+
+            # 2.发送请求
+            response = self.api_method(method=api_function, api_url=api_url, data=data, api_headers=api_headers)
+
+            # 3.解析返回值
+            status_code = response  # 状态码
+            response1 = ''
+            response = [status_code, response1]
+
+            # 4. 打印日志
+            self.print_log(api_no, api_name, api_describe, api_url, api_function, api_headers,
+                           data, api_check, api_hope, api_status, response)
+
+            # 5.解析关联消息
+            self.analysis_messages(api_no, api_name, api_messages)
+
+            return status_code, response1
 
     '''
         用于解析返回值中的数据和请求数据中的关联项
@@ -333,57 +374,125 @@ class API_REQUEST(Login):
                     return False
 
     # 获取leancloud系统消息记录
-    def get_Messages_from_leancloud(self, from_who=None, timestamp=None, till_timestamp=None):
+    def get_Messages_from_leancloud(self):
         import requests
         url = "https://3bxid9fg.api.lncld.net/1.1/rtm/messages/history"
+
         headers = {
             'X-LC-Id': "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz",
             'X-LC-Sign': "7396816f73bdbcf70281b09dc2c1b3b9,1517046641139,master",
-            'Cache-Control': "no-cache",
-            'Postman-Token': "5c5edf73-6e8a-4bf5-9376-499057d1ec8b"
         }
+        # 1.发送请求
+        with requests.Session() as s:
+            response = s.get(url, headers=headers)
 
-        data = {
-            'from': from_who,
-            'timestamp': timestamp,
-            'till_timestamp':till_timestamp
-        }
-
-        response = requests.request("GET", url, headers=headers, data=data)
+        # 2.解析返回内容
         res = response.text
 
-        # 转为字典
+        # 3.转为字典
         dict_r = json.loads(res)
 
         # 转为json,并格式化输出
         json_r = json.dumps(dict_r, sort_keys=True, ensure_ascii=False, indent=4, separators=(',', ': '))
         return json_r
 
+    # 获取发送给某个用户的(忽略发送着的身份【system】|【user】)最新一条消息的【data】数据
+    def get_first_message(self, to_who):
+        # 1.调用消息记录模块,返回消息记录列表
+        re1 = self.get_Messages_from_leancloud()
+        re1 = json.loads(re1)
 
-request = API_REQUEST(sheet_name='test2')
-# re1 = request.get_Messages_from_leancloud(from_who='system', timestamp='1521010252352',till_timestamp='1521010252350')
-re1 = request.get_Messages_from_leancloud()
+        # 2.循环存消息
+        messages = []
+        for i in re1:
+            if i['to'] == to_who:
+                messages.append(i)
+            else:
+                pass
+        message_1 = messages[0]
+
+        # 3.解析第一条数据
+        dict1 = message_1['data']
+        data = dict1 = json.loads(dict1)
+
+        # 4.直接取出id
+        # dict1 = dict1['_lcattrs']['id']
+
+        # 5.格式化输出
+        # message_1 = json.dumps(message_1, sort_keys=True, ensure_ascii=False, indent=4, separators=(',', ': '))
+        # print(message_1)
+        # print(dict1)
+
+        # 6.返回message_1,类型为字典
+        return data
+
+    # 解析发给某个用户的最新一条消息的关联数据
+    def analysis_messages(self, api_no, api_name, correlation):
+        '''
+        用于解析返回值中的数据，将这些数据存入关联字典中以供使用
+        :return:
+        '''
+        # 如果关联数据不为空
+        if correlation != '':
+            # 1.处理关联数据(存到列表中)
+            correlation = correlation.replace('\n', '').replace('\r', '').split(';')
+
+            # 2.分解关联数据
+            for j in range(len(correlation)):
+                correlation = correlation[j].split('=')
+
+                # 3.判断处理后的关联列表长度为2时
+                if len(correlation) == 2:
+                    if correlation[1] == '' or not re.search(r'^\[', correlation[1]) or not re.search(r'\]$', correlation[1]):
+                        self.log.error(api_no + ' ' + api_name + ' 关联参数设置有误，请检查[Correlation]字段参数格式是否正确！！！')
+                        continue
+
+                    # 4.返回结果赋值
+                    '''
+                        临时方案，此时推送给的用户id是写死的，token1的用户
+                    '''
+                    value = self.get_first_message(to_who='d66dcb63-107f-4d30-a632-d97882b7465f')
+
+                    # 5.继续处理correlation
+                    a = correlation[1][1:-1].split('][')
+
+                    # 6.循环遍历列表的键
+                    for key in a:
+                        try:
+                            temp = value[int(key)]
+                        except:
+                            try:
+                                temp = value[key]
+                            except:
+                                break
+                        value = temp
+                    self.correlationDict[correlation[0]] = value
+        return self.correlationDict
+
+# request = API_REQUEST(sheet_name='test2')
+# col = '${mes_invite_id}=[_lcattrs][id]'
+# a = request.analysis_messages(api_no='1',api_name='消息id',correlation=col)
+# print(a)
+
+# re1 = request.get_first_message('d66dcb63-107f-4d30-a632-d97882b7465f')
 # print(re1)
 
-re1 = json.loads(re1)
-to = 'd66dcb63-107f-4d30-a632-d97882b7465f'
-list1 = []
-for i in re1:
-    if i['to'] == to:
-        list1.append(i)
-    else:
-        pass
-
-list1 = json.dumps(list1, sort_keys=True, ensure_ascii=False, indent=4, separators=(',', ': '))
-print(list1)
-
-
-
-
-
-
-
-
+# re1 = json.loads(re1)
+# to = 'd66dcb63-107f-4d30-a632-d97882b7465f'
+# list1 = []
+# for i in re1:
+#     if i['to'] == to:
+#         list1.append(i)
+#     else:
+#         pass
+# list1 = list1[0]
+# dict1 = list1['data']
+# dict1 = json.loads(dict1)
+# dict1 = dict1['_lcattrs']['id']
+#
+# list1 = json.dumps(list1, sort_keys=True, ensure_ascii=False, indent=4, separators=(',', ': '))
+# print(list1)
+# print(dict1)
 
 
 # excel = Excel(xls='data_api.xls', sheet_name='test2')
