@@ -3,7 +3,11 @@ import time
 import sys
 
 # sys.path.append("C:\Program Files (x86)\Jenkins\workspace\jenkins_github_test1\\")
-sys.path.append("C:\Program Files (x86)\Jenkins\workspace\jenkins_github_test1\\")
+sys.path.append("\\Users\\xiaojingyuan\.jenkins\workspace\stest\\")
+sys.path.append("\\Users\\xiaojingyuan\\.jenkins\\workspace\\test\\appium\\")
+sys.path.append("\\Users\\xiaojingyuan\\PycharmProjects\\Appium\\YunluFramework_API")
+
+
 
 from YunluFramework_API.public.common.HTMLTestRunner import HTMLTestRunner
 from YunluFramework_API.config.globalparam import GlobalParam

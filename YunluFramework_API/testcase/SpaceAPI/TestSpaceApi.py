@@ -55,7 +55,6 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
         :return:
         '''
         # 1.控制器
-        api_no = list[1]
         api_no = list[0]  # 接口编号
         api_name = list[1]  # 接口名称
         api_describe = list[2]  # 接口描述

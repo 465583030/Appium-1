@@ -19,8 +19,12 @@ class RequestForHttp(Handle):
         :return:
         '''
         try:
-            # 0. url拼接
-            url = self.url + url
+            if '/api' in url:
+                # 0. url拼接
+                url = self.url + url
+
+            else:
+                url = url
 
             # 1.发送请求
             with requests.Session() as s:
@@ -53,8 +57,12 @@ class RequestForHttp(Handle):
         :return:
         '''
         try:
-            # 0. url拼接
-            url = self.url + url
+            if '/api' in url:
+                # 0. url拼接
+                url = self.url + url
+
+            else:
+                url = url
 
             # 1.发送请求
             with requests.Session() as s:
@@ -90,8 +98,12 @@ class RequestForHttp(Handle):
         :return:
         '''
         try:
-            # 0. url拼接
-            url = self.url + url
+            if '/api' in url:
+                # 0. url拼接
+                url = self.url + url
+
+            else:
+                url = url
 
             # 1.发送请求
             with requests.Session() as s:
@@ -124,8 +136,12 @@ class RequestForHttp(Handle):
         :return:
         '''
         try:
-            # 0. url拼接
-            url = self.url + url
+            if '/api' in url:
+                # 0. url拼接
+                url = self.url + url
+
+            else:
+                url = url
 
             # 1.发送请求
             with requests.Session() as s:
@@ -152,7 +168,6 @@ class RequestForHttp(Handle):
         except Exception as err:
             self.log.error("PUT请求错误 : %s" % err)
             raise err
-
 
 # data = {
 #     'token': '3888f2c8717f50b7a7f47e2371c1cbf2',
