@@ -2,13 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e587e590-d089-4b81-be51-2e9ce1d651ea" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/测试代码/系统变量路径.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/Appium.iml" afterPath="$PROJECT_DIR$/.idea/Appium.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/YunluFramework_API/api_test/api_request.py" afterPath="$PROJECT_DIR$/YunluFramework_API/api_test/api_request.py" />
+      <change beforePath="$PROJECT_DIR$/YunluFramework_API/config/globalparam.py" afterPath="$PROJECT_DIR$/YunluFramework_API/config/globalparam.py" />
+      <change beforePath="$PROJECT_DIR$/YunluFramework_API/config/path_file.conf" afterPath="$PROJECT_DIR$/YunluFramework_API/config/path_file.conf" />
       <change beforePath="$PROJECT_DIR$/YunluFramework_API/data/data_api.xls" afterPath="$PROJECT_DIR$/YunluFramework_API/data/data_api.xls" />
       <change beforePath="$PROJECT_DIR$/YunluFramework_API/public/common/RequestForHttp.py" afterPath="$PROJECT_DIR$/YunluFramework_API/public/common/RequestForHttp.py" />
+      <change beforePath="$PROJECT_DIR$/YunluFramework_API/public/common/log.py" afterPath="$PROJECT_DIR$/YunluFramework_API/public/common/log.py" />
+      <change beforePath="$PROJECT_DIR$/YunluFramework_API/public/common/readconfig.py" afterPath="$PROJECT_DIR$/YunluFramework_API/public/common/readconfig.py" />
+      <change beforePath="$PROJECT_DIR$/YunluFramework_API/public/common/sendmail.py" afterPath="$PROJECT_DIR$/YunluFramework_API/public/common/sendmail.py" />
+      <change beforePath="$PROJECT_DIR$/YunluFramework_API/public/common/test_excel.py" afterPath="$PROJECT_DIR$/YunluFramework_API/public/common/test_excel.py" />
       <change beforePath="$PROJECT_DIR$/YunluFramework_API/report/log/log.log" afterPath="$PROJECT_DIR$/YunluFramework_API/report/log/log.log" />
+      <change beforePath="$PROJECT_DIR$/YunluFramework_API/report/testreport/20180226151235.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/YunluFramework_API/report/testreport/20180301141558.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/YunluFramework_API/report/testreport/20180301142034.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/YunluFramework_API/report/testreport/20180315150249.html" afterPath="" />
       <change beforePath="$PROJECT_DIR$/YunluFramework_API/runcase/runcase1.py" afterPath="$PROJECT_DIR$/YunluFramework_API/runcase/runcase1.py" />
+      <change beforePath="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI/TestSapceData.py" afterPath="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI/TestSapceData.py" />
       <change beforePath="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI/TestSpaceApi.py" afterPath="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI/TestSpaceApi.py" />
+      <change beforePath="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI/__init__.py" afterPath="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI/__init__.py" />
+      <change beforePath="$PROJECT_DIR$/测试代码/for循环测试.py" afterPath="$PROJECT_DIR$/测试代码/for循环测试.py" />
+      <change beforePath="$PROJECT_DIR$/测试代码/if or.py" afterPath="$PROJECT_DIR$/测试代码/if or.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,7 +38,7 @@
     <SUITE FILE_PATH="coverage/Appium$Unittests_for_TestSpaceApi_SpaceAPI_Private_test04_Space_list_api.coverage" NAME="Unittests for TestSpaceApi.SpaceAPI_Private.test04_Space_list_api Coverage Results" MODIFIED="1518072216649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI" />
     <SUITE FILE_PATH="PyCharm2017.2/coverage/Appium$Unittests_in_CreateAscSpace001_1_py.coverage" NAME="Unittests in CreateAscSpace001_1.py Coverage Results" MODIFIED="1510734217519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/StoneUIFramework/testcase/空间/协会空间/test1_1创建协会空间" />
     <SUITE FILE_PATH="PyCharm2017.2/coverage/Appium$Unittests_for_CreateOrgSpace001_1_space_CreateO.coverage" NAME="Unittests for CreateOrgSpace001_1.space_CreateO Coverage Results" MODIFIED="1511764064249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework/testcase/空间/机构空间/test1_1创建机构空间" />
-    <SUITE FILE_PATH="coverage/Appium$for.coverage" NAME="for循环测试 Coverage Results" MODIFIED="1519722480739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/测试代码" />
+    <SUITE FILE_PATH="coverage/Appium$for.coverage" NAME="for循环测试 Coverage Results" MODIFIED="1521767396654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/测试代码" />
     <SUITE FILE_PATH="coverage/Appium$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1518753154252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/测试代码" />
     <SUITE FILE_PATH="coverage/Appium$Unittests_for__B.coverage" NAME="Unittests for 单元测试循环测试.B Coverage Results" MODIFIED="1519634482964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/测试代码" />
     <SUITE FILE_PATH="PyCharm2017.2/coverage/Appium$Unittests_in_CreatePerSFolder002_1_py.coverage" NAME="Unittests in CreatePerSFolder002_1.py Coverage Results" MODIFIED="1511773629864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework/testcase/空间/私人空间/test2_1私人空间加文件夹" />
@@ -40,7 +55,7 @@
     <SUITE FILE_PATH="coverage/Appium$runcase1.coverage" NAME="runcase1 Coverage Results" MODIFIED="1521097368862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API/runcase" />
     <SUITE FILE_PATH="coverage/Appium$Unittests_in_ceshi_py.coverage" NAME="Unittests in ceshi.py Coverage Results" MODIFIED="1516694263993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API" />
     <SUITE FILE_PATH="coverage/Appium$Unittests_for_TestSpaceApi_SpaceAPI_Private_test_01Space_type_list_api.coverage" NAME="Unittests for TestSpaceApi.SpaceAPI_Private.test_01Space_type_list_api Coverage Results" MODIFIED="1518072783489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI" />
-    <SUITE FILE_PATH="coverage/Appium$Unittests_in__py.coverage" NAME="Unittests in 单元测试循环测试.py Coverage Results" MODIFIED="1519632810378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/测试代码" />
+    <SUITE FILE_PATH="coverage/Appium$Unittests_in__py.coverage" NAME="Unittests in 中文测试.py Coverage Results" MODIFIED="1522825641963" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="PyCharm2017.2/coverage/Appium$Unittests_for_TeamAssignJob003_1_team_AssignO.coverage" NAME="Unittests for TeamAssignJob003_1.team_AssignO Coverage Results" MODIFIED="1511765033884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework/testcase/空间/机构空间/test3_1团队人事任免" />
     <SUITE FILE_PATH="coverage/Appium$Unittests_for_Login001_1_LoginAPI.coverage" NAME="Unittests for Login001_1.LoginAPI Coverage Results" MODIFIED="1515654415840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API/testcase/登录/test1_1登录" />
     <SUITE FILE_PATH="coverage/Appium$Unittests_for_CreateProduct002_1_space_ProductO_test_spaceproduct.coverage" NAME="Unittests for CreateProduct002_1.space_ProductO.test_spaceproduct Coverage Results" MODIFIED="1512963386728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework/testcase/空间/机构空间/test2_1上下架产品" />
@@ -60,7 +75,7 @@
     <SUITE FILE_PATH="coverage/Appium$team_construction.coverage" NAME="team_construction Coverage Results" MODIFIED="1517822348462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API/public/TeamConstruction" />
     <SUITE FILE_PATH="PyCharm2017.2/coverage/Appium$Unittests_for_BusinessCard005_1_space_BusinessCardO.coverage" NAME="Unittests for BusinessCard005_1.space_BusinessCardO Coverage Results" MODIFIED="1511767814004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework/testcase/空间/机构空间/test5_1企业名片" />
     <SUITE FILE_PATH="coverage/Appium$Unittests_for_TestSpaceApi_SpaceAPI_Private_test_api_0014__13___Team_Construction_______________api_v1_team___test_team_id__packages___packages_id_____PUT__________token______self_token____team_id_____test_team_id____id_____packages_id_________msg__False__success_____________YES___200_____.coverage" NAME="Unittests for TestSpaceApi.SpaceAPI_Private.test_api_0014__13___Team_Construction___业务开启____当前团队开启指定业务__该接口需要业务的更新权限______api_v1_team___test_team_id__packages___packages_id_____PUT__________token______self_token____team_id_____test_team_id____id_____packages_id_______此业务已开启__msg__False__success_____________YES___200_____ Coverage Results" MODIFIED="1519786869951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI" />
-    <SUITE FILE_PATH="coverage/Appium$api_request.coverage" NAME="api_request Coverage Results" MODIFIED="1521083510503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API/api_test" />
+    <SUITE FILE_PATH="coverage/Appium$api_request.coverage" NAME="api_request Coverage Results" MODIFIED="1522829589311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API/api_test" />
     <SUITE FILE_PATH="coverage/Appium$RequestForHttp.coverage" NAME="RequestForHttp Coverage Results" MODIFIED="1516948002461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API/public/common" />
     <SUITE FILE_PATH="coverage/Appium$Unittests_for_CreateProduct002_1_space_ProductO.coverage" NAME="Unittests for CreateProduct002_1.space_ProductO Coverage Results" MODIFIED="1514862262891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework/testcase/空间/机构空间/test2_1上下架产品" />
     <SUITE FILE_PATH="coverage/Appium$Unittests_in_exel_ddt_py.coverage" NAME="Unittests in exel-ddt测试.py Coverage Results" MODIFIED="1519615570679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/测试代码" />
@@ -74,13 +89,13 @@
     <SUITE FILE_PATH="PyCharm2017.2/coverage/Appium$Connect.coverage" NAME="Connect Coverage Results" MODIFIED="1511313053929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework/public/common" />
     <SUITE FILE_PATH="coverage/Appium$Unittests_for_TeamAssignJob003_1_team_AssignO_test_teamAssign05.coverage" NAME="Unittests for TeamAssignJob003_1.team_AssignO.test_teamAssign05 Coverage Results" MODIFIED="1513576379352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework/testcase/空间/机构空间/test3_1团队人事任免" />
     <SUITE FILE_PATH="coverage/Appium$leancloud_test.coverage" NAME="leancloud_test Coverage Results" MODIFIED="1517562840533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API" />
-    <SUITE FILE_PATH="coverage/Appium$.coverage" NAME="系统变量路径 Coverage Results" MODIFIED="1521537916144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/测试代码" />
+    <SUITE FILE_PATH="coverage/Appium$.coverage" NAME="创建产品测试 Coverage Results" MODIFIED="1522392725478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/测试代码" />
     <SUITE FILE_PATH="coverage/Appium$Unittests_for_TestSpaceApi_SpaceAPI_Private_test01_Space_type_list_api.coverage" NAME="Unittests for TestSpaceApi.SpaceAPI_Private.test01_Space_type_list_api Coverage Results" MODIFIED="1518072774116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI" />
     <SUITE FILE_PATH="coverage/Appium$if_or.coverage" NAME="if or Coverage Results" MODIFIED="1519868285809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/测试代码" />
     <SUITE FILE_PATH="PyCharm2017.2/coverage/Appium$Unittests_for_CreateProduct002_1_space_ProductO.coverage" NAME="Unittests for CreateProduct002_1.space_ProductO Coverage Results" MODIFIED="1511763200610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework/testcase/空间/机构空间/test2_1上下架产品" />
     <SUITE FILE_PATH="coverage/Appium$team_construction__1_.coverage" NAME="team_construction (1) Coverage Results" MODIFIED="1517886632673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API/api/TeamConstruction" />
     <SUITE FILE_PATH="coverage/Appium$Unittests_for_TestSpaceApi_SpaceAPI_Private_test_Space_type_list_api.coverage" NAME="Unittests for TestSpaceApi.SpaceAPI_Private.test_Space_type_list_api Coverage Results" MODIFIED="1518072790591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI" />
-    <SUITE FILE_PATH="coverage/Appium$Unittests_for_TestSpaceApi_SpaceAPI_Private.coverage" NAME="Unittests for TestSpaceApi.SpaceAPI_Private Coverage Results" MODIFIED="1519782770498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI" />
+    <SUITE FILE_PATH="coverage/Appium$Unittests_for_TestSpaceApi_SpaceAPI_Private.coverage" NAME="Unittests for TestSpaceApi.SpaceAPI_Private Coverage Results" MODIFIED="1522828112884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI" />
     <SUITE FILE_PATH="coverage/Appium$Unittests_for_SapceApiTest_SpaceAPI_Private_test04_Space_list_api.coverage" NAME="Unittests for SapceApiTest.SpaceAPI_Private.test04_Space_list_api Coverage Results" MODIFIED="1516607706862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI" />
     <SUITE FILE_PATH="coverage/Appium$LiveApp.coverage" NAME="LiveApp Coverage Results" MODIFIED="1518661045907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InterfaceTest-master" />
     <SUITE FILE_PATH="coverage/Appium$Unittests_for_CreateOrgSpace001_1_SpaceAPI.coverage" NAME="Unittests for CreateOrgSpace001_1.SpaceAPI Coverage Results" MODIFIED="1516172372085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API/testcase/空间/机构空间/test1_1创建机构空间" />
@@ -104,7 +119,7 @@
     <SUITE FILE_PATH="coverage/Appium$Unittests_for_Loginout002_1_Loginout.coverage" NAME="Unittests for Loginout002_1.Loginout Coverage Results" MODIFIED="1511939960956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework/testcase/登录/test2_1退出登录" />
     <SUITE FILE_PATH="coverage/Appium$Unittests_in_Add_AtoP_Agree005_3_py.coverage" NAME="Unittests in Add_AtoP_Agree005_3.py Coverage Results" MODIFIED="1512629360482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework/testcase/空间/协会空间/test5_3加会员_管理员_个人_同意" />
     <SUITE FILE_PATH="PyCharm2017.2/coverage/Appium$CreateProduct.coverage" NAME="CreateProduct Coverage Results" MODIFIED="1510907643728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework/testcase/空间/机构空间/test2_1上下架产品" />
-    <SUITE FILE_PATH="coverage/Appium$Unittests_for_TestSpaceApi_SpaceAPI_Private_test_api.coverage" NAME="Unittests for TestSpaceApi.SpaceAPI_Private.test_api Coverage Results" MODIFIED="1520845057125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI" />
+    <SUITE FILE_PATH="coverage/Appium$Unittests_for_TestSpaceApi_SpaceAPI_Private_test_api.coverage" NAME="Unittests for TestSpaceApi.SpaceAPI_Private.test_api Coverage Results" MODIFIED="1522828328643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI" />
     <SUITE FILE_PATH="coverage/Appium$Unittests_for_Add_AtoP_Agree005_3_AddAtoPAgreeA.coverage" NAME="Unittests for Add_AtoP_Agree005_3.AddAtoPAgreeA Coverage Results" MODIFIED="1512959954547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework/testcase/空间/协会空间/test5_3加会员_管理员_个人_同意" />
     <SUITE FILE_PATH="coverage/Appium$Unittests_in_unittest_object_py.coverage" NAME="Unittests in unittest_object.py Coverage Results" MODIFIED="1518058988976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/测试代码" />
     <SUITE FILE_PATH="PyCharm2017.2/coverage/Appium$1.coverage" NAME="1 Coverage Results" MODIFIED="1511247426096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -149,10 +164,11 @@
     <SUITE FILE_PATH="coverage/Appium$Unittests_in_Add_PtoP_Refuse005_2_py.coverage" NAME="Unittests in Add_PtoP_Refuse005_2.py Coverage Results" MODIFIED="1512542088194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework/testcase/空间/协会空间/test5_2加会员_个人_个人_拒绝" />
     <SUITE FILE_PATH="coverage/Appium$pythonjson.coverage" NAME="pythonjson Coverage Results" MODIFIED="1514202558563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/json学习" />
     <SUITE FILE_PATH="coverage/Appium$Unittests_in_Edit002_1_py.coverage" NAME="Unittests in Edit002_1.py Coverage Results" MODIFIED="1514443066023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework/testcase/空间/协会空间/test2_1编辑" />
+    <SUITE FILE_PATH="coverage/Appium$A.coverage" NAME="A Coverage Results" MODIFIED="1521976276390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Appium$list1.coverage" NAME="list1 Coverage Results" MODIFIED="1516066121313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API" />
     <SUITE FILE_PATH="coverage/Appium$Unittests_for_ceshi_TestA_testb.coverage" NAME="Unittests for ceshi.TestA.testb Coverage Results" MODIFIED="1516694235099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API" />
     <SUITE FILE_PATH="coverage/Appium$Unittests_for_ceshi_TestA_test_01.coverage" NAME="Unittests for ceshi.TestA.test_01 Coverage Results" MODIFIED="1516694080646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API" />
-    <SUITE FILE_PATH="coverage/Appium$Unittests_in_TestSpaceApi_py.coverage" NAME="Unittests in TestSpaceApi.py Coverage Results" MODIFIED="1521684048982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI" />
+    <SUITE FILE_PATH="coverage/Appium$Unittests_in_TestSpaceApi_py.coverage" NAME="Unittests in TestSpaceApi.py Coverage Results" MODIFIED="1522892245308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI" />
     <SUITE FILE_PATH="PyCharm2017.2/coverage/Appium$Unittests_for_Archivies004_1_space_ArchiviesO.coverage" NAME="Unittests for Archivies004_1.space_ArchiviesO Coverage Results" MODIFIED="1511766335192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework/testcase/空间/机构空间/test4_1资讯" />
     <SUITE FILE_PATH="coverage/Appium$test.coverage" NAME="test Coverage Results" MODIFIED="1518013529592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/YunluFramework_API" />
   </component>
@@ -185,28 +201,50 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TestSpaceApi.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI/TestSpaceApi.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RequestForHttp.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/YunluFramework_API/public/common/RequestForHttp.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-220">
-              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.6380544">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="TestSpaceApi.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI/TestSpaceApi.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="595">
+                  <caret line="174" column="0" lean-forward="true" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#46#96#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="log.log" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/YunluFramework_API/report/log/log.log">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="api_request.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/YunluFramework_API/api_test/api_request.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="242">
+                  <caret line="348" column="0" lean-forward="false" selection-start-line="348" selection-start-column="0" selection-end-line="348" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#22#63#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -218,26 +256,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>testcase</find>
-      <find>mk_test_name</find>
-      <find>make</find>
-      <find>00</find>
-      <find>0</find>
-      <find>5029</find>
-      <find>a =</find>
-      <find>assert</find>
-      <find>ddt</find>
-      <find>ma</find>
-      <find>correlation[j]</find>
-      <find>没进入</find>
-      <find>count</find>
-      <find>analysis_data</find>
-      <find>token</find>
       <find>login</find>
       <find>print_log</find>
       <find>时间戳</find>
       <find>_update_data</find>
-      <find>print</find>
       <find>发送请</find>
       <find>response</find>
       <find>analysis</find>
@@ -248,6 +270,22 @@
       <find>click_elemnt</find>
       <find>title_main_fl_more_menu</find>
       <find>get</find>
+      <find>post</find>
+      <find>header</find>
+      <find>headers</find>
+      <find>api_method</find>
+      <find>POST</find>
+      <find>POST请求错误</find>
+      <find>data</find>
+      <find>print</find>
+      <find>test</find>
+      <find>check</find>
+      <find>测试机构</find>
+      <find>api</find>
+      <find>进入</find>
+      <find>analysis_check</find>
+      <find>flag =</find>
+      <find>ERROR</find>
     </findStrings>
     <replaceStrings>
       <replace>YunluIFramework</replace>
@@ -290,15 +328,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/YunluFramework_API/api/登陆/__init__.py" />
-        <option value="$PROJECT_DIR$/YunluFramework_API/api_test/__init__.py" />
-        <option value="$PROJECT_DIR$/YunluFramework_API/api_requests.py" />
-        <option value="$PROJECT_DIR$/InterfaceTest-master/LiveApp.py" />
-        <option value="$PROJECT_DIR$/测试代码/__init__.py" />
-        <option value="$PROJECT_DIR$/测试代码/关联测试.py" />
-        <option value="$PROJECT_DIR$/测试代码/列表测试.py" />
-        <option value="$PROJECT_DIR$/YunluFramework_API/api/TeamConstruction/team_construction.py" />
-        <option value="$PROJECT_DIR$/YunluFramework_API/api/Space/space.py" />
         <option value="$PROJECT_DIR$/YunluFramework_API/111.html" />
         <option value="$PROJECT_DIR$/YunluFramework_API/runcase/__init__.py" />
         <option value="$PROJECT_DIR$/YunluFramework_API/runcase/suitefactory.py" />
@@ -313,7 +342,6 @@
         <option value="$PROJECT_DIR$/测试代码/检查数据.py" />
         <option value="$PROJECT_DIR$/测试代码/关联测试_返回值response.py" />
         <option value="$PROJECT_DIR$/测试代码/for.py" />
-        <option value="$PROJECT_DIR$/测试代码/for循环测试.py" />
         <option value="$PROJECT_DIR$/测试代码/数据类型测试.py" />
         <option value="$PROJECT_DIR$/测试代码/if or.py" />
         <option value="$PROJECT_DIR$/测试代码/去除指定字符串.py" />
@@ -329,7 +357,6 @@
         <option value="$PROJECT_DIR$/测试代码/关联测试_返回数据.py" />
         <option value="$PROJECT_DIR$/测试代码/关联测试_请求数据.py" />
         <option value="$PROJECT_DIR$/YunluFramework_API/public/common/test_excel.py" />
-        <option value="$PROJECT_DIR$/YunluFramework_API/api_test/api_request.py" />
         <option value="$PROJECT_DIR$/YunluFramework_API/public/common/sendmail.py" />
         <option value="$PROJECT_DIR$/YunluFramework/public/common/Connect.py" />
         <option value="$PROJECT_DIR$/YunluFramework/config/connect.conf" />
@@ -339,8 +366,19 @@
         <option value="$PROJECT_DIR$/YunluFramework_API/api/Shopping/shopping.py" />
         <option value="$PROJECT_DIR$/测试代码/系统变量路径.py" />
         <option value="$PROJECT_DIR$/YunluFramework_API/runcase/runcase1.py" />
-        <option value="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI/TestSpaceApi.py" />
+        <option value="$PROJECT_DIR$/测试代码/for循环测试.py" />
+        <option value="$PROJECT_DIR$/B.py" />
+        <option value="$PROJECT_DIR$/A.py" />
+        <option value="$PROJECT_DIR$/创建产品错误日志.html" />
+        <option value="$PROJECT_DIR$/测试代码/创建产品测试.py" />
         <option value="$PROJECT_DIR$/YunluFramework_API/public/common/RequestForHttp.py" />
+        <option value="$PROJECT_DIR$/YunluFramework_API/testcase/__init__.py" />
+        <option value="$PROJECT_DIR$/中文测试.py" />
+        <option value="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI/tests.py" />
+        <option value="$PROJECT_DIR$/YunluFramework_API/api/Space/space.py" />
+        <option value="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI/TestSapceData.py" />
+        <option value="$PROJECT_DIR$/YunluFramework_API/api_test/api_request.py" />
+        <option value="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI/TestSpaceApi.py" />
       </list>
     </option>
   </component>
@@ -356,28 +394,7 @@
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>Google App Engine (Python)</id>
-          </State>
-          <State>
-            <id>JavaScript</id>
-          </State>
-          <State>
-            <id>JavaScript function metricsJavaScript</id>
-          </State>
-          <State>
-            <id>Pyramid</id>
-          </State>
-          <State>
-            <id>Python</id>
-          </State>
-        </expanded-state>
-      </profile-state>
+      <profile-state />
     </entry>
   </component>
   <component name="ProjectLevelVcsManager">
@@ -398,7 +415,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -415,24 +431,45 @@
               <item name="Appium" type="b2602c69:ProjectViewProjectNode" />
               <item name="Appium" type="462c0819:PsiDirectoryNode" />
               <item name="YunluFramework_API" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="report" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Appium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Appium" type="462c0819:PsiDirectoryNode" />
+              <item name="YunluFramework_API" type="462c0819:PsiDirectoryNode" />
+              <item name="report" type="462c0819:PsiDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Appium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Appium" type="462c0819:PsiDirectoryNode" />
+              <item name="YunluFramework_API" type="462c0819:PsiDirectoryNode" />
+              <item name="testcase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Appium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Appium" type="462c0819:PsiDirectoryNode" />
+              <item name="YunluFramework_API" type="462c0819:PsiDirectoryNode" />
+              <item name="testcase" type="462c0819:PsiDirectoryNode" />
+              <item name="SpaceAPI" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="database.data.extractors.current.id" value="Tab-separated (TSV)_id" />
     <property name="ToolWindowDocumentation.ShowToolbar" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="SearchEverywhereHistoryKey" value="Http&#9;FILE&#9;file:///Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework_API/public/common/RequestForHttp.py&#10;Handle&#9;FILE&#9;file:///Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework/public/handle/space/SPACEHANDLE1.py&#10;leancloud&#9;null&#9;null&#10;attributes&#9;null&#9;null&#10;find_by_conve&#9;null&#9;null&#10;conversation&#9;null&#9;null&#10;find_by_client&#9;null&#9;null&#10;login&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="apire&#9;FILE&#9;file:///Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework_API/api_test/api_request.py&#10;apicheck&#9;null&#9;null&#10;request&#9;FILE&#9;file:///Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework_API/api_test/api_request.py&#10;Http&#9;FILE&#9;file:///Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework_API/public/common/RequestForHttp.py&#10;Handle&#9;FILE&#9;file:///Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework/public/handle/space/SPACEHANDLE1.py&#10;leancloud&#9;null&#9;null&#10;attributes&#9;null&#9;null&#10;find_by_conve&#9;null&#9;null&#10;conversation&#9;null&#9;null&#10;find_by_client&#9;null&#9;null&#10;login&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -443,11 +480,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/YunluFramework_API/api" />
+      <recent name="$PROJECT_DIR$/YunluFramework_API/api_test" />
+      <recent name="$PROJECT_DIR$/YunluFramework_API/config" />
       <recent name="$PROJECT_DIR$/YunluFramework_API/data" />
-      <recent name="$PROJECT_DIR$/YunluFramework_API/public/common" />
-      <recent name="$PROJECT_DIR$/apidoc" />
-      <recent name="$PROJECT_DIR$/YunluFramework_API" />
-      <recent name="$PROJECT_DIR$/YunluFramework_API/testcase/Space" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -463,7 +500,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python tests.Unittests in TestSpaceApi.py">
-    <configuration name="字典合并" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="字典合并" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -477,6 +514,63 @@
       <module name="Appium" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/测试代码/字典合并.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="A" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Appium" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/A.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="创建产品测试" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/测试代码" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Appium" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/测试代码/创建产品测试.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="创建产品测试" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/测试代码" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Appium" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/测试代码/创建产品测试.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -558,39 +652,20 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="关联测试_请求数据" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="api_request" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/测试代码" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/YunluFramework_API/api_test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Appium" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/测试代码/关联测试_请求数据.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="关联测试_返回数据" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/测试代码" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Appium" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/测试代码/关联测试_返回数据.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/YunluFramework_API/api_test/api_request.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -627,19 +702,34 @@
       <option name="_new_target" value="&quot;CreateOrgSpace001_1.space_CreateO&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
     </configuration>
-    <configuration name="Unittests for CreateOrgSpace001_1.space_CreateO.test_createSpace01" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for TestSpaceApi.SpaceAPI_Private" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/YunluFramework/testcase/空间/机构空间/test1_1创建机构空间" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Appium" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;CreateOrgSpace001_1.space_CreateO.test_createSpace01&quot;" />
+      <option name="_new_target" value="&quot;TestSpaceApi.SpaceAPI_Private&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+    </configuration>
+    <configuration name="Unittests for TestSpaceApi.SpaceAPI_Private.test_api" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Appium" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;TestSpaceApi.SpaceAPI_Private.test_api&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
     </configuration>
     <configuration name="Unittests for YunluFramework_API.testcase.SpaceAPI.TestSpaceApi.SpaceAPI_Private" type="tests" factoryName="Unittests" nameIsGenerated="true">
@@ -672,36 +762,6 @@
       <option name="_new_target" value="&quot;YunluFramework_API.testcase.SpaceAPI.TestSpaceApi.SpaceAPI_Private&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
     </configuration>
-    <configuration name="Unittests in CreateOrgSpace001_1.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/YunluFramework/testcase/空间/机构空间/test1_1创建机构空间" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Appium" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/YunluFramework/testcase/空间/机构空间/test1_1创建机构空间/CreateOrgSpace001_1.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-    </configuration>
-    <configuration name="Unittests in CreateProduct002_1.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/YunluFramework/testcase/空间/机构空间/test2_1上下架产品" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Appium" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/YunluFramework/testcase/空间/机构空间/test2_1上下架产品/CreateProduct002_1.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-    </configuration>
     <configuration name="Unittests in TestSpaceApi.py" type="tests" factoryName="Unittests" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -713,27 +773,45 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Appium" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI/TestSpaceApi.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
-    <list size="9">
+    <configuration name="Unittests in 中文测试.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Appium" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/中文测试.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
+    <list size="10">
       <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in TestSpaceApi.py" />
       <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests for CreateOrgSpace001_1.space_CreateO" />
       <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for Archivies004_1.space_ArchiviesO.test_archivies01" />
       <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for YunluFramework_API.testcase.SpaceAPI.TestSpaceApi.SpaceAPI_Private" />
-      <item index="4" class="java.lang.String" itemvalue="Python.关联测试_请求数据" />
-      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittests in CreateOrgSpace001_1.py" />
-      <item index="6" class="java.lang.String" itemvalue="Python tests.Unittests for CreateOrgSpace001_1.space_CreateO.test_createSpace01" />
-      <item index="7" class="java.lang.String" itemvalue="Python tests.Unittests in CreateProduct002_1.py" />
-      <item index="8" class="java.lang.String" itemvalue="Python.字典合并" />
+      <item index="4" class="java.lang.String" itemvalue="Python.字典合并" />
+      <item index="5" class="java.lang.String" itemvalue="Python.A" />
+      <item index="6" class="java.lang.String" itemvalue="Python tests.Unittests for TestSpaceApi.SpaceAPI_Private" />
+      <item index="7" class="java.lang.String" itemvalue="Python tests.Unittests in 中文测试.py" />
+      <item index="8" class="java.lang.String" itemvalue="Python tests.Unittests for TestSpaceApi.SpaceAPI_Private.test_api" />
+      <item index="9" class="java.lang.String" itemvalue="Python.api_request" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.字典合并" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in CreateOrgSpace001_1.py" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in CreateProduct002_1.py" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for CreateOrgSpace001_1.space_CreateO.test_createSpace01" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.api_request" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests for TestSpaceApi.SpaceAPI_Private.test_api" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for TestSpaceApi.SpaceAPI_Private" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in 中文测试.py" />
+        <item index="4" class="java.lang.String" itemvalue="Python.A" />
       </list>
     </recent_temporary>
   </component>
@@ -930,38 +1008,52 @@
       <option name="project" value="LOCAL" />
       <updated>1521528694689</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="2018-03-22&#10;1. 开启product接口测试">
+      <created>1521700688598</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1521700688598</updated>
+    </task>
+    <task id="LOCAL-00027" summary="2018-03-22&#10;1. 开启product接口测试">
+      <created>1521767220757</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1521767220757</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_TestSpaceApi_py - 2018.03.21 at 16h 36m 42s.xml">
+    <history-entry file="Unittests_in_TestSpaceApi_py - 2018.04.04 at 16h 14m 12s.xml">
       <configuration name="Unittests in TestSpaceApi.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestSpaceApi_py - 2018.03.21 at 16h 37m 06s.xml">
+    <history-entry file="Unittests_in_TestSpaceApi_py - 2018.04.04 at 16h 17m 15s.xml">
       <configuration name="Unittests in TestSpaceApi.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestSpaceApi_py - 2018.03.21 at 16h 39m 48s.xml">
+    <history-entry file="Unittests_in_TestSpaceApi_py - 2018.04.04 at 16h 19m 33s.xml">
       <configuration name="Unittests in TestSpaceApi.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestSpaceApi_py - 2018.03.21 at 16h 40m 14s.xml">
+    <history-entry file="Unittests_in_TestSpaceApi_py - 2018.04.04 at 16h 21m 03s.xml">
       <configuration name="Unittests in TestSpaceApi.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestSpaceApi_py - 2018.03.21 at 16h 40m 59s.xml">
+    <history-entry file="Unittests_in_TestSpaceApi_py - 2018.04.04 at 16h 45m 11s.xml">
       <configuration name="Unittests in TestSpaceApi.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestSpaceApi_py - 2018.03.21 at 16h 41m 33s.xml">
+    <history-entry file="Unittests_in_TestSpaceApi_py - 2018.04.04 at 16h 50m 57s.xml">
       <configuration name="Unittests in TestSpaceApi.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestSpaceApi_py - 2018.03.21 at 16h 44m 05s.xml">
+    <history-entry file="Unittests_in_TestSpaceApi_py - 2018.04.04 at 16h 57m 08s.xml">
       <configuration name="Unittests in TestSpaceApi.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestSpaceApi_py - 2018.03.21 at 16h 48m 01s.xml">
+    <history-entry file="Unittests_in_TestSpaceApi_py - 2018.04.04 at 16h 57m 27s.xml">
       <configuration name="Unittests in TestSpaceApi.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestSpaceApi_py - 2018.03.22 at 09h 59m 51s.xml">
+    <history-entry file="Unittests_in_TestSpaceApi_py - 2018.04.04 at 16h 57m 52s.xml">
       <configuration name="Unittests in TestSpaceApi.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_TestSpaceApi_py - 2018.03.22 at 10h 00m 50s.xml">
+    <history-entry file="Unittests_in_TestSpaceApi_py - 2018.04.05 at 09h 37m 28s.xml">
       <configuration name="Unittests in TestSpaceApi.py" configurationId="tests" />
     </history-entry>
   </component>
@@ -976,14 +1068,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.49713877" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32799014" sideWeight="0.49713877" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2382104" sideWeight="0.50429183" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769045" sideWeight="0.497558" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.49713877" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="0" y="40" width="1440" height="796" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.32799014" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" x="136" y="-963" width="1440" height="900" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2490931" sideWeight="0.49570817" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17739628" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21101573" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11731044" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1001,7 +1094,7 @@
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="0" y="0" width="310" height="700" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Database Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Log Manager" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1035,200 +1128,19 @@
     <MESSAGE value="2018-03-01&#10;1. 接口框架完成读数据部分，写数据待完成&#10;2. space接口完成excel录入，接下来再录team_construction部分" />
     <MESSAGE value="2018-03-14&#10;1. 接口框架完成读数据部分，写数据待完成&#10;2. team接口录入基本完成&#10;3. 后续添加leancloud消息读取模块" />
     <MESSAGE value="2018-03-20&#10;1. 接口框架完成读数据部分，写数据待完成&#10;2. team接口录入完成&#10;3. 已添加leancloud消息读取模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="2018-03-20&#10;1. 接口框架完成读数据部分，写数据待完成&#10;2. team接口录入完成&#10;3. 已添加leancloud消息读取模块" />
+    <MESSAGE value="2018-03-22&#10;1. 开启product接口测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="2018-03-22&#10;1. 开启product接口测试" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="25" />
+      <option name="time" value="26" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/YunluFramework/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor>
-            <js_state />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/测试代码/列表.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/测试代码/字典.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/测试代码/关联测试_检查点check.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="113" column="10" lean-forward="false" selection-start-line="113" selection-start-column="10" selection-end-line="113" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YunluFramework_API/api/登陆/login.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="65" column="20" lean-forward="true" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YunluFramework_API/config/path_file.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI/TestSapceData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/leancloud/errors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YunluFramework_API/public/common/Handle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YunluFramework_API/public/common/choosesuite.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YunluFramework_API/public/common/datainfo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YunluFramework_API/public/common/messages.py" />
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/sqlalchemy/orm/attributes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-565">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/leancloud/cloud.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/leancloud/client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1101">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/leancloud/conversation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="64" column="21" lean-forward="false" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.3/python_stubs/-2010535109/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="721" column="6" lean-forward="false" selection-start-line="721" selection-start-column="6" selection-end-line="721" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/测试代码/test-excel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/leancloud/object_.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="246" column="0" lean-forward="true" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/leancloud/acl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1076">
-          <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/leancloud/query.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="686" column="6" lean-forward="false" selection-start-line="686" selection-start-column="6" selection-end-line="686" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/leancloud/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/leancloud/message.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="25" column="11" lean-forward="true" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/测试代码/时间戳.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="15" lean-forward="true" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YunluFramework_API/public/common/message.py" />
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/ddt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/测试代码/关联测试_返回数据.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/测试代码/关联测试_请求数据.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
@@ -1243,13 +1155,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YunluFramework_API/report/log/log.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-383403">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/YunluFramework_API/public/common/sendmail.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
@@ -1257,13 +1162,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YunluFramework_API/report/testreport/20180315150249.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/YunluFramework_API/report/testreport/20180315150249.html" />
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/appium/webdriver/webdriver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="518">
@@ -1289,13 +1188,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YunluFramework/testcase/空间/机构空间/test1_1创建机构空间/CreateOrgSpace001_1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1369,34 +1261,226 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/YunluFramework_API/runcase/suitefactory.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/YunluFramework_API/runcase/runcase1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        <state relative-caret-position="108">
+          <caret line="7" column="84" lean-forward="true" selection-start-line="7" selection-start-column="84" selection-end-line="7" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/测试代码/for循环测试.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/B.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apidoc.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/A.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="23" column="10" lean-forward="false" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StoneUIFramework/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/requests/sessions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="560" column="23" lean-forward="true" selection-start-line="560" selection-start-column="23" selection-end-line="560" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YunluFramework_API/public/common/RequestForHttp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-122">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/测试代码/创建产品测试.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/创建产品错误日志.html" />
+    <entry file="file://$PROJECT_DIR$/YunluFramework_API/config/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YunluFramework_API/public/common/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YunluFramework_API/report/log/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YunluFramework_API/report/testreport/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YunluFramework_API/report/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YunluFramework_API/api/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YunluFramework_API/config/path_file.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="35" column="39" lean-forward="false" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="342" column="0" lean-forward="true" selection-start-line="342" selection-start-column="0" selection-end-line="342" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YunluFramework_API/testcase/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/YunluFramework_API/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/中文测试.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI/tests.py" />
+    <entry file="file://$PROJECT_DIR$/YunluFramework_API/api/Space/space.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YunluFramework/testcase/空间/机构空间/test1_1创建机构空间/CreateOrgSpace001_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="88" column="21" lean-forward="true" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI/TestSapceData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="49" lean-forward="false" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YunluFramework_API/data/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/测试代码/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/YunluFramework_API/api_test/api_request.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+        <state relative-caret-position="242">
+          <caret line="348" column="0" lean-forward="false" selection-start-line="348" selection-start-column="0" selection-end-line="348" selection-end-column="0" />
+          <folding>
+            <element signature="e#22#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YunluFramework_API/report/log/log.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/YunluFramework_API/testcase/SpaceAPI/TestSpaceApi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YunluFramework_API/public/common/RequestForHttp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-220">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="595">
+          <caret line="174" column="0" lean-forward="true" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
+          <folding>
+            <element signature="e#46#96#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

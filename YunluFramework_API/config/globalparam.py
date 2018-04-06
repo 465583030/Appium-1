@@ -2,6 +2,10 @@ __author__ = 'xiaoj'
 import os
 from YunluFramework_API.public.common.readconfig import Config
 
+import io
+import sys
+sys.stdout=io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
+
 
 class GlobalParam():
     def __init__(self, folder, file):

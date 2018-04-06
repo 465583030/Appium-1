@@ -7,6 +7,7 @@ from email.mime.multipart import MIMEMultipart
 from YunluFramework_API.config.globalparam import GlobalParam
 from YunluFramework_API.public.common.log import Log
 
+
 # 1.配置日志记录模块
 cf = GlobalParam('config', 'path_file.conf')
 logfile = cf.getParam('log', "logfile")  # 日志文件名

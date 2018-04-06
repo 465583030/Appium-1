@@ -1,4 +1,5 @@
 # Author:Xiaojingyuan
+# -*- coding: utf-8 -*-
 
 list1 = ['true','false','True','False']
 list2 = [

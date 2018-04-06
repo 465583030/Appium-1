@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 __author__ = 'xiaoj'
 import configparser
 
@@ -13,4 +14,7 @@ class Config:
         # 此处path_config = "path_001"以此类推
         path = cf.get(path_Section,path_NO)
         return path
+
+# a = Config(configPath='/Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework_API/config/path_file.conf')
+# path_1 = a.get_PATH('workspace','path')
 

@@ -25,8 +25,10 @@ class Log:
         ch = logging.StreamHandler()
         ch.setLevel(logging.DEBUG)
         # 定义handler的输出格式
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-        formatter1 = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+        formatter = logging.Formatter(
+            '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        formatter1 = logging.Formatter(
+            '%(asctime)s - %(levelname)s - %(message)s')
         fh.setFormatter(formatter1)
         ch.setFormatter(formatter1)
         # 给logger添加handler
@@ -57,6 +59,7 @@ class Log:
 
     def error(self, message):
         self.__printconsole('error', message)
+
 
 # cf = GlobalParam('config','path_file.conf')
 # filename = cf.getParam('space',"logfile")#日志文件名

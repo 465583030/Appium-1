@@ -38,8 +38,9 @@ class API_REQUEST(Login):
         self.correlationDict['${self.token1}'] = self.token1
         self.correlationDict['${space_name}'] = 'api测试'
 
-    def print_log(self, api_no, api_name, api_describe, api_url, api_function, api_headers,
-                  api_data, api_check, api_status, api_hope, response):
+    def print_log(self, api_no, api_name, api_describe, api_url, api_function,
+                  api_headers, api_data, api_check, api_status, api_hope,
+                  response):
         '''
         打印日志模块
         :param api_no       : 接口编号
@@ -101,19 +102,9 @@ class API_REQUEST(Login):
         通用的接口请求方法,返回接口的response值
     '''
 
-    def api_requests(self,
-                     api_no,
-                     api_name,
-                     api_describe,
-                     api_url,
-                     api_function,
-                     api_headers,
-                     api_data,
-                     api_check,
-                     api_hope,
-                     api_status,
-                     api_correlation,
-                     api_messages):
+    def api_requests(self, api_no, api_name, api_describe, api_url,
+                     api_function, api_headers, api_data, api_check, api_hope,
+                     api_status, api_correlation, api_messages):
         '''
         公用请求方法
         :param api_no       : 接口编号
@@ -127,64 +118,121 @@ class API_REQUEST(Login):
         :param api_hope     : 接口预期
         :return             : 接口返回 response[0] - 状态码 | response[1] - 返回值
         '''
+        # 0 解析请求头，如果为json类型，将str类型的headers转换成字典类型
+        if api_headers == "{'Content-Type':'application/json'}":
+            # 1）将header转换成字典格式
+            api_headers = eval(api_headers)
 
-        # 1.组装token
-        try:
-            # 1.1解析测试数据
-            data = self.analysis_data(api_data)
+            # 2）直接将api_data转换成json格式
+            self.data = self.analysis_data(api_data)
+            self.data = json.dumps(self.data)
 
-            # 1.2 解析url
+            # 3）解析url
             api_url = self.analysis_url(api_url)
 
-        except Exception as e:
-            # 1.1 将请求数据转换成字典
-            data = api_data
-            data = eval(data)
+        # 1 如果api_headers为空
+        if api_headers == '':
+            # 1.解析data 和 url ———— 将data转为字典格式
+            try:
+                # 1.1解析测试数据
+                self.data = self.analysis_data(api_data)
 
-            # 1.2 解析url
-            api_url = self.analysis_url(api_url)
-            self.log.error(e)
+                # 1.2 解析url
+                api_url = self.analysis_url(api_url)
+
+            except Exception as e:
+                # 1.1 将请求数据转换成字典
+                self.data = api_data
+                self.data = eval(self.data)
+
+                # 1.2 解析url
+                api_url = self.analysis_url(api_url)
+                self.log.error(e)
 
         # 2. 发送请求
+        # 2.1 发送请求
+        response = self.api_method(
+            method=api_function,
+            api_url=api_url,
+            data=self.data,
+            api_headers=api_headers)
+
+        # 2.2 打印日志
         # 2.1 > 如果状态码不为204
         if api_status != 204:
-
-            # 2. 发送请求
-            response = self.api_method(method=api_function, api_url=api_url, data=data, api_headers=api_headers)
-
             # 3. 打印日志
-            self.print_log(api_no, api_name, api_describe, api_url, api_function, api_headers,
-                           data, api_check, api_hope, api_status, response)
+            self.print_log(api_no, api_name, api_describe, api_url,
+                           api_function, api_headers, self.data, api_check,
+                           api_hope, api_status, response)
 
             # 4.解析返回值
             status_code = response[0]  # 状态码
             response1 = json.loads(response[1])  # 解析返回值
-            self.analysis_response(api_no, api_name, api_correlation, response1)
+            self.analysis_response(api_no, api_name, api_correlation,
+                                   response1)
 
             # 5.解析关联消息
             self.analysis_messages(api_no, api_name, api_messages)
 
             return status_code, response1
 
-        # 2.2 > 如果状态码为204，返回结果为【no content】
+            # 2.2 > 如果状态码为204
         elif api_status == 204:
-
-            # 2.发送请求
-            response = self.api_method(method=api_function, api_url=api_url, data=data, api_headers=api_headers)
-
             # 3.解析返回值
             status_code = response  # 状态码
             response1 = ''
             response = [status_code, response1]
 
             # 4. 打印日志
-            self.print_log(api_no, api_name, api_describe, api_url, api_function, api_headers,
-                           data, api_check, api_hope, api_status, response)
+            self.print_log(api_no, api_name, api_describe, api_url,
+                           api_function, api_headers, self.data, api_check,
+                           api_hope, api_status, response)
 
             # 5.解析关联消息
             self.analysis_messages(api_no, api_name, api_messages)
 
             return status_code, response1
+
+        # # 2. 发送请求
+        # # 2.1 > 如果状态码不为204
+        # if api_status != 204:
+        #
+        #     # 2. 发送请求
+        #     response = self.api_method(method=api_function, api_url=api_url, data=data, api_headers=api_headers)
+        #
+        #     # 3. 打印日志
+        #     self.print_log(api_no, api_name, api_describe, api_url, api_function, api_headers,
+        #                    data, api_check, api_hope, api_status, response)
+        #
+        #     # 4.解析返回值
+        #     status_code = response[0]  # 状态码
+        #     response1 = json.loads(response[1])  # 解析返回值
+        #     self.analysis_response(api_no, api_name, api_correlation, response1)
+        #
+        #     # 5.解析关联消息
+        #     self.analysis_messages(api_no, api_name, api_messages)
+        #
+        #     return status_code, response1
+        #
+        # # 2.2 > 如果状态码为204，返回结果为【no content】
+        # elif api_status == 204:
+        #
+        #     # 2.发送请求
+        #     response = self.api_method(method=api_function, api_url=api_url, data=data, api_headers=api_headers)
+        #
+        #     # 3.解析返回值
+        #     status_code = response  # 状态码
+        #     response1 = ''
+        #     response = [status_code, response1]
+        #
+        #     # 4. 打印日志
+        #     self.print_log(api_no, api_name, api_describe, api_url, api_function, api_headers,
+        #                    data, api_check, api_hope, api_status, response)
+        #
+        #     # 5.解析关联消息
+        #     self.analysis_messages(api_no, api_name, api_messages)
+        #
+        #     return status_code, response1
 
     '''
         用于解析返回值中的数据和请求数据中的关联项
@@ -231,7 +279,8 @@ class API_REQUEST(Login):
         # 如果关联数据不为空
         if correlation != '':
             # 1.处理关联数据(存到列表中)
-            correlation = correlation.replace('\n', '').replace('\r', '').split(';')
+            correlation = correlation.replace('\n', '').replace('\r',
+                                                                '').split(';')
 
             # 2.分解关联数据
             for j in range(len(correlation)):
@@ -239,8 +288,12 @@ class API_REQUEST(Login):
 
                 # 3.判断处理后的关联列表长度为2时
                 if len(correlation) == 2:
-                    if correlation[1] == '' or not re.search(r'^\[', correlation[1]) or not re.search(r'\]$', correlation[1]):
-                        self.log.error(api_no + ' ' + api_name + ' 关联参数设置有误，请检查[Correlation]字段参数格式是否正确！！！')
+                    if correlation[1] == '' or not re.search(
+                            r'^\[', correlation[1]) or not re.search(
+                        r'\]$', correlation[1]):
+                        self.log.error(
+                            api_no + ' ' + api_name +
+                            ' 关联参数设置有误，请检查[Correlation]字段参数格式是否正确！！！')
                         continue
 
                     # 4.返回结果赋值
@@ -271,11 +324,13 @@ class API_REQUEST(Login):
         '''
         # 标志符
         flag = ''
+        print("flag标志 = ", flag)
 
         # 如果检查数据不为空
         if api_check != '':
             # 1.处理关联数据(存到列表中)
-            api_check = api_check.replace('\n', '').replace('\r', '').split(';')
+            api_check = api_check.replace('\n', '').replace('\r',
+                                                            '').split(';')
             # print('api_check = ',api_check)
 
             # 2.分解关联数据
@@ -283,28 +338,34 @@ class API_REQUEST(Login):
 
                 # 判断是否为'='关系
                 if '=' in api_check[j]:
+                    print("= 存在于api_check中")
 
                     # 如果 '#len#' 存在
                     if '#len#' in api_check[j]:
                         # print('去除指定的 #len# 字符串 ：', api_check[j].strip('#len#'))
                         param = api_check[j].replace('#len#', '').split('=')
                         flag = '#len#'
+                        print("1.flag 等于#len# ：", flag)
 
                     # 如果 '#len#'不存在
                     elif '#len#' not in api_check[j]:
                         param = api_check[j].split('=')
                         # print('没进入 #len# 的param = ', param)
-                        flag = ''
+                        flag = '='
 
                 # 判断是否为'<>'关系
                 elif '<>' in api_check[j]:
                     param = api_check[j].split('<>')
                     flag = '<>'
+                    print("4. flag = <>:", flag)
 
                 # 3.判断处理后的关联列表长度为2时
                 if len(param) == 2:
-                    if param[1] == '' or not re.search(r'^\[', param[1]) or not re.search(r'\]$', param[1]):
-                        self.log.error(api_no + ' ' + api_name + ' 关联参数设置有误，请检查[Check]字段参数格式是否正确！！！')
+                    if param[1] == '' or not re.search(
+                            r'^\[', param[1]) or not re.search(
+                        r'\]$', param[1]):
+                        self.log.error(api_no + ' ' + api_name +
+                                       ' 关联参数设置有误，请检查[Check]字段参数格式是否正确！！！')
                         continue
 
                     # 4.返回结果赋值
@@ -324,13 +385,15 @@ class API_REQUEST(Login):
                             except:
                                 break
                         value = temp
-                        # print('value = ',value)
+                        print('value = ', value)
 
                 try:
+                    print("----------进入检查点数据校验-------------")
+                    print("flag = ", flag)
                     # 检查点数据校验
                     # '='关系断言
                     if flag == '=':
-                        # print('等于')
+                        print('等于')
 
                         # 先将value值中的True或False的类型转换成str类型，再与param[0]断言
                         if param[0] in 'True' or 'False':
@@ -344,7 +407,9 @@ class API_REQUEST(Login):
 
                         # 无需转换时，直接比较检查点
                         else:
-                            # print('进入else')
+                            print('进入else')
+                            print('param[0] = ', param[0])
+                            print('value = ', value)
                             assert param[0] == value
 
                     # '<>'关系断言
@@ -380,7 +445,8 @@ class API_REQUEST(Login):
 
         headers = {
             'X-LC-Id': "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz",
-            'X-LC-Sign': "7396816f73bdbcf70281b09dc2c1b3b9,1517046641139,master",
+            'X-LC-Sign':
+                "7396816f73bdbcf70281b09dc2c1b3b9,1517046641139,master",
         }
         # 1.发送请求
         with requests.Session() as s:
@@ -393,7 +459,12 @@ class API_REQUEST(Login):
         dict_r = json.loads(res)
 
         # 转为json,并格式化输出
-        json_r = json.dumps(dict_r, sort_keys=True, ensure_ascii=False, indent=4, separators=(',', ': '))
+        json_r = json.dumps(
+            dict_r,
+            sort_keys=True,
+            ensure_ascii=False,
+            indent=4,
+            separators=(',', ': '))
         return json_r
 
     # 获取发送给某个用户的(忽略发送着的身份【system】|【user】)最新一条消息的【data】数据
@@ -435,7 +506,8 @@ class API_REQUEST(Login):
         # 如果关联数据不为空
         if correlation != '':
             # 1.处理关联数据(存到列表中)
-            correlation = correlation.replace('\n', '').replace('\r', '').split(';')
+            correlation = correlation.replace('\n', '').replace('\r',
+                                                                '').split(';')
 
             # 2.分解关联数据
             for j in range(len(correlation)):
@@ -443,15 +515,20 @@ class API_REQUEST(Login):
 
                 # 3.判断处理后的关联列表长度为2时
                 if len(correlation) == 2:
-                    if correlation[1] == '' or not re.search(r'^\[', correlation[1]) or not re.search(r'\]$', correlation[1]):
-                        self.log.error(api_no + ' ' + api_name + ' 关联参数设置有误，请检查[Correlation]字段参数格式是否正确！！！')
+                    if correlation[1] == '' or not re.search(
+                            r'^\[', correlation[1]) or not re.search(
+                        r'\]$', correlation[1]):
+                        self.log.error(
+                            api_no + ' ' + api_name +
+                            ' 关联参数设置有误，请检查[Correlation]字段参数格式是否正确！！！')
                         continue
 
                     # 4.返回结果赋值
                     '''
                         临时方案，此时推送给的用户id是写死的，token1的用户
                     '''
-                    value = self.get_first_message(to_who='d66dcb63-107f-4d30-a632-d97882b7465f')
+                    value = self.get_first_message(
+                        to_who='d66dcb63-107f-4d30-a632-d97882b7465f')
 
                     # 5.继续处理correlation
                     a = correlation[1][1:-1].split('][')
@@ -493,7 +570,6 @@ class API_REQUEST(Login):
 # list1 = json.dumps(list1, sort_keys=True, ensure_ascii=False, indent=4, separators=(',', ': '))
 # print(list1)
 # print(dict1)
-
 
 # excel = Excel(xls='data_api.xls', sheet_name='test2')
 # data = excel.get_row_data(sheet_name='test2')

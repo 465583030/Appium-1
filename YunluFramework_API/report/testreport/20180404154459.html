@@ -1,0 +1,1386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>测试结果</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    
+<style type="text/css" media="screen">
+body        { font-family: Microsoft YaHei,Tahoma,arial,helvetica,sans-serif;padding: 20px; font-size: 120%; }
+table       { font-size: 100%; }
+/* -- heading ---------------------------------------------------------------------- */
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+/* -- report ------------------------------------------------------------------------ */
+#total_row  { font-weight: bold; }
+.passCase   { color: #5cb85c; }
+.failCase   { color: #d9534f; font-weight: bold; }
+.errorCase  { color: #f0ad4e; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; width: 550px; overflow: scroll}
+</style>
+
+</head>
+<body >
+<script language="javascript" type="text/javascript">
+output_list = Array();
+/*level 调整增加只显示通过用例的分类 --Findyou
+0:Summary //all hiddenRow
+1:Failed  //pt hiddenRow, ft none
+2:Pass    //pt none, ft hiddenRow
+3:All     //pt none, ft none
+*/
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level == 2 || level == 0 ) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level < 2) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+    }
+    //加入【详细】切换文字变化 --Findyou
+    detail_class=document.getElementsByClassName('detail');
+	//console.log(detail_class.length)
+	if (level == 3) {
+		for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="收起"
+		}
+	}
+	else{
+			for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="详细"
+		}
+	}
+}
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        //ID修改 点 为 下划线 -Findyou
+        tid0 = 't' + cid.substr(1) + '_' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        //修改点击无法收起的BUG，加入【详细】切换文字变化 --Findyou
+        if (toHide) {
+            document.getElementById(tid).className = 'hiddenRow';
+            document.getElementById(cid).innerText = "详细"
+        }
+        else {
+            document.getElementById(tid).className = '';
+            document.getElementById(cid).innerText = "收起"
+        }
+    }
+}
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+</script>
+<div class='heading'>
+<h1 style="font-family: Microsoft YaHei">测试结果</h1>
+<p class='attribute'><strong>测试人员 : </strong> xiaojingyuan</p>
+<p class='attribute'><strong>开始时间 : </strong> 2018-04-04 15:44:59</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:00:00.751023</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 36，通过 36，通过率= 100.00%</p>
+
+<p class='description'>测试报告</p>
+</div>
+
+
+<p id='show_detail_line'>
+<a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 100.00% }</a>
+<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 0 }</a>
+<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 36 }</a>
+<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 36 }</a>
+</p>
+<table id='result_table' class="table table-condensed table-bordered table-hover">
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row' class="text-center success" style="font-weight: bold;font-size: 16px;">
+    <td>用例集/测试用例</td>
+    <td>总计</td>
+    <td>通过</td>
+    <td>失败</td>
+    <td>错误</td>
+    <td>详细</td>
+</tr>
+
+<tr class='passClass warning'>
+    <td>YunluFramework_API.testcase.SpaceAPI.TestSpaceApi.SpaceAPI_Private</td>
+    <td class="text-center">36</td>
+    <td class="text-center">36</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c1',36)" class="detail" id='c1'>详细</a></td>
+</tr>
+
+<tr id='pt1_1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_01__1___Space___私人空间类型列表____获取私人空间下面的可选类型列表_____api_v1_space_classes____GET__________token______self_token_____________n______n_________aliaz____food___n_________id___67__n_________name____食物__n_______n______n_________aliaz____house___n_________id___68__n_________name____居住__n_______n______n_________aliaz____traffic___n_________id___69__n_________name____出行__n_______n______n_________aliaz____education___n_________id___70__n_________name____学习__n_______n______n_________aliaz____health___n_________id___71__n_________name____健康__n_______n______n_________aliaz____intercourse___n_________id___72__n_________name____社交__n_______n______n_________aliaz____vocation___n_________id___73__n_________name____工作__n_______n______n_________aliaz____art___n_________id___74__n_________name____文艺__n_______n______n_________aliaz____amusement___n_________id___75__n_________name____娱乐__n_______n______n_________aliaz____beauty___n_________id___76__n_________name____美护__n_______n______n_________aliaz____other___n_________id___77__n_________name____其他__n_______n______n_________aliaz____clothing___n_________id___66__n_________name____穿衣__n______n_________NO___200_____class_id___0__id_______</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
+    <div id='div_pt1_1' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
+    <div id='div_pt1_1' class="collapse in" align="left">
+    <pre>
+    
+pt1_1: 2018-04-04 15:45:00,009 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,009 - INFO - [1, 'Space - 私人空间类型列表', '获取私人空间下面的可选类型列表', '/api/v1/space_classes', 'GET', '', "{'token': '${self.token}'}", '', '[\n    {\n        "aliaz": "food",\n        "id": 67,\n        "name": "食物"\n    },\n    {\n        "aliaz": "house",\n        "id": 68,\n        "name": "居住"\n    },\n    {\n        "aliaz": "traffic",\n        "id": 69,\n        "name": "出行"\n    },\n    {\n        "aliaz": "education",\n        "id": 70,\n        "name": "学习"\n    },\n    {\n        "aliaz": "health",\n        "id": 71,\n        "name": "健康"\n    },\n    {\n        "aliaz": "intercourse",\n        "id": 72,\n        "name": "社交"\n    },\n    {\n        "aliaz": "vocation",\n        "id": 73,\n        "name": "工作"\n    },\n    {\n        "aliaz": "art",\n        "id": 74,\n        "name": "文艺"\n    },\n    {\n        "aliaz": "amusement",\n        "id": 75,\n        "name": "娱乐"\n    },\n    {\n        "aliaz": "beauty",\n        "id": 76,\n        "name": "美护"\n    },\n    {\n        "aliaz": "other",\n        "id": 77,\n        "name": "其他"\n    },\n    {\n        "aliaz": "clothing",\n        "id": 66,\n        "name": "穿衣"\n    }\n]', '', 'NO', 200, '${class_id}=[0][id]', '']
+2018-04-04 15:45:00,009 - INFO - 未执行测试用例编号 : 1 | 名称 : Space - 私人空间类型列表
+2018-04-04 15:45:00,010 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_02__2___Space___热门空间名____获取常用空间名_____api_v1_spaces_names____GET__________count___10___class_id_____class_id_____________n_____names_____n_________舌尖上的中国___n_________美食___n_________民以食为天___n_________厨艺秀___n_________茶___n_________吃货世界___n_________正宗东海海鲜_海鲜大礼____n_________吃货的世界___n_________我的衣柜___n_________我的店铺__n_______n_____success___true_n_________NO___200_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_2'>通过</button>
+    <div id='div_pt1_2' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_2'>通过</button>
+    <div id='div_pt1_2' class="collapse in" align="left">
+    <pre>
+    
+pt1_2: 2018-04-04 15:45:00,010 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,010 - INFO - [2, 'Space - 热门空间名', '获取常用空间名', '/api/v1/spaces/names', 'GET', '', "{'count':'10','class_id':'${class_id}'}", '', '{\n    "names": [\n        "舌尖上的中国",\n        "美食",\n        "民以食为天",\n        "厨艺秀",\n        "茶",\n        "吃货世界",\n        "正宗东海海鲜《海鲜大礼》",\n        "吃货的世界",\n        "我的衣柜",\n        "我的店铺"\n    ],\n    "success": true\n}', '', 'NO', 200, '', '']
+2018-04-04 15:45:00,010 - INFO - 未执行测试用例编号 : 2 | 名称 : Space - 热门空间名
+2018-04-04 15:45:00,011 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_03__3___Space___空间创建_私人空间_____当前用户创建私人空间_____api_v1_clusters____POST__________token______self_token_____name____api测试___class_id______class_id_______True__success_____________NO___201_____cluster_id___id_______</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_3' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_3'>通过</button>
+    <div id='div_pt1_3' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_3' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_3'>通过</button>
+    <div id='div_pt1_3' class="collapse in" align="left">
+    <pre>
+    
+pt1_3: 2018-04-04 15:45:00,011 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,011 - INFO - [3, 'Space - 空间创建（私人空间）', '当前用户创建私人空间', '/api/v1/clusters', 'POST', '', "{'token': '${self.token}', 'name': 'api测试','class_id': '${class_id}'}", 'True=[success]', '', '', 'NO', 201, '${cluster_id}=[id]', '']
+2018-04-04 15:45:00,011 - INFO - 未执行测试用例编号 : 3 | 名称 : Space - 空间创建（私人空间）
+2018-04-04 15:45:00,012 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_04__4___Space___空间列表____获取指定用户的空间列表_查看api测试空间是否在列表中_____api_v1_spaces____GET__________token______self_token____q____api测试____class___None_____api测试__0__name_____________NO___200_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_4' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_4'>通过</button>
+    <div id='div_pt1_4' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_4' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_4'>通过</button>
+    <div id='div_pt1_4' class="collapse in" align="left">
+    <pre>
+    
+pt1_4: 2018-04-04 15:45:00,012 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,012 - INFO - [4, 'Space - 空间列表', '获取指定用户的空间列表：查看api测试空间是否在列表中', '/api/v1/spaces', 'GET', '', "{'token': '${self.token}','q': 'api测试', 'class': None}", 'api测试=[0][name]', '', '', 'NO', 200, '', '']
+2018-04-04 15:45:00,013 - INFO - 未执行测试用例编号 : 4 | 名称 : Space - 空间列表
+2018-04-04 15:45:00,013 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_05__41___Space___空间列表____获取指定用户的空间列表_存_测试机构_ID_____api_v1_spaces____GET__________token______self_token_______测试机构__3__name_____________YES___200_____test_team_id___3__organization_id_______</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_5' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_5'>通过</button>
+    <div id='div_pt1_5' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_5' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_5'>通过</button>
+    <div id='div_pt1_5' class="collapse in" align="left">
+    <pre>
+    
+pt1_5: 2018-04-04 15:45:00,013 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,314 - INFO - 1. 接口编号 : 41
+2018-04-04 15:45:00,315 - INFO - 2. 接口名称 : Space - 空间列表
+2018-04-04 15:45:00,317 - INFO - 3. 接口描述 : 获取指定用户的空间列表：存"测试机构"ID
+2018-04-04 15:45:00,317 - INFO - 4. 接口路由 : /api/v1/spaces
+2018-04-04 15:45:00,317 - INFO - 5. 接口方式 : GET
+2018-04-04 15:45:00,317 - INFO - 6. 接口头部 : 
+2018-04-04 15:45:00,318 - INFO - 7. 接口数据 : {'token': '4a98dd00c5688ef1f8e44787966abe74'}
+2018-04-04 15:45:00,318 - INFO - 8. 接口检查 : 测试机构=[3][name]
+2018-04-04 15:45:00,318 - INFO - 9. 预期状态 ：
+2018-04-04 15:45:00,318 - INFO - 10.接口预期 : 200
+2018-04-04 15:45:00,319 - INFO - 11.接口返回 : [
+    {
+        "aliaz": "stone_store",
+        "class_id": 69,
+        "cluster_id": 308,
+        "company": "武汉环球万国石材有限公司",
+        "disclosure": "off",
+        "gallery_count": 11,
+        "groups_users": [
+            {
+                "id": 7405,
+                "name": "销售员",
+                "viewed": false
+            }
+        ],
+        "locked": false,
+        "logo_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FrB4rO7zQO2n6yyvDGeqhuD-Bvot-thumb",
+        "name": "环球万国",
+        "organization_id": 90,
+        "organization_state": "approved",
+        "owner_class": "member",
+        "service_id": 13,
+        "vocation": "stone"
+    },
+    {
+        "aliaz": "stone_mine",
+        "class_id": null,
+        "cluster_id": 2067,
+        "company": "武汉服设计公司",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "groups_users": [
+            {
+                "id": 6680,
+                "name": "导购员",
+                "viewed": false
+            }
+        ],
+        "locked": false,
+        "logo_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FhnT-zchYWGw3XgBRQ2rZfcvbMOg-thumb",
+        "name": "服装营销",
+        "organization_id": 985,
+        "organization_state": "expired",
+        "owner_class": "member",
+        "service_id": 11,
+        "vocation": "stone"
+    },
+    {
+        "aliaz": "unknown",
+        "class_id": null,
+        "cluster_id": 3320,
+        "company": "福建省雾精灵环境科技有限公司",
+        "disclosure": "on",
+        "gallery_count": 0,
+        "groups_users": [
+            {
+                "id": 7545,
+                "name": "销售员",
+                "viewed": false
+            }
+        ],
+        "locked": false,
+        "logo_url": "http://7xjfsp.com1.z0.glb.clouddn.com/FmhhoGbTLfUNBGUJQAOWcD2v9xeU-thumb",
+        "name": "雾精灵公司",
+        "organization_id": 1619,
+        "organization_state": "approved",
+        "owner_class": "member",
+        "service_id": 23,
+        "vocation": "other"
+    },
+    {
+        "aliaz": "stone_mine",
+        "class_id": null,
+        "cluster_id": 7009,
+        "company": "测试机构321",
+        "disclosure": "on",
+        "gallery_count": 0,
+        "groups_users": [
+            {
+                "id": 9489,
+                "name": "管理员",
+                "viewed": true
+            }
+        ],
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "测试机构",
+        "organization_id": 4835,
+        "organization_state": "approved",
+        "owner_class": "master",
+        "service_id": 11,
+        "vocation": "stone"
+    },
+    {
+        "aliaz": "association",
+        "class_id": null,
+        "cluster_id": 7225,
+        "company": "协会测试123",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "groups_users": [
+            {
+                "id": 9758,
+                "name": "管理员",
+                "viewed": false
+            }
+        ],
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "协会测试123",
+        "organization_id": 5029,
+        "organization_state": "unapproved",
+        "owner_class": "master",
+        "service_id": 37,
+        "vocation": "other"
+    },
+    {
+        "aliaz": "class",
+        "class_id": null,
+        "cluster_id": 7433,
+        "company": "江汉大学数学与计算机1401班",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "groups_users": [
+            {
+                "id": 9875,
+                "name": "管理员",
+                "viewed": false
+            }
+        ],
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "1401班",
+        "organization_id": 5235,
+        "organization_state": "approved",
+        "owner_class": "master",
+        "service_id": 71,
+        "vocation": "other"
+    },
+    {
+        "aliaz": "unknown",
+        "class_id": null,
+        "cluster_id": 7843,
+        "company": "收款账号123",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "groups_users": [
+            {
+                "id": 10935,
+                "name": "管理员",
+                "viewed": false
+            },
+            {
+                "id": 11371,
+                "name": "内部导购员",
+                "viewed": false
+            }
+        ],
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "收款账号123",
+        "organization_id": 5556,
+        "organization_state": "approved",
+        "owner_class": "master",
+        "service_id": 23,
+        "vocation": "other"
+    },
+    {
+        "aliaz": "unknown",
+        "class_id": null,
+        "cluster_id": 7844,
+        "company": "测试账号124",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "groups_users": [
+            {
+                "id": 10936,
+                "name": "管理员",
+                "viewed": false
+            }
+        ],
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "测试账号124",
+        "organization_id": 5557,
+        "organization_state": "approved",
+        "owner_class": "master",
+        "service_id": 23,
+        "vocation": "other"
+    },
+    {
+        "aliaz": "unknown",
+        "class_id": null,
+        "cluster_id": 8026,
+        "company": "测试分享名片",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "groups_users": [
+            {
+                "id": 11372,
+                "name": "管理员",
+                "viewed": false
+            }
+        ],
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "测试分享名片",
+        "organization_id": 5706,
+        "organization_state": "approved",
+        "owner_class": "master",
+        "service_id": 23,
+        "vocation": "other"
+    },
+    {
+        "aliaz": "mall",
+        "class_id": null,
+        "cluster_id": 8029,
+        "company": "12D3商城",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "groups_users": [
+            {
+                "id": 11375,
+                "name": "管理员",
+                "viewed": false
+            }
+        ],
+        "locked": false,
+        "logo_url": "http://7xjfsp.com1.z0.glb.clouddn.com/Fuhw1PlZdwr7IS_GUJNw6HaULt3v-thumb",
+        "name": "啥在上自习",
+        "organization_id": 5709,
+        "organization_state": "approved",
+        "owner_class": "master",
+        "service_id": 73,
+        "vocation": "other"
+    },
+    {
+        "aliaz": "unknown",
+        "class_id": null,
+        "cluster_id": 8030,
+        "company": "商城资讯审核",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "groups_users": [
+            {
+                "id": 11376,
+                "name": "管理员",
+                "viewed": false
+            },
+            {
+                "id": 11874,
+                "name": "内部导购员",
+                "viewed": false
+            }
+        ],
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "商城资讯审核",
+        "organization_id": 5710,
+        "organization_state": "approved",
+        "owner_class": "master",
+        "service_id": 23,
+        "vocation": "other"
+    },
+    {
+        "aliaz": "mall",
+        "class_id": null,
+        "cluster_id": 8031,
+        "company": "123商城123",
+        "disclosure": "off",
+        "gallery_count": 0,
+        "groups_users": [
+            {
+                "id": 11377,
+                "name": "管理员",
+                "viewed": true
+            }
+        ],
+        "locked": false,
+        "logo_url": "https://www.yunlu6.com/assets/blank.jpg",
+        "name": "123商城123",
+        "organization_id": 5711,
+        "organization_state": "approved",
+        "owner_class": "master",
+        "service_id": 73,
+        "vocation": "other"
+    },
+    {
+        "aliaz": null,
+        "class_id": 67,
+        "cluster_id": 4073,
+        "company": null,
+        "disclosure": "off",
+        "gallery_count": 3,
+        "locked": false,
+        "logo_url": null,
+        "name": "你好",
+        "organization_id": null,
+        "owner_class": "private",
+        "service_id": null,
+        "vocation": null
+    }
+]
+2018-04-04 15:45:00,319 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_6' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_06__5___Space___空间更新_私人空间_____更新私人空间_____api_v1_clusters___cluster_id_____PUT__________token______self_token____id______cluster_id____name____测试api___class_id___68______True__success_____________NO___200_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_6' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_6'>通过</button>
+    <div id='div_pt1_6' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_6' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_6'>通过</button>
+    <div id='div_pt1_6' class="collapse in" align="left">
+    <pre>
+    
+pt1_6: 2018-04-04 15:45:00,319 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,320 - INFO - [5, 'Space - 空间更新（私人空间）', '更新私人空间', '/api/v1/clusters/${cluster_id}', 'PUT', '', "{'token': '${self.token}','id': '${cluster_id}','name': '测试api','class_id':'68'}", 'True=[success]', '', '', 'NO', 200, '', '']
+2018-04-04 15:45:00,320 - INFO - 未执行测试用例编号 : 5 | 名称 : Space - 空间更新（私人空间）
+2018-04-04 15:45:00,320 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_7' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_07__6___Space___文件夹创建____创建文件夹到私人空间_____api_v1_galleries____POST__________token______self_token_____cluster_id______cluster_id____name___api测试文件夹______True__success_____________NO___201_____folder_id___id_______</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_7' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_7'>通过</button>
+    <div id='div_pt1_7' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_7' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_7'>通过</button>
+    <div id='div_pt1_7' class="collapse in" align="left">
+    <pre>
+    
+pt1_7: 2018-04-04 15:45:00,320 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,321 - INFO - [6, 'Space - 文件夹创建', '创建文件夹到私人空间', '/api/v1/galleries', 'POST', '', "{'token': '${self.token}', 'cluster_id': '${cluster_id}','name':'api测试文件夹'}", 'True=[success]', '', '', 'NO', 201, '${folder_id}=[id]', '']
+2018-04-04 15:45:00,321 - INFO - 未执行测试用例编号 : 6 | 名称 : Space - 文件夹创建
+2018-04-04 15:45:00,321 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_8' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_08__7___Space___文件夹更新____更新文件夹_____api_v1_galleries___folder_id_____PUT__________token______self_token____id_____folder_id____name___测试文件夹api______True__success_____________NO___200_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_8' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_8'>通过</button>
+    <div id='div_pt1_8' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_8' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_8'>通过</button>
+    <div id='div_pt1_8' class="collapse in" align="left">
+    <pre>
+    
+pt1_8: 2018-04-04 15:45:00,322 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,322 - INFO - [7, 'Space - 文件夹更新', '更新文件夹', '/api/v1/galleries/${folder_id}', 'PUT', '', "{'token': '${self.token}','id':'${folder_id}','name':'测试文件夹api'}", 'True=[success]', '', '', 'NO', 200, '', '']
+2018-04-04 15:45:00,322 - INFO - 未执行测试用例编号 : 7 | 名称 : Space - 文件夹更新
+2018-04-04 15:45:00,322 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_9' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_09__8___Space___文件夹列表____获取当前用户的文件夹_____api_v1_galleries____GET__________token______self_token____cluster_id_____cluster_id_______测试文件夹api__gallery__0__name_____________NO___200_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_9' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_9'>通过</button>
+    <div id='div_pt1_9' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_9' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_9'>通过</button>
+    <div id='div_pt1_9' class="collapse in" align="left">
+    <pre>
+    
+pt1_9: 2018-04-04 15:45:00,323 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,323 - INFO - [8, 'Space - 文件夹列表', '获取当前用户的文件夹', '/api/v1/galleries', 'GET', '', "{'token': '${self.token}','cluster_id':'${cluster_id}'}", '测试文件夹api=[gallery][0][name]', '', '', 'NO', 200, '', '']
+2018-04-04 15:45:00,323 - INFO - 未执行测试用例编号 : 8 | 名称 : Space - 文件夹列表
+2018-04-04 15:45:00,323 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_10' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_10__9___Space___空间概况_私人空间_____空间概况_____api_v1_clusters___cluster_id_____GET__________token______self_token____cluster_id_____cluster_id_______测试api__name_____________NO___200_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_10' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_10'>通过</button>
+    <div id='div_pt1_10' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_10' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_10'>通过</button>
+    <div id='div_pt1_10' class="collapse in" align="left">
+    <pre>
+    
+pt1_10: 2018-04-04 15:45:00,324 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,324 - INFO - [9, 'Space - 空间概况（私人空间）', '空间概况', '/api/v1/clusters/${cluster_id}', 'GET', '', "{'token': '${self.token}','cluster_id':'${cluster_id}'}", '测试api=[name]', '', '', 'NO', 200, '', '']
+2018-04-04 15:45:00,324 - INFO - 未执行测试用例编号 : 9 | 名称 : Space - 空间概况（私人空间）
+2018-04-04 15:45:00,324 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_11' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_11__10___Space___文件夹删除____删除当前用户的文件夹_____api_v1_galleries___folder_id_____DELETE__________token______self_token_____id______folder_id_______True__success_____________NO___200_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_11' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_11'>通过</button>
+    <div id='div_pt1_11' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_11' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_11'>通过</button>
+    <div id='div_pt1_11' class="collapse in" align="left">
+    <pre>
+    
+pt1_11: 2018-04-04 15:45:00,325 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,325 - INFO - [10, 'Space - 文件夹删除', '删除当前用户的文件夹', '/api/v1/galleries/${folder_id}', 'DELETE', '', "{'token': '${self.token}', 'id': '${folder_id}'}", 'True=[success]', '', '', 'NO', 200, '', '']
+2018-04-04 15:45:00,325 - INFO - 未执行测试用例编号 : 10 | 名称 : Space - 文件夹删除
+2018-04-04 15:45:00,325 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_12' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_12__11___Space___空间删除_私人空间_____删除当前用户的私人空间_____api_v1_clusters___cluster_id_____DELETE__________token______self_token_____cluster_id______cluster_id_______True__success_____________NO___200_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_12' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_12'>通过</button>
+    <div id='div_pt1_12' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_12' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_12'>通过</button>
+    <div id='div_pt1_12' class="collapse in" align="left">
+    <pre>
+    
+pt1_12: 2018-04-04 15:45:00,325 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,326 - INFO - [11, 'Space - 空间删除（私人空间）', '删除当前用户的私人空间', '/api/v1/clusters/${cluster_id}', 'DELETE', '', "{'token': '${self.token}', 'cluster_id': '${cluster_id}'}", 'True=[success]', '', '', 'NO', 200, '', '']
+2018-04-04 15:45:00,326 - INFO - 未执行测试用例编号 : 11 | 名称 : Space - 空间删除（私人空间）
+2018-04-04 15:45:00,326 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_13' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_13__12___Team_Construction___业务列表____获取指定团队的可用业务列表_____api_v1_team___test_team_id__packages____GET__________token______self_token____team_id_____test_team_id_______inner_guide__0__alias__10__0__id___nouter_guide__1__alias__11__1__id___nset_target_customer__2__alias__14__2__id___ndianshang__3__alias__5__3__id___ntuandui__4__alias__6__4__id_____________NO___200_____packages_id___0__id_______</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_13' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_13'>通过</button>
+    <div id='div_pt1_13' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_13' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_13'>通过</button>
+    <div id='div_pt1_13' class="collapse in" align="left">
+    <pre>
+    
+pt1_13: 2018-04-04 15:45:00,327 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,327 - INFO - [12, 'Team_Construction - 业务列表', '获取指定团队的可用业务列表', '/api/v1/team/${test_team_id}/packages', 'GET', '', "{'token': '${self.token}','team_id':'${test_team_id}'}", 'inner_guide=[0][alias];10=[0][id];\nouter_guide=[1][alias];11=[1][id];\nset_target_customer=[2][alias];14=[2][id];\ndianshang=[3][alias];5=[3][id];\ntuandui=[4][alias];6=[4][id]', '', '', 'NO', 200, '${packages_id}=[0][id]', '']
+2018-04-04 15:45:00,327 - INFO - 未执行测试用例编号 : 12 | 名称 : Team_Construction - 业务列表
+2018-04-04 15:45:00,327 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_14' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_14__13___Team_Construction___业务开启____当前团队开启指定业务__该接口需要业务的更新权限______api_v1_team___test_team_id__packages___packages_id_____PUT__________token______self_token____team_id_____test_team_id____id_____packages_id_______此业务已开启__msg__False__success_____________NO___200_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_14' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_14'>通过</button>
+    <div id='div_pt1_14' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_14' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_14'>通过</button>
+    <div id='div_pt1_14' class="collapse in" align="left">
+    <pre>
+    
+pt1_14: 2018-04-04 15:45:00,327 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,328 - INFO - [13, 'Team_Construction - 业务开启', '当前团队开启指定业务。（该接口需要业务的更新权限）', '/api/v1/team/${test_team_id}/packages/${packages_id}', 'PUT', '', "{'token': '${self.token}','team_id':'${test_team_id}','id':'${packages_id}'}", '此业务已开启=[msg];False=[success]', '', '', 'NO', 200, '', '']
+2018-04-04 15:45:00,328 - INFO - 未执行测试用例编号 : 13 | 名称 : Team_Construction - 业务开启
+2018-04-04 15:45:00,328 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_15' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_15__14___Team_Construction___是否是团队员工____判断当前用户是否为团队员工_____api_v1_team___test_team_id__users_joined____GET__________token______self_token____team_id_____test_team_id_______True__is_joined_____________NO___200_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_15' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_15'>通过</button>
+    <div id='div_pt1_15' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_15' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_15'>通过</button>
+    <div id='div_pt1_15' class="collapse in" align="left">
+    <pre>
+    
+pt1_15: 2018-04-04 15:45:00,328 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,329 - INFO - [14, 'Team_Construction - 是否是团队员工', '判断当前用户是否为团队员工', '/api/v1/team/${test_team_id}/users/joined', 'GET', '', "{'token': '${self.token}','team_id':'${test_team_id}'}", 'True=[is_joined]', '', '', 'NO', 200, '', '']
+2018-04-04 15:45:00,329 - INFO - 未执行测试用例编号 : 14 | 名称 : Team_Construction - 是否是团队员工
+2018-04-04 15:45:00,329 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_16' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_16__15___Team_Construction___部门列表____获取指定团队的部门列表__该接口需要部门的浏览权限______api_v1_team___test_team_id__departments____GET__________token______self_token____team_id_____test_team_id_____________n______n_________clazz____root___n_________description____董事会___n_________id___9__n_________name____董事会__n_______n______n_________clazz____normal___n_________description____行政部___n_________id___11__n_________name____人事部__n_______n______n_________clazz____normal___n_________description____销售部___n_________id___10__n_________name____营销部__n______n_________NO___200_____dept_id___2__id_______</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_16' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_16'>通过</button>
+    <div id='div_pt1_16' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_16' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_16'>通过</button>
+    <div id='div_pt1_16' class="collapse in" align="left">
+    <pre>
+    
+pt1_16: 2018-04-04 15:45:00,329 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,330 - INFO - [15, 'Team_Construction - 部门列表', '获取指定团队的部门列表。（该接口需要部门的浏览权限）', '/api/v1/team/${test_team_id}/departments', 'GET', '', "{'token': '${self.token}','team_id':'${test_team_id}'}", '', '[\n    {\n        "clazz": "root",\n        "description": "董事会",\n        "id": 9,\n        "name": "董事会"\n    },\n    {\n        "clazz": "normal",\n        "description": "行政部",\n        "id": 11,\n        "name": "人事部"\n    },\n    {\n        "clazz": "normal",\n        "description": "销售部",\n        "id": 10,\n        "name": "营销部"\n    }\n]', '', 'NO', 200, '${dept_id}=[2][id]', '']
+2018-04-04 15:45:00,330 - INFO - 未执行测试用例编号 : 15 | 名称 : Team_Construction - 部门列表
+2018-04-04 15:45:00,330 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_17' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_17__151___Team_Construction___部门列表____获取指定团队的部门列表__该接口需要部门的浏览权限__n__has_groups___是否附加该部门的职位列表__如提供该参数则该接口还需拥有职位的浏览权限______api_v1_team___test_team_id__departments____GET__________token______self_token____team_id_____test_team_id____has_groups___True___________0__groups__董事长__0__groups__0__name___n3__len__0__groups_____________NO___200_____saler_id___2__groups__1__id_______</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_17' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_17'>通过</button>
+    <div id='div_pt1_17' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_17' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_17'>通过</button>
+    <div id='div_pt1_17' class="collapse in" align="left">
+    <pre>
+    
+pt1_17: 2018-04-04 15:45:00,331 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,331 - INFO - [151, 'Team_Construction - 部门列表', '获取指定团队的部门列表。（该接口需要部门的浏览权限）\n- has_groups : 是否附加该部门的职位列表。（如提供该参数则该接口还需拥有职位的浏览权限）', '/api/v1/team/${test_team_id}/departments', 'GET', '', "{'token': '${self.token}','team_id':'${test_team_id}','has_groups':'True'}", "''&lt;&gt;[0][groups];董事长=[0][groups][0][name];\n3=#len#[0][groups]", '', '', 'NO', 200, '${saler_id}=[2][groups][1][id]', '']
+2018-04-04 15:45:00,331 - INFO - 未执行测试用例编号 : 151 | 名称 : Team_Construction - 部门列表
+2018-04-04 15:45:00,331 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_18' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_18__152___Team_Construction___部门列表____获取指定团队的部门列表__该接口需要部门的浏览权限__n__has_groups___是否附加该部门的职位列表__如提供该参数则该接口还需拥有职位的浏览权限__n__ex___职位别名为True时_则排除掉导购员职位_____api_v1_team___test_team_id__departments____GET__________token______self_token____team_id_____test_team_id____has_groups___True___ex___True___________0__groups__2__len__1__groups_____________NO___200_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_18' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_18'>通过</button>
+    <div id='div_pt1_18' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_18' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_18'>通过</button>
+    <div id='div_pt1_18' class="collapse in" align="left">
+    <pre>
+    
+pt1_18: 2018-04-04 15:45:00,332 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,332 - INFO - [152, 'Team_Construction - 部门列表', '获取指定团队的部门列表。（该接口需要部门的浏览权限）\n- has_groups : 是否附加该部门的职位列表。（如提供该参数则该接口还需拥有职位的浏览权限）\n- ex : 职位别名为True时，则排除掉导购员职位', '/api/v1/team/${test_team_id}/departments', 'GET', '', "{'token': '${self.token}','team_id':'${test_team_id}','has_groups':'True','ex':'True'}", "''&lt;&gt;[0][groups];2=#len#[1][groups]", '', '', 'NO', 200, '', '']
+2018-04-04 15:45:00,332 - INFO - 未执行测试用例编号 : 152 | 名称 : Team_Construction - 部门列表
+2018-04-04 15:45:00,332 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_19' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_19__16___Team_Construction___部门列表_我的部门_____获取指定团队的当前用户所在的部门列表__该接口需要部门及员工的浏览权限______api_v1_team___test_team_id__departments_mine____GET__________token______self_token____team_id_____test_team_id_______董事会__0__name___n管理员__0__users__0__groups__0__name_____________NO___200_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_19' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_19'>通过</button>
+    <div id='div_pt1_19' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_19' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_19'>通过</button>
+    <div id='div_pt1_19' class="collapse in" align="left">
+    <pre>
+    
+pt1_19: 2018-04-04 15:45:00,333 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,333 - INFO - [16, 'Team_Construction - 部门列表（我的部门）', '获取指定团队的当前用户所在的部门列表。（该接口需要部门及员工的浏览权限）', '/api/v1/team/${test_team_id}/departments/mine', 'GET', '', "{'token': '${self.token}','team_id':'${test_team_id}'}", '董事会=[0][name];\n管理员=[0][users][0][groups][0][name]', '', '', 'NO', 200, '', '']
+2018-04-04 15:45:00,333 - INFO - 未执行测试用例编号 : 16 | 名称 : Team_Construction - 部门列表（我的部门）
+2018-04-04 15:45:00,333 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_20' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_20__17___Team_Construction___职位详情____获取指定团队的指定职位详情__该接口需要职位的浏览权限______api_v1_team___test_team_id__groups_detail____GET__________token______self_token____role_alias___outer_guide______1_0__guide_terms__0__rate__导购员__groups__0__name_____________NO___200_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_20' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_20'>通过</button>
+    <div id='div_pt1_20' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_20' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_20'>通过</button>
+    <div id='div_pt1_20' class="collapse in" align="left">
+    <pre>
+    
+pt1_20: 2018-04-04 15:45:00,334 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,334 - INFO - [17, 'Team_Construction - 职位详情', '获取指定团队的指定职位详情。（该接口需要职位的浏览权限）', '/api/v1/team/${test_team_id}/groups/detail', 'GET', '', "{'token': '${self.token}','role_alias':'outer_guide'}", '1.0=[guide_terms][0][rate];导购员=[groups][0][name]', '', '', 'NO', 200, '', '']
+2018-04-04 15:45:00,334 - INFO - 未执行测试用例编号 : 17 | 名称 : Team_Construction - 职位详情
+2018-04-04 15:45:00,334 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_21' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_21__18___Team_Construction___职位更新____获取指定团队下指定部门的职位列表__该接口需要职位的浏览权限__此处更新销售员的职位人数_2人______api_v1_team___test_team_id__groups___saler_id_____PUT__________token______self_token____quota___2______True__success_____________NO___200_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_21' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_21'>通过</button>
+    <div id='div_pt1_21' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_21' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_21'>通过</button>
+    <div id='div_pt1_21' class="collapse in" align="left">
+    <pre>
+    
+pt1_21: 2018-04-04 15:45:00,335 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,335 - INFO - [18, 'Team_Construction - 职位更新', '获取指定团队下指定部门的职位列表。（该接口需要职位的浏览权限）【此处更新销售员的职位人数：2人】', '/api/v1/team/${test_team_id}/groups/${saler_id}', 'PUT', '', "{'token': '${self.token}','quota':'2'}", 'True=[success]', '', '', 'NO', 200, '', '']
+2018-04-04 15:45:00,335 - INFO - 未执行测试用例编号 : 18 | 名称 : Team_Construction - 职位更新
+2018-04-04 15:45:00,335 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_22' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_22__19___Team_Construction___职位列表____获取指定团队下指定部门的职位列表__该接口需要职位的浏览权限__当前获取的是销售部的职位列表______api_v1_team___test_team_id__groups____GET__________token______self_token____team_id_____test_team_id____dept_id_____dept_id_______销售主管__0__name__销售员__1__name__导购员__2__name__2__1__quota_____________NO___200_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_22' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_22'>通过</button>
+    <div id='div_pt1_22' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_22' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_22'>通过</button>
+    <div id='div_pt1_22' class="collapse in" align="left">
+    <pre>
+    
+pt1_22: 2018-04-04 15:45:00,336 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,336 - INFO - [19, 'Team_Construction - 职位列表', '获取指定团队下指定部门的职位列表。（该接口需要职位的浏览权限）【当前获取的是销售部的职位列表】', '/api/v1/team/${test_team_id}/groups', 'GET', '', "{'token': '${self.token}','team_id':'${test_team_id}','dept_id':'${dept_id}'}", '销售主管=[0][name];销售员=[1][name];导购员=[2][name];2=[1][quota]', '', '', 'NO', 200, '', '']
+2018-04-04 15:45:00,336 - INFO - 未执行测试用例编号 : 19 | 名称 : Team_Construction - 职位列表
+2018-04-04 15:45:00,337 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_23' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_23__20___Personal___职位_申请_借用_____当前用户对指定机构的指定职位发起申请__当前申请成为企业id为4835的团队成员______api_v1_jobs____POST__________token______self_token1____team_id_____test_team_id____________preps_____________NO___201_____apply_id___preps__id_______</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_23' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_23'>通过</button>
+    <div id='div_pt1_23' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_23' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_23'>通过</button>
+    <div id='div_pt1_23' class="collapse in" align="left">
+    <pre>
+    
+pt1_23: 2018-04-04 15:45:00,337 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,337 - INFO - [20, 'Personal - 职位-申请（借用）', '当前用户对指定机构的指定职位发起申请。【当前申请成为企业id为4835的团队成员】', '/api/v1/jobs', 'POST', '', "{'token': '${self.token1}','team_id':'${test_team_id}'}", "''&lt;&gt;[preps]", '', '', 'NO', 201, '${apply_id}=[preps][id]', '']
+2018-04-04 15:45:00,337 - INFO - 未执行测试用例编号 : 20 | 名称 : Personal - 职位-申请（借用）
+2018-04-04 15:45:00,338 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_24' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_24__21___Team_Construction___职位申请_处理____当前机构处理用户的会员申请_该接口需要员工的新增权限___当前处理token1的用户申请成为4835机构的申请消息请求_event_accept______api_v1_team___test_team_id__members____PUT__________token______self_token____ids_______apply_id____team_id_____test_team_id____event___accept__________pms_____________NO___200_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_24' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_24'>通过</button>
+    <div id='div_pt1_24' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_24' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_24'>通过</button>
+    <div id='div_pt1_24' class="collapse in" align="left">
+    <pre>
+    
+pt1_24: 2018-04-04 15:45:00,338 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,338 - INFO - [21, 'Team_Construction - 职位申请-处理', '当前机构处理用户的会员申请（该接口需要员工的新增权限）。【当前处理token1的用户申请成为4835机构的申请消息请求-event：accept】', '/api/v1/team/${test_team_id}/members', 'PUT', '', "{'token': '${self.token}','ids[]':'${apply_id}','team_id':'${test_team_id}','event':'accept'}", '[]=[pms]', '', '', 'NO', 200, '', '']
+2018-04-04 15:45:00,338 - INFO - 未执行测试用例编号 : 21 | 名称 : Team_Construction - 职位申请-处理
+2018-04-04 15:45:00,338 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_25' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_25__221___Team_Construction___员工列表____获取指定团队的员工列表__该接口需要员工的浏览权限__当前检查token1的员工是否进入员工列表中了_q__查询字符串_模糊查询_不提供该值则返回所有员工______api_v1_team___test_team_id__users____GET__________token______self_token____team_id_____test_team_id____q___肖静远______肖静远__0__name__内部导购员__0__groups__0__name_____________NO___200_____employee_id___0__id_______</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_25' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_25'>通过</button>
+    <div id='div_pt1_25' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_25' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_25'>通过</button>
+    <div id='div_pt1_25' class="collapse in" align="left">
+    <pre>
+    
+pt1_25: 2018-04-04 15:45:00,339 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,339 - INFO - [221, 'Team_Construction - 员工列表', '获取指定团队的员工列表。（该接口需要员工的浏览权限）【当前检查token1的员工是否进入员工列表中了。q: 查询字符串，模糊查询，不提供该值则返回所有员工】', '/api/v1/team/${test_team_id}/users', 'GET', '', "{'token': '${self.token}','team_id':'${test_team_id}','q':'肖静远'}", '肖静远=[0][name];内部导购员=[0][groups][0][name]', '', '', 'NO', 200, '${employee_id}=[0][id]', '']
+2018-04-04 15:45:00,339 - INFO - 未执行测试用例编号 : 221 | 名称 : Team_Construction - 员工列表
+2018-04-04 15:45:00,339 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_26' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_26__23___Team_Construction___员工任免____员工任免指定职位__该接口需要员工的更新权限__当前给token1的用户任职为销售员______api_v1_team___test_team_id__users___employee_id_____PUT__________token______self_token____team_id_____test_team_id____id_____employee_id____group_ids_______saler_id_______True__success_____________NO___200_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_26' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_26'>通过</button>
+    <div id='div_pt1_26' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_26' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_26'>通过</button>
+    <div id='div_pt1_26' class="collapse in" align="left">
+    <pre>
+    
+pt1_26: 2018-04-04 15:45:00,340 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,340 - INFO - [23, 'Team_Construction - 员工任免', '员工任免指定职位。（该接口需要员工的更新权限）【当前给token1的用户任职为销售员】', '/api/v1/team/${test_team_id}/users/${employee_id}', 'PUT', '', "{'token': '${self.token}','team_id':'${test_team_id}','id':'${employee_id}','group_ids[]':'${saler_id}'}", 'True=[success]', '', '', 'NO', 200, '', '']
+2018-04-04 15:45:00,340 - INFO - 未执行测试用例编号 : 23 | 名称 : Team_Construction - 员工任免
+2018-04-04 15:45:00,340 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_27' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_27__222___Team_Construction___员工列表____获取指定团队的员工列表__该接口需要员工的浏览权限__当前检查员工列表中是否有token1的用户_肖静远_groups_ids___职位ID_提供该值则返回该职位的员工______api_v1_team___test_team_id__users____GET__________token______self_token____team_id_____test_team_id____group_ids_______saler_id_______肖静远__0__name__销售员__0__groups__0__name_____________NO___200_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_27' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_27'>通过</button>
+    <div id='div_pt1_27' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_27' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_27'>通过</button>
+    <div id='div_pt1_27' class="collapse in" align="left">
+    <pre>
+    
+pt1_27: 2018-04-04 15:45:00,341 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,341 - INFO - [222, 'Team_Construction - 员工列表', '获取指定团队的员工列表。（该接口需要员工的浏览权限）【当前检查员工列表中是否有token1的用户（肖静远）groups_ids[]：职位ID 提供该值则返回该职位的员工】', '/api/v1/team/${test_team_id}/users', 'GET', '', "{'token': '${self.token}','team_id':'${test_team_id}','group_ids[]':'${saler_id}'}", '肖静远=[0][name];销售员=[0][groups][0][name]', '', '', 'NO', 200, '', '']
+2018-04-04 15:45:00,341 - INFO - 未执行测试用例编号 : 222 | 名称 : Team_Construction - 员工列表
+2018-04-04 15:45:00,341 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_28' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_28__223___Team_Construction___员工列表____获取指定团队的员工列表__该接口需要员工的浏览权限__当前检查员工列表中是否有token1的用户_肖静远_branch_ids___部门ID_提供该值则返回该部门的员工______api_v1_team___test_team_id__users____GET__________token______self_token____team_id_____test_team_id____branch_ids_______dept_id_______祝菲__0__name_____________NO___200_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_28' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_28'>通过</button>
+    <div id='div_pt1_28' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_28' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_28'>通过</button>
+    <div id='div_pt1_28' class="collapse in" align="left">
+    <pre>
+    
+pt1_28: 2018-04-04 15:45:00,342 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,342 - INFO - [223, 'Team_Construction - 员工列表', '获取指定团队的员工列表。（该接口需要员工的浏览权限）【当前检查员工列表中是否有token1的用户（肖静远）branch_ids[]：部门ID 提供该值则返回该部门的员工】', '/api/v1/team/${test_team_id}/users', 'GET', '', "{'token': '${self.token}','team_id':'${test_team_id}','branch_ids[]':'${dept_id}'}", '祝菲=[0][name]', '', '', 'NO', 200, '', '']
+2018-04-04 15:45:00,342 - INFO - 未执行测试用例编号 : 223 | 名称 : Team_Construction - 员工列表
+2018-04-04 15:45:00,342 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_29' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_29__24___Team_Construction___员工移除____从当前团队移除指定的员工__该接口需要员工的删除权限__当前从team_id为4835的团队移除token1的员工_肖静远_______api_v1_team___test_team_id__users____DELETE__________token______self_token____team_id_____test_team_id____user_ids_______employee_id____________user_ids_____________NO___200_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_29' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_29'>通过</button>
+    <div id='div_pt1_29' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_29' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_29'>通过</button>
+    <div id='div_pt1_29' class="collapse in" align="left">
+    <pre>
+    
+pt1_29: 2018-04-04 15:45:00,343 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,343 - INFO - [24, 'Team_Construction - 员工移除', '从当前团队移除指定的员工。（该接口需要员工的删除权限）【当前从team_id为4835的团队移除token1的员工（肖静远）】', '/api/v1/team/${test_team_id}/users', 'DELETE', '', "{'token': '${self.token}','team_id':'${test_team_id}','user_ids[]':'${employee_id}'}", "''&lt;&gt;[user_ids]", '', '', 'NO', 200, '', '']
+2018-04-04 15:45:00,343 - INFO - 未执行测试用例编号 : 24 | 名称 : Team_Construction - 员工移除
+2018-04-04 15:45:00,343 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_30' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_30__251___Contacts___联系人列表_借用_____获取当前用户的联系人列表_当前获取token1用户的stranger_id______api_v1_people_strangers____GET__________token______self_token_______肖静远__strangers__1__name_____________NO___200_____team_stranger_id___strangers__1__id_______</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_30' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_30'>通过</button>
+    <div id='div_pt1_30' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_30' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_30'>通过</button>
+    <div id='div_pt1_30' class="collapse in" align="left">
+    <pre>
+    
+pt1_30: 2018-04-04 15:45:00,343 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,344 - INFO - [251, 'Contacts - 联系人列表（借用）', '获取当前用户的联系人列表【当前获取token1用户的stranger_id】', '/api/v1/people/strangers', 'GET', '', "{'token': '${self.token}'}", '肖静远=[strangers][1][name]', '', '', 'NO', 200, '${team_stranger_id}=[strangers][1][id]', '']
+2018-04-04 15:45:00,344 - INFO - 未执行测试用例编号 : 251 | 名称 : Contacts - 联系人列表（借用）
+2018-04-04 15:45:00,344 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_31' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_31__26___Team_Construction___员工新增_邀请____添加若干联系人为员工_并指派一个职位__该接口需要员工的新增权限__当前邀请token1用户成为团队成员______api_v1_team___test_team_id__users____POST__________token______self_token____team_id_____test_team_id____stranger_ids_______team_stranger_id___________________NO___201_________mes_invite_id____lcattrs__id___</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_31' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_31'>通过</button>
+    <div id='div_pt1_31' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_31' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_31'>通过</button>
+    <div id='div_pt1_31' class="collapse in" align="left">
+    <pre>
+    
+pt1_31: 2018-04-04 15:45:00,344 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,345 - INFO - [26, 'Team_Construction - 员工新增-邀请', '添加若干联系人为员工，并指派一个职位。（该接口需要员工的新增权限）【当前邀请token1用户成为团队成员】', '/api/v1/team/${test_team_id}/users', 'POST', '', "{'token': '${self.token}','team_id':'${test_team_id}','stranger_ids[]':'${team_stranger_id}'}", '', '', '', 'NO', 201, '', '${mes_invite_id}=[_lcattrs][id]']
+2018-04-04 15:45:00,345 - INFO - 未执行测试用例编号 : 26 | 名称 : Team_Construction - 员工新增-邀请
+2018-04-04 15:45:00,345 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_32' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_32__27___Personal___职位邀请_处理_借用_____当前用户对指定的职位邀请处理__当前处理team_id4835的团队邀请token1的用户成为员工的邀请消息______api_v1_jobs___mes_invite_id_____PUT__________token______self_token1_____id_____mes_invite_id____event___accept__________________NO___204_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_32' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_32'>通过</button>
+    <div id='div_pt1_32' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_32' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_32'>通过</button>
+    <div id='div_pt1_32' class="collapse in" align="left">
+    <pre>
+    
+pt1_32: 2018-04-04 15:45:00,346 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,346 - INFO - [27, 'Personal - 职位邀请-处理（借用）', '当前用户对指定的职位邀请处理。【当前处理team_id4835的团队邀请token1的用户成为员工的邀请消息】', '/api/v1/jobs/${mes_invite_id}', 'PUT', '', "{'token': '${self.token1}', 'id':'${mes_invite_id}','event':'accept'}", '', '', '', 'NO', 204, '', '']
+2018-04-04 15:45:00,347 - INFO - 未执行测试用例编号 : 27 | 名称 : Personal - 职位邀请-处理（借用）
+2018-04-04 15:45:00,347 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_33' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_33__28___Team_Construction___员工主动退出____员工主动退出团队__当前处理token1用户退出team_id4835团队______api_v1_team___test_team_id__users_quit____DELETE__________token______self_token1_____team_id_____test_team_id_______True__success_____________NO___200_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_33' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_33'>通过</button>
+    <div id='div_pt1_33' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_33' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_33'>通过</button>
+    <div id='div_pt1_33' class="collapse in" align="left">
+    <pre>
+    
+pt1_33: 2018-04-04 15:45:00,347 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,348 - INFO - [28, 'Team_Construction - 员工主动退出', '员工主动退出团队。【当前处理token1用户退出team_id4835团队】', '/api/v1/team/${test_team_id}/users/quit', 'DELETE', '', "{'token': '${self.token1}', 'team_id':'${test_team_id}'}", 'True=[success]', '', '', 'NO', 200, '', '']
+2018-04-04 15:45:00,348 - INFO - 未执行测试用例编号 : 28 | 名称 : Team_Construction - 员工主动退出
+2018-04-04 15:45:00,348 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_34' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_34__29___Cloud___获取上传凭证____根据上传方式获取上传凭证_为上传作准备______api_v1_upload_token____GET__________token_____self_token____mode___team_catalog___type___product___team_id_____test_team_id___________________NO___200_____product_img_upload_token___uptoken_______</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_34' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_34'>通过</button>
+    <div id='div_pt1_34' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_34' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_34'>通过</button>
+    <div id='div_pt1_34' class="collapse in" align="left">
+    <pre>
+    
+pt1_34: 2018-04-04 15:45:00,349 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,349 - INFO - [29, 'Cloud - 获取上传凭证', '根据上传方式获取上传凭证，为上传作准备。', '/api/v1/upload_token', 'GET', '', "{'token':'${self.token}','mode':'team_catalog','type':'product','team_id':'${test_team_id}'}", '', '', '', 'NO', 200, '${product_img_upload_token}=[uptoken]', '']
+2018-04-04 15:45:00,349 - INFO - 未执行测试用例编号 : 29 | 名称 : Cloud - 获取上传凭证
+2018-04-04 15:45:00,349 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_35' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_35__30___Product___产品_创建____为指定组织创建一个产品__该接口需要产品的创建权限__n1__必填项验证_ntoken___team_id___name___file_ids___prices________api_v1_team___test_team_id__products____POST______Content_Type___application_json________file_ids____155730___name____接口测试商品___prices______amount_______money__________token______self_token_______1通1用商品1__products__category_name__接口测试商品__products__name__定制__products__prices__0__amount__定制__products__prices__0__money_____________YES___201_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_35' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_35'>通过</button>
+    <div id='div_pt1_35' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_35' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_35'>通过</button>
+    <div id='div_pt1_35' class="collapse in" align="left">
+    <pre>
+    
+pt1_35: 2018-04-04 15:45:00,350 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,638 - INFO - 1. 接口编号 : 30
+2018-04-04 15:45:00,638 - INFO - 2. 接口名称 : Product - 产品-创建
+2018-04-04 15:45:00,640 - INFO - 3. 接口描述 : 为指定组织创建一个产品。（该接口需要产品的创建权限）
+1. 必填项验证
+token | team_id | name | file_ids | prices | 
+2018-04-04 15:45:00,640 - INFO - 4. 接口路由 : /api/v1/team/4835/products
+2018-04-04 15:45:00,641 - INFO - 5. 接口方式 : POST
+2018-04-04 15:45:00,641 - INFO - 6. 接口头部 : {'Content-Type': 'application/json'}
+2018-04-04 15:45:00,641 - INFO - 7. 接口数据 : {"file_ids": [155730], "name": "\u63a5\u53e3\u6d4b\u8bd5\u5546\u54c1", "prices": [{"amount": "", "money": ""}], "token": "4a98dd00c5688ef1f8e44787966abe74"}
+2018-04-04 15:45:00,642 - INFO - 8. 接口检查 : 1通1用商品1=[products][category_name];接口测试商品=[products][name];定制=[products][prices][0][amount];定制=[products][prices][0][money]
+2018-04-04 15:45:00,642 - INFO - 9. 预期状态 ：
+2018-04-04 15:45:00,642 - INFO - 10.接口预期 : 201
+2018-04-04 15:45:00,642 - INFO - 11.接口返回 : {
+    "products": {
+        "archives": [],
+        "category_id": 35173,
+        "category_name": "通用商品",
+        "description": null,
+        "files": [
+            {
+                "file_id": 155730,
+                "id": 62417,
+                "name": null
+            }
+        ],
+        "goods_type": null,
+        "id": 56075,
+        "name": "接口测试商品",
+        "prices": [
+            {
+                "amount": "定制",
+                "id": 63700,
+                "money": "定制",
+                "properties": []
+            }
+        ],
+        "properties": [
+            {
+                "children": [],
+                "id": null,
+                "name": "功能/用途",
+                "product_property_id": 6,
+                "quotes": [],
+                "value": null
+            },
+            {
+                "children": [],
+                "id": null,
+                "name": "外观/形状",
+                "product_property_id": 7,
+                "quotes": [],
+                "value": null
+            },
+            {
+                "children": [],
+                "id": null,
+                "name": "工艺/设备",
+                "product_property_id": 8,
+                "quotes": [],
+                "value": null
+            },
+            {
+                "children": [],
+                "id": null,
+                "name": "原料/用料",
+                "product_property_id": 9,
+                "quotes": [],
+                "value": null
+            }
+        ],
+        "state": "editing"
+    }
+}
+2018-04-04 15:45:00,643 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_36' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_api_36__31___Product___产品_创建____为指定组织创建一个产品__该接口需要产品的创建权限__n1__必填项验证_ntoken___team_id___name___file_ids___prices________api_v1_team___test_team_id__products____POST______Content_Type___application_json________file_ids____155730___name____接口测试商品___prices______amount_______money__________token______self_token___________________NO___201_________</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_36' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_36'>通过</button>
+    <div id='div_pt1_36' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_36' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_36'>通过</button>
+    <div id='div_pt1_36' class="collapse in" align="left">
+    <pre>
+    
+pt1_36: 2018-04-04 15:45:00,643 - INFO - ------------------------------------用例开始------------------------------------
+2018-04-04 15:45:00,644 - INFO - [31, 'Product - 产品-创建', '为指定组织创建一个产品。（该接口需要产品的创建权限）\n1. 必填项验证\ntoken | team_id | name | file_ids | prices | ', '/api/v1/team/${test_team_id}/products', 'POST', "{'Content-Type':'application/json'}", "{'file_ids': [155730],'name': '接口测试商品','prices': [{'amount': '','money': '' }],'token': '${self.token}'}", '', '', '', 'NO', 201, '', '']
+2018-04-04 15:45:00,644 - INFO - 未执行测试用例编号 : 31 | 名称 : Product - 产品-创建
+2018-04-04 15:45:00,644 - INFO - ------------------------------------用例结束------------------------------------
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='total_row' class="text-center active">
+    <td>总计</td>
+    <td>36</td>
+    <td>36</td>
+    <td>0</td>
+    <td>0</td>
+    <td>通过率：100.00%</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+    <div style=" position:fixed;right:50px; bottom:30px; width:20px; height:20px;cursor:pointer">
+    <a href="#"><span class="glyphicon glyphicon-eject" style = "font-size:30px;" aria-hidden="true">
+    </span></a></div>
+    
+</body>
+</html>

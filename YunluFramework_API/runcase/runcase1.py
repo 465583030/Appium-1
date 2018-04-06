@@ -3,12 +3,12 @@ import time
 import sys
 
 # sys.path.append("C:\Program Files (x86)\Jenkins\workspace\jenkins_github_test1\\")
-sys.path.append("\\Users\\xiaojingyuan\.jenkins\workspace\stest\\")
-sys.path.append("\\Users\\xiaojingyuan\\.jenkins\\workspace\\test\\appium\\")
-sys.path.append("\\Users\\xiaojingyuan\\PycharmProjects\\Appium\\YunluFramework_API")
+# sys.path.append("\\Users\\xiaojingyuan\.jenkins\workspace\stest\\")
+# sys.path.append("\\Users\\xiaojingyuan\\.jenkins\\workspace\\test\\appium\\")
+# sys.path.append("\\Users\\xiaojingyuan\\PycharmProjects\\Appium\\YunluFramework_API")
 
 # sys.path.append("C:\Program Files (x86)\Jenkins\workspace\jenkins_github_test1\\")
-sys.path.append("\\Users\\xiaojingyuan\.jenkins\workspace\\api_test\\")
+# sys.path.append("\\Users\\xiaojingyuan\.jenkins\workspace\\api_test\\")
 
 
 

@@ -1,6 +1,5 @@
-# Author:Xiaojingyuan
-__author__ = 'Administrator'
 # -*- coding: utf-8 -*-
+# Author:Xiaojingyuan
 from YunluFramework_API.testcase.SpaceAPI import *
 from YunluFramework_API.testcase.SpaceAPI.TestSapceData import SpaceAPI_Dada
 from YunluFramework_API.public.common.test_excel import Excel
@@ -28,7 +27,9 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
         self.log = Log(self.logfile)
 
         # 4.打印日志
-        self.log.info('****************************************SpaceAPI_Private：开始****************************************')
+        self.log.info(
+            '****************************************SpaceAPI_Private：开始****************************************'
+        )
 
         # 5.创建登录对象
         self.S = Space()
@@ -37,15 +38,21 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
     @classmethod
     def tearDownClass(self):
         # 1.打印日志
-        self.log.info('****************************************SpaceAPI_Private：结束****************************************\n')
+        self.log.info(
+            '****************************************SpaceAPI_Private：结束****************************************\n'
+        )
 
     # 3.测试方法开始
     def setUp(self):
-        self.log.info('------------------------------------用例开始------------------------------------')
+        self.log.info(
+            '------------------------------------用例开始------------------------------------'
+        )
 
     # 4.测试方法结束
     def tearDown(self):
-        self.log.info('------------------------------------用例结束------------------------------------\n')
+        self.log.info(
+            '------------------------------------用例结束------------------------------------\n'
+        )
 
     # 4.测试用例
     @ddt.data(*data)
@@ -55,7 +62,7 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
         :return:
         '''
         # 1.控制器
-        api_no = list[0]  # 接口编号
+        api_no = list[0]  # 接口编号]
         api_name = list[1]  # 接口名称
         api_describe = list[2]  # 接口描述
         api_url = list[3]  # 接口路由
@@ -88,8 +95,7 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
                     api_hope=api_hope,
                     api_status=api_status,
                     api_correlation=api_correlation,
-                    api_messages=api_message
-                )
+                    api_messages=api_message)
 
                 # 解析状态码-实际状态码
                 status_code = response[0]
@@ -102,6 +108,8 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
 
             # 断言1:status状态码是否正确
             try:
+                print("-----------------------进入status_check-------------------")
+
                 assert status_code == api_status
             except Exception as e:
                 self.log.error('返回状态码错误！实际返回状态码为:{0}\n'.format(status_code))
@@ -118,6 +126,7 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
 
             # 状态码不为204时
             else:
+                print('-----------------------进入返回值校验-------------------')
                 try:
                     assert response != ''
                 except Exception as e:
@@ -128,16 +137,23 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
             # 如果api_check不为空：
             try:
                 if api_check != '':
-                    assert False != self.request.analysis_check(api_no=api_no, api_name=api_name, api_check=api_check, response=response)
+                    print("-----------------------进入api_check-------------------")
+                    assert False != self.request.analysis_check(
+                        api_no=api_no,
+                        api_name=api_name,
+                        api_check=api_check,
+                        response=response)
                 else:
                     pass
-            except Exception as e:
+            except AssertionError as e:
                 self.log.error('检查点:{0} | 结果错误,错误信息:{1}'.format(api_check, e))
                 assert False, '检查点:{0} | 结果错误，错误信息:{1}'.format(api_check, e)
 
             # 断言4:返回值是否符合预期
             # 如果api_hope不为空:
             if api_hope != '':
+                print('-----------------------进入api_hope-------------------')
+
                 # 1> 先将api_hope通过json解析成对应的格式
                 api_hope = json.loads(api_hope)
 
@@ -153,5 +169,9 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
         # 3.用例不执行
         elif api_active == 'NO':
             self.log.info(list)
-            self.log.info('未执行测试用例编号 : {0} | 名称 : {1}'.format(api_no, api_name))
+            self.log.info('未执行测试用例编号 : {0} | 名称 : {1}'.format(
+                api_no, api_name))
             pass
+            
+if __name__ == '__main__':
+    unittest.main()

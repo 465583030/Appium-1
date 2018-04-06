@@ -30,7 +30,8 @@ class Excel:
 
         for i in range(2, self.len + 1):
             # 1.接口描述
-            api_description = str(self.d.cell(sheet_name=self.sheet_name, rowno=i, colno=2))
+            api_description = str(
+                self.d.cell(sheet_name=self.sheet_name, rowno=i, colno=2))
 
             # 2.记录接口描述次数
             if api_description == description:
@@ -64,8 +65,10 @@ class Excel:
 
         # 如果符合条件的只有1次
         if flag == 1:
-            data = self.d.cell(sheet_name=self.sheet_name, rowno=row_no, colno=7)
-            hope_result = self.d.cell(sheet_name=self.sheet_name, rowno=row_no, colno=9)
+            data = self.d.cell(
+                sheet_name=self.sheet_name, rowno=row_no, colno=7)
+            hope_result = self.d.cell(
+                sheet_name=self.sheet_name, rowno=row_no, colno=9)
             list1 = [data, hope_result]
             list.append(list1)
             return list
@@ -74,10 +77,12 @@ class Excel:
         elif flag > 1:
             for i in range(row_no, row_no + flag):
                 # 测试数据
-                data = self.d.cell(sheet_name=self.sheet_name, rowno=i, colno=7)  # a:字符串
+                data = self.d.cell(
+                    sheet_name=self.sheet_name, rowno=i, colno=7)  # a:字符串
 
                 # 预期结果
-                hope_result = self.d.cell(sheet_name=self.sheet_name, rowno=i, colno=9)  # a:字符串
+                hope_result = self.d.cell(
+                    sheet_name=self.sheet_name, rowno=i, colno=9)  # a:字符串
                 list1 = [data, hope_result]
 
                 # 进入列表
@@ -107,7 +112,8 @@ class Excel:
         row_no1 = description_row_no[1]  # 从第几行开始写
 
         for i in range(0, flag):
-            self.d.write_Excel(sheet_no=sheet_no, row=row_no1 + i, col=col, str=str)
+            self.d.write_Excel(
+                sheet_no=sheet_no, row=row_no1 + i, col=col, str=str)
 
     """
         获取excel中某行数据
@@ -136,20 +142,9 @@ class Excel:
             api_message = row_data[13]
 
             list_2 = [
-                api_no,
-                api_name,
-                api_describe,
-                api_url,
-                api_function,
-                api_headers,
-                api_data,
-                api_check,
-                api_hope,
-                api_reality,
-                api_active,
-                api_status,
-                api_correlation,
-                api_message
+                api_no, api_name, api_describe, api_url, api_function,
+                api_headers, api_data, api_check, api_hope, api_reality,
+                api_active, api_status, api_correlation, api_message
             ]
             list_row.append(list_2)
         return list_row

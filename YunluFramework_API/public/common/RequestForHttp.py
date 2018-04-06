@@ -41,7 +41,12 @@ class RequestForHttp(Handle):
 
             # 5.格式化输出json（字典转json）
             # ensure_ascii=False 中文不转码
-            json_r = json.dumps(dict_r, sort_keys=True, ensure_ascii=False, indent=4, separators=(',', ': '))
+            json_r = json.dumps(
+                dict_r,
+                sort_keys=True,
+                ensure_ascii=False,
+                indent=4,
+                separators=(',', ': '))
             return [status, json_r]
 
         except Exception as err:
@@ -82,7 +87,12 @@ class RequestForHttp(Handle):
 
             # 5.格式化输出json
             # ensure_ascii=False 中文不转码
-            json_r = json.dumps(dict_r, sort_keys=True, ensure_ascii=False, indent=4, separators=(',', ': '))
+            json_r = json.dumps(
+                dict_r,
+                sort_keys=True,
+                ensure_ascii=False,
+                indent=4,
+                separators=(',', ': '))
             return [status, json_r]
 
         except Exception as err:
@@ -120,7 +130,12 @@ class RequestForHttp(Handle):
 
             # 5.格式化输出json
             # ensure_ascii=False 中文不转码
-            json_r = json.dumps(dict_r, sort_keys=True, ensure_ascii=False, indent=4, separators=(',', ': '))
+            json_r = json.dumps(
+                dict_r,
+                sort_keys=True,
+                ensure_ascii=False,
+                indent=4,
+                separators=(',', ': '))
             return [status, json_r]
 
         except Exception as err:
@@ -130,7 +145,7 @@ class RequestForHttp(Handle):
     # put请求
     def put_function(self, url, r_data):
         '''
-        post请求
+        put请求
         :param url: 接口地址
         :param r_data: 数据
         :return:
@@ -159,7 +174,12 @@ class RequestForHttp(Handle):
 
                 # 5.格式化输出json
                 # ensure_ascii=False 中文不转码
-                json_r = json.dumps(dict_r, sort_keys=True, ensure_ascii=False, indent=4, separators=(',', ': '))
+                json_r = json.dumps(
+                    dict_r,
+                    sort_keys=True,
+                    ensure_ascii=False,
+                    indent=4,
+                    separators=(',', ': '))
                 return [status, json_r]
 
             except Exception as e:
@@ -168,6 +188,7 @@ class RequestForHttp(Handle):
         except Exception as err:
             self.log.error("PUT请求错误 : %s" % err)
             raise err
+
 
 # data = {
 #     'token': '3888f2c8717f50b7a7f47e2371c1cbf2',

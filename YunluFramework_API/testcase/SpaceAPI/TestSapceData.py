@@ -41,4 +41,3 @@ class SpaceAPI_Dada():
     # Space_overview_id_result = ex.get_result(description='Space - 空间概况（私人空间）')
     # Space_folder_delete_id_result = ex.get_result(description=' Space - 文件夹删除')
     # Space_private_delete_id_result = ex.get_result(description='Space - 空间删除（私人空间）')
-
