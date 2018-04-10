@@ -71,9 +71,6 @@ class RequestForHttp(Handle):
 
             # 1.发送请求
             with requests.Session() as s:
-                # t1 = str(time.time()).replace('.', ''[0:11])
-                # print('时间戳为：', t1)
-
                 r = s.post(url, data=r_data, headers=headers)
 
             # 2.打印请求状态码

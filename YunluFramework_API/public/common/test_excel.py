@@ -126,7 +126,10 @@ class Excel:
         # len = 10
         for i in range(2, len + 1):
             row_data = self.data_info.row(sheet_name=sheet_name, rowno=i)
-            api_no = int(row_data[0])
+
+            # 201804010 11:11AM改动
+            api_no = (row_data[0])
+
             api_name = row_data[1]
             api_describe = row_data[2]
             api_url = row_data[3]

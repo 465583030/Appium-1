@@ -290,7 +290,7 @@ class API_REQUEST(Login):
                 if len(correlation) == 2:
                     if correlation[1] == '' or not re.search(
                             r'^\[', correlation[1]) or not re.search(
-                        r'\]$', correlation[1]):
+                                r'\]$', correlation[1]):
                         self.log.error(
                             api_no + ' ' + api_name +
                             ' 关联参数设置有误，请检查[Correlation]字段参数格式是否正确！！！')
@@ -324,7 +324,7 @@ class API_REQUEST(Login):
         '''
         # 标志符
         flag = ''
-        print("flag标志 = ", flag)
+        # print("flag标志 = ", flag)
 
         # 如果检查数据不为空
         if api_check != '':
@@ -338,14 +338,14 @@ class API_REQUEST(Login):
 
                 # 判断是否为'='关系
                 if '=' in api_check[j]:
-                    print("= 存在于api_check中")
+                    # print("= 存在于api_check中")
 
                     # 如果 '#len#' 存在
                     if '#len#' in api_check[j]:
                         # print('去除指定的 #len# 字符串 ：', api_check[j].strip('#len#'))
-                        param = api_check[j].replace('#len#', '').split('=')
+                        # param = api_check[j].replace('#len#', '').split('=')
                         flag = '#len#'
-                        print("1.flag 等于#len# ：", flag)
+                        # print("1.flag 等于#len# ：", flag)
 
                     # 如果 '#len#'不存在
                     elif '#len#' not in api_check[j]:
@@ -357,13 +357,13 @@ class API_REQUEST(Login):
                 elif '<>' in api_check[j]:
                     param = api_check[j].split('<>')
                     flag = '<>'
-                    print("4. flag = <>:", flag)
+                    # print("4. flag = <>:", flag)
 
                 # 3.判断处理后的关联列表长度为2时
                 if len(param) == 2:
                     if param[1] == '' or not re.search(
                             r'^\[', param[1]) or not re.search(
-                        r'\]$', param[1]):
+                                r'\]$', param[1]):
                         self.log.error(api_no + ' ' + api_name +
                                        ' 关联参数设置有误，请检查[Check]字段参数格式是否正确！！！')
                         continue
@@ -385,32 +385,41 @@ class API_REQUEST(Login):
                             except:
                                 break
                         value = temp
-                        print('value = ', value)
+                        # print('value = ', value)
 
                 try:
-                    print("----------进入检查点数据校验-------------")
-                    print("flag = ", flag)
+                    # print("----------进入检查点数据校验-------------")
+                    # print("flag = ", flag)
                     # 检查点数据校验
                     # '='关系断言
                     if flag == '=':
-                        print('等于')
+                        # print('等于')
 
                         # 先将value值中的True或False的类型转换成str类型，再与param[0]断言
                         if param[0] in 'True' or 'False':
                             value = str(value)
                             assert param[0] == value
 
+                            # 20180410 10:36加入
+                            return [True, value]
+
                         # 如果返回数据为int型，比较时将excel中的数据先转换成整型数据
                         elif type(value) == int:
                             # print('进入elif')
                             assert int(param[0]) == value
 
+                            # 20180410 10:36加入
+                            return [True, value]
+
                         # 无需转换时，直接比较检查点
                         else:
-                            print('进入else')
-                            print('param[0] = ', param[0])
-                            print('value = ', value)
+                            # print('进入else')
+                            # print('param[0] = ', param[0])
+                            # print('value = ', value)
                             assert param[0] == value
+
+                            # 20180410 10:36加入
+                            return [True, value]
 
                     # '<>'关系断言
                     if flag == '<>':
@@ -419,24 +428,36 @@ class API_REQUEST(Login):
                             value = str(value)
                             assert param[0] != value
 
+                            # 20180410 10:36加入
+                            return [True, value]
+
                         # 如果返回数据为int型，比较时将excel中的数据先转换成整型数据
                         elif type(value) == int:
                             # print('进入elif')
                             assert int(param[0]) != value
+
+                            # 20180410 10:36加入
+                            return [True, value]
 
                         # 无需转换时，直接比较检查点
                         else:
                             # print('进入else')
                             assert param[0] != value
 
+                            # 20180410 10:36加入
+                            return [True, value]
+
                     # '#len#'关系断言
                     if flag == '#len#':
                         # print('进入#len#')
                         assert len(value) == int(param[0])
 
+                        # 20180410 10:36加入
+                        return [True, value]
+
                 except Exception as e:
                     # print('进入exception')
-                    return False
+                    return [False, value]
 
     # 获取leancloud系统消息记录
     def get_Messages_from_leancloud(self):
@@ -446,7 +467,7 @@ class API_REQUEST(Login):
         headers = {
             'X-LC-Id': "3BXiD9Fga5RtswdyrJSFQ3h3-gzGzoHsz",
             'X-LC-Sign':
-                "7396816f73bdbcf70281b09dc2c1b3b9,1517046641139,master",
+            "7396816f73bdbcf70281b09dc2c1b3b9,1517046641139,master",
         }
         # 1.发送请求
         with requests.Session() as s:
@@ -517,7 +538,7 @@ class API_REQUEST(Login):
                 if len(correlation) == 2:
                     if correlation[1] == '' or not re.search(
                             r'^\[', correlation[1]) or not re.search(
-                        r'\]$', correlation[1]):
+                                r'\]$', correlation[1]):
                         self.log.error(
                             api_no + ' ' + api_name +
                             ' 关联参数设置有误，请检查[Correlation]字段参数格式是否正确！！！')
@@ -545,6 +566,7 @@ class API_REQUEST(Login):
                         value = temp
                     self.correlationDict[correlation[0]] = value
         return self.correlationDict
+
 
 # request = API_REQUEST(sheet_name='test2')
 # col = '${mes_invite_id}=[_lcattrs][id]'

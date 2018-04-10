@@ -2,6 +2,6 @@
 
 class BBBB:
     def b(self):
-        print('我I am BBB')
+        print('I am BBB')
 a = BBBB()
 a.b()

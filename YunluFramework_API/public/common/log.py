@@ -1,10 +1,6 @@
-# coding=utf-8
-
 import logging
-import time
-import os
+
 # from config import globalparam
-from StoneUIFramework.config.globalparam import GlobalParam
 
 
 # log_path = globalparam.log_path
@@ -18,12 +14,15 @@ class Log:
         # 创建一个logger
         logger = logging.getLogger()
         logger.setLevel(logging.DEBUG)
+
         # 创建一个handler，用于写入日志文件
         fh = logging.FileHandler(self.logname, 'a', encoding='utf-8')
         fh.setLevel(logging.DEBUG)
+       
         # 再创建一个handler，用于输出到控制台
         ch = logging.StreamHandler()
         ch.setLevel(logging.DEBUG)
+       
         # 定义handler的输出格式
         formatter = logging.Formatter(
             '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -31,9 +30,11 @@ class Log:
             '%(asctime)s - %(levelname)s - %(message)s')
         fh.setFormatter(formatter1)
         ch.setFormatter(formatter1)
+       
         # 给logger添加handler
         logger.addHandler(fh)
         logger.addHandler(ch)
+       
         # 记录一条日志
         if level == 'info':
             logger.info(message)

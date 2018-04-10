@@ -1,6 +1,5 @@
 # Author:Xiaojingyuan
 __author__ = 'Administrator'
-# -*- coding: utf-8 -*-
 from YunluFramework_API.api.Shopping import *
 
 

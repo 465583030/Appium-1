@@ -1,6 +1,7 @@
+# -*- coding: utf-8 -*-
+
 __author__ = 'xiaoj'
 import time
-import sys
 
 # sys.path.append("C:\Program Files (x86)\Jenkins\workspace\jenkins_github_test1\\")
 # sys.path.append("\\Users\\xiaojingyuan\.jenkins\workspace\stest\\")

@@ -1,6 +1,6 @@
 # Author:Xiaojingyuan
 __author__ = 'Administrator'
-# -*- coding: utf-8 -*-
+
 from YunluFramework_API.api.Space import *
 
 
@@ -1022,7 +1022,7 @@ class Space(Login):
 
 
 # 调试
-sp = Space()
+# sp = Space()
 
 # Space - 文件夹列表
 # sp.Space_folder_list_api(cluster_id='4073')

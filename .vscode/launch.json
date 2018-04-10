@@ -26,7 +26,8 @@
             "request": "launch",
             "program": "${file}",
             "env": {
-                "PYTHONIOENCODING": "utf8"
+                "PYTHONIOENCODING": "utf8",
+                "PYTHONPATH": "${workspaceRoot}"
             }
         },
         {

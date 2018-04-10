@@ -1,10 +1,13 @@
-# -*- coding: utf-8 -*-
 # Author:Xiaojingyuan
+# -*- coding: utf-8 -*-
+import sys
+sys.path.append("/Users/xiaojingyuan/PycharmProjects/Appium")
+import traceback
+
 from YunluFramework_API.testcase.SpaceAPI import *
 from YunluFramework_API.testcase.SpaceAPI.TestSapceData import SpaceAPI_Dada
 from YunluFramework_API.public.common.test_excel import Excel
 from YunluFramework_API.api_test.api_request import API_REQUEST
-import json
 
 
 @ddt.ddt
@@ -21,10 +24,12 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
         cf = GlobalParam('config', 'path_file.conf')
 
         # 2.获取截图路径、日志路径、日志名
-        self.logfile = cf.getParam('log', "logfile")  # 日志文件名
+        self.logfile = cf.getParam('log', "logfile")  # 所有运行日志文件名
+        self.errfile = cf.getParam('log', 'errfile')  # 错误日志文件
 
         # 3.创建日志记录模块
-        self.log = Log(self.logfile)
+        self.log = Log(self.logfile)  # 所有日志
+        self.err = Log(self.errfile)  # 错误日志
 
         # 4.打印日志
         self.log.info(
@@ -105,14 +110,21 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
 
             except Exception as e:
                 self.log.error('Exception Information : {0}'.format(e))
+                self.err.error('Exception Information : {0}'.format(
+                    traceback.format_exc()))
 
             # 断言1:status状态码是否正确
             try:
-                print("-----------------------进入status_check-------------------")
-
                 assert status_code == api_status
-            except Exception as e:
-                self.log.error('返回状态码错误！实际返回状态码为:{0}\n'.format(status_code))
+            except AssertionError as e:
+                self.log.error('返回状态码错误！实际返回状态码为:{0}\n'.format(status_code) +
+                               traceback.format_exc())
+
+                self.err.error('1. 接口编号 : {0} | 接口名称 : {1} '.format(
+                    api_no, api_name))
+                self.err.error('2. 状态信息 : 预期结果={0} | 实际结果={1}'.format(
+                    api_status, status_code))
+                self.err.error('3. 错误信息 : {0}'.format(traceback.format_exc()))
                 assert False, '返回状态码错误！实际返回状态码为:{0}'.format(status_code)
 
             # 断言2:返回值是否为空
@@ -120,39 +132,58 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
             if status_code == 204:
                 try:
                     assert response == ''
-                except Exception as e:
-                    self.log.error('204状态下返回值应该为空！')
+                except AssertionError as e:
+                    self.log.error('204状态下返回值应该为空！' + traceback.format_exc())
+                    self.err.error('1. 接口编号 : {0} | 接口名称 : {1} '.format(
+                        api_no, api_name))
+                    self.err.error('2. 204状态下返回值应该为空！')
+                    self.err.error('3. 错误信息 : {0}'.format(
+                        traceback.format_exc()))
                     assert False, '204状态下返回值应该为空,当前实际不为空！'
 
             # 状态码不为204时
             else:
-                print('-----------------------进入返回值校验-------------------')
                 try:
                     assert response != ''
-                except Exception as e:
-                    self.log.error('返回值为空！\n')
+                except AssertionError as e:
+                    self.log.error('返回值为空！\n' + traceback.format_exc())
+                    self.err.error('1. 接口编号 : {0} | 接口名称 : {1} '.format(
+                        api_no, api_name))
+                    self.err.error('2. 返回值为空！')
+                    self.err.error('3. 错误信息 : {0}'.format(
+                        traceback.format_exc()))
                     assert False, '返回值应该不为空,当前实际返回值为空！'
 
             # 断言3:检查点数据校验
             # 如果api_check不为空：
             try:
                 if api_check != '':
-                    print("-----------------------进入api_check-------------------")
-                    assert False != self.request.analysis_check(
+                    #3.1 存储检查结果
+                    api_check_result = self.request.analysis_check(
                         api_no=api_no,
                         api_name=api_name,
                         api_check=api_check,
                         response=response)
+
+                    #3.2 断言判断，检查False是否不等于检查结果，如果等于就报错
+                    assert False != api_check_result[0]
                 else:
                     pass
             except AssertionError as e:
-                self.log.error('检查点:{0} | 结果错误,错误信息:{1}'.format(api_check, e))
+                self.log.error("'检查点:{0} | 实际返回结果:{1} | 结果错误,错误信息:{2}".format(
+                    api_check, api_check_result[1], traceback.format_exc()))
+                self.err.error('1. 接口编号 : {0} | 接口名称 : {1} '.format(
+                    api_no, api_name))
+                self.err.error("2. 检查信息 : {0} | 实际返回结果:{1} ".format(
+                    api_check,
+                    api_check_result[1],
+                ))
+                self.err.error('3. 错误信息 : {0}'.format(traceback.format_exc()))
                 assert False, '检查点:{0} | 结果错误，错误信息:{1}'.format(api_check, e)
 
             # 断言4:返回值是否符合预期
             # 如果api_hope不为空:
             if api_hope != '':
-                print('-----------------------进入api_hope-------------------')
 
                 # 1> 先将api_hope通过json解析成对应的格式
                 api_hope = json.loads(api_hope)
@@ -160,18 +191,25 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
                 # 2> 断言
                 try:
                     assert api_hope == response
-                except Exception as e:
-                    self.log.error('实际结果与预期结果不符！')
+                except AssertionError as e:
+                    self.log.error('实际结果与预期结果不符！' + traceback.format_exc())
+                    self.err.error('1. 接口编号 : {0} | 接口名称 : {1} '.format(
+                        api_no, api_name))
+                    self.err.error('2. 返回信息 ：预期返回={0} | 实际返回={1}'.format(
+                        api_hope, response))
+                    self.err.error('3. 错误信息 : {0}'.format(
+                        traceback.format_exc()))
                     assert False, '实际结果与预期结果不符！'
             else:
                 pass
 
         # 3.用例不执行
         elif api_active == 'NO':
-            self.log.info(list)
+            # self.log.info(list)
             self.log.info('未执行测试用例编号 : {0} | 名称 : {1}'.format(
                 api_no, api_name))
             pass
-            
+
+
 if __name__ == '__main__':
     unittest.main()
