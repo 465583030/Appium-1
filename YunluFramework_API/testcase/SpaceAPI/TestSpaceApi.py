@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 import sys
 # sys.path.append("/Users/xiaojingyuan/PycharmProjects/Appium")
-sys.path.append("/root/.jenkins/workspace/测试/Appium")
-sys.path.append("/root/.jenkins/workspace/测试/Appium/YunluFramework_API")
+# sys.path.append("/root/.jenkins/workspace/测试/Appium")
+# sys.path.append("/root/.jenkins/workspace/测试/Appium/YunluFramework_API")
 import traceback
 
 from YunluFramework_API.testcase.SpaceAPI import *
