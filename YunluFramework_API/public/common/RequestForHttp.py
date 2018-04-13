@@ -122,18 +122,22 @@ class RequestForHttp(Handle):
             # 3.打印返回结果
             response = r.text
 
-            # 4.解码json数据,将json转为字典
-            dict_r = json.loads(response)
+            try:
+                # 4.解码json数据,将json转为字典
+                dict_r = json.loads(response)
 
-            # 5.格式化输出json
-            # ensure_ascii=False 中文不转码
-            json_r = json.dumps(
-                dict_r,
-                sort_keys=True,
-                ensure_ascii=False,
-                indent=4,
-                separators=(',', ': '))
-            return [status, json_r]
+                # 5.格式化输出json
+                # ensure_ascii=False 中文不转码
+                json_r = json.dumps(
+                    dict_r,
+                    sort_keys=True,
+                    ensure_ascii=False,
+                    indent=4,
+                    separators=(',', ': '))
+                return [status, json_r]
+
+            except Exception as e:
+                return status
 
         except Exception as err:
             self.log.error("DELETE请求错误 : %s" % err)

@@ -11,3 +11,7 @@ for i in range(10):
 # a = int(a)
 # if a%3==0 and a%5==0:
 #     print('找到了')
+
+for i in "erqerq adf":
+    print(i)
+    print(id(i))

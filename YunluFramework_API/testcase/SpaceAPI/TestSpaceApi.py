@@ -12,10 +12,18 @@ from YunluFramework_API.api_test.api_request import API_REQUEST
 
 @ddt.ddt
 class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
+
     # 全局数据: 获取excel中行数据
     request = API_REQUEST(sheet_name='test2')
     excel1 = Excel(xls='data_api.xls', sheet_name='test2')
     data = excel1.get_row_data(sheet_name='test2')
+
+    '''
+    接口测试
+    '''
+    # request = API_REQUEST(sheet_name='test3')
+    # excel1 = Excel(xls='data_api.xls', sheet_name='test3')
+    # data = excel1.get_row_data(sheet_name='test3')
 
     # 1.类开始
     @classmethod

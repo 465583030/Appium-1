@@ -160,6 +160,7 @@ class API_REQUEST(Login):
         # 2.2 打印日志
         # 2.1 > 如果状态码不为204
         if api_status != 204:
+            
             # 3. 打印日志
             self.print_log(api_no, api_name, api_describe, api_url,
                            api_function, api_headers, self.data, api_check,
@@ -176,10 +177,12 @@ class API_REQUEST(Login):
 
             return status_code, response1
 
-            # 2.2 > 如果状态码为204
+        # 2.2 > 如果状态码为204
         elif api_status == 204:
+
             # 3.解析返回值
             status_code = response  # 状态码
+
             response1 = ''
             response = [status_code, response1]
 
@@ -191,7 +194,8 @@ class API_REQUEST(Login):
             # 5.解析关联消息
             self.analysis_messages(api_no, api_name, api_messages)
 
-            return status_code, response1
+            # return status_code, response1
+            return response
 
         # # 2. 发送请求
         # # 2.1 > 如果状态码不为204

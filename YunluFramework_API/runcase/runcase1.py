@@ -2,6 +2,8 @@
 
 __author__ = 'xiaoj'
 import time
+import sys
+sys.path.append("/Users/xiaojingyuan/PycharmProjects/Appium")
 
 # sys.path.append("C:\Program Files (x86)\Jenkins\workspace\jenkins_github_test1\\")
 # sys.path.append("\\Users\\xiaojingyuan\.jenkins\workspace\stest\\")
@@ -10,8 +12,6 @@ import time
 
 # sys.path.append("C:\Program Files (x86)\Jenkins\workspace\jenkins_github_test1\\")
 # sys.path.append("\\Users\\xiaojingyuan\.jenkins\workspace\\api_test\\")
-
-
 
 from YunluFramework_API.public.common.HTMLTestRunner import HTMLTestRunner
 from YunluFramework_API.config.globalparam import GlobalParam
@@ -37,7 +37,9 @@ if __name__ == '__main__':
     while a != 5:
         # a = a + 1
         # ------------------------------测试报告模块----------------------------------
-        logger.info('{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{START:RUNCASSE1}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}')
+        logger.info(
+            '{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{START:RUNCASSE1}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}'
+        )
         cf = GlobalParam("config", "report.conf")
         path = cf.getParam("report", "path")
         logger.info('报告存储路径：{0}'.format(path))
@@ -45,11 +47,7 @@ if __name__ == '__main__':
         filename = path + timestr + ".html"
         logger.info('测试报告名称：{0}'.format(filename))
         fp = open(filename, 'wb')
-        runner = HTMLTestRunner(
-            stream=fp,
-            title='测试结果',
-            description='测试报告'
-        )
+        runner = HTMLTestRunner(stream=fp, title='测试结果', description='测试报告')
         logger.info('运行测试用例！')
         runner.run(suiteA)
         fp.close()  # 测试报告关闭
@@ -58,5 +56,7 @@ if __name__ == '__main__':
         # time.sleep(5)
         # sendMail = SendMail()
         # sendMail.send()
-        logger.info('{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{END:RUNCASSE1}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}')
+        logger.info(
+            '{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{END:RUNCASSE1}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}'
+        )
         break
