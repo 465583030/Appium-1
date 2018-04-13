@@ -1,7 +1,7 @@
 # Author:Xiaojingyuan
 # -*- coding: utf-8 -*-
 import sys
-# sys.path.append("/Users/xiaojingyuan/PycharmProjects/Appium")
+sys.path.append("/Users/xiaojingyuan/PycharmProjects/Appium")
 sys.path.append("/root/.jenkins/workspace/test/Appium")
 sys.path.append("/root/.jenkins/workspace/test/Appium/YunluFramework_API")
 import traceback
