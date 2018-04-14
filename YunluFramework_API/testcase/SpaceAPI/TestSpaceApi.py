@@ -20,7 +20,6 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
     request = API_REQUEST(sheet_name='test2')
     excel1 = Excel(xls='data_api.xls', sheet_name='test2')
     data = excel1.get_row_data(sheet_name='test2')
-
     '''
     接口测试
     '''
@@ -61,9 +60,8 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
     # 3.测试方法开始
     def setUp(self):
         self.log.info(
-            '------------------------------------用例开始------------------------------------'
+            '------------------------------------用例开始123123------------------------------------'
         )
-        print('asdfasdfadsfadsfadsfxxxadsfadjfhqjlwehrj qhwejrhjhqweljrhlqjwe hrjehj qhjewrhcqjkewhrcqjejahsdfjdha fasd')
 
     # 4.测试方法结束
     def tearDown(self):
