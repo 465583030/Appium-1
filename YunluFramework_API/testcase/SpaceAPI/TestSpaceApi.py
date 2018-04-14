@@ -63,6 +63,7 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
         self.log.info(
             '------------------------------------用例开始------------------------------------'
         )
+        print('asdfasdfadsfadsfadsfxxxadsfadjfhqjlwehrj qhwejrhjhqweljrhlqjwe hrjehj qhjewrhcqjkewhrcqjejahsdfjdha fasd')
 
     # 4.测试方法结束
     def tearDown(self):
