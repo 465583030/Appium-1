@@ -1,0 +1,14 @@
+2018-04-14 08:54:16,043 - ERROR - 1. 接口编号 : 2.0 | 接口名称 : Space - 热门空间名 
+2018-04-14 08:54:16,044 - ERROR - 2. 返回信息 ：预期返回={'names': ['舌尖上的中国', '美食', '民以食为天', '厨艺秀', '茶', '吃货世界', '正宗东海海鲜《海鲜大礼》', '吃货的世界', '我的衣柜', '我的店铺'], 'success': True} | 实际返回={'names': ['舌尖上的中国', '美食', '民以食为天', '茶', '吃货世界', '厨艺秀', '吃货的世界', '正宗东海海鲜《海鲜大礼》', '我的衣柜', '我的店铺'], 'success': True}
+2018-04-14 08:54:16,044 - ERROR - 3. 错误信息 : Traceback (most recent call last):
+  File "/Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework_API/testcase/SpaceAPI/TestSpaceApi.py", line 203, in test_api
+    assert api_hope == response
+AssertionError
+
+2018-04-14 08:54:35,828 - ERROR - 1. 接口编号 : 2.0 | 接口名称 : Space - 热门空间名 
+2018-04-14 08:54:35,829 - ERROR - 2. 返回信息 ：预期返回={'names': ['舌尖上的中国', '美食', '民以食为天', '厨艺秀', '茶', '吃货世界', '正宗东海海鲜《海鲜大礼》', '吃货的世界', '我的衣柜', '我的店铺'], 'success': True} | 实际返回={'names': ['舌尖上的中国', '美食', '民以食为天', '茶', '吃货世界', '厨艺秀', '吃货的世界', '正宗东海海鲜《海鲜大礼》', '我的衣柜', '我的店铺'], 'success': True}
+2018-04-14 08:54:35,829 - ERROR - 3. 错误信息 : Traceback (most recent call last):
+  File "/Users/xiaojingyuan/PycharmProjects/Appium/YunluFramework_API/testcase/SpaceAPI/TestSpaceApi.py", line 203, in test_api
+    assert api_hope == response
+AssertionError
+
