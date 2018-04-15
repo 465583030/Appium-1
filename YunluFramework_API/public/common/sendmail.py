@@ -1,4 +1,8 @@
 # coding:utf-8
+import sys
+sys.path.append("/Users/xiaojingyuan/PycharmProjects/Appium")
+sys.path.append("/root/.jenkins/workspace/AutoTest")
+
 import os
 import smtplib
 import time
@@ -6,7 +10,6 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from YunluFramework_API.config.globalparam import GlobalParam
 from YunluFramework_API.public.common.log import Log
-
 
 # 1.配置日志记录模块
 cf = GlobalParam('config', 'path_file.conf')
@@ -25,7 +28,6 @@ recvaddress = ['291008572@qq.com']
 # 163的用户名和密码
 sendaddr_name = '13027104206@163.com'
 sendaddr_pswd = 'xjyxjy199288'
-
 
 # sendaddr_name = '1668319858@qq.com'
 # sendaddr_pswd = 'paintklbyszqfaed'
@@ -63,7 +65,8 @@ class SendMail:
         # html附件
         att1 = MIMEText(mailbody, 'base64', 'gb2312')
         att1["Content-Type"] = 'application/octet-stream'
-        att1["Content-Disposition"] = 'attachment; filename="TestReport.html"'  # 这里的filename可以任意写，写什么名字，邮件中显示什么名字
+        att1[
+            "Content-Disposition"] = 'attachment; filename="TestReport.html"'  # 这里的filename可以任意写，写什么名字，邮件中显示什么名字
         self.msg.attach(att1)
 
     def send(self):
@@ -76,7 +79,8 @@ class SendMail:
 
             logger.info('与邮件服务器：{0}建立连接'.format('smtp.163.com'))
             smtp.login(sendaddr_name, sendaddr_pswd)
-            logger.info('登录邮件服务器，用户名：{0}，密码：{1}'.format(sendaddr_name, 'xxxxxxxxx'))
+            logger.info('登录邮件服务器，用户名：{0}，密码：{1}'.format(
+                sendaddr_name, 'xxxxxxxxx'))
             smtp.sendmail(self.msg['from'], self.sendTo, self.msg.as_string())
             logger.info('发件人为：{0}'.format(self.msg['from']))
             logger.info('收件人为：{0}'.format(self.sendTo))

@@ -220,5 +220,5 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
             pass
 
 
-if __name__ == '__main__':
-    unittest.main()
+# if __name__ == '__main__':
+#     unittest.main()
