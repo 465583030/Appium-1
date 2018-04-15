@@ -44,7 +44,8 @@ if __name__ == '__main__':
         cf = GlobalParam("config", "report.conf")
         path = cf.getParam("report", "path")
         logger.info('报告存储路径：{0}'.format(path))
-        timestr = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
+        # timestr = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
+        timestr = "测试"
         filename = path + timestr + ".html"
         logger.info('测试报告名称：{0}'.format(filename))
         fp = open(filename, 'wb')
