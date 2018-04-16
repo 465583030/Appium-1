@@ -46,7 +46,8 @@ if __name__ == '__main__':
         logger.info('报告存储路径：{0}'.format(path))
         timestr = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
         title = "测试报告"
-        filename = path + timestr + title + ".html"
+        # filename = path + timestr + title + ".html"
+        filename = title + ".html"
         logger.info('测试报告名称：{0}'.format(filename))
         fp = open(filename, 'wb')
         runner = HTMLTestRunner(stream=fp, title='测试结果', description='测试报告')
