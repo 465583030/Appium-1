@@ -44,9 +44,9 @@ if __name__ == '__main__':
         cf = GlobalParam("config", "report.conf")
         path = cf.getParam("report", "path")
         logger.info('报告存储路径：{0}'.format(path))
-        # timestr = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
-        timestr = "测试"
-        filename = path + timestr + ".html"
+        timestr = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
+        title = "测试报告"
+        filename = path + timestr + title + ".html"
         logger.info('测试报告名称：{0}'.format(filename))
         fp = open(filename, 'wb')
         runner = HTMLTestRunner(stream=fp, title='测试结果', description='测试报告')
@@ -55,9 +55,9 @@ if __name__ == '__main__':
         fp.close()  # 测试报告关闭
 
         # 发送邮件
-        time.sleep(5)
-        sendMail = SendMail()
-        sendMail.send()
+        # time.sleep(5)
+        # sendMail = SendMail()
+        # sendMail.send()
         logger.info(
             '{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{END:RUNCASSE1}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}'
         )
