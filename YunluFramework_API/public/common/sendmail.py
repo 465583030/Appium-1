@@ -26,8 +26,11 @@ recvaddress = ['291008572@qq.com']
 
 # 3.2发件人信息
 # 163的用户名和密码
-sendaddr_name = '13027104206@163.com'
-sendaddr_pswd = 'xjyxjy199288'
+# sendaddr_name = '13027104206@163.com'
+# sendaddr_pswd = 'xjyxjy199288'
+
+sendaddr_name = '291008572@qq.com'
+sendaddr_pswd = 'mdauzegtbhehcabh'
 
 # sendaddr_name = '1668319858@qq.com'
 # sendaddr_pswd = 'paintklbyszqfaed'
@@ -74,10 +77,11 @@ class SendMail:
         self.__take_messages()
         self.msg['from'] = sendaddr_name
         try:
-            smtp = smtplib.SMTP('smtp.163.com', 25)
-            # smtp = smtplib.SMTP('smtp.qq.com', 465)
+            # smtp = smtplib.SMTP('smtp.163.com', 25)
+            smtp = smtplib.SMTP_SSL('smtp.qq.com', 465)
 
-            logger.info('与邮件服务器：{0}建立连接'.format('smtp.163.com'))
+            # logger.info('与邮件服务器：{0}建立连接'.format('smtp.163.com'))
+            logger.info('与邮件服务器：{0}建立连接'.format('smtp.qq.com'))
             smtp.login(sendaddr_name, sendaddr_pswd)
             logger.info('登录邮件服务器，用户名：{0}，密码：{1}'.format(
                 sendaddr_name, 'xxxxxxxxx'))
