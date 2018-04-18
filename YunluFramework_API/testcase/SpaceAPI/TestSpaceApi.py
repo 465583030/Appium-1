@@ -22,9 +22,9 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
     '''
     接口测试
     '''
-    # request = API_REQUEST(sheet_name='test3')
-    # excel1 = Excel(xls='data_api.xls', sheet_name='test3')
-    # data = excel1.get_row_data(sheet_name='test3')
+    # request = API_REQUEST(sheet_name='refund')
+    # excel1 = Excel(xls='data_api.xls', sheet_name='refund')
+    # data = excel1.get_row_data(sheet_name='refund')
 
     # 1.类开始
     @classmethod
@@ -220,5 +220,5 @@ class SpaceAPI_Private(unittest.TestCase, SpaceAPI_Dada):
             pass
 
 
-# if __name__ == '__main__':
-#     unittest.main()
+if __name__ == '__main__':
+    unittest.main()

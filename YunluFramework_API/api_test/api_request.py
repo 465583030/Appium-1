@@ -374,7 +374,6 @@ class API_REQUEST(Login):
 
                     # 4.返回结果赋值
                     value = response
-
                     # 5.继续处理api_check
                     a = param[1][1:-1].split('][')
                     # print('a = ',a)
@@ -389,79 +388,149 @@ class API_REQUEST(Login):
                             except:
                                 break
                         value = temp
-                        # print('value = ', value)
+                        print('#value# = ', value)
+                    
+                    # 替换检查点中的关联数据
+                    print('self.correlationDict = ',self.correlationDict)
+                    for k in self.correlationDict:
+                        if param[0] == k:
+                            print('param[0] = ',param[0])
+                            param[0] = self.correlationDict[k]
+                            print('k = ',k)
+                            print(param[0])
 
                 try:
-                    # print("----------进入检查点数据校验-------------")
-                    # print("flag = ", flag)
+                    print("----------进入检查点数据校验-------------")
+                    print("flag = ", flag)
                     # 检查点数据校验
                     # '='关系断言
                     if flag == '=':
-                        # print('等于')
-
-                        # 先将value值中的True或False的类型转换成str类型，再与param[0]断言
-                        if param[0] in 'True' or 'False':
-                            value = str(value)
-                            assert param[0] == value
-
-                            # 20180410 10:36加入
-                            return [True, value]
-
-                        # 如果返回数据为int型，比较时将excel中的数据先转换成整型数据
-                        elif type(value) == int:
-                            # print('进入elif')
+                        print('等于')
+                        print('进入等于阶段后的---->param[0] = ',param[0])
+                        print('进入等于阶段后的---->type(param[0]) 值 = ',type(param[0]))
+                        print('进入等于阶段后的---->value 值 = ',value)
+                        print('进入等于阶段后的---->type(value) 值 = ',type(value))
+                        
+                        # 如果返回值解析结果value值是数值，先将check中解析出来的param[0]的值转为int再断言
+                        if type(value) == int:
+                            print('进入if')
                             assert int(param[0]) == value
+                            print('true',value)
+                            
+                            # 20180410 10:36加入
+                            # return [True, value]
+
+                        # 将value值中的True或False的类型转换成str类型，再与param[0]断言
+                        # 先判断传进来的parma[0]的类型是否为str类型，如果是才能和'True'/'False'比较 
+                        elif param[0] == 'True' or param[0] == 'False':
+                            print('进入elif')
+                            value1 = str(value)
+
+                            assert param[0] == value1
+                            print('true',value1)
 
                             # 20180410 10:36加入
-                            return [True, value]
+                            # return [True, value]
 
                         # 无需转换时，直接比较检查点
                         else:
-                            # print('进入else')
-                            # print('param[0] = ', param[0])
-                            # print('value = ', value)
+                            print('进入else')
+                            print('param[0] = ', param[0])
+                            print('value = ', value)
+
                             assert param[0] == value
+                            print('true',value)
 
                             # 20180410 10:36加入
-                            return [True, value]
+                            # return [True, value]
 
                     # '<>'关系断言
                     if flag == '<>':
-                        # 先将value值中的True或False的类型转换成str类型，再与param[0]断言
-                        if param[0] in 'True' or 'False':
-                            value = str(value)
-                            assert param[0] != value
 
-                            # 20180410 10:36加入
-                            return [True, value]
-
-                        # 如果返回数据为int型，比较时将excel中的数据先转换成整型数据
-                        elif type(value) == int:
-                            # print('进入elif')
+                        print('不等于')
+                        print('进入不等于阶段后的---->param[0] = ',param[0])
+                        print('进入不等于阶段后的---->type(param[0]) 值 = ',type(param[0]))
+                        print('进入不等于阶段后的---->value 值 = ',value)
+                        print('进入不等于阶段后的---->type(value) 值 = ',type(value))
+                        
+                        # 如果返回值解析结果value值是数值，先将check中解析出来的param[0]的值转为int再断言
+                        if type(value) == int:
+                            print('进入if')
                             assert int(param[0]) != value
+                            print('true',value)
+                            
+                            # 20180410 10:36加入
+                            # return [True, value]
+
+                        # 将value值中的True或False的类型转换成str类型，再与param[0]断言
+                        # 先判断传进来的parma[0]的类型是否为str类型，如果是才能和'True'/'False'比较 
+                        elif param[0] == 'True' or param[0] == 'False':
+                            print('进入elif')
+                            value1 = str(value)
+
+                            assert param[0] != value1
+                            print('true',value1)
 
                             # 20180410 10:36加入
-                            return [True, value]
+                            # return [True, value]
 
                         # 无需转换时，直接比较检查点
                         else:
-                            # print('进入else')
+                            print('进入else')
+                            print('param[0] = ', param[0])
+                            print('value = ', value)
+
                             assert param[0] != value
+                            print('true',value)
 
                             # 20180410 10:36加入
-                            return [True, value]
+                            # return [True, value]
+                        # # 先将value值中的True或False的类型转换成str类型，再与param[0]断言
+                        # if param[0] in 'True' or 'False':
+                        #     value = str(value)
+
+                        #     print('true',value)
+                        #     assert param[0] != value
+
+                        #     # 20180410 10:36加入
+                        #     # return [True, value]
+
+                        # # 如果返回数据为int型，比较时将excel中的数据先转换成整型数据
+                        # elif type(value) == int:
+                        # # elif isinstance(value,int):
+                        #     # print('进入elif')
+
+                        #     print('true',value)
+                        #     assert int(param[0]) != value
+
+                        #     # 20180410 10:36加入
+                        #     # return [True, value]
+
+                        # # 无需转换时，直接比较检查点
+                        # else:
+                        #     # print('进入else')
+
+                        #     print('true',value)
+                        #     assert param[0] != value
+
+                        #     # 20180410 10:36加入
+                        #     # return [True, value]
 
                     # '#len#'关系断言
                     if flag == '#len#':
-                        # print('进入#len#')
+                        print('进入#len#')
+                        print('true',value)
                         assert len(value) == int(param[0])
 
                         # 20180410 10:36加入
-                        return [True, value]
+                        # return [True, value]
 
                 except Exception as e:
-                    # print('进入exception')
+                    print('e = ',e)
+                    print('进入exception')
+                    print('false',value)
                     return [False, value]
+        return[True,value] 
 
     # 获取leancloud系统消息记录
     def get_Messages_from_leancloud(self):
